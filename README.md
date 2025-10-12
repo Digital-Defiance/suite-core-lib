@@ -290,6 +290,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.1: Add constants/function
+
+- Sun Oct 12 2025 13:34:00 GMT-0700 (Pacific Daylight Time)
+  - Added more constants and changed to a function to create the constants object
+
 ## v1.0.0: Initial release of user system package
 
 - Sun Oct 12 2025 13:26:37 GMT-0700 (Pacific Daylight Time)
