@@ -290,6 +290,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.2: Missing export (IConstants)
+
+- Sun Oct 12 2025 14:13:00 GMT-0700 (Pacific Daylight Time)
+  - Added missing export for IConstants in src/interfaces/index.ts
+
 ## v1.0.1: Add constants/function
 
 - Sun Oct 12 2025 13:34:00 GMT-0700 (Pacific Daylight Time)
