@@ -182,21 +182,28 @@ const userSchema = new mongoose.Schema<IBackendUser<'en'>>({
 
 ## 🔧 Advanced Configuration
 
-### Custom Model Extensions
+### Custom Model Extensions & Dynamic Registration
+
+> **Note:** The static `ModelName` and `BaseModelName` enums are deprecated. For extensibility, use dynamic model registration (see `ModelRegistry` in `node-express-suite`).
+
+You can now register and extend models dynamically:
 
 ```typescript
-import { BaseModelName, ExtendedModelName } from '@digitaldefiance/suite-core-lib';
+import { ModelRegistry } from '@digitaldefiance/node-express-suite';
 
-// Extend the base models for your application
-enum CustomModels {
-  Organization = 'Organization',
-  Subscription = 'Subscription',
-  AuditLog = 'AuditLog'
-}
+// Register a custom model (e.g., Organization)
+ModelRegistry.instance.register({
+  modelName: 'Organization',
+  schema: organizationSchema,
+  model: OrganizationModel,
+  collection: 'organizations',
+});
 
-type AppModelName = ExtendedModelName<typeof CustomModels>;
-// Includes: User, Role, EmailToken, Mnemonic, UserRole, Organization, Subscription, AuditLog
+// Retrieve a model anywhere in your app
+const orgModel = ModelRegistry.instance.get('Organization')?.model;
 ```
+
+This approach allows other libraries and apps to extend or override models at runtime, supporting advanced use cases like multi-tenancy and plugin architectures.
 
 ### Email Token Types
 
