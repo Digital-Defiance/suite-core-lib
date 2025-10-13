@@ -4,3 +4,5 @@ export * from './enumerations';
 export * from './errors';
 export * from './i18n-setup';
 export * from './interfaces';
+
+export * from './defaults';

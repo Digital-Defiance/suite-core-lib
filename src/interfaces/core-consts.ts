@@ -1,7 +1,6 @@
 import { IBackupCodeConstants } from './backup-code-consts';
-import { ICoreConstants } from './core-consts';
 
-export interface IConstants extends ICoreConstants {
+export interface ICoreConstants {
   /**
    * Backup code related constants
    */
@@ -43,17 +42,9 @@ export interface IConstants extends ICoreConstants {
    */
   AdministratorRole: string;
   /**
-   * The email of the administrator user/admin contact
-   */
-  AdministratorEmail: string;
-  /**
    * The name of the member role.
    */
   MemberRole: string;
-  /**
-   * The email of the test user.
-   */
-  MemberEmail: string;
   /**
    * The username of the test user.
    */
@@ -66,10 +57,6 @@ export interface IConstants extends ICoreConstants {
    * The username of the system user.
    */
   SystemUser: string;
-  /**
-   * The email of the system user.
-   */
-  SystemEmail: string;
   /**
    * Minimum username length
    */

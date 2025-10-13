@@ -243,6 +243,36 @@ The **@digitaldefiance/node-ecies** and **@digitaldefiance/node-express-suite** 
 
 ## 🧪 Testing & Quality
 
+## 🛠️ Runtime Configuration Registry
+
+This package uses a runtime configuration registry for all constants and cryptographic parameters. You can override defaults at runtime for advanced use cases:
+
+```typescript
+import {
+  getSuiteCoreRuntimeConfiguration,
+  registerSuiteCoreRuntimeConfiguration,
+} from '@digitaldefiance/suite-core-lib';
+
+// Get current config
+const config = getSuiteCoreRuntimeConfiguration();
+
+// Register a custom config
+const customKey = Symbol('custom-suite-core-config');
+registerSuiteCoreRuntimeConfiguration(customKey, 'example.com', { BcryptRounds: 12 });
+const customConfig = getSuiteCoreRuntimeConfiguration(customKey);
+```
+
+All constants are immutable and accessible via the registry/config API. See `src/constants.ts` and `src/defaults.ts` for details.
+
+## 🏛️ Architectural Conventions
+
+- Centralized constants file
+- Immutability via Object.freeze
+- Registry/config pattern for runtime overrides
+- Type-safe interfaces for all config objects
+
+## 🧪 Testing & Quality
+
 ```bash
 # Run the comprehensive test suite
 yarn test

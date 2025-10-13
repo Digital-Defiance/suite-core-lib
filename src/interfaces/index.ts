@@ -2,6 +2,7 @@ export * from './backup-code';
 export * from './backup-code-consts';
 export * from './bases';
 export * from './constants';
+export * from './core-consts';
 export * from './dto';
 export * from './has-creation';
 export * from './has-creator';
