@@ -1,4 +1,3 @@
-import { Types } from 'mongoose';
 import { EmailTokenType } from '../../enumerations/email-token-type';
 import { IHasId } from '../has-id';
 import { IHasTimestamps } from '../has-timestamps';

@@ -1,17 +1,20 @@
-import { DeepPartial } from './interfaces/deep-partial';
-import { IConstants } from './interfaces/constants';
 import { createConstants } from './constants';
+import { IConstants } from './interfaces/constants';
+import { DeepPartial } from './interfaces/deep-partial';
 
 export type ConfigurationKey = string | symbol;
 
-const DEFAULT_CONFIGURATION_KEY: ConfigurationKey = Symbol.for('digitaldefiance.suite-core.defaults.default');
+const DEFAULT_CONFIGURATION_KEY: ConfigurationKey = Symbol.for(
+  'digitaldefiance.suite-core.defaults.default',
+);
 
 const registry: Map<ConfigurationKey, IConstants> = new Map();
 
 function deepClone<T>(input: T): T {
   if (input === null || typeof input !== 'object') return input;
   if (Array.isArray(input)) return input.map(deepClone) as unknown as T;
-  if (input instanceof RegExp) return new RegExp(input.source, input.flags) as unknown as T;
+  if (input instanceof RegExp)
+    return new RegExp(input.source, input.flags) as unknown as T;
   if (input instanceof Date) return new Date(input.getTime()) as unknown as T;
   const result: Record<string, unknown> = {};
   for (const [key, value] of Object.entries(input)) {

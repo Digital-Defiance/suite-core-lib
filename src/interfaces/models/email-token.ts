@@ -1,4 +1,3 @@
-import { Types } from 'mongoose';
 import { IEmailTokenBase } from '../bases/email-token';
 
 /**
