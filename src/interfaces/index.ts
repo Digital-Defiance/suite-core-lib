@@ -4,6 +4,7 @@ export * from './bases';
 export * from './constants';
 export * from './core-consts';
 export * from './dto';
+export * from './failable-result';
 export * from './has-creation';
 export * from './has-creator';
 export * from './has-id';

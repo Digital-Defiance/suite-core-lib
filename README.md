@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.3: Add failable-result
+
+- Sun Oct 12 2025 15:48:00 GMT-0700 (Pacific Daylight Time)
+  - Added IFailableResult class
+
 ## v1.0.2: Missing export (IConstants)
 
 - Sun Oct 12 2025 14:13:00 GMT-0700 (Pacific Daylight Time)
