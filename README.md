@@ -327,6 +327,12 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.6: Version bump/hotfix
+
+- Sun Oct 12 2025 17:52:00 GMT-0700 (Pacific Daylight Time)
+  - Actually include failable result
+  - Version bump of libraries
+
 ## v1.0.3: Add failable-result
 
 - Sun Oct 12 2025 15:48:00 GMT-0700 (Pacific Daylight Time)
