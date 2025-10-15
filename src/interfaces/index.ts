@@ -15,3 +15,4 @@ export * from './has-timestamps';
 export * from './has-updater';
 export * from './has-updates';
 export * from './models';
+export * from './token-user';

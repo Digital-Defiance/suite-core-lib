@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.8: ITokenUser HotFix
+
+- Wed Oct 15 2025 14:26:00 GMT-0700 (Pacific Daylight Time)
+  - Export ITokenUser
+
 ## v1.0.7: ITokenUser
 
 - Wed Oct 15 2025 14:22:00 GMT-0700 (Pacific Daylight Time)
