@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.9: Extended strings
+
+- Wed Oct 15 2025 15:23:00 GMT-0700 (Pacific Daylight Time)
+  - Include additional suite internationalization strings from express suite
+
 ## v1.0.8: ITokenUser HotFix
 
 - Wed Oct 15 2025 14:26:00 GMT-0700 (Pacific Daylight Time)

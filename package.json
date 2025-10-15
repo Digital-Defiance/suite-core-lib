@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/suite-core-lib",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Generic user system and document system common core for applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
