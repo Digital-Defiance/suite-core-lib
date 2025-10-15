@@ -23,6 +23,7 @@ export enum SuiteCoreStringKey {
   Validation_UsernameOrEmailRequired = 'validation_usernameOrEmailRequired',
   Validation_TokenExpired = 'validation_tokenExpired',
   Validation_InvalidJwtToken = 'validation_invalidJwtToken',
+  Validation_InvalidToken = 'validation_invalidToken',
   ValidationError = 'validation_error',
   Validation_MissingValidatedData = 'validation_missingValidatedData',
   Validation_MissingValidatedDataForField = 'validation_missingValidatedDataForField',

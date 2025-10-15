@@ -42,6 +42,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidEmail]:
       'Invalid email address format',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Invalid JWT token',
+    [SuiteCoreStringKey.Validation_InvalidToken]: 'Invalid token',
     [SuiteCoreStringKey.Validation_InvalidUsername]: 'Invalid username format',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:
       'Password does not meet security requirements',
@@ -106,6 +107,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidEmail]:
       'Invalid email address format',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Invalid JWT token',
+    [SuiteCoreStringKey.Validation_InvalidToken]: 'Invalid token',
     [SuiteCoreStringKey.Validation_InvalidUsername]: 'Invalid username format',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:
       'Password does not meet security requirements',
@@ -175,6 +177,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidEmail]:
       "Format d'adresse e-mail invalide",
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Token JWT invalide',
+    [SuiteCoreStringKey.Validation_InvalidToken]: 'Jeton invalide',
     [SuiteCoreStringKey.Validation_InvalidUsername]:
       "Format de nom d'utilisateur invalide",
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:
@@ -246,6 +249,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidEmail]:
       'Ungültiges E-Mail-Adressformat',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Ungültiger JWT-Token',
+    [SuiteCoreStringKey.Validation_InvalidToken]: 'Ungültiger Token',
     [SuiteCoreStringKey.Validation_InvalidUsername]:
       'Ungültiges Benutzernameformat',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:
@@ -317,6 +321,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidEmail]:
       'Formato de dirección de correo electrónico inválido',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Token JWT inválido',
+    [SuiteCoreStringKey.Validation_InvalidToken]: 'Token inválido',
     [SuiteCoreStringKey.Validation_InvalidUsername]:
       'Formato de nombre de usuario inválido',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:
@@ -380,6 +385,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidCredentials]: '无效的用户名或密码',
     [SuiteCoreStringKey.Validation_InvalidEmail]: '无效的电子邮件地址格式',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: '无效的JWT令牌',
+    [SuiteCoreStringKey.Validation_InvalidToken]: '无效的令牌',
     [SuiteCoreStringKey.Validation_InvalidUsername]: '无效的用户名格式',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]: '密码不符合安全要求',
     [SuiteCoreStringKey.Validation_TokenExpired]: '令牌已过期',
@@ -447,6 +453,7 @@ export const SuiteCoreComponentStrings: Record<
       '無効なユーザー名またはパスワード',
     [SuiteCoreStringKey.Validation_InvalidEmail]: '無効なメールアドレス形式',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: '無効なJWTトークン',
+    [SuiteCoreStringKey.Validation_InvalidToken]: '無効なトークン',
     [SuiteCoreStringKey.Validation_InvalidUsername]: '無効なユーザー名形式',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:
       'パスワードがセキュリティ要件を満たしていません',
@@ -519,6 +526,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_InvalidEmail]:
       'Недійсний формат адреси електронної пошти',
     [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Недійсний JWT токен',
+    [SuiteCoreStringKey.Validation_InvalidToken]: 'Недійсний токен',
     [SuiteCoreStringKey.Validation_InvalidUsername]:
       'Недійсний формат імені користувача',
     [SuiteCoreStringKey.Validation_PasswordTooWeak]:

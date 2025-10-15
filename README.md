@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.10: Extended strings HotFix
+
+- Wed Oct 15 2025 15:34:00 GMT-0700 (Pacific Daylight Time)
+  - Add missing Validation_InvalidToken
+
 ## v1.0.9: Extended strings
 
 - Wed Oct 15 2025 15:23:00 GMT-0700 (Pacific Daylight Time)
