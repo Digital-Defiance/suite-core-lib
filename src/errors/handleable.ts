@@ -14,9 +14,6 @@ export class HandleableError extends Error {
     this._handled = options?.handled ?? false;
     this.sourceData = options?.sourceData;
 
-    // Ensure proper prototype chain for instanceof checks across transpiled targets
-    Object.setPrototypeOf(this, new.target.prototype);
-
     // Capture stack trace - prioritize source stack, then capture new one
     if (source.stack) {
       this.stack = source.stack;
