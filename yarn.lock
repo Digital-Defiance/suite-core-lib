@@ -1286,62 +1286,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digitaldefiance/ecies-lib@npm:1.0.27":
-  version: 1.0.27
-  resolution: "@digitaldefiance/ecies-lib@npm:1.0.27"
+"@digitaldefiance/ecies-lib@npm:1.0.30":
+  version: 1.0.30
+  resolution: "@digitaldefiance/ecies-lib@npm:1.0.30"
   dependencies:
-    "@digitaldefiance/i18n-lib": "npm:^1.1.5"
+    "@digitaldefiance/i18n-lib": "npm:^1.1.8"
     "@ethereumjs/wallet": "npm:^10.0.0"
     "@noble/curves": "npm:^2.0.1"
     "@noble/hashes": "npm:^2.0.1"
     "@scure/bip32": "npm:^2.0.0"
     bson: "npm:^6.10.4"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/6d4add6b6f048447e266812fd510495f6a9b50d765bac37a6289732c8de38e3b117ca2384d2d124622508fcf1afa46f14235e47054e9720dc85ec3cac48006ff
+  checksum: 10c0/2c4fda8d1ed8d88fa84d435db5a264b9c99ad2c0112534a2fcf4417bd54933b25dd921cdb439119148d31db9866480c28dc1f92c7d69e6fd0e931f5d44de1171
   languageName: node
   linkType: hard
 
-"@digitaldefiance/ecies-lib@npm:1.0.28":
-  version: 1.0.28
-  resolution: "@digitaldefiance/ecies-lib@npm:1.0.28"
-  dependencies:
-    "@digitaldefiance/i18n-lib": "npm:^1.1.6"
-    "@ethereumjs/wallet": "npm:^10.0.0"
-    "@noble/curves": "npm:^2.0.1"
-    "@noble/hashes": "npm:^2.0.1"
-    "@scure/bip32": "npm:^2.0.0"
-    bson: "npm:^6.10.4"
-    ts-brand: "npm:^0.2.0"
-  checksum: 10c0/74af29dde3a85fba3db94fc6043e94d1a2e38016c79dfd6acbb6ef5a34dd26a687a5d1cf5213d39ad3219bff74798619ad4f00da5de8b7b6a60ab406d152b716
-  languageName: node
-  linkType: hard
-
-"@digitaldefiance/i18n-lib@npm:1.1.5, @digitaldefiance/i18n-lib@npm:^1.1.5":
-  version: 1.1.5
-  resolution: "@digitaldefiance/i18n-lib@npm:1.1.5"
+"@digitaldefiance/i18n-lib@npm:1.1.8, @digitaldefiance/i18n-lib@npm:^1.1.8":
+  version: 1.1.8
+  resolution: "@digitaldefiance/i18n-lib@npm:1.1.8"
   dependencies:
     moment: "npm:^2.30.1"
     moment-timezone: "npm:^0.6.0"
-  checksum: 10c0/f4c811913f17a8413b16419c9f6bd406d66415ee0a6700c50e6be5c582dc3e7301ce2877b8c5ba3e00864ed569e7d13621416a7e5ba276e7a0f75ee55fca0d8d
+  checksum: 10c0/59da8b447e1d94a2f04e37630026569c1c04cf22cd3625de91486d6855785630d8c874de967720160eef6da5af17cf428d15ee8935653409edd1253fa25bf806
   languageName: node
   linkType: hard
 
-"@digitaldefiance/i18n-lib@npm:1.1.6, @digitaldefiance/i18n-lib@npm:^1.1.6":
-  version: 1.1.6
-  resolution: "@digitaldefiance/i18n-lib@npm:1.1.6"
+"@digitaldefiance/node-ecies-lib@npm:1.0.12":
+  version: 1.0.12
+  resolution: "@digitaldefiance/node-ecies-lib@npm:1.0.12"
   dependencies:
-    moment: "npm:^2.30.1"
-    moment-timezone: "npm:^0.6.0"
-  checksum: 10c0/335c3d2f175d331b6846f5ba0813e425c2df8a42f78d1feb1dbf655ae8d786e803c5d4e0e6c65fbc050c3e261c17274af693ff2a2a192201935a4111d77c59db
-  languageName: node
-  linkType: hard
-
-"@digitaldefiance/node-ecies-lib@npm:1.0.9":
-  version: 1.0.9
-  resolution: "@digitaldefiance/node-ecies-lib@npm:1.0.9"
-  dependencies:
-    "@digitaldefiance/ecies-lib": "npm:1.0.27"
-    "@digitaldefiance/i18n-lib": "npm:1.1.5"
+    "@digitaldefiance/ecies-lib": "npm:1.0.30"
+    "@digitaldefiance/i18n-lib": "npm:1.1.8"
     "@ethereumjs/wallet": "npm:^10.0.0"
     "@noble/curves": "npm:^2.0.1"
     "@noble/hashes": "npm:^2.0.1"
@@ -1349,7 +1324,7 @@ __metadata:
     bson: "npm:^6.10.4"
     ethereum-cryptography: "npm:^3.2.0"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/7a10aa51f57684a4da29bd0c140b7f83e7f6fa6f9bd1383acca2f8e7393974a344d3995640f29f5cb966dd118c92526a07d8a0b6ee2440cba1be51847fd97871
+  checksum: 10c0/0c7ee1d3fd121484409345415f791d92865f8641e754f91272f7db2c8ce8dc23168a16ddd16f5092f79d4b91df6428d3f63975c7bebf61b2f7b1006c1f38dd35
   languageName: node
   linkType: hard
 
@@ -1359,9 +1334,9 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.28.4"
     "@babel/preset-env": "npm:^7.28.3"
-    "@digitaldefiance/ecies-lib": "npm:1.0.28"
-    "@digitaldefiance/i18n-lib": "npm:1.1.6"
-    "@digitaldefiance/node-ecies-lib": "npm:1.0.9"
+    "@digitaldefiance/ecies-lib": "npm:1.0.30"
+    "@digitaldefiance/i18n-lib": "npm:1.1.8"
+    "@digitaldefiance/node-ecies-lib": "npm:1.0.12"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^29.0.0"

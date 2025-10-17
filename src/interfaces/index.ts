@@ -5,6 +5,7 @@ export * from './constants';
 export * from './core-consts';
 export * from './dto';
 export * from './failable-result';
+export * from './handleable-error-options';
 export * from './has-creation';
 export * from './has-creator';
 export * from './has-id';

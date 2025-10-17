@@ -327,6 +327,17 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.12: Version bump of ecies/i18n libs
+
+- Wed Oct 15 2025 16:53:00 GMT-0700 (Pacific Daylight Time)
+  - Version bump of ecies/i18n libs
+
+## v1.0.11: Version bump of ecies/i18n libs, add translatable suite error
+
+- Wed Oct 15 2025 16:30:00 GMT-0700 (Pacific Daylight Time)
+  - Version bump ecies/i18n libs
+  - Add TranslatableSuiteError
+
 ## v1.0.10: Extended strings HotFix
 
 - Wed Oct 15 2025 15:34:00 GMT-0700 (Pacific Daylight Time)

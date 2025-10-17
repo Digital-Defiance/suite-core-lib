@@ -56,6 +56,7 @@ export enum SuiteCoreStringKey {
   Error_FailedToStartApplication = 'error_failedToStartApplication',
   Error_InvalidModelKeyTemplate = 'error_invalidModelKeyTemplate',
   Error_ModelNotRegisteredTemplate = 'error_modelNotRegisteredTemplate',
+  Error_FailedToCreateRoleTemplate = 'error_failedToCreateRoleTemplate',
 
   // Admin/system messages
   Admin_NoMongoDbClientFoundFallingBack = 'admin_noMongodbClientFoundFallingBack',

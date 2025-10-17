@@ -75,6 +75,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'Failed to start application',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Invalid model key: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Model not registered: {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Failed to create {NAME} role',
     
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
@@ -140,6 +141,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'Failed to start application',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Invalid model key: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Model not registered: {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Failed to create {NAME} role',
     
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
@@ -212,6 +214,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'Échec du démarrage de l\'application',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Clé de modèle invalide : {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Modèle non enregistré : {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Échec de la création du rôle {NAME}',
 
     [SuiteCoreStringKey.ValidationError]: 'Erreur de Validation',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Données validées manquantes',
@@ -284,6 +287,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'Fehler beim Starten der Anwendung',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Ungültiger Modellschlüssel: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Modell nicht registriert: {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Fehler beim Erstellen der Rolle {NAME}',
 
     [SuiteCoreStringKey.ValidationError]: 'Validierungsfehler',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Fehlende validierte Daten',
@@ -356,6 +360,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'Error al iniciar la aplicación',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Clave de modelo inválida: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Modelo no registrado: {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Error al crear el rol {NAME}',
 
     [SuiteCoreStringKey.ValidationError]: 'Error de Validación',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Faltan datos validados',
@@ -416,6 +421,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: '启动应用程序失败',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: '无效的模型键：{modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: '模型未注册：{modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: '创建{NAME}角色失败',
 
     [SuiteCoreStringKey.ValidationError]: '验证错误',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: '缺少验证数据',
@@ -488,6 +494,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'アプリケーションの起動に失敗しました',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: '無効なモデルキー: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'モデルが登録されていません: {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: '{NAME}ロールの作成に失敗しました',
 
     [SuiteCoreStringKey.ValidationError]: '検証エラー',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: '検証済みデータが不足しています',
@@ -561,6 +568,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToStartApplication]: 'Не вдалося запустити додаток',
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Недійсний ключ моделі: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Модель не зареєстрована: {modelName}',
+    [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Не вдалося створити роль {NAME}',
 
     [SuiteCoreStringKey.ValidationError]: 'Помилка Валідації',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Відсутні валідовані дані',
