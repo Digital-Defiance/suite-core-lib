@@ -28,6 +28,8 @@ export enum SuiteCoreStringKey {
   Validation_MissingValidatedData = 'validation_missingValidatedData',
   Validation_MissingValidatedDataForField = 'validation_missingValidatedDataForField',
   Validation_MnemonicRegex = 'validation_mnemonicRegex',
+  Validation_ExpressValidationFailed = "validation_expressValidationFailed",
+  Validation_MongooseValidationError = "validation_mongooseValidationError",
 
   // Authentication errors
   Auth_UserNotFound = 'auth_userNotFound',

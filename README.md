@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.13: Add string
+
+- Fri Oct 17 2025 14:18:00 GMT-0700 (Pacific Daylight Time)
+  - Add string keys
+
 ## v1.0.12: Version bump of ecies/i18n libs
 
 - Wed Oct 15 2025 16:53:00 GMT-0700 (Pacific Daylight Time)

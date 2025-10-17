@@ -50,6 +50,10 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_UsernameInUse]: 'Username is already in use',
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       'Username or email is required',
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Express validation failed',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Mongoose validation error occurred',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Account is active',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'Account is locked by an administrator',
@@ -116,6 +120,10 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_UsernameInUse]: 'Username is already in use',
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       'Username or email is required',
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Express validation failed',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Mongoose validation error occurred',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Account is active',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'Account is locked by an administrator',
@@ -189,6 +197,10 @@ export const SuiteCoreComponentStrings: Record<
       "Le nom d'utilisateur est déjà utilisé",
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       "Le nom d'utilisateur ou l'e-mail est requis",
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Échec de la validation Express',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Une erreur de validation Mongoose s\'est produite',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Le compte est actif',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'Le compte est verrouillé par un administrateur',
@@ -262,6 +274,10 @@ export const SuiteCoreComponentStrings: Record<
       'Benutzername wird bereits verwendet',
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       'Benutzername oder E-Mail ist erforderlich',
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Express-Validierung fehlgeschlagen',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Mongoose-Validierungsfehler aufgetreten',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Konto ist aktiv',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'Konto ist von einem Administrator gesperrt',
@@ -335,6 +351,10 @@ export const SuiteCoreComponentStrings: Record<
       'El nombre de usuario ya está en uso',
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       'Se requiere nombre de usuario o correo electrónico',
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Express validación fallida',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Error de validación de Mongoose',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'La cuenta está activa',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'La cuenta está bloqueada por un administrador',
@@ -397,6 +417,10 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_UsernameInUse]: '用户名已被使用',
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       '需要用户名或电子邮件',
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Express验证失败',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      '发生了Mongoose验证错误',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: '账户处于激活状态',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]: '账户被管理员锁定',
     [SuiteCoreStringKey.Error_AccountStatus_PendingEmailVerification]:
@@ -468,6 +492,10 @@ export const SuiteCoreComponentStrings: Record<
       'ユーザー名は既に使用されています',
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       'ユーザー名またはメールが必要です',
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Expressの検証に失敗しました',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Mongooseの検証エラーが発生しました',
     [SuiteCoreStringKey.Error_AccountStatus_Active]:
       'アカウントはアクティブです',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
@@ -543,6 +571,10 @@ export const SuiteCoreComponentStrings: Record<
       "Ім'я користувача вже використовується",
     [SuiteCoreStringKey.Validation_UsernameOrEmailRequired]:
       "Потрібно вказати ім'я користувача або електронну пошту",
+    [SuiteCoreStringKey.Validation_ExpressValidationFailed]:
+      'Не вдалося виконати перевірку Express',
+    [SuiteCoreStringKey.Validation_MongooseValidationError]:
+      'Виникла помилка перевірки Mongoose',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Обліковий запис активний',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'Обліковий запис заблоковано адміністратором',
