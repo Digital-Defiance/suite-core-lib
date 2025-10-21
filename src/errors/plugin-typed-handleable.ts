@@ -1,14 +1,23 @@
-import { HandleableErrorOptions } from '../interfaces/handleable-error-options';
+import { CompleteReasonMap, PluginI18nEngine, PluginTypedError } from '@digitaldefiance/i18n-lib';
+import { HandleableErrorOptions } from '../interfaces';
+import { HandleableError, IHandleable } from '@digitaldefiance/ecies-lib';
+import { CoreTypedHandleableError } from './core-typed-handleable';
 
-export class HandleableError extends Error {
+export class PluginTypedHandleableError<TEnum extends Record<string, string>, TStringKey extends string, TLanguages extends string = string> extends PluginTypedError<TEnum, TStringKey, TLanguages> implements IHandleable {
   public readonly cause?: Error;
   public readonly statusCode: number;
   public readonly sourceData?: unknown;
   private _handled: boolean;
 
-  constructor(source: Error, options?: HandleableErrorOptions) {
-    super(source.message);
-    this.name = this.constructor.name;
+  constructor(type: TEnum[keyof TEnum], reasonMap: CompleteReasonMap<TEnum, TStringKey>, engine: PluginI18nEngine<TLanguages>, componentId: string, source: Error, options?: HandleableErrorOptions, language?: TLanguages, otherVars?: Record<string, string | number>) {
+    super(
+      engine,
+      componentId,
+      type,
+      reasonMap,
+      language,
+      otherVars
+    );
     this.cause = source;
     this.statusCode = options?.statusCode ?? 500;
     this._handled = options?.handled ?? false;
@@ -22,8 +31,10 @@ export class HandleableError extends Error {
     } else {
       this.stack = new Error().stack;
     }
+    this.name = this.constructor.name;
   }
 
+  
   public get handled(): boolean {
     return this._handled;
   }
@@ -40,7 +51,7 @@ export class HandleableError extends Error {
       handled: this.handled,
       stack: this.stack,
       cause:
-        this.cause instanceof HandleableError
+        this.cause instanceof HandleableError || this.cause instanceof PluginTypedHandleableError || this.cause instanceof CoreTypedHandleableError
           ? this.cause.toJSON()
           : this.cause?.message,
       ...(this.sourceData ? { sourceData: this.sourceData } : {}),

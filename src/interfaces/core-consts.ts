@@ -94,4 +94,16 @@ export interface ICoreConstants {
    * The interval in minutes after which an email token can be resent.
    */
   EmailTokenResendIntervalMinutes: number;
+  /**
+   * The name of the site.
+   */
+  Site: string;
+  /**
+   * The tagline of the site.
+   */
+  SiteTagline: string;
+  /**
+   * The description of the site.
+   */
+  SiteDescription: string;
 }

@@ -2,7 +2,7 @@ import { HandleableError } from '@digitaldefiance/ecies-lib';
 import { CoreLanguage } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { AccountStatus } from '../enumerations/account-status';
-import { getSuiteCoreTranslation } from '../i18n-setup';
+import { TranslatableSuiteError } from './translatable-suite';
 
 export class AccountStatusError extends HandleableError {
   public readonly accountStatus: AccountStatus;
@@ -27,9 +27,7 @@ export class AccountStatusError extends HandleableError {
     };
 
     const errorKey = getErrorKey(accountStatus);
-    const message = getSuiteCoreTranslation(errorKey, undefined, language);
-
-    super(message, { statusCode });
+    super(new TranslatableSuiteError(errorKey, undefined, language), { statusCode });
     this.name = 'AccountStatusError';
     this.accountStatus = accountStatus;
   }

@@ -10,28 +10,28 @@ import {
 // Mock additional error classes for testing using the new API
 class EmailInUseError extends HandleableError {
   constructor(language?: CoreLanguage, statusCode = 422) {
-    super(
-      getSuiteCoreTranslation(
-        SuiteCoreStringKey.Validation_EmailInUse,
-        undefined,
-        language,
-      ),
-      { statusCode },
+    const message = getSuiteCoreTranslation(
+      SuiteCoreStringKey.Validation_EmailInUse,
+      undefined,
+      language,
     );
+    const error = new Error(message);
+    super(error, { statusCode });
+    this.message = message;
     this.name = 'EmailInUseError';
   }
 }
 
 class InvalidCredentialsError extends HandleableError {
   constructor(language?: CoreLanguage, statusCode = 401) {
-    super(
-      getSuiteCoreTranslation(
-        SuiteCoreStringKey.Validation_InvalidCredentials,
-        undefined,
-        language,
-      ),
-      { statusCode },
+    const message = getSuiteCoreTranslation(
+      SuiteCoreStringKey.Validation_InvalidCredentials,
+      undefined,
+      language,
     );
+    const error = new Error(message);
+    super(error, { statusCode });
+    this.message = message;
     this.name = 'InvalidCredentialsError';
   }
 }

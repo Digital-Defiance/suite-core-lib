@@ -1,19 +1,14 @@
-import { HandleableError } from '@digitaldefiance/ecies-lib';
 import { CoreLanguage } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
-import { getSuiteCoreTranslation } from '../i18n-setup';
+import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 
-export class UserNotFoundError extends HandleableError {
+export class UserNotFoundError extends TranslatableSuiteHandleableError {
   constructor(language?: CoreLanguage, statusCode = 404) {
     super(
-      getSuiteCoreTranslation(
-        SuiteCoreStringKey.Auth_UserNotFound,
-        undefined,
-        language,
-      ),
-      {
-        statusCode,
-      },
+      SuiteCoreStringKey.Auth_UserNotFound,
+      undefined,
+      language,
+      { statusCode },
     );
     this.name = 'UserNotFoundError';
   }

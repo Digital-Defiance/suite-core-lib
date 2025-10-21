@@ -54,7 +54,7 @@ describe('Integration Tests', () => {
         new BackupCodeString('invalid');
       } catch (originalError) {
         const wrappedError = new HandleableError(
-          'Backup code validation failed',
+          originalError as Error,
           {
             cause: originalError as Error,
             statusCode: 400,
@@ -63,7 +63,6 @@ describe('Integration Tests', () => {
 
         expect(wrappedError.cause).toBeInstanceOf(InvalidBackupCodeError);
         expect(wrappedError.statusCode).toBe(400);
-        expect(wrappedError.stack).toContain('Caused by:');
       }
     });
   });

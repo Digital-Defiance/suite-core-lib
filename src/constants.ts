@@ -111,6 +111,18 @@ export const CORE: ICoreConstants = Object.freeze({
    * The interval in minutes after which an email token can be resent.
    */
   EmailTokenResendIntervalMinutes: 5 as const,
+  /**
+   * The site name. Overridden by specific site constants.
+   */
+  Site: 'New Site' as const,
+  /**
+   * The site tagline. Overridden by specific site constants.
+   */
+  SiteTagline: 'New Site Tagline' as const,
+  /**
+   * The site description. Overridden by specific site constants.
+   */
+  SiteDescription: 'Description of the new site' as const,
 } as const);
 
 export const createConstants: (

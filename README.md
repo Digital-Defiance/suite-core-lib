@@ -327,6 +327,95 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.15: Big enhancements
+
+- Tue Oct 21 2025 16:07:00 GMT-0700 (Pacific Daylight Time)
+
+### Dependency Updates
+
+- Updated 
+
+  ```plaintext
+  @digitaldefiance/ecies-lib
+  ```
+  from 1.0.31 to 1.0.32
+
+- Updated 
+
+  ```plaintext
+  @digitaldefiance/node-ecies-lib
+  ```
+
+  from 1.0.12 to 1.0.13
+
+
+### New Features
+
+- Added site configuration constants: 
+
+  ```plaintext
+  Site
+  ```
+
+  ```plaintext
+  SiteTagline
+  ```
+
+
+  ```plaintext
+  SiteDescription
+  ```
+
+
+  to core constants
+
+  
+
+- Added new error type enumerations:
+
+
+    ```plaintext
+    FecErrorType
+    ```
+
+     
+
+    \- Forward Error Correction error types (13 error cases)
+
+
+
+    ```plaintext
+    Pbkdf2ErrorType
+    ```
+
+     
+
+    \- PBKDF2 validation error types (2 error cases)
+
+    
+
+### String Key Refactoring
+
+- Removed unused common string keys (UnexpectedError, Ready, Connecting, Disconnected, MongoDB, Unauthorized, NoActiveRequest, NoUserOnRequest, NoActiveResponse)
+- Removed unused validation string keys (UsernameInUse, EmailInUse, InvalidEmail, InvalidCredentials, UsernameOrEmailRequired, TokenExpired, InvalidToken, ValidationError, MissingValidatedData, MissingValidatedDataForField, MnemonicRegex)
+- Removed unused error string keys (LengthExceedsMaximum, LengthIsInvalidType, FailedToCreateRoleTemplate)
+- Added extensive admin/system string keys (30+ new keys for database initialization, environment setup, error handling, and system operations)
+
+### Module Exports
+
+- Updated enumeration index to export new 
+
+  ```plaintext
+  FecErrorType
+  ```
+  and
+
+  ```plaintext
+  Pbkdf2ErrorType
+  ```
+  enumerations
+
+
 ## v1.0.13: Add string
 
 - Fri Oct 17 2025 14:18:00 GMT-0700 (Pacific Daylight Time)
