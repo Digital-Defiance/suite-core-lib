@@ -393,7 +393,7 @@ export enum SuiteCoreStringKey {
   Validation_IsMemberBoolean = 'validation_isMemberBoolean',
   Validation_MemberIdRequired = 'validation_memberIdRequired',
   Validation_MissingValidatedData = 'validation_missingValidatedData',
-  Validation_MissingValidatedDataForField = 'validation_missingValidatedDataForField',
+  Validation_MissingValidatedDataForFieldTemplate = 'validation_missingValidatedDataForField',
   Validation_MnemonicOrPasswordRequired = 'validation_mnemonicOrPasswordRequired',
   Validation_MnemonicRegex = 'validation_mnemonicRegex',
   Validation_MnemonicRequired = 'validation_mnemonicRequired',

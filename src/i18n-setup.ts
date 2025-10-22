@@ -101,7 +101,7 @@ export const SuiteCoreComponentStrings: Record<
    
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 'Missing validated data for field: {field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Invalid mnemonic format',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'No MongoDB client found, falling back',
@@ -652,7 +652,7 @@ export const SuiteCoreComponentStrings: Record<
    
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 'Missing validated data for field: {field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Invalid mnemonic format',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'No MongoDB client found, falling back',
@@ -1211,7 +1211,7 @@ export const SuiteCoreComponentStrings: Record<
 
     [SuiteCoreStringKey.ValidationError]: 'Erreur de Validation',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Données validées manquantes',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 'Données validées manquantes pour le champ: {field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Données validées manquantes pour le champ: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Format de mnémonique invalide',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'Aucun client MongoDB trouvé, utilisation de l\'alternative',
@@ -1821,7 +1821,7 @@ export const SuiteCoreComponentStrings: Record<
 
     [SuiteCoreStringKey.ValidationError]: 'Validierungsfehler',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Fehlende validierte Daten',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 'Fehlende validierte Daten für Feld: {field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Fehlende validierte Daten für Feld: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Ungültiges Mnemoformat',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'Kein MongoDB-Client gefunden, wechsle zu Fallback',
@@ -2434,7 +2434,7 @@ export const SuiteCoreComponentStrings: Record<
 
     [SuiteCoreStringKey.ValidationError]: 'Error de Validación',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Faltan datos validados',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 'Faltan datos validados para el campo: {field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Faltan datos validados para el campo: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Formato de mnemónico inválido',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'No se encontró cliente MongoDB, usando alternativa',
@@ -3036,7 +3036,7 @@ export const SuiteCoreComponentStrings: Record<
 
     [SuiteCoreStringKey.ValidationError]: '验证错误',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: '缺少验证数据',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: '字段缺少验证数据：{field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: '字段缺少验证数据：{field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: '助记词格式无效',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: '未找到MongoDB客户端，使用备用方案',
@@ -3543,7 +3543,7 @@ export const SuiteCoreComponentStrings: Record<
      '検証エラー',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 
     '検証済みデータがありません',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 
      'フィールドの検証済みデータがありません: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 
     '無効な助記詞の形式',
@@ -4118,7 +4118,7 @@ export const SuiteCoreComponentStrings: Record<
 
     [SuiteCoreStringKey.ValidationError]: 'Помилка Валідації',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Відсутні валідовані дані',
-    [SuiteCoreStringKey.Validation_MissingValidatedDataForField]: 'Відсутні валідовані дані для поля: {field}',
+    [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Відсутні валідовані дані для поля: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Недійсний формат мнемоніки',
     
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'Клієнт MongoDB не знайдено, використовується резервний варіант',
