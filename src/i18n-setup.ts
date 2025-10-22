@@ -3,6 +3,7 @@ import {
   ComponentRegistration,
   CoreLanguage,
   createCoreI18nEngine,
+  DefaultLanguage as OrigDefaultLanguage,
   PluginI18nEngine,
 } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
@@ -10,6 +11,19 @@ import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
 export const SuiteCoreI18nEngineKey =
   'DigitalDefiance.SuiteCore.I18nEngine' as const;
 export const SuiteCoreComponentId = 'suite-core-lib' as const;
+export const DefaultLanguage = CoreLanguage.EnglishUS;
+
+export function coreLanguageToDefaultLanguage(lang: CoreLanguage): OrigDefaultLanguage {
+  switch (lang) {
+    case CoreLanguage.EnglishUS: return OrigDefaultLanguage.EnglishUS;
+    case CoreLanguage.EnglishUK: return OrigDefaultLanguage.EnglishUK;
+    case CoreLanguage.French: return OrigDefaultLanguage.French;
+    case CoreLanguage.Spanish: return OrigDefaultLanguage.Spanish;
+    case CoreLanguage.MandarinChinese: return OrigDefaultLanguage.MandarinChinese;
+    case CoreLanguage.Ukrainian: return OrigDefaultLanguage.Ukrainian;
+    default: return OrigDefaultLanguage.EnglishUS;
+  }
+}
 
 // Define the Suite Core component
 export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {

@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.0.16: coreLanguageToDefaultLanguage & DefaultLanguage
+
+- Wed Oct 22 2025 15:06:00 GMT-0700 (Pacific Daylight Time)
+  - coreLanguageToDefaultLanguage and DefaultLanguage helpers
+
 ## v1.0.15: Big enhancements
 
 - Tue Oct 21 2025 16:07:00 GMT-0700 (Pacific Daylight Time)
