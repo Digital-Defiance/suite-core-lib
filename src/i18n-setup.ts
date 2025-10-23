@@ -427,6 +427,7 @@ export const SuiteCoreComponentStrings: Record<
       'Encryption key must be {KEY_BYTES} bytes long',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Unknown enum value: {value} for enum: {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Email service not configured. Call setEmailService() before using middleware.',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Back to Login',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'An error occurred while processing your request.',
@@ -978,6 +979,7 @@ export const SuiteCoreComponentStrings: Record<
       'Encryption key must be {KEY_BYTES} bytes long',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Unknown enum value: {value} for enum: {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Email service not configured. Call setEmailService() before using middleware.',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Back to Login',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'An error occurred while processing your request.',
@@ -1573,6 +1575,7 @@ export const SuiteCoreComponentStrings: Record<
       'La clé de chiffrement doit faire {KEY_BYTES} octets de long',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Valeur d’énumération inconnue : {value} pour l’énumération : {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Service de messagerie non configuré. Appelez setEmailService() avant d\'utiliser le middleware.',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Retour à la connexion',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Une erreur est survenue lors du traitement de votre demande.',
@@ -2184,6 +2187,7 @@ export const SuiteCoreComponentStrings: Record<
       'Der Verschlüsselungsschlüssel muss {KEY_BYTES} Bytes lang sein',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Unbekannter Enumerationswert: {value} für die Enumeration: {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'E-Mail-Dienst nicht konfiguriert. Rufen Sie setEmailService() auf, bevor Sie die Middleware verwenden.',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Zurück zur Anmeldung',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Bei der Bearbeitung Ihrer Anfrage ist ein Fehler aufgetreten.',
@@ -2209,7 +2213,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.LanguageUpdate_Success]: 
       'Sprache erfolgreich aktualisiert',
     [SuiteCoreStringKey.LoggedIn_Success]: 'Erfolgreich angemeldet',
-  [SuiteCoreStringKey.Login_ChallengeGenerated]: 'Anmelde-Challenge generiert',
+    [SuiteCoreStringKey.Login_ChallengeGenerated]: 'Anmelde-Challenge generiert',
     [SuiteCoreStringKey.Login_DirectLogin]: 'Direkte Anmeldung',
     [SuiteCoreStringKey.Login_DirectLoginWarning]:
       'Wenn der Benutzername oder die E-Mail ungültig ist oder der Benutzer die direkte Anmeldung deaktiviert hat, schlägt die direkte Herausforderungsanmeldung mit einem generischen ungültigen Herausforderungsantwortfehler fehl, der nicht offenlegt, ob das Konto existiert.',
@@ -2797,6 +2801,7 @@ export const SuiteCoreComponentStrings: Record<
       'La clave de cifrado debe tener {KEY_BYTES} bytes de longitud',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Valor de enumeración desconocido: {value} para la enumeración: {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Servicio de correo electrónico no configurado. Llame a setEmailService() antes de usar el middleware.',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Volver al inicio de sesión',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Ocurrió un error al procesar su solicitud.',
@@ -3319,6 +3324,7 @@ export const SuiteCoreComponentStrings: Record<
       '加密密钥必须为 {KEY_BYTES} 字节长',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       '未知的枚举值: {value} 对于枚举: {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: '电子邮件服务未配置。在使用中间件之前请调用 setEmailService()。',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: '返回登录',
     [SuiteCoreStringKey.ForgotPassword_Error]: '处理您的请求时发生错误。',
     [SuiteCoreStringKey.ForgotPassword_ForgotPassword]: '忘记密码',
@@ -3884,6 +3890,7 @@ export const SuiteCoreComponentStrings: Record<
       '暗号化鍵は{KEY_BYTES}バイトである必要があります',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       '不明な列挙値：{value}、列挙型：{enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'メールサービスが設定されていません。ミドルウェアを使用する前に setEmailService() を呼び出してください。',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'ログインに戻る',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'リクエストの処理中にエラーが発生しました。',
@@ -4471,6 +4478,7 @@ export const SuiteCoreComponentStrings: Record<
       'Ключ шифрування повинен бути довжиною {KEY_BYTES} байт',
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Невідома значення перерахування: {value} для перерахування: {enumName}',
+    [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Сервіс електронної пошти не налаштовано. Викличте setEmailService() перед використанням middleware.',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Повернутися до входу',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Сталася помилка під час обробки вашого запиту.',

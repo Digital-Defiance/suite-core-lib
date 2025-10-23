@@ -294,6 +294,7 @@ export enum SuiteCoreStringKey {
   Error_SymmetricDataNullOrUndefined = 'Error_SymmetricDataNullOrUndefined',
   Error_SymmetricInvalidKeyLengthTemplate = 'Error_SymmetricInvalidKeyLengthTemplate',
   Error_UnknownEnumValueForEnumTemplate = 'Error_UnknownEnumValueForEnumTemplate',
+  Error_EmailService_NotConfigured = 'error_emailService_notConfigured',
   ForgotPassword_BackToLogin = 'forgotPassword_backToLogin',
   ForgotPassword_Error = 'forgotPassword_error',
   ForgotPassword_ForgotPassword = 'forgotPassword_forgotPassword',

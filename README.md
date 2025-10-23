@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.1: Add string key for EmailService
+
+- Thu Oct 23 2025 16:12:00 GMT-0700 (Pacific Daylight Time)
+  - Add string key/string for EmailService
+
 ## v1.1.0: Update i18n and ecies
 
 - Thu Oct 23 2025 14:53:00 GMT-0700 (Pacific Daylight Time)
