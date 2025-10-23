@@ -1,4 +1,4 @@
-import { CoreLanguage, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
+import { CoreLanguageCode, LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../src/enumerations';
 import { UsernameInUseError } from '../src/errors/username-in-use';
 import {
@@ -30,12 +30,12 @@ describe('Error Message Localization', () => {
     });
 
     it('should return English message when explicitly requested', () => {
-      const error = new UsernameInUseError(CoreLanguage.EnglishUS);
+      const error = new UsernameInUseError(LanguageCodes.EN_US);
       expect(error.message).toBe('Username is already in use');
     });
 
     it('should return French message when requested', () => {
-      const error = new UsernameInUseError(CoreLanguage.French);
+      const error = new UsernameInUseError(LanguageCodes.FR);
       expect(error.message).toBe("Le nom d'utilisateur est déjà utilisé");
     });
 
@@ -45,7 +45,7 @@ describe('Error Message Localization', () => {
     });
 
     it('should allow custom status code', () => {
-      const error = new UsernameInUseError(CoreLanguage.EnglishUS, 409);
+      const error = new UsernameInUseError(LanguageCodes.EN_US, 409);
       expect(error.statusCode).toBe(409);
     });
 
@@ -63,7 +63,7 @@ describe('Error Message Localization', () => {
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.EnglishUS,
+        LanguageCodes.EN_US,
       );
       expect(englishMessage).toBe('Username is already in use');
 
@@ -71,7 +71,7 @@ describe('Error Message Localization', () => {
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.French,
+        LanguageCodes.FR,
       );
       expect(frenchMessage).toBe("Le nom d'utilisateur est déjà utilisé");
     });
@@ -84,7 +84,7 @@ describe('Error Message Localization', () => {
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.Spanish,
+        LanguageCodes.ES,
       );
       expect(spanishMessage).toBe('El nombre de usuario ya está en uso');
     });
@@ -93,14 +93,14 @@ describe('Error Message Localization', () => {
       const englishMessage = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.EnglishUS,
+        LanguageCodes.EN_US,
       );
       expect(englishMessage).toBe('Username is already in use');
 
       const frenchMessage = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.French,
+        LanguageCodes.FR,
       );
       expect(frenchMessage).toBe("Le nom d'utilisateur est déjà utilisé");
     });

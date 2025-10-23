@@ -1,9 +1,9 @@
 import {
   ComponentDefinition,
   ComponentRegistration,
-  CoreLanguage,
+  LanguageCodes,
+  CoreLanguageCode,
   createCoreI18nEngine,
-  DefaultLanguage as OrigDefaultLanguage,
   PluginI18nEngine,
 } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
@@ -11,19 +11,7 @@ import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
 export const SuiteCoreI18nEngineKey =
   'DigitalDefiance.SuiteCore.I18nEngine' as const;
 export const SuiteCoreComponentId = 'suite-core-lib' as const;
-export const DefaultLanguage = CoreLanguage.EnglishUS;
-
-export function coreLanguageToDefaultLanguage(lang: CoreLanguage): OrigDefaultLanguage {
-  switch (lang) {
-    case CoreLanguage.EnglishUS: return OrigDefaultLanguage.EnglishUS;
-    case CoreLanguage.EnglishUK: return OrigDefaultLanguage.EnglishUK;
-    case CoreLanguage.French: return OrigDefaultLanguage.French;
-    case CoreLanguage.Spanish: return OrigDefaultLanguage.Spanish;
-    case CoreLanguage.MandarinChinese: return OrigDefaultLanguage.MandarinChinese;
-    case CoreLanguage.Ukrainian: return OrigDefaultLanguage.Ukrainian;
-    default: return OrigDefaultLanguage.EnglishUS;
-  }
-}
+export const DefaultLanguageCode = LanguageCodes.EN_US;
 
 // Define the Suite Core component
 export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {
@@ -34,10 +22,10 @@ export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {
 
 // Create complete component strings for all supported languages
 export const SuiteCoreComponentStrings: Record<
-  CoreLanguage,
+  CoreLanguageCode,
   Record<SuiteCoreStringKey, string>
 > = {
-  [CoreLanguage.EnglishUS]: {
+  [LanguageCodes.EN_US]: {
     [SuiteCoreStringKey.Auth_AccountLocked]: 'Account is temporarily locked',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
       'Insufficient permissions for this action',
@@ -587,7 +575,7 @@ export const SuiteCoreComponentStrings: Record<
       'Username must be {UsernameMinLength}-{UsernameMaxLength} characters long and contain only letters and numbers',
     [SuiteCoreStringKey.Validation_UserNotFound]: 'User not found or inactive',
   },
-  [CoreLanguage.EnglishUK]: {
+  [LanguageCodes.EN_GB]: {
     [SuiteCoreStringKey.Auth_AccountLocked]: 'Account is temporarily locked',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
       'Insufficient permissions for this action',
@@ -1138,7 +1126,7 @@ export const SuiteCoreComponentStrings: Record<
       'Username must be {UsernameMinLength}-{UsernameMaxLength} characters long and contain only letters and numbers',
     [SuiteCoreStringKey.Validation_UserNotFound]: 'User not found or inactive',
   },
-  [CoreLanguage.French]: {
+  [LanguageCodes.FR]: {
     [SuiteCoreStringKey.Auth_AccountLocked]:
       'Le compte est temporairement verrouillé',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
@@ -1748,7 +1736,7 @@ export const SuiteCoreComponentStrings: Record<
       "Le nom d'utilisateur doit comporter entre {UsernameMinLength} et {UsernameMaxLength} caractères et ne contenir que des lettres et des chiffres",
     [SuiteCoreStringKey.Validation_UserNotFound]: 'Utilisateur non trouvé ou inactif',
   },
-  [CoreLanguage.German]: {
+  [LanguageCodes.DE]: {
     [SuiteCoreStringKey.Auth_AccountLocked]: 'Konto ist vorübergehend gesperrt',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
       'Unzureichende Berechtigungen für diese Aktion',
@@ -2361,7 +2349,7 @@ export const SuiteCoreComponentStrings: Record<
       "Der Benutzername muss zwischen {UsernameMinLength} und {UsernameMaxLength} Zeichen lang sein und darf nur Buchstaben und Zahlen enthalten",
     [SuiteCoreStringKey.Validation_UserNotFound]: 'Benutzer nicht gefunden oder inaktiv',
   },
-  [CoreLanguage.Spanish]: {
+  [LanguageCodes.ES]: {
     [SuiteCoreStringKey.Auth_AccountLocked]:
       'La cuenta está temporalmente bloqueada',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
@@ -2975,7 +2963,7 @@ export const SuiteCoreComponentStrings: Record<
       'El nombre de usuario debe tener entre {UsernameMinLength} y {UsernameMaxLength} caracteres y contener solo letras y números',
     [SuiteCoreStringKey.Validation_UserNotFound]: 'Usuario no encontrado o inactivo',
   },
-  [CoreLanguage.MandarinChinese]: {
+  [LanguageCodes.ZH_CN]: {
     [SuiteCoreStringKey.Auth_AccountLocked]: '账户暂时被锁定',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
       '权限不足，无法执行此操作',
@@ -3465,7 +3453,7 @@ export const SuiteCoreComponentStrings: Record<
       '用户名必须为 {UsernameMinLength}-{UsernameMaxLength} 个字符长，只能包含字母和数字',
     [SuiteCoreStringKey.Validation_UserNotFound]: '未找到用户或用户不活跃',
   },
-  [CoreLanguage.Japanese]: {
+  [LanguageCodes.JA]: {
     [SuiteCoreStringKey.Auth_AccountLocked]: 'アカウントは一時的にロックされています',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
       'この操作の権限が不足しています',
@@ -4044,7 +4032,7 @@ export const SuiteCoreComponentStrings: Record<
       'ユーザー名は{UsernameMinLength}～{UsernameMaxLength}文字で、文字と数字のみを含む必要があります',
     [SuiteCoreStringKey.Validation_UserNotFound]: 'ユーザーが見つからないか非アクティブです',
   },
-  [CoreLanguage.Ukrainian]: {
+  [LanguageCodes.UK]: {
     [SuiteCoreStringKey.Auth_AccountLocked]:
       'Обліковий запис тимчасово заблоковано',
     [SuiteCoreStringKey.Auth_InsufficientPermissions]:
@@ -4642,7 +4630,7 @@ export const SuiteCoreComponentStrings: Record<
 // Create the component registration
 export const SuiteCoreComponentRegistration: ComponentRegistration<
   SuiteCoreStringKey,
-  CoreLanguage
+  CoreLanguageCode
 > = {
   component: SuiteCoreComponent,
   strings: SuiteCoreComponentStrings,
@@ -4653,14 +4641,14 @@ export const SuiteCoreComponentRegistration: ComponentRegistration<
  */
 export function initSuiteCoreI18nEngine(
   instanceKey?: string,
-): PluginI18nEngine<CoreLanguage> {
+): PluginI18nEngine<CoreLanguageCode> {
   const key = instanceKey || SuiteCoreI18nEngineKey;
 
   // Check if instance already exists
-  let engine: PluginI18nEngine<CoreLanguage>;
+  let engine: PluginI18nEngine<CoreLanguageCode>;
 
   if (PluginI18nEngine.hasInstance(key)) {
-    engine = PluginI18nEngine.getInstance<CoreLanguage>(key);
+    engine = PluginI18nEngine.getInstance<CoreLanguageCode>(key);
   } else {
     engine = createCoreI18nEngine(key);
 
@@ -4681,12 +4669,12 @@ export function initSuiteCoreI18nEngine(
 }
 
 // Singleton instance management
-let _SuiteCoreI18nEngine: PluginI18nEngine<CoreLanguage> | null = null;
+let _SuiteCoreI18nEngine: PluginI18nEngine<CoreLanguageCode> | null = null;
 
 /**
  * Get the User System i18n engine instance (singleton)
  */
-export function getSuiteCoreI18nEngine(): PluginI18nEngine<CoreLanguage> {
+export function getSuiteCoreI18nEngine(): PluginI18nEngine<CoreLanguageCode> {
   if (!_SuiteCoreI18nEngine) {
     _SuiteCoreI18nEngine = initSuiteCoreI18nEngine();
   }
@@ -4709,7 +4697,7 @@ export function resetSuiteCoreI18nEngine(): void {
 export function getSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, string | number>,
-  language?: CoreLanguage,
+  language?: CoreLanguageCode,
 ): string {
   const engine = getSuiteCoreI18nEngine();
   return engine.translate(SuiteCoreComponentId, key, variables, language);
@@ -4721,7 +4709,7 @@ export function getSuiteCoreTranslation(
 export function safeGetSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, string | number>,
-  language?: CoreLanguage,
+  language?: CoreLanguageCode,
 ): string {
   const engine = getSuiteCoreI18nEngine();
   return engine.safeTranslate(SuiteCoreComponentId, key, variables, language);
@@ -4731,7 +4719,7 @@ export function safeGetSuiteCoreTranslation(
  * Register the User System component with an existing i18n engine
  */
 export function registerSuiteCoreComponent(
-  engine: PluginI18nEngine<CoreLanguage>,
+  engine: PluginI18nEngine<CoreLanguageCode>,
 ): void {
   const validationResult = engine.registerComponent(
     SuiteCoreComponentRegistration,

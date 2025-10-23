@@ -1,4 +1,4 @@
-import { CompleteReasonMap, CoreLanguage, CoreStringKey, CoreTypedError, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
+import { CompleteReasonMap, CoreLanguageCode, CoreStringKey, CoreTypedError, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { HandleableErrorOptions } from '../interfaces';
 import { HandleableError, IHandleable } from '@digitaldefiance/ecies-lib';
 import { PluginTypedHandleableError } from './plugin-typed-handleable';
@@ -9,7 +9,7 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>> exte
   public readonly sourceData?: unknown;
   private _handled: boolean;
 
-  constructor(type: TEnum[keyof TEnum], reasonMap: CompleteReasonMap<TEnum, CoreStringKey>, engine: PluginI18nEngine<CoreLanguage>, source: Error, options?: HandleableErrorOptions, language?: CoreLanguage, otherVars?: Record<string, string | number>) {
+  constructor(type: TEnum[keyof TEnum], reasonMap: CompleteReasonMap<TEnum, CoreStringKey>, engine: PluginI18nEngine<CoreLanguageCode>, source: Error, options?: HandleableErrorOptions, language?: CoreLanguageCode, otherVars?: Record<string, string | number>) {
     super(
       engine,
       type,

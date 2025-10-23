@@ -1,5 +1,5 @@
 import { HandleableError } from '@digitaldefiance/ecies-lib';
-import { CoreLanguage } from '@digitaldefiance/i18n-lib';
+import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { AccountStatus } from '../enumerations/account-status';
 import { TranslatableSuiteError } from './translatable-suite';
@@ -9,7 +9,7 @@ export class AccountStatusError extends HandleableError {
 
   constructor(
     accountStatus: AccountStatus,
-    language?: CoreLanguage,
+    language?: CoreLanguageCode,
     statusCode = 403,
   ) {
     // Map AccountStatus to SuiteCoreStringKey

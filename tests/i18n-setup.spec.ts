@@ -1,4 +1,4 @@
-import { CoreLanguage, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
+import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../src/enumerations';
 import {
   getSuiteCoreI18nEngine,
@@ -48,7 +48,7 @@ describe('User System I18n Setup', () => {
         const translation = getSuiteCoreTranslation(
           key,
           undefined,
-          CoreLanguage.EnglishUS,
+          LanguageCodes.EN_US,
         );
         expect(translation).toBeTruthy();
         expect(translation).not.toBe(key);
@@ -62,7 +62,7 @@ describe('User System I18n Setup', () => {
         const translation = getSuiteCoreTranslation(
           key,
           undefined,
-          CoreLanguage.French,
+          LanguageCodes.FR,
         );
         expect(translation).toBeTruthy();
         expect(translation).not.toBe(key);
@@ -103,7 +103,7 @@ describe('User System I18n Setup', () => {
       const translation = getSuiteCoreTranslation(
         SuiteCoreStringKey.Auth_UserNotFound,
         undefined,
-        CoreLanguage.French,
+        LanguageCodes.FR,
       );
       expect(translation).toBe('Compte utilisateur introuvable');
     });
@@ -112,12 +112,12 @@ describe('User System I18n Setup', () => {
       const englishTranslation = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.EnglishUS,
+        LanguageCodes.EN_US,
       );
       const frenchTranslation = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.French,
+        LanguageCodes.FR,
       );
 
       expect(englishTranslation).toBe('Username is already in use');
@@ -147,12 +147,12 @@ describe('User System I18n Setup', () => {
       const englishMsg = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.EnglishUS,
+        LanguageCodes.EN_US,
       );
       const frenchMsg = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        CoreLanguage.French,
+        LanguageCodes.FR,
       );
 
       expect(englishMsg).not.toBe(frenchMsg);
@@ -174,12 +174,12 @@ describe('User System I18n Setup', () => {
         const englishMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          CoreLanguage.EnglishUS,
+          LanguageCodes.EN_US,
         );
         const frenchMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          CoreLanguage.French,
+          LanguageCodes.FR,
         );
 
         expect(englishMsg).toBeTruthy();
@@ -201,12 +201,12 @@ describe('User System I18n Setup', () => {
         const englishMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          CoreLanguage.EnglishUS,
+          LanguageCodes.EN_US,
         );
         const frenchMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          CoreLanguage.French,
+          LanguageCodes.FR,
         );
 
         expect(englishMsg).toBeTruthy();
@@ -217,14 +217,14 @@ describe('User System I18n Setup', () => {
 
     it('should handle all supported languages', () => {
       const supportedLanguages = [
-        CoreLanguage.EnglishUS,
-        CoreLanguage.EnglishUK,
-        CoreLanguage.French,
-        CoreLanguage.German,
-        CoreLanguage.Spanish,
-        CoreLanguage.MandarinChinese,
-        CoreLanguage.Japanese,
-        CoreLanguage.Ukrainian,
+        LanguageCodes.EN_US,
+        LanguageCodes.EN_GB,
+        LanguageCodes.FR,
+        LanguageCodes.DE,
+        LanguageCodes.ES,
+        LanguageCodes.ZH_CN,
+        LanguageCodes.JA,
+        LanguageCodes.UK,
       ];
 
       supportedLanguages.forEach((language) => {

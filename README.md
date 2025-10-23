@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.0: Update i18n and ecies
+
+- Thu Oct 23 2025 14:53:00 GMT-0700 (Pacific Daylight Time)
+  - Update for i18n and ecies libs
+
 ## v1.0.17: SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate
 
 - Wed Oct 22 2025 16:40:00 GMT-0700 (Pacific Daylight Time)

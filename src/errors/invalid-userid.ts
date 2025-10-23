@@ -1,10 +1,10 @@
 import { HandleableError } from '@digitaldefiance/ecies-lib';
-import { CoreLanguage } from '@digitaldefiance/i18n-lib';
+import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 
 export class InvalidUserIdError extends HandleableError {
-  constructor(detail?: SuiteCoreStringKey, language?: CoreLanguage, statusCode = 422) {
+  constructor(detail?: SuiteCoreStringKey, language?: CoreLanguageCode, statusCode = 422) {
     const engine = getSuiteCoreI18nEngine();
     const baseMessage = detail ? engine.translate(
       SuiteCoreComponentId,

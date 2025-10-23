@@ -1,5 +1,5 @@
 import { HandleableError } from '@digitaldefiance/ecies-lib';
-import { CoreLanguage, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
+import { CoreLanguageCode, LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../src/enumerations';
 import {
   getSuiteCoreTranslation,
@@ -9,7 +9,7 @@ import {
 
 // Mock additional error classes for testing using the new API
 class EmailInUseError extends HandleableError {
-  constructor(language?: CoreLanguage, statusCode = 422) {
+  constructor(language?: CoreLanguageCode, statusCode = 422) {
     const message = getSuiteCoreTranslation(
       SuiteCoreStringKey.Validation_EmailInUse,
       undefined,
@@ -23,7 +23,7 @@ class EmailInUseError extends HandleableError {
 }
 
 class InvalidCredentialsError extends HandleableError {
-  constructor(language?: CoreLanguage, statusCode = 401) {
+  constructor(language?: CoreLanguageCode, statusCode = 401) {
     const message = getSuiteCoreTranslation(
       SuiteCoreStringKey.Validation_InvalidCredentials,
       undefined,
@@ -50,8 +50,8 @@ describe('Multiple Error Types Localization', () => {
 
   describe('Error Message Consistency', () => {
     it('should provide consistent localization across different error types', () => {
-      const emailError = new EmailInUseError(CoreLanguage.French);
-      const credentialsError = new InvalidCredentialsError(CoreLanguage.French);
+      const emailError = new EmailInUseError(LanguageCodes.FR);
+      const credentialsError = new InvalidCredentialsError(LanguageCodes.FR);
 
       expect(emailError.message).toBe("L'adresse e-mail est déjà utilisée");
       expect(credentialsError.message).toBe(
@@ -60,16 +60,16 @@ describe('Multiple Error Types Localization', () => {
     });
 
     it('should handle multiple languages for same error type', () => {
-      const englishError = new EmailInUseError(CoreLanguage.EnglishUS);
-      const frenchError = new EmailInUseError(CoreLanguage.French);
+      const englishError = new EmailInUseError(LanguageCodes.EN_US);
+      const frenchError = new EmailInUseError(LanguageCodes.FR);
 
       expect(englishError.message).toBe('Email address is already in use');
       expect(frenchError.message).toBe("L'adresse e-mail est déjà utilisée");
     });
 
     it('should maintain error properties across languages', () => {
-      const englishError = new InvalidCredentialsError(CoreLanguage.EnglishUS);
-      const frenchError = new InvalidCredentialsError(CoreLanguage.French);
+      const englishError = new InvalidCredentialsError(LanguageCodes.EN_US);
+      const frenchError = new InvalidCredentialsError(LanguageCodes.FR);
 
       expect(englishError.statusCode).toBe(frenchError.statusCode);
       expect(englishError.name).toBe(frenchError.name);
@@ -80,8 +80,8 @@ describe('Multiple Error Types Localization', () => {
   describe('Fallback Behavior', () => {
     it('should fallback to English for unsupported languages', () => {
       // Using a valid core language for fallback test
-      const germanError = new EmailInUseError(CoreLanguage.German);
-      const englishError = new EmailInUseError(CoreLanguage.EnglishUS);
+      const germanError = new EmailInUseError(LanguageCodes.DE);
+      const englishError = new EmailInUseError(LanguageCodes.EN_US);
 
       // German should have its own translation
       expect(germanError.message).toBe('E-Mail-Adresse wird bereits verwendet');
@@ -95,13 +95,13 @@ describe('Multiple Error Types Localization', () => {
 
     it('should handle all supported languages', () => {
       const supportedLanguages = [
-        CoreLanguage.EnglishUS,
-        CoreLanguage.French,
-        CoreLanguage.Spanish,
-        CoreLanguage.German,
-        CoreLanguage.MandarinChinese,
-        CoreLanguage.Japanese,
-        CoreLanguage.Ukrainian,
+        LanguageCodes.EN_US,
+        LanguageCodes.FR,
+        LanguageCodes.ES,
+        LanguageCodes.DE,
+        LanguageCodes.ZH_CN,
+        LanguageCodes.JA,
+        LanguageCodes.UK,
       ];
 
       supportedLanguages.forEach((language) => {
