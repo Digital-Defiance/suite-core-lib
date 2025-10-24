@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.3: Add PrivateKeyRequiredError
+
+- Thu Oct 23 2025 20:19:00 GMT-0700 (Pacific Daylight Time)
+  - Add PrivateKeyRequiredError
+
 ## v1.1.2: Add EmailTokenFailedToSendError and supporting strings
 
 - Thu Oct 23 2025 17:58:00 GMT-0700 (Pacific Daylight Time)
