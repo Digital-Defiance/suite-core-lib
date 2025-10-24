@@ -4,6 +4,7 @@ export * from './core-typed-handleable';
 export * from './direct-token-used';
 export * from './email-in-use';
 export * from './email-token-expired';
+export * from './email-token-failed-to-send';
 export * from './email-token-sent-too-recently';
 export * from './email-token-used-or-invalid';
 export * from './email-verified';

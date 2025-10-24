@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.2: Add EmailTokenFailedToSendError and supporting strings
+
+- Thu Oct 23 2025 17:58:00 GMT-0700 (Pacific Daylight Time)
+  - Add EmailTokenFailedToSendError and supporting strings
+
 ## v1.1.1: Add string key for EmailService
 
 - Thu Oct 23 2025 16:12:00 GMT-0700 (Pacific Daylight Time)
