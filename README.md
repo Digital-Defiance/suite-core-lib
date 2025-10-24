@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.4: export PrivateKeyRequiredError
+
+- Thu Oct 23 2025 20:20:00 GMT-0700 (Pacific Daylight Time)
+  - export PrivateKeyRequiredError
+
 ## v1.1.3: Add PrivateKeyRequiredError
 
 - Thu Oct 23 2025 20:19:00 GMT-0700 (Pacific Daylight Time)

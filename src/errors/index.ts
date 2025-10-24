@@ -20,6 +20,7 @@ export * from './invalid-userid';
 export * from './invalid-username';
 export * from './pbkdf2-error';
 export * from './pending-email-verification';
+export * from './private-key-required';
 export * from './plugin-typed-handleable'
 export * from './translatable-suite';
 export * from './translatable-suite-handleable';
