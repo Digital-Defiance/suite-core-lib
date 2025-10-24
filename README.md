@@ -327,6 +327,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.5: add InvalidChallengeResponseError/LoginChallengeExpiredError
+ - Thu Oct 23 2925 20:34:00 GMT-0700 (Pacific Daylight Time)
+  - add InvalidChallengeResponseError/LoginChallengeExpiredError
+
 ## v1.1.4: export PrivateKeyRequiredError
 
 - Thu Oct 23 2025 20:20:00 GMT-0700 (Pacific Daylight Time)
