@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.9: version bump of libs
+
+- Sat Oct 25 2025 16:19:00 GMT-0700 (Pacific Daylight Time)
+  - Bump versions of libs
+
 ## v1.1.8: add string key for Admin_DatabaseInitializedWithOptionsHashTemplate
 
 - Fri Oct 24 2025 17:27:00 GMT-0700 (Pacific Daylight Time)
