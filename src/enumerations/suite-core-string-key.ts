@@ -44,6 +44,7 @@ export enum SuiteCoreStringKey {
 
   Admin_AccountCredentials = 'admin_accountCredentials',
   Admin_CreatingUserTemplate = 'admin_creatingUserTemplate',
+  Admin_DatabaseInitializedWithOptionsHashTemplate = 'admin_databaseInitializedWithOptionsHashTemplate',
   Admin_DatabaseAlreadyInitialized = 'admin_databaseAlreadyInitialized',
   Admin_DatabaseDropped = 'admin_databaseDropped',
   Admin_DevelopmentDatabase = 'admin_developmentDatabase',

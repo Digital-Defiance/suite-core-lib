@@ -103,6 +103,7 @@ export const SuiteCoreComponentStrings: Record<
     'ACCOUNT CREDENTIALS (Save to Password Manager)',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       'Creating {TYPE} user {NAME} and generating keys',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'Database initialized with options hash: {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]: 'Database already initialized',
     [SuiteCoreStringKey.Admin_DatabaseDropped]: 'Database collections dropped',
     [SuiteCoreStringKey.Admin_DevelopmentDatabase]: 'Development Database',
@@ -658,6 +659,7 @@ export const SuiteCoreComponentStrings: Record<
     'ACCOUNT CREDENTIALS (Save to Password Manager)',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       'Creating {TYPE} user {NAME} and generating keys',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'Database initialized with options hash: {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]: 'Database already initialized',
     [SuiteCoreStringKey.Admin_DatabaseDropped]: 'Database collections dropped',
     [SuiteCoreStringKey.Admin_DevelopmentDatabase]: 'Development Database',
@@ -1221,6 +1223,7 @@ export const SuiteCoreComponentStrings: Record<
     'IDENTIFIANTS DE COMPTE (Enregistrer dans le gestionnaire de mots de passe)',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       'Création de {TYPE} utilisateur {NAME} et génération des clés',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'Base de données initialisée avec le hachage des options : {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]:
       'Base de données déjà initialisée',
     [SuiteCoreStringKey.Admin_DatabaseDropped]:
@@ -1835,6 +1838,7 @@ export const SuiteCoreComponentStrings: Record<
       'KONTOANMELDEINFORMATIONEN (In Passwortmanager speichern)',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       'Erstelle {TYPE} Benutzer {NAME} und generiere Schlüssel',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'Datenbank mit Options-Hash initialisiert: {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]:
       'Datenbank bereits initialisiert',
     [SuiteCoreStringKey.Admin_DatabaseDropped]:
@@ -2452,6 +2456,7 @@ export const SuiteCoreComponentStrings: Record<
       'CREDENCIALES DE CUENTA (Guardar en el gestor de contraseñas)',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       'Creando {TYPE} usuario {NAME} y generando claves',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'Base de datos inicializada con el hash de opciones: {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]:
       'La base de datos ya está inicializada',
     [SuiteCoreStringKey.Admin_DatabaseDropped]: 'Colecciones de base de datos eliminadas',
@@ -3057,6 +3062,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Admin_AccountCredentials]: '账户凭据（保存到密码管理器）',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       '正在创建 {TYPE} 用户 {NAME} 并生成密钥',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: '数据库已使用选项哈希初始化：{hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]: '数据库已初始化',
     [SuiteCoreStringKey.Admin_DatabaseDropped]: '数据库集合已删除',
     [SuiteCoreStringKey.Admin_DevelopmentDatabase]: '开发数据库',
@@ -3578,6 +3584,7 @@ export const SuiteCoreComponentStrings: Record<
     'アカウント資格情報（パスワードマネージャーに保存）',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
     'ユーザー {NAME} を作成し、キーを生成しています',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'オプションハッシュでデータベースが初期化されました: {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]:
     'データベースは既に初期化されています',
     [SuiteCoreStringKey.Admin_DatabaseDropped]:
@@ -4148,6 +4155,7 @@ export const SuiteCoreComponentStrings: Record<
       'Облікові дані облікового запису (зберегти в менеджері паролів)',
     [SuiteCoreStringKey.Admin_CreatingUserTemplate]:
       'Створення {TYPE} користувача {NAME} та генерація ключів',
+    [SuiteCoreStringKey.Admin_DatabaseInitializedWithOptionsHashTemplate]: 'База даних ініціалізована з хешем параметрів: {hash}',
     [SuiteCoreStringKey.Admin_DatabaseAlreadyInitialized]:
       'База даних вже ініціалізована',
     [SuiteCoreStringKey.Admin_DatabaseDropped]: 'Колекції бази даних видалено',
