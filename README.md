@@ -327,6 +327,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.10: Add string keys
+
+- Sun Oct 26 2025 13:46:00 GMT-0700 (Pacific Daylight Time)
+  - Add some string keys
+
 ## v1.1.9: version bump of libs
 
 - Sat Oct 25 2025 16:19:00 GMT-0700 (Pacific Daylight Time)

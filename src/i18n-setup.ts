@@ -76,6 +76,8 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_SiteTemplate]: '{Site}',
     [SuiteCoreStringKey.Common_SiteTaglineTemplate]: '{SiteTagline}',
     [SuiteCoreStringKey.Common_SiteDescriptionTemplate]: '{SiteDescription}',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'A child role cannot be a system role',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'A child role cannot be an admin role',
     [SuiteCoreStringKey.Error_EngineAlreadySet]: 'I18n engine already set',
     [SuiteCoreStringKey.Error_EngineNotSet]: 'I18n engine not set',
     [SuiteCoreStringKey.Error_LengthExceedsMaximum]: 'Length exceeds maximum',
@@ -350,6 +352,7 @@ export const SuiteCoreComponentStrings: Record<
       'Invalid or incorrect login challenge response',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: 'Invalid checksum constants',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Invalid email.',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} is not a valid email address.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Missing email.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'Email contains trailing or leading whitespace.',
@@ -631,7 +634,8 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_NoActiveRequest]: 'No active request',
     [SuiteCoreStringKey.Common_NoUserOnRequest]: 'No user on request',
     [SuiteCoreStringKey.Common_NoActiveResponse]: 'No active response',
-    
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'A child role cannot be a system role',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'A child role cannot be an admin role',
     [SuiteCoreStringKey.Error_EngineAlreadySet]: 'I18n engine already set',
     [SuiteCoreStringKey.Error_EngineNotSet]: 'I18n engine not set',
     [SuiteCoreStringKey.Error_LengthExceedsMaximum]: 'Length exceeds maximum',
@@ -906,6 +910,7 @@ export const SuiteCoreComponentStrings: Record<
       'Invalid or incorrect login challenge response',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: 'Invalid checksum constants',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Invalid email.',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} is not a valid email address.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Missing email.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'Email contains trailing or leading whitespace.',
@@ -1197,7 +1202,8 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_NoActiveRequest]: 'Aucune requête active',
     [SuiteCoreStringKey.Common_NoUserOnRequest]: 'Aucun utilisateur sur la requête',
     [SuiteCoreStringKey.Common_NoActiveResponse]: 'Aucune réponse active',
-    
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Un rôle enfant ne peut pas être un rôle système',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Un rôle enfant ne peut pas être un rôle administrateur',
     [SuiteCoreStringKey.Error_EngineAlreadySet]: 'Moteur i18n déjà configuré',
     [SuiteCoreStringKey.Error_EngineNotSet]: 'Moteur i18n non configuré',
     [SuiteCoreStringKey.Error_LengthExceedsMaximum]: 'La longueur dépasse le maximum',
@@ -1500,6 +1506,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Constantes de somme de contrôle invalides',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Email invalide.',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} n\'est pas une adresse e-mail valide.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Email manquant.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'L’email contient des espaces avant ou après.',
@@ -1799,7 +1806,8 @@ export const SuiteCoreComponentStrings: Record<
       'Konto wartet auf E-Mail-Verifizierung',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Index-Datei nicht gefunden: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'Die App scheint nicht innerhalb eines /dist/-Verzeichnisses zu laufen: {dir}',
-
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Eine untergeordnete Rolle kann keine Systemrolle sein',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Eine untergeordnete Rolle kann keine Administratorrolle sein',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ein unerwarteter Fehler ist aufgetreten',
     [SuiteCoreStringKey.Common_Ready]: 'Bereit',
     [SuiteCoreStringKey.Common_Stopping]: 'Anhalten',
@@ -2116,6 +2124,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Ungültige Prüfsummen-Konstanten',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Ungültige E-Mail.',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} ist keine gültige E-Mail-Adresse.',
   [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'E-Mail fehlt.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'E-Mail enthält führende oder nachfolgende Leerzeichen.',
@@ -2430,7 +2439,8 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_NoActiveRequest]: 'No hay solicitud activa',
     [SuiteCoreStringKey.Common_NoUserOnRequest]: 'No hay usuario en la solicitud',
     [SuiteCoreStringKey.Common_NoActiveResponse]: 'No hay respuesta activa',
-    
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Un rol hijo no puede ser un rol del sistema',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Un rol hijo no puede ser un rol de administrador',
     [SuiteCoreStringKey.Error_EngineAlreadySet]: 'Motor i18n ya configurado',
     [SuiteCoreStringKey.Error_EngineNotSet]: 'Motor i18n no configurado',
     [SuiteCoreStringKey.Error_LengthExceedsMaximum]: 'La longitud excede el máximo',
@@ -2734,6 +2744,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Constantes de suma de verificación no válidas',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Correo electrónico inválido.',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} no es una dirección de correo electrónico válida.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Email faltante.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'El correo electrónico contiene espacios en blanco al principio o al final.',
@@ -3024,7 +3035,8 @@ export const SuiteCoreComponentStrings: Record<
       '账户待电子邮件验证',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: '未找到索引文件：{path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: '应用程序似乎未在/dist/目录中运行：{dir}',
-
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: '子角色不能是系统角色',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: '子角色不能是管理员角色',
     [SuiteCoreStringKey.Common_UnexpectedError]: '发生了意外错误',
     [SuiteCoreStringKey.Common_Ready]: '就绪',
     [SuiteCoreStringKey.Common_Stopping]: '正在停止',
@@ -3275,6 +3287,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChallengeResponse]: '无效或不正确的登录挑战响应',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: '无效的校验和常量',
     [SuiteCoreStringKey.Error_InvalidEmail]: '无效的电子邮件。',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} 不是有效的电子邮件地址。',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: '缺少电子邮件。',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]: '电子邮件前后包含空格。',
     [SuiteCoreStringKey.Error_InvalidGuid]: '无效的 GUID。',
@@ -3535,7 +3548,8 @@ export const SuiteCoreComponentStrings: Record<
       'アクティブなリクエストがありません',
     [SuiteCoreStringKey.Common_NoUserOnRequest]: 'リクエストにユーザーがいません',
     [SuiteCoreStringKey.Common_NoActiveResponse]: 'アクティブなレスポンスがありません',
-
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: '子ロールはシステムロールにできません',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: '子ロールは管理者ロールにできません',
     [SuiteCoreStringKey.Error_EngineAlreadySet]:
       'I18nエンジンは既に設定されています',
     [SuiteCoreStringKey.Error_EngineNotSet]:
@@ -3837,6 +3851,7 @@ export const SuiteCoreComponentStrings: Record<
       '無効または不正なログインチャレンジ応答',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: '無効なチェックサム定数',
     [SuiteCoreStringKey.Error_InvalidEmail]: '無効なメールアドレス。',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} は有効なメールアドレスではありません。',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'メールアドレスがありません。',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'メールアドレスに末尾または先頭の空白が含まれています。',
@@ -4116,7 +4131,8 @@ export const SuiteCoreComponentStrings: Record<
       'Обліковий запис очікує підтвердження електронної пошти',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Файл індексу не знайдено: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'Здається, додаток не працює в каталозі /dist/: {dir}',
-
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Дочірня роль не може бути системною роллю',
+    [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Дочірня роль не може бути роллю адміністратора',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Сталася неочікувана помилка',
     [SuiteCoreStringKey.Common_Ready]: 'Готово',
     [SuiteCoreStringKey.Common_Stopping]: 'Зупинка',
@@ -4427,6 +4443,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Недійсні константи контрольної суми',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Недійсна електронна адреса.',
+    [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} не є дійсною адресою електронної пошти.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Відсутня електронна адреса.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
       'Електронна адреса містить пробіли перед або після.',
