@@ -4,37 +4,37 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-A library that provides higher-level primitives for the cornerstone of a comprehensive, cryptographically-secure user management system and node express server with service framework built with **@digitaldefiance/ecies-lib** and **@digitaldefiance/node-ecies-lib** encryption. This library serves as the foundational building blocks for the **node-ecies** project and **node-express-suite** packages, which together form a complete full-stack framework ecosystem.
+A comprehensive library providing higher-level primitives and foundational building blocks for creating a cryptographically-secure user management system and Node.js Express server framework. Built on top of **@digitaldefiance/ecies-lib** and **@digitaldefiance/node-ecies-lib**, this package serves as the core foundation for the **node-ecies** and **node-express-suite** projects, which together form a complete full-stack security and user management ecosystem.
 
 ## 🚀 Framework Ecosystem
 
-`@digitaldefiance/suiite-core-lib` provides the **core primitives and abstractions** that power:
+`@digitaldefiance/suite-core-lib` offers the essential **core primitives and abstractions** that power:
 
-- user accounts and authentication
-- user to user and user to server encryption
-- zero-knowledge proof authentication
-- role-based access control (RBAC)
-- multi-language internationalization (i18n)
+- Secure user accounts and authentication mechanisms
+- End-to-end encryption between users and servers
+- Zero-knowledge proof based authentication flows
+- Role-based access control (RBAC) with fine-grained permissions
+- Multi-language internationalization (i18n) with plugin-based architecture
 
 ## 📦 Installation
 
 ```bash
-npm install @digitaldefiance/suiite-core-lib
+npm install @digitaldefiance/suite-core-lib
 # or
-yarn add @digitaldefiance/suiite-core-lib
+yarn add @digitaldefiance/suite-core-lib
 ```
 
 ## 🌍 Internationalization
 
-Built-in support for **5 languages** with the new plugin-based i18n architecture:
+This library includes built-in support for **five major languages** using a modern plugin-based i18n architecture:
 
-- **English** (US/UK)
+- **English** (US and UK variants)
 - **French**
 - **Spanish**
 - **Mandarin Chinese**
 - **Ukrainian**
 
-All error messages, validation text, and user-facing strings are fully localized and extensible.
+All error messages, validation texts, and user-facing strings are fully localized and designed to be extensible for additional languages.
 
 ## 🏗️ Architecture Overview
 
@@ -47,16 +47,16 @@ import {
   AccountStatus, 
   Role,
   CoreLanguage 
-} from '@digitaldefiance/suiite-core-lib';
+} from '@digitaldefiance/suite-core-lib';
 
-// Frontend-optimized user interface (string IDs)
+// Frontend-optimized user interface with string-based IDs
 interface AppUser extends IFrontendUser<'en'> {
   _id: string;
   siteLanguage: 'en';
   accountStatus: AccountStatus;
 }
 
-// Backend database interface (ObjectId support)  
+// Backend database interface supporting ObjectId types  
 interface DatabaseUser extends IBackendUser<'en'> {
   _id: Types.ObjectId;
   createdBy: Types.ObjectId;
@@ -67,20 +67,20 @@ interface DatabaseUser extends IBackendUser<'en'> {
 ### Secure Backup Code System
 
 ```typescript
-import { BackupCodeString, Constants } from '@digitaldefiance/suiite-core-lib';
+import { BackupCodeString, Constants } from '@digitaldefiance/suite-core-lib';
 
 // Generate cryptographically secure backup codes
 const backupCodes = BackupCodeString.generateBackupCodes();
-console.log(backupCodes.length); // 10 (configurable via Constants.BACKUP_CODES.Count)
+console.log(backupCodes.length); // Default is 10, configurable via Constants.BACKUP_CODES.Count
 
-// Each code is formatted for user display
+// Format a backup code for user display
 const code = new BackupCodeString('deadbeefcafebabefeedface01234567');
-console.log(code.value); // "dead-beef-cafe-babe-feed-face-0123-4567"
+console.log(code.value); // Outputs: "dead-beef-cafe-babe-feed-face-0123-4567"
 
-// Multiple secure encoding formats
+// Access multiple secure encoding formats
 console.log(code.valueAsHexString);    // Hex-encoded UTF-8 bytes
-console.log(code.valueAsBase64String); // Base64-encoded 
-console.log(code.valueAsUint8Array);   // Raw byte array
+console.log(code.valueAsBase64String); // Base64-encoded string
+console.log(code.valueAsUint8Array);   // Raw Uint8Array byte array
 ```
 
 ### Localized Error Handling
@@ -91,36 +91,36 @@ import {
   UsernameInUseError, 
   AccountLockedError,
   CoreLanguage 
-} from '@digitaldefiance/suiite-core-lib';
+} from '@digitaldefiance/suite-core-lib';
 
-// Errors with automatic localization
+// Throw errors with automatic localization support
 throw new UserNotFoundError(CoreLanguage.French);
-// "Compte utilisateur introuvable"
+// Output: "Compte utilisateur introuvable"
 
 throw new UsernameInUseError(CoreLanguage.Spanish); 
-// "El nombre de usuario ya está en uso"
+// Output: "El nombre de usuario ya está en uso"
 
 throw new AccountLockedError(CoreLanguage.German);
-// "Konto ist von einem Administrator gesperrt"
+// Output: "Konto ist von einem Administrator gesperrt"
 ```
 
 ## 🎯 How Frameworks Use These Primitives
 
-The **@digitaldefiance/node-express-suite** package builds upon these primitives to create full framework components:
+The **@digitaldefiance/node-express-suite** package builds upon these primitives to create full-featured framework components:
 
 ### Express.js Framework Usage
 
 ```typescript
-// node-express-suite uses these primitives internally
+// Internal usage of suite-core-lib primitives in node-express-suite
 import { 
   IFrontendUser, 
   AccountStatus, 
   BackupCodeString,
   UserNotFoundError,
   CoreLanguage 
-} from '@digitaldefiance/suiite-core-lib';
+} from '@digitaldefiance/suite-core-lib';
 
-// Framework middleware validates using our primitives
+// Middleware example: validate backup code input
 function validateBackupCode(userInput: string, storedCodes: IBackupCode[]) {
   try {
     const inputCode = new BackupCodeString(userInput);
@@ -129,7 +129,7 @@ function validateBackupCode(userInput: string, storedCodes: IBackupCode[]) {
     );
   } catch (error) {
     if (error instanceof InvalidBackupCodeError) {
-      // Framework handles localized error response
+      // Handle localized error response gracefully
       return false;
     }
     throw error;
@@ -140,16 +140,16 @@ function validateBackupCode(userInput: string, storedCodes: IBackupCode[]) {
 ### Frontend Framework Integration
 
 ```typescript
-// Frontend frameworks consume our type-safe interfaces
-import { IFrontendUser, AccountStatus } from '@digitaldefiance/suiite-core-lib';
+// Frontend frameworks consume type-safe interfaces
+import { IFrontendUser, AccountStatus } from '@digitaldefiance/suite-core-lib';
 
-// React/Vue/Angular components use our interfaces
+// React/Vue/Angular component props example
 interface UserProfileProps {
   user: IFrontendUser<'en' | 'fr' | 'es'>;
   onStatusChange: (status: AccountStatus) => void;
 }
 
-// Type safety ensures consistent data flow
+// Function to update user status with type safety
 function updateUserStatus(user: IFrontendUser<string>, status: AccountStatus) {
   return {
     ...user,
@@ -162,11 +162,10 @@ function updateUserStatus(user: IFrontendUser<string>, status: AccountStatus) {
 ### Database Layer Integration
 
 ```typescript
-// node-express-suite database layers use our models
-import { IBackendUser, IUserRoleBase } from '@digitaldefiance/suiite-core-lib';
+// Database schemas implementing suite-core-lib interfaces
+import { IBackendUser, IUserRoleBase } from '@digitaldefiance/suite-core-lib';
 import { Types } from 'mongoose';
 
-// Framework database schemas implement our interfaces
 const userSchema = new mongoose.Schema<IBackendUser<'en'>>({
   _id: { type: Types.ObjectId, required: true },
   username: { type: String, required: true, unique: true },
@@ -176,7 +175,7 @@ const userSchema = new mongoose.Schema<IBackendUser<'en'>>({
     enum: Object.values(AccountStatus),
     default: AccountStatus.PendingEmailVerification 
   },
-  // ... rest of the schema matches our interface
+  // Additional schema fields matching the interface
 });
 ```
 
@@ -184,14 +183,14 @@ const userSchema = new mongoose.Schema<IBackendUser<'en'>>({
 
 ### Custom Model Extensions & Dynamic Registration
 
-> **Note:** The static `ModelName` and `BaseModelName` enums are deprecated. For extensibility, use dynamic model registration (see `ModelRegistry` in `node-express-suite`).
+> **Note:** The static `ModelName` and `BaseModelName` enums are deprecated. For extensibility, use dynamic model registration available in `ModelRegistry` from `node-express-suite`.
 
-You can now register and extend models dynamically:
+You can register and extend models dynamically at runtime:
 
 ```typescript
 import { ModelRegistry } from '@digitaldefiance/node-express-suite';
 
-// Register a custom model (e.g., Organization)
+// Register a custom model, e.g., Organization
 ModelRegistry.instance.register({
   modelName: 'Organization',
   schema: organizationSchema,
@@ -199,18 +198,18 @@ ModelRegistry.instance.register({
   collection: 'organizations',
 });
 
-// Retrieve a model anywhere in your app
+// Retrieve the model anywhere in your application
 const orgModel = ModelRegistry.instance.get('Organization')?.model;
 ```
 
-This approach allows other libraries and apps to extend or override models at runtime, supporting advanced use cases like multi-tenancy and plugin architectures.
+This dynamic approach supports advanced use cases such as multi-tenancy and plugin-based architectures.
 
 ### Email Token Types
 
 ```typescript
-import { EmailTokenType } from '@digitaldefiance/suiite-core-lib';
+import { EmailTokenType } from '@digitaldefiance/suite-core-lib';
 
-// Built-in token types for common workflows
+// Common built-in email token types
 const tokenTypes = [
   EmailTokenType.AccountVerification,    // Email confirmation
   EmailTokenType.PasswordReset,          // Password reset flow  
@@ -223,30 +222,30 @@ const tokenTypes = [
 ### Account Status Management
 
 ```typescript
-import { AccountStatus } from '@digitaldefiance/suiite-core-lib';
+import { AccountStatus } from '@digitaldefiance/suite-core-lib';
 
-// Granular account state control
+// Manage user account states with fine granularity
 switch (user.accountStatus) {
   case AccountStatus.PendingEmailVerification:
-    // Send verification email
+    // Trigger email verification workflow
     break;
   case AccountStatus.Active:
-    // Full access granted
+    // Grant full access
     break;
   case AccountStatus.AdminLock:
-    // Requires admin intervention
+    // Restrict access pending admin intervention
     break;
 }
 ```
 
 ### Framework Integration (Built by Other Projects)
 
-The **@digitaldefiance/node-ecies** and **@digitaldefiance/node-express-suite** packages use these primitives to build:
+The **@digitaldefiance/node-ecies** and **@digitaldefiance/node-express-suite** packages leverage these primitives to build:
 
-- **Complete Express.js framework** with middleware, routes, and database integration
-- **Frontend framework adapters** for React, Vue, Angular, and Svelte
-- **Mobile and desktop SDKs** for React Native, Flutter, Electron, and Tauri
-- **DevOps and deployment tools** with Docker, Kubernetes, and CI/CD integration
+- A complete Express.js framework with middleware, routing, and database integration
+- Frontend adapters for React, Vue, Angular, and Svelte
+- Mobile and desktop SDKs for React Native, Flutter, Electron, and Tauri
+- DevOps and deployment tooling including Docker, Kubernetes, and CI/CD pipelines
 
 ## 🧪 Testing & Quality
 
@@ -260,23 +259,23 @@ import {
   registerSuiteCoreRuntimeConfiguration,
 } from '@digitaldefiance/suite-core-lib';
 
-// Get current config
+// Retrieve current configuration
 const config = getSuiteCoreRuntimeConfiguration();
 
-// Register a custom config
+// Register a custom configuration with overrides
 const customKey = Symbol('custom-suite-core-config');
 registerSuiteCoreRuntimeConfiguration(customKey, 'example.com', { BcryptRounds: 12 });
 const customConfig = getSuiteCoreRuntimeConfiguration(customKey);
 ```
 
-All constants are immutable and accessible via the registry/config API. See `src/constants.ts` and `src/defaults.ts` for details.
+All constants are immutable and accessible via the registry/config API. See `src/constants.ts` and `src/defaults.ts` for more information.
 
 ## 🏛️ Architectural Conventions
 
-- Centralized constants file
-- Immutability via Object.freeze
+- Centralized constants file for configuration
+- Immutability enforced via Object.freeze
 - Registry/config pattern for runtime overrides
-- Type-safe interfaces for all config objects
+- Type-safe interfaces for all configuration objects
 
 ## 🧪 Testing & Quality
 
@@ -295,13 +294,13 @@ yarn test
 
 ## 🤝 Contributing
 
-We welcome contributions to help build the future of secure user management! Areas where we need help:
+We welcome contributions to help build the future of secure user management! Areas where contributions are especially appreciated:
 
-- **Frontend component libraries** for popular frameworks
-- **Additional language translations** and localization
-- **Performance optimizations** and benchmarking
-- **Documentation** and example applications
-- **Security auditing** and penetration testing
+- Frontend component libraries for popular frameworks
+- Additional language translations and localization
+- Performance optimizations and benchmarking
+- Documentation and example applications
+- Security auditing and penetration testing
 
 ## 📄 License
 
@@ -326,6 +325,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 **Building user management primitives?** Start with `@digitaldefiance/suite-core-lib` for type-safe, secure, and internationalized user system foundations. For complete frameworks, check out the **node-ecies** and **node-express-suite** projects! 🚀
 
 ## ChangeLog
+
+## v1.1.12: Update readme
+
+- Sun Oct 26 2025 22:31:00 GMT-07 (Pacific Daylight Time)
+  - Update readme
 
 ## v1.1.11: Update libs
 
@@ -354,8 +358,9 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
   - Version bump
 
 ## v1.1.5: add InvalidChallengeResponseError/LoginChallengeExpiredError
- - Thu Oct 23 2025 20:34:00 GMT-0700 (Pacific Daylight Time)
-  - add InvalidChallengeResponseError/LoginChallengeExpiredError
+
+- Thu Oct 23 2025 20:34:00 GMT-0700 (Pacific Daylight Time)
+- add InvalidChallengeResponseError/LoginChallengeExpiredError
 
 ## v1.1.4: export PrivateKeyRequiredError
 
@@ -398,14 +403,15 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ### Dependency Updates
 
-- Updated 
+- Updated
 
   ```plaintext
   @digitaldefiance/ecies-lib
   ```
+
   from 1.0.31 to 1.0.32
 
-- Updated 
+- Updated
 
   ```plaintext
   @digitaldefiance/node-ecies-lib
@@ -413,10 +419,9 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
   from 1.0.12 to 1.0.13
 
-
 ### New Features
 
-- Added site configuration constants: 
+- Added site configuration constants:
 
   ```plaintext
   Site
@@ -426,38 +431,25 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
   SiteTagline
   ```
 
-
   ```plaintext
   SiteDescription
   ```
 
-
   to core constants
 
-  
-
 - Added new error type enumerations:
-
 
     ```plaintext
     FecErrorType
     ```
 
-     
-
     \- Forward Error Correction error types (13 error cases)
-
-
 
     ```plaintext
     Pbkdf2ErrorType
     ```
 
-     
-
     \- PBKDF2 validation error types (2 error cases)
-
-    
 
 ### String Key Refactoring
 
@@ -468,18 +460,19 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ### Module Exports
 
-- Updated enumeration index to export new 
+- Updated enumeration index to export new
 
   ```plaintext
   FecErrorType
   ```
+
   and
 
   ```plaintext
   Pbkdf2ErrorType
   ```
-  enumerations
 
+  enumerations
 
 ## v1.0.13: Add string
 
