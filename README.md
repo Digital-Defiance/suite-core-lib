@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.14: Update libs
+
+  - Update libs
+
 ## v1.1.13: Add string
 
 - Mon Oct 27 2025 15:15:00 GMT-0700 (Pacific Daylight Time)
