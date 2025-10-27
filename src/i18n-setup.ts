@@ -87,7 +87,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Failed to create {NAME} role',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Index file not found: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'App does not appear to be running within a /dist/ directory: {dir}', 
-   
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Failed to create email token',
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
@@ -989,6 +989,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Unknown enum value: {value} for enum: {enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Email service not configured. Call setEmailService() before using middleware.',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Failed to create email token',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Back to Login',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'An error occurred while processing your request.',
@@ -1591,6 +1592,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Valeur d’énumération inconnue : {value} pour l’énumération : {enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Service de messagerie non configuré. Appelez setEmailService() avant d\'utiliser le middleware.',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Échec de la création du jeton d\'email',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Retour à la connexion',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Une erreur est survenue lors du traitement de votre demande.',
@@ -2209,6 +2211,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Unbekannter Enumerationswert: {value} für die Enumeration: {enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'E-Mail-Dienst nicht konfiguriert. Rufen Sie setEmailService() auf, bevor Sie die Middleware verwenden.',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Fehler beim Erstellen des E-Mail-Tokens',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Zurück zur Anmeldung',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Bei der Bearbeitung Ihrer Anfrage ist ein Fehler aufgetreten.',
@@ -2829,6 +2832,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Valor de enumeración desconocido: {value} para la enumeración: {enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Servicio de correo electrónico no configurado. Llame a setEmailService() antes de usar el middleware.',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Error al crear el token de correo electrónico',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Volver al inicio de sesión',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Ocurrió un error al procesar su solicitud.',
@@ -3358,6 +3362,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       '未知的枚举值: {value} 对于枚举: {enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: '电子邮件服务未配置。在使用中间件之前请调用 setEmailService()。',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: '创建电子邮件令牌失败',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: '返回登录',
     [SuiteCoreStringKey.ForgotPassword_Error]: '处理您的请求时发生错误。',
     [SuiteCoreStringKey.ForgotPassword_ForgotPassword]: '忘记密码',
@@ -3930,6 +3935,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       '不明な列挙値：{value}、列挙型：{enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'メールサービスが設定されていません。ミドルウェアを使用する前に setEmailService() を呼び出してください。',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'メールトークンの作成に失敗しました',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'ログインに戻る',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'リクエストの処理中にエラーが発生しました。',
@@ -4524,6 +4530,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_UnknownEnumValueForEnumTemplate]:
       'Невідома значення перерахування: {value} для перерахування: {enumName}',
     [SuiteCoreStringKey.Error_EmailService_NotConfigured]: 'Сервіс електронної пошти не налаштовано. Викличте setEmailService() перед використанням middleware.',
+    [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Не вдалося створити токен електронної пошти',
     [SuiteCoreStringKey.ForgotPassword_BackToLogin]: 'Повернутися до входу',
     [SuiteCoreStringKey.ForgotPassword_Error]:
       'Сталася помилка під час обробки вашого запиту.',
