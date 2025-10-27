@@ -1,10 +1,9 @@
-import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 import { SuiteCoreStringKey } from '../enumerations';
 
 
 export class EmailTokenExpiredError extends TranslatableSuiteHandleableError {
-  constructor(language?: CoreLanguageCode, statusCode = 422) {
+  constructor(language?: string, statusCode = 422) {
     super(SuiteCoreStringKey.Validation_TokenExpired, undefined, language), {
       statusCode,
     };

@@ -1,7 +1,6 @@
 import { IHandleable } from '@digitaldefiance/ecies-lib';
 import { TranslatableSuiteError } from './translatable-suite';
 import { SuiteCoreStringKey } from '../enumerations';
-import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 
 export class TranslatableSuiteHandleableError extends TranslatableSuiteError implements IHandleable {
   public readonly cause?: Error;
@@ -12,7 +11,7 @@ export class TranslatableSuiteHandleableError extends TranslatableSuiteError imp
   constructor(
     messageKey: SuiteCoreStringKey,
     otherVars?: Record<string, string | number>,
-    language?: CoreLanguageCode,
+    language?: string,
     handleableOptions?: { statusCode?: number; cause?: Error; sourceData?: unknown },
   ) {
     super(messageKey, otherVars, language);

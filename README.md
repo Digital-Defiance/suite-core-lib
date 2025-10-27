@@ -327,6 +327,12 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.11: Update libs
+
+- Sun Oct 26 2025 20:33:00 GMT-0700 (Pacific Daylight Time)
+  - Update libraries
+  - Update error classes to not use CoreLanguageCode (use string instead)
+
 ## v1.1.10: Add string keys
 
 - Sun Oct 26 2025 13:46:00 GMT-0700 (Pacific Daylight Time)

@@ -1,5 +1,5 @@
 import { HandleableError } from '@digitaldefiance/ecies-lib';
-import { CoreLanguageCode, LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
+import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../src/enumerations';
 import {
   getSuiteCoreTranslation,
@@ -9,7 +9,7 @@ import {
 
 // Mock additional error classes for testing using the new API
 class EmailInUseError extends HandleableError {
-  constructor(language?: CoreLanguageCode, statusCode = 422) {
+  constructor(language?: string, statusCode = 422) {
     const message = getSuiteCoreTranslation(
       SuiteCoreStringKey.Validation_EmailInUse,
       undefined,
@@ -23,7 +23,7 @@ class EmailInUseError extends HandleableError {
 }
 
 class InvalidCredentialsError extends HandleableError {
-  constructor(language?: CoreLanguageCode, statusCode = 401) {
+  constructor(language?: string, statusCode = 401) {
     const message = getSuiteCoreTranslation(
       SuiteCoreStringKey.Validation_InvalidCredentials,
       undefined,

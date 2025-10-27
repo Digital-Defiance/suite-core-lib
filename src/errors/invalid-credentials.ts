@@ -1,9 +1,8 @@
-import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 
 export class InvalidCredentialsError extends TranslatableSuiteHandleableError {
-  constructor(language?: CoreLanguageCode) {
+  constructor(language?: string) {
     super(
       SuiteCoreStringKey.Validation_InvalidCredentials, undefined, language,
       {

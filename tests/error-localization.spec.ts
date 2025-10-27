@@ -1,4 +1,4 @@
-import { CoreLanguageCode, LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
+import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../src/enumerations';
 import { UsernameInUseError } from '../src/errors/username-in-use';
 import {

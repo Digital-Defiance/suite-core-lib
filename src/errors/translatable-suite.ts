@@ -1,4 +1,3 @@
-import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations/suite-core-string-key';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 
@@ -15,7 +14,7 @@ export class TranslatableSuiteError extends Error {
   constructor(
     string: SuiteCoreStringKey,
     otherVars?: Record<string, string | number>,
-    language?: CoreLanguageCode,
+    language?: string,
   ) {
     const i18nEngine = getSuiteCoreI18nEngine();
     let translatedMessage: string;

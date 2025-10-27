@@ -2,7 +2,6 @@ import {
   ComponentDefinition,
   ComponentRegistration,
   LanguageCodes,
-  CoreLanguageCode,
   createCoreI18nEngine,
   PluginI18nEngine,
 } from '@digitaldefiance/i18n-lib';
@@ -22,7 +21,7 @@ export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {
 
 // Create complete component strings for all supported languages
 export const SuiteCoreComponentStrings: Record<
-  CoreLanguageCode,
+  string,
   Record<SuiteCoreStringKey, string>
 > = {
   [LanguageCodes.EN_US]: {
@@ -4687,7 +4686,7 @@ export const SuiteCoreComponentStrings: Record<
 // Create the component registration
 export const SuiteCoreComponentRegistration: ComponentRegistration<
   SuiteCoreStringKey,
-  CoreLanguageCode
+  string
 > = {
   component: SuiteCoreComponent,
   strings: SuiteCoreComponentStrings,
@@ -4698,14 +4697,14 @@ export const SuiteCoreComponentRegistration: ComponentRegistration<
  */
 export function initSuiteCoreI18nEngine(
   instanceKey?: string,
-): PluginI18nEngine<CoreLanguageCode> {
+): PluginI18nEngine<string> {
   const key = instanceKey || SuiteCoreI18nEngineKey;
 
   // Check if instance already exists
-  let engine: PluginI18nEngine<CoreLanguageCode>;
+  let engine: PluginI18nEngine<string>;
 
   if (PluginI18nEngine.hasInstance(key)) {
-    engine = PluginI18nEngine.getInstance<CoreLanguageCode>(key);
+    engine = PluginI18nEngine.getInstance<string>(key);
   } else {
     engine = createCoreI18nEngine(key);
 
@@ -4726,12 +4725,12 @@ export function initSuiteCoreI18nEngine(
 }
 
 // Singleton instance management
-let _SuiteCoreI18nEngine: PluginI18nEngine<CoreLanguageCode> | null = null;
+let _SuiteCoreI18nEngine: PluginI18nEngine<string> | null = null;
 
 /**
  * Get the User System i18n engine instance (singleton)
  */
-export function getSuiteCoreI18nEngine(): PluginI18nEngine<CoreLanguageCode> {
+export function getSuiteCoreI18nEngine(): PluginI18nEngine<string> {
   if (!_SuiteCoreI18nEngine) {
     _SuiteCoreI18nEngine = initSuiteCoreI18nEngine();
   }
@@ -4754,7 +4753,7 @@ export function resetSuiteCoreI18nEngine(): void {
 export function getSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, string | number>,
-  language?: CoreLanguageCode,
+  language?: string,
 ): string {
   const engine = getSuiteCoreI18nEngine();
   return engine.translate(SuiteCoreComponentId, key, variables, language);
@@ -4766,7 +4765,7 @@ export function getSuiteCoreTranslation(
 export function safeGetSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, string | number>,
-  language?: CoreLanguageCode,
+  language?: string,
 ): string {
   const engine = getSuiteCoreI18nEngine();
   return engine.safeTranslate(SuiteCoreComponentId, key, variables, language);
@@ -4776,7 +4775,7 @@ export function safeGetSuiteCoreTranslation(
  * Register the User System component with an existing i18n engine
  */
 export function registerSuiteCoreComponent(
-  engine: PluginI18nEngine<CoreLanguageCode>,
+  engine: PluginI18nEngine<string>,
 ): void {
   const validationResult = engine.registerComponent(
     SuiteCoreComponentRegistration,
