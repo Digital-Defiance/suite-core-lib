@@ -11,12 +11,12 @@ import {
 
 describe('User System I18n Setup', () => {
   beforeEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
   });
 
   afterEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
   });
 

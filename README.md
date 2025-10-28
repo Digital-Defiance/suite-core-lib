@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.16: Update libs
+
+  - Update libs
+
 ## v1.1.15: Update libs
 
   - Update libs

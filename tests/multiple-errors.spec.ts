@@ -38,13 +38,13 @@ class InvalidCredentialsError extends HandleableError {
 
 describe('Multiple Error Types Localization', () => {
   beforeEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
     initSuiteCoreI18nEngine();
   });
 
   afterEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
   });
 

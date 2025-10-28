@@ -15,13 +15,13 @@ import {
 
 describe('Comprehensive Localization Testing', () => {
   beforeEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
     initSuiteCoreI18nEngine();
   });
 
   afterEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
   });
 

@@ -12,14 +12,14 @@ import {
 describe('Error Message Localization', () => {
   beforeEach(() => {
     // Clear any existing instances
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
     // Initialize user system i18n
     initSuiteCoreI18nEngine();
   });
 
   afterEach(() => {
-    PluginI18nEngine.clearAllInstances();
+    PluginI18nEngine.resetAll();
     resetSuiteCoreI18nEngine();
   });
 
