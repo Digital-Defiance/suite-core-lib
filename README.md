@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.20: Update libs/CommonJS
+
+  - CommonJS
+
 ## v1.1.19: Update libs
 
   - Update libs
