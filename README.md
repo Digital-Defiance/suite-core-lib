@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.18: Update libs
+
+ - Update libs
+
 ## v1.1.17: Add frontend-objects
 
   - Add frontend-objects
