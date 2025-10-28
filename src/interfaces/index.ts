@@ -6,6 +6,7 @@ export * from './core-consts';
 export * from './deep-partial';
 export * from './dto';
 export * from './failable-result';
+export * from './frontend-objects';
 export * from './handleable-error-options';
 export * from './has-creation';
 export * from './has-creator';
