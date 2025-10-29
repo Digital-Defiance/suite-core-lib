@@ -97,6 +97,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 'Transaction failed (transient): {error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: 'Transaction timeout after {timeMs}ms',
     [SuiteCoreStringKey.Admin_StartingDatabaseInitialization]: 'Starting database initialization',
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: 'Invalid Mongo URI',
     [SuiteCoreStringKey.Admin_Error_FailedToInitializeUserDatabaseTimeoutTemplate]: 'Failed to initialize user database (timeout after {timeMs}ms)',
     [SuiteCoreStringKey.Admin_EnvNotSetTemplate]: 'Environment variable not set: {variable}',
     [SuiteCoreStringKey.Admin_ServingRoute]: 'Serving route',
@@ -650,7 +651,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Invalid mnemonic format',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: 'Invalid Mongo URI',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'No MongoDB client found, falling back',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 'Transaction failed (transient): {error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: 'Transaction timeout after {timeMs}ms',
@@ -1217,7 +1218,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Données validées manquantes',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Données validées manquantes pour le champ: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Format de mnémonique invalide',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: 'URI Mongo invalide',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'Aucun client MongoDB trouvé, utilisation de l\'alternative',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 'Transaction échouée (transitoire): {error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: 'Délai d\'attente de transaction après {timeMs}ms',
@@ -1835,7 +1836,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Fehlende validierte Daten',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Fehlende validierte Daten für Feld: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Ungültiges Mnemoformat',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: 'Ungültige Mongo URI',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'Kein MongoDB-Client gefunden, wechsle zu Fallback',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 'Transaktion fehlgeschlagen (transient): {error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: 'Transaktionszeitüberschreitung nach {timeMs}ms',
@@ -2456,7 +2457,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Faltan datos validados',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Faltan datos validados para el campo: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Formato de mnemónico inválido',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: 'URI Mongo inválido',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'No se encontró cliente MongoDB, usando alternativa',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 'Transacción falló (transitorio): {error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: 'Tiempo de espera de transacción después de {timeMs}ms',
@@ -3066,7 +3067,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_MissingValidatedData]: '缺少验证数据',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: '字段缺少验证数据：{field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: '助记词格式无效',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: '无效的 Mongo URI',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: '未找到MongoDB客户端，使用备用方案',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: '事务失败（临时）：{error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: '事务在{timeMs}毫秒后超时',
@@ -3583,7 +3584,7 @@ export const SuiteCoreComponentStrings: Record<
      'フィールドの検証済みデータがありません: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 
     '無効な助記詞の形式',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: '無効な Mongo URI',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 
     'MongoDBクライアントが見つかりません。フォールバックします',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 
@@ -4164,7 +4165,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Відсутні валідовані дані',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Відсутні валідовані дані для поля: {field}',
     [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Недійсний формат мнемоніки',
-    
+    [SuiteCoreStringKey.Admin_Error_InvalidMongoUri]: 'Недійсний Mongo URI',
     [SuiteCoreStringKey.Admin_NoMongoDbClientFoundFallingBack]: 'Клієнт MongoDB не знайдено, використовується резервний варіант',
     [SuiteCoreStringKey.Admin_TransactionFailedTransientTemplate]: 'Транзакція не вдалася (тимчасово): {error}',
     [SuiteCoreStringKey.Admin_TransactionTimeoutTemplate]: 'Тайм-аут транзакції після {timeMs}мс',

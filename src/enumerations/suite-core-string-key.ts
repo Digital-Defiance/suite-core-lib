@@ -41,6 +41,7 @@ export enum SuiteCoreStringKey {
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',
+  Admin_Error_InvalidMongoUri = 'admin_error_invalidMongoUri',
 
   Admin_AccountCredentials = 'admin_accountCredentials',
   Admin_CreatingUserTemplate = 'admin_creatingUserTemplate',
