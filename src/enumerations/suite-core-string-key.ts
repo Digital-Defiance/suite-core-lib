@@ -38,6 +38,7 @@ export enum SuiteCoreStringKey {
   Error_ModelNotRegisteredTemplate = 'error_modelNotRegisteredTemplate',
   Error_IndexFileNotFoundTemplate = 'error_indexFileNotFoundTemplate',
   Error_AppDoesNotAppearToBeRunningWithinDistTemplate = 'error_appDoesNotAppearToBeRunningWithinDistTemplate',
+  Error_ValidationFunctionNotRegisteredInAllowlist = 'error_validationFunctionNotRegisteredInAllowlist',
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',

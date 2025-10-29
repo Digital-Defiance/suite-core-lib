@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.22: Add string
+
+ - Add string
+
 ## v1.1.21: Add string
 
   - Add string

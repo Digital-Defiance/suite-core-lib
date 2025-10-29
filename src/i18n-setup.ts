@@ -88,6 +88,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Index file not found: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'App does not appear to be running within a /dist/ directory: {dir}', 
     [SuiteCoreStringKey.Error_FailedToCreateEmailToken]: 'Failed to create email token',
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Validation function not registered in allowlist',
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
@@ -646,7 +647,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Failed to create {NAME} role',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Index file not found: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'App does not appear to be running within a /dist/ directory: {dir}', 
-   
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Validation function not registered in allowlist',
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
@@ -1190,7 +1191,7 @@ export const SuiteCoreComponentStrings: Record<
       'Le compte est en attente de vérification par e-mail',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Fichier index introuvable : {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'L\'application ne semble pas être exécutée dans un répertoire /dist/',
-
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Fonction de validation non enregistrée dans la liste autorisée',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Une erreur inattendue s\'est produite',
     [SuiteCoreStringKey.Common_Ready]: 'Prêt',
     [SuiteCoreStringKey.Common_Stopping]: 'Arrêt',
@@ -1810,6 +1811,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'Die App scheint nicht innerhalb eines /dist/-Verzeichnisses zu laufen: {dir}',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Eine untergeordnete Rolle kann keine Systemrolle sein',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Eine untergeordnete Rolle kann keine Administratorrolle sein',
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Validation function not registered in allowlist', 
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ein unerwarteter Fehler ist aufgetreten',
     [SuiteCoreStringKey.Common_Ready]: 'Bereit',
     [SuiteCoreStringKey.Common_Stopping]: 'Anhalten',
@@ -2429,7 +2431,7 @@ export const SuiteCoreComponentStrings: Record<
       'La cuenta está pendiente de verificación por correo electrónico',
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Archivo de índice no encontrado: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'La aplicación no parece estar ejecutándose dentro de un directorio /dist/: {dir}',
-
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'La función de validación no está registrada en la lista permitida',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ocurrió un error inesperado',
     [SuiteCoreStringKey.Common_Ready]: 'Listo',
     [SuiteCoreStringKey.Common_Stopping]: 'Deteniendo',
@@ -3041,6 +3043,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: '应用程序似乎未在/dist/目录中运行：{dir}',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: '子角色不能是系统角色',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: '子角色不能是管理员角色',
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: '验证函数未在允许列表中注册',
     [SuiteCoreStringKey.Common_UnexpectedError]: '发生了意外错误',
     [SuiteCoreStringKey.Common_Ready]: '就绪',
     [SuiteCoreStringKey.Common_Stopping]: '正在停止',
@@ -3575,7 +3578,7 @@ export const SuiteCoreComponentStrings: Record<
     'インデックスファイルが見つかりません: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 
     'アプリケーションは /dist/ ディレクトリ内で実行されていないようです: {dir}',
-   
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: '検証関数が許可リストに登録されていません',
     [SuiteCoreStringKey.ValidationError]:
      '検証エラー',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 
@@ -4160,6 +4163,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Недійсний ключ моделі: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Модель не зареєстрована: {modelName}',
     [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Не вдалося створити роль {NAME}',
+    [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Функцію валідації не зареєстровано в allowlist',
 
     [SuiteCoreStringKey.ValidationError]: 'Помилка Валідації',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Відсутні валідовані дані',
