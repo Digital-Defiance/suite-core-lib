@@ -39,6 +39,8 @@ export enum SuiteCoreStringKey {
   Error_IndexFileNotFoundTemplate = 'error_indexFileNotFoundTemplate',
   Error_AppDoesNotAppearToBeRunningWithinDistTemplate = 'error_appDoesNotAppearToBeRunningWithinDistTemplate',
   Error_ValidationFunctionNotRegisteredInAllowlist = 'error_validationFunctionNotRegisteredInAllowlist',
+  Error_InvalidCertificatePathAfterResolution = 'error_invalidCertificatePathAfterResolution',
+  Error_InvalidCertificatePathMustBeAbsolute = 'error_invalidCertificatePathMustBeAbsolute',
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',
