@@ -41,6 +41,10 @@ export enum SuiteCoreStringKey {
   Error_ValidationFunctionNotRegisteredInAllowlist = 'error_validationFunctionNotRegisteredInAllowlist',
   Error_InvalidCertificatePathAfterResolution = 'error_invalidCertificatePathAfterResolution',
   Error_InvalidCertificatePathMustBeAbsolute = 'error_invalidCertificatePathMustBeAbsolute',
+  Error_InvalidPathContainsParentDirectoryReference = 'error_invalidPathContainsParentDirectoryReference',
+  Error_InvalidViewsPathEscapesBaseDirectory = 'error_invalidViewsPathEscapesBaseDirectory',
+  Error_InvalidIndexPathEscapesBaseDirectory = 'error_invalidIndexPathEscapesBaseDirectory',
+  Error_InvalidAssetsPathEscapesBaseDirectory = 'error_invalidAssetsPathEscapesBaseDirectory',
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',
