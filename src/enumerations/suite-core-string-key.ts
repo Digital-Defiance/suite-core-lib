@@ -45,6 +45,8 @@ export enum SuiteCoreStringKey {
   Error_InvalidViewsPathEscapesBaseDirectory = 'error_invalidViewsPathEscapesBaseDirectory',
   Error_InvalidIndexPathEscapesBaseDirectory = 'error_invalidIndexPathEscapesBaseDirectory',
   Error_InvalidAssetsPathEscapesBaseDirectory = 'error_invalidAssetsPathEscapesBaseDirectory',
+  Error_MissingRequiredEnvironmentVariableTemplate = 'error_missingRequiredEnvironmentVariableTemplate',
+  Error_EmptyEnvironmentVariableTemplate = 'error_emptyEnvironmentVariableTemplate',
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',
