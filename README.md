@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.28: Add local storage manager
+
+  - Add local storage manager
+
 ## v1.1.27: Update libs
 
   - Update ecies libs
