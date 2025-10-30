@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.27: Update libs
+
+  - Update ecies libs
+
 ## v1.1.26: Add npmignore
 
   - Add npmignore
