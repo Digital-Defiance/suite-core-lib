@@ -338,6 +338,7 @@ export enum SuiteCoreStringKey {
   Login_UseUsername = 'login_useUsername',
   LogoutButton = 'logoutButton',
   MemberRoleNotFound = 'memberRoleNotFound',
+  SystemRoleNotFound = 'systemRoleNotFound',
   MnemonicRecovery_Missing = 'mnemonicRecovery_missing',
   MnemonicRecovery_Success = 'mnemonicRecovery_success',
   NoMembersYet = 'noMembersYet',

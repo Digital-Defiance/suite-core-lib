@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.29: Add numerous error classes
+
+  - Add numerous error classes
+
 ## v1.1.28: Add local storage manager
 
   - Add local storage manager

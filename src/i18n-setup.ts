@@ -479,6 +479,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: 'Use Username',
     [SuiteCoreStringKey.LogoutButton]: 'Logout',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'Member role not found',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'System role not found',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]: 'Mnemonic recovery data missing',
     [SuiteCoreStringKey.MnemonicRecovery_Success]: 'Mnemonic recovered successfully',
     [SuiteCoreStringKey.NoMembersYet]: 'No members yet',
@@ -1046,6 +1047,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: 'Use Username',
     [SuiteCoreStringKey.LogoutButton]: 'Logout',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'Member role not found',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'System role not found',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]: 'Mnemonic recovery data missing',
     [SuiteCoreStringKey.MnemonicRecovery_Success]: 'Mnemonic recovered successfully',
     [SuiteCoreStringKey.NoMembersYet]: 'No members yet',
@@ -1659,6 +1661,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: "Utiliser le nom d'utilisateur",
     [SuiteCoreStringKey.LogoutButton]: 'Se déconnecter',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'Rôle de membre non trouvé',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'Rôle système non trouvé',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]:
       'Données de récupération mnémonique manquantes',
     [SuiteCoreStringKey.MnemonicRecovery_Success]:
@@ -2288,6 +2291,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: "Benutzernamen verwenden",
     [SuiteCoreStringKey.LogoutButton]: 'Abmelden',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'Mitgliederrolle nicht gefunden',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'Systemrolle nicht gefunden',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]:
       'Fehlende mnemonische Wiederherstellungsdaten',
     [SuiteCoreStringKey.MnemonicRecovery_Success]:
@@ -2916,6 +2920,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: 'Usar nombre de usuario',
     [SuiteCoreStringKey.LogoutButton]: 'Cerrar sesión',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'Rol de miembro no encontrado',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'Rol de sistema no encontrado',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]:
       'Faltan los datos de recuperación mnemónica',
     [SuiteCoreStringKey.MnemonicRecovery_Success]:
@@ -3449,6 +3454,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: '使用用户名',
     [SuiteCoreStringKey.LogoutButton]: '登出',
     [SuiteCoreStringKey.MemberRoleNotFound]: '未找到成员角色',
+    [SuiteCoreStringKey.SystemRoleNotFound]: '未找到系统角色',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]: '助记恢复数据缺失',
     [SuiteCoreStringKey.MnemonicRecovery_Success]: '助记词恢复成功',
     [SuiteCoreStringKey.NoMembersYet]: '尚无成员',
@@ -4034,6 +4040,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: 'ユーザー名を使用',
     [SuiteCoreStringKey.LogoutButton]: 'ログアウト',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'メンバー役割が見つかりません',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'システム役割が見つかりません',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]: 'ニーモニック復元データがありません',
     [SuiteCoreStringKey.MnemonicRecovery_Success]: 'ニーモニックが正常に復元されました',
     [SuiteCoreStringKey.NoMembersYet]: 'まだメンバーがいません',
@@ -4638,6 +4645,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Login_UseUsername]: "Використати ім'я користувача",
     [SuiteCoreStringKey.LogoutButton]: 'Вийти',
     [SuiteCoreStringKey.MemberRoleNotFound]: 'Роль учасника не знайдено',
+    [SuiteCoreStringKey.SystemRoleNotFound]: 'Роль системи не знайдено',
     [SuiteCoreStringKey.MnemonicRecovery_Missing]:
       'Відсутні дані мнемонічного відновлення',
     [SuiteCoreStringKey.MnemonicRecovery_Success]: 'Відновлення мнемоніки успішне',
