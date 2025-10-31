@@ -4,6 +4,10 @@ import {
   LanguageCodes,
   createCoreI18nEngine,
   PluginI18nEngine,
+  LanguageContextSpace,
+  GlobalActiveContext,
+  CoreLanguageCode,
+  IActiveContext,
 } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
 
@@ -4842,6 +4846,29 @@ export function getSuiteCoreTranslation(
 ): string {
   const engine = getSuiteCoreI18nEngine();
   return engine.translate(SuiteCoreComponentId, key, variables, language);
+}
+
+export function contextualSuiteCoreTranslation<TLanguage extends CoreLanguageCode = CoreLanguageCode, TLanguageContextSpace extends LanguageContextSpace = LanguageContextSpace>(
+  contextSpace: TLanguageContextSpace,
+  key: SuiteCoreStringKey,
+  variables?: Record<string, string | number>,
+  language?: string,
+): string {
+  const engine = getSuiteCoreI18nEngine();
+  const globalContext = GlobalActiveContext.getInstance<TLanguage, IActiveContext<TLanguage>>();
+  // fetch current context
+  const engineContext = engine.getContext();
+  const currentGlobalSpace = globalContext.getLanguageContextSpace();
+  const currentEngineSpace = engineContext.currentContext;
+  // set new context
+  globalContext.setLanguageContextSpace(contextSpace);
+  engineContext.currentContext = contextSpace;
+  // translate
+  const translated = engine.translate(SuiteCoreComponentId, key, variables, language);
+  // restore context
+  globalContext.setLanguageContextSpace(currentGlobalSpace);
+  engineContext.currentContext = currentEngineSpace;
+  return translated;
 }
 
 /**
