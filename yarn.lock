@@ -1286,9 +1286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digitaldefiance/ecies-lib@npm:1.1.18":
-  version: 1.1.18
-  resolution: "@digitaldefiance/ecies-lib@npm:1.1.18"
+"@digitaldefiance/ecies-lib@npm:1.1.19":
+  version: 1.1.19
+  resolution: "@digitaldefiance/ecies-lib@npm:1.1.19"
   dependencies:
     "@digitaldefiance/i18n-lib": "npm:1.3.6"
     "@ethereumjs/wallet": "npm:^10.0.0"
@@ -1297,7 +1297,7 @@ __metadata:
     "@scure/bip32": "npm:^2.0.0"
     bson: "npm:^6.10.4"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/b62fea29b181196beb20d297bb4e7abc8f247af132b10ca27a17e4f8d20b63f404dd8186cd0949891a0f884031a6918cdb4d994044cc6e545d3a4fc7441acb47
+  checksum: 10c0/62a5d25253914d0dc6d2880f8e2521513bbe386f99f7743bc9914b243344d088194be3e2c8013d10b9529d390ba8681210d92651168fb69f23f1ceeca41564b0
   languageName: node
   linkType: hard
 
@@ -1311,11 +1311,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digitaldefiance/node-ecies-lib@npm:1.1.15":
-  version: 1.1.15
-  resolution: "@digitaldefiance/node-ecies-lib@npm:1.1.15"
+"@digitaldefiance/node-ecies-lib@npm:1.1.16":
+  version: 1.1.16
+  resolution: "@digitaldefiance/node-ecies-lib@npm:1.1.16"
   dependencies:
-    "@digitaldefiance/ecies-lib": "npm:1.1.18"
+    "@digitaldefiance/ecies-lib": "npm:1.1.19"
     "@digitaldefiance/i18n-lib": "npm:1.3.6"
     "@ethereumjs/wallet": "npm:^10.0.0"
     "@noble/curves": "npm:^2.0.1"
@@ -1324,7 +1324,7 @@ __metadata:
     bson: "npm:^6.10.4"
     ethereum-cryptography: "npm:^3.2.0"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/b22273acabcd943d4ab70810fec1228555dffb57ee205ffa8ee482b07b968587d3b8052374472f8d16c9a0440a2dbd2faecdf7a1c75678d197a6b8677b56f66c
+  checksum: 10c0/8c26ff4fb1dafce2727e7b53696124c33025ef31bb5a1458cbd8b9a4108dc807cf537e1827fe272b73508cb747d51796d8e5b027fd50b1bcbf2be49512c69c50
   languageName: node
   linkType: hard
 
@@ -1334,9 +1334,9 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.28.4"
     "@babel/preset-env": "npm:^7.28.3"
-    "@digitaldefiance/ecies-lib": "npm:1.1.18"
+    "@digitaldefiance/ecies-lib": "npm:1.1.19"
     "@digitaldefiance/i18n-lib": "npm:1.3.6"
-    "@digitaldefiance/node-ecies-lib": "npm:1.1.15"
+    "@digitaldefiance/node-ecies-lib": "npm:1.1.16"
     "@types/babel__core": "npm:^7"
     "@types/babel__preset-env": "npm:^7"
     "@types/jest": "npm:^29.0.0"

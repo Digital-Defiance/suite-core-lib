@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.32: Update ecies
+
+  - Update ecies
+
 ## v1.1.31: Update ecies
 
   - Update ecies
