@@ -1,12 +1,12 @@
 
-import { PluginTypedError } from '@digitaldefiance/i18n-lib';
+import { CoreLanguageCode, PluginTypedError } from '@digitaldefiance/i18n-lib';
 import { FecErrorType, SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 
-export class FecError extends PluginTypedError<typeof FecErrorType, SuiteCoreStringKey, string> {
+export class FecError extends PluginTypedError<typeof FecErrorType, SuiteCoreStringKey, CoreLanguageCode> {
   constructor(
     type: FecErrorType,
-    language?: string,
+    language?: CoreLanguageCode,
     templateParams?: Record<string, string>,
   ) {
     const i18nEngine = getSuiteCoreI18nEngine();

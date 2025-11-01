@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v.1.1.37: Improve i18n registration
+
+  - Improve i18n plugin registration
+
 ## v1.1.36: Update i18n/ecies
 
   - Update i18n/ecies

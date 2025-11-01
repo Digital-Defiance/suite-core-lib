@@ -1,9 +1,9 @@
-import { HandleableError, HandleableErrorOptions } from '@digitaldefiance/i18n-lib';
+import { CoreLanguageCode, HandleableError, HandleableErrorOptions } from '@digitaldefiance/i18n-lib';
 import { EmailTokenType, SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreTranslation } from '../i18n-setup';
 
 export class EmailTokenFailedToSendError extends HandleableError {
-  constructor(tokenType: EmailTokenType, language?: string, options?: HandleableErrorOptions) {
+  constructor(tokenType: EmailTokenType, language?: CoreLanguageCode, options?: HandleableErrorOptions) {
     const map: Record<EmailTokenType, SuiteCoreStringKey> = {
       [EmailTokenType.AccountVerification]: SuiteCoreStringKey.TokenType_AccountVerification,
       [EmailTokenType.PasswordReset]: SuiteCoreStringKey.TokenType_PasswordReset,
