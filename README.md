@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.33: Use typed/handleable from i18n
+
+  - Use typed/handleable from i18n
+
 ## v1.1.32: Update ecies
 
   - Update ecies

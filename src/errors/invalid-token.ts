@@ -1,6 +1,6 @@
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteError } from './translatable-suite';
-import { HandleableError } from '@digitaldefiance/ecies-lib';
+import { HandleableError } from '@digitaldefiance/i18n-lib';
 
 
 export class InvalidTokenError extends HandleableError {

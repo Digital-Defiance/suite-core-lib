@@ -27,7 +27,6 @@ export * from './member-role-not-found';
 export * from './pbkdf2-error';
 export * from './pending-email-verification';
 export * from './private-key-required';
-export * from './plugin-typed-handleable';
 export * from './system-role-not-found';
 export * from './token-not-found';
 export * from './translatable-suite';

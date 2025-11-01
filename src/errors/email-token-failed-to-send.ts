@@ -1,4 +1,4 @@
-import { HandleableError, HandleableErrorOptions } from '@digitaldefiance/ecies-lib';
+import { HandleableError, HandleableErrorOptions } from '@digitaldefiance/i18n-lib';
 import { EmailTokenType, SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreTranslation } from '../i18n-setup';
 

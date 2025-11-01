@@ -1,7 +1,7 @@
 import {
   HandleableError,
   HandleableErrorOptions,
-} from '@digitaldefiance/ecies-lib';
+} from '@digitaldefiance/i18n-lib';
 
 export class GenericValidationError extends HandleableError {
   constructor(message: string, options?: HandleableErrorOptions) {

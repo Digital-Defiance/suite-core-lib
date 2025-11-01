@@ -1,4 +1,4 @@
-import { HandleableError } from '@digitaldefiance/ecies-lib';
+import { HandleableError } from '@digitaldefiance/i18n-lib';
 import { BackupCodeString } from '../src/backup-code-string';
 import { Constants } from '../src/constants';
 import { AccountStatus } from '../src/enumerations/account-status';

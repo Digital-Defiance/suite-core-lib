@@ -1,7 +1,4 @@
-import { CompleteReasonMap, CoreStringKey, CoreTypedError, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { HandleableErrorOptions } from '../interfaces';
-import { HandleableError, IHandleable } from '@digitaldefiance/ecies-lib';
-import { PluginTypedHandleableError } from './plugin-typed-handleable';
+import { CompleteReasonMap, CoreStringKey, CoreTypedError, HandleableError, HandleableErrorOptions, IHandleable, PluginI18nEngine, PluginTypedHandleableError } from '@digitaldefiance/i18n-lib';
 
 export class CoreTypedHandleableError<TEnum extends Record<string, string>> extends CoreTypedError<TEnum> implements IHandleable {
   public readonly cause?: Error;

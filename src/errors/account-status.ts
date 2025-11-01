@@ -1,4 +1,4 @@
-import { HandleableError } from '@digitaldefiance/ecies-lib';
+import { HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { AccountStatus } from '../enumerations/account-status';
 import { TranslatableSuiteError } from './translatable-suite';
