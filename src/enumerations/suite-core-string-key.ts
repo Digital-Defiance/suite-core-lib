@@ -48,6 +48,8 @@ export enum SuiteCoreStringKey {
   Error_MissingRequiredEnvironmentVariableTemplate = 'error_missingRequiredEnvironmentVariableTemplate',
   Error_EmptyEnvironmentVariableTemplate = 'error_emptyEnvironmentVariableTemplate',
   Error_RecursiveErrorHandlingDetected = 'error_recursiveErrorHandlingDetected',
+  Validation_ValueIsRequired = 'validation_valueIsRequired',
+  Validation_ValueMustBeOneOfTheAvailableOptions = 'validation_valueMustBeOneOfTheAvailableOptions',
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',

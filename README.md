@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.40: Add strings
+
+  - Add strings
+
 ## v1.1.38: Bugfixes on i18n registration
 
   - Bugfixes on i18n registration
