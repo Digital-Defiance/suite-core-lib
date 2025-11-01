@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.1.41: Upgrade libs
+
+  - Upgrade libs
+
 ## v1.1.40: Add strings
 
   - Add strings
