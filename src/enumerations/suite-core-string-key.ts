@@ -47,6 +47,7 @@ export enum SuiteCoreStringKey {
   Error_InvalidAssetsPathEscapesBaseDirectory = 'error_invalidAssetsPathEscapesBaseDirectory',
   Error_MissingRequiredEnvironmentVariableTemplate = 'error_missingRequiredEnvironmentVariableTemplate',
   Error_EmptyEnvironmentVariableTemplate = 'error_emptyEnvironmentVariableTemplate',
+  Error_RecursiveErrorHandlingDetected = 'error_recursiveErrorHandlingDetected',
 
   // Admin/system messages
   Admin_StartingDatabaseInitialization = 'admin_startingDatabaseInitialization',

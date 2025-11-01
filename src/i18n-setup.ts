@@ -101,6 +101,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: 'Invalid assets path: escapes base directory',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Missing required environment variable: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'Environment variable {key} is empty',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Recursive error handling detected',
 
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
@@ -670,6 +671,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_IndexFileNotFoundTemplate]: 'Index file not found: {path}',
     [SuiteCoreStringKey.Error_AppDoesNotAppearToBeRunningWithinDistTemplate]: 'App does not appear to be running within a /dist/ directory: {dir}', 
     [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Validation function not registered in allowlist',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Recursive error handling detected',
     [SuiteCoreStringKey.ValidationError]: 'Validation Error',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Missing validated data',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Missing validated data for field: {field}',
@@ -1223,6 +1225,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: 'Ruta de recursos inválida: escapa del directorio base',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Variable d\'environnement requise manquante : {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'La variable d\'environnement {key} est vide',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Gestion d\'erreur récursive détectée',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Une erreur inattendue s\'est produite',
     [SuiteCoreStringKey.Common_Ready]: 'Prêt',
     [SuiteCoreStringKey.Common_Stopping]: 'Arrêt',
@@ -1852,6 +1855,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: 'Ungültiger Asset-Pfad: verlässt Basisverzeichnis',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Erforderliche Umgebungsvariable fehlt: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'Umgebungsvariable {key} ist leer',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Rekursive Fehlerbehandlung erkannt',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ein unerwarteter Fehler ist aufgetreten',
     [SuiteCoreStringKey.Common_Ready]: 'Bereit',
     [SuiteCoreStringKey.Common_Stopping]: 'Anhalten',
@@ -2481,6 +2485,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: 'Ruta de recursos inválida: escapa del directorio base',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Falta la variable de entorno requerida: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'La variable de entorno {key} está vacía',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Manejo de errores recursivo detectado',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ocurrió un error inesperado',
     [SuiteCoreStringKey.Common_Ready]: 'Listo',
     [SuiteCoreStringKey.Common_Stopping]: 'Deteniendo',
@@ -3102,6 +3107,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: '资源路径无效：超出基础目录',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: '缺少必需的环境变量：{key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: '环境变量 {key} 为空',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: '检测到递归错误处理',
     [SuiteCoreStringKey.Common_UnexpectedError]: '发生了意外错误',
     [SuiteCoreStringKey.Common_Ready]: '就绪',
     [SuiteCoreStringKey.Common_Stopping]: '正在停止',
@@ -3646,6 +3652,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: '無効なアセットパス：ベースディレクトリを超えています',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: '必須の環境変数が見つかりません：{key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: '環境変数 {key} が空です',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: '再帰的なエラー処理が検出されました',
     [SuiteCoreStringKey.ValidationError]:
      '検証エラー',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 
@@ -4218,6 +4225,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'Змінна середовища {key} порожня',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Дочірня роль не може бути системною роллю',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Дочірня роль не може бути роллю адміністратора',
+    [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Виявлено рекурсивну обробку помилок',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Сталася неочікувана помилка',
     [SuiteCoreStringKey.Common_Ready]: 'Готово',
     [SuiteCoreStringKey.Common_Stopping]: 'Зупинка',
@@ -4870,6 +4878,11 @@ export function contextualSuiteCoreTranslation<TLanguage extends CoreLanguageCod
   engineContext.currentContext = currentEngineSpace;
   return translated;
 }
+
+export function getSuiteCoreGlobalActiveContext<TCoreLanguageCode extends CoreLanguageCode = CoreLanguageCode>(): GlobalActiveContext<TCoreLanguageCode, IActiveContext<TCoreLanguageCode>> {
+  return GlobalActiveContext.getInstance<TCoreLanguageCode, IActiveContext<TCoreLanguageCode>>();
+}
+
 
 /**
  * Safe translation helper that provides fallback

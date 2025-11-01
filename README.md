@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.35: Add string
+
+  - Add string
+
 ## v1.1.34: Export LocalStorageManager
 
   - Export LocalStorageManager
