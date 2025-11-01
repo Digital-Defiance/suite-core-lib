@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.36: Update i18n/ecies
+
+  - Update i18n/ecies
+
 ## v1.1.35: Add string
 
   - Add string
