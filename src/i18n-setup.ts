@@ -4822,18 +4822,6 @@ export function initSuiteCoreI18nEngine(
     engine = PluginI18nEngine.getInstance<CoreLanguageCode>(key);
   } else {
     engine = createSuiteCoreI18nEngine(key);
-
-    // Register the user system component
-    const validationResult = engine.registerComponent(
-      SuiteCoreComponentRegistration,
-    );
-
-    if (!validationResult.isValid) {
-      console.warn(
-        'User System component registration incomplete:',
-        validationResult.missingKeys,
-      );
-    }
   }
 
   return engine;
@@ -4932,5 +4920,4 @@ export function registerSuiteCoreComponent(
   }
 }
 
-// Default instance export
-export const SuiteCoreI18nEngine = getSuiteCoreI18nEngine();
+

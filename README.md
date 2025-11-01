@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v1.1.38: Bugfixes on i18n registration
+
+  - Bugfixes on i18n registration
+
 ## v.1.1.37: Improve i18n registration
 
   - Improve i18n plugin registration
