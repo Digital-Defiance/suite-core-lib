@@ -4798,13 +4798,13 @@ export const SuiteCoreComponentStrings: Record<
 };
 
 // Create the component registration
-export const SuiteCoreComponentRegistration: ComponentRegistration<
-  SuiteCoreStringKey,
-  string
-> = {
+export const SuiteCoreComponentRegistration = {
   component: SuiteCoreComponent,
   strings: SuiteCoreComponentStrings,
-};
+  enumName: 'SuiteCoreStringKey',
+  enumObject: SuiteCoreStringKey,
+  aliases: ['suite-core', 'suiteCore'],
+} as ComponentRegistration<SuiteCoreStringKey, string>;
 
 
 /**
