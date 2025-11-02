@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.1.43: Re-release with js
+
+  - Re-release with js
+
 ## V1.1.42: Upgrade to es2022/nx monorepo
 
   - Upgrade to es2022/nx monorepo
