@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.3.15: Homogenize versions
+
+  - Homogenize versions
+
 ## V1.1.44: Update i18n/ecies
 
   - Update i18n/ecies
