@@ -1,18 +1,21 @@
+const { pathsToModuleNameMapper } = require('ts-jest');
+const { compilerOptions } = require('../../tsconfig.base.json');
+
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   roots: ['<rootDir>/src', '<rootDir>/tests'],
   testMatch: ['**/__tests__/**/*.ts', '**/?(*.)+(spec|test).ts'],
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleNameMapper: {
-    '^@digitaldefiance/ecies-lib$': '<rootDir>/tests/__mocks__/@digitaldefiance/ecies-lib.ts'
+    ...pathsToModuleNameMapper(compilerOptions.paths, {
+      prefix: '<rootDir>/../../',
+    }),
+    '^@digitaldefiance/ecies-lib$':
+      '<rootDir>/tests/__mocks__/@digitaldefiance/ecies-lib.ts',
   },
-  collectCoverageFrom: [
-    'src/**/*.ts',
-    '!src/**/*.d.ts',
-  ],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
   maxWorkers: 1,
-  forceExit: true,
 };

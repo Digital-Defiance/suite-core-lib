@@ -1,19 +1,33 @@
-import { CompleteReasonMap, CoreStringKey, CoreTypedError, HandleableError, HandleableErrorOptions, IHandleable, PluginI18nEngine, PluginTypedHandleableError } from '@digitaldefiance/i18n-lib';
+import {
+  CompleteReasonMap,
+  CoreStringKey,
+  CoreTypedError,
+  HandleableError,
+  HandleableErrorOptions,
+  IHandleable,
+  PluginI18nEngine,
+  PluginTypedHandleableError,
+} from '@digitaldefiance/i18n-lib';
 
-export class CoreTypedHandleableError<TEnum extends Record<string, string>> extends CoreTypedError<TEnum> implements IHandleable {
-  public readonly cause?: Error;
+export class CoreTypedHandleableError<TEnum extends Record<string, string>>
+  extends CoreTypedError<TEnum>
+  implements IHandleable
+{
+  public override readonly cause?: Error;
   public readonly statusCode: number;
   public readonly sourceData?: unknown;
   private _handled: boolean;
 
-  constructor(type: TEnum[keyof TEnum], reasonMap: CompleteReasonMap<TEnum, CoreStringKey>, engine: PluginI18nEngine<string>, source: Error, options?: HandleableErrorOptions, language?: string, otherVars?: Record<string, string | number>) {
-    super(
-      engine,
-      type,
-      reasonMap,
-      language,
-      otherVars
-    );
+  constructor(
+    type: TEnum[keyof TEnum],
+    reasonMap: CompleteReasonMap<TEnum, CoreStringKey>,
+    engine: PluginI18nEngine<string>,
+    source: Error,
+    options?: HandleableErrorOptions,
+    language?: string,
+    otherVars?: Record<string, string | number>
+  ) {
+    super(engine, type, reasonMap, language, otherVars);
     this.cause = source;
     this.statusCode = options?.statusCode ?? 500;
     this._handled = options?.handled ?? false;
@@ -30,7 +44,6 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>> exte
     this.name = this.constructor.name;
   }
 
-  
   public get handled(): boolean {
     return this._handled;
   }
@@ -47,7 +60,9 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>> exte
       handled: this.handled,
       stack: this.stack,
       cause:
-        this.cause instanceof HandleableError || this.cause instanceof PluginTypedHandleableError || this.cause instanceof CoreTypedHandleableError
+        this.cause instanceof HandleableError ||
+        this.cause instanceof PluginTypedHandleableError ||
+        this.cause instanceof CoreTypedHandleableError
           ? this.cause.toJSON()
           : this.cause?.message,
       ...(this.sourceData ? { sourceData: this.sourceData } : {}),

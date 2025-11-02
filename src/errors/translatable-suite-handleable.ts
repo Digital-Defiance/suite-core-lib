@@ -1,9 +1,12 @@
 import { IHandleable } from '@digitaldefiance/i18n-lib';
-import { TranslatableSuiteError } from './translatable-suite';
 import { SuiteCoreStringKey } from '../enumerations';
+import { TranslatableSuiteError } from './translatable-suite';
 
-export class TranslatableSuiteHandleableError extends TranslatableSuiteError implements IHandleable {
-  public readonly cause?: Error;
+export class TranslatableSuiteHandleableError
+  extends TranslatableSuiteError
+  implements IHandleable
+{
+  public override readonly cause?: Error;
   public readonly statusCode: number;
   public readonly sourceData?: unknown;
   private _handled = false;
@@ -12,7 +15,11 @@ export class TranslatableSuiteHandleableError extends TranslatableSuiteError imp
     messageKey: SuiteCoreStringKey,
     otherVars?: Record<string, string | number>,
     language?: string,
-    handleableOptions?: { statusCode?: number; cause?: Error; sourceData?: unknown },
+    handleableOptions?: {
+      statusCode?: number;
+      cause?: Error;
+      sourceData?: unknown;
+    }
   ) {
     super(messageKey, otherVars, language);
     this.statusCode = handleableOptions?.statusCode ?? 500;

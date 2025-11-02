@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.1.42: Upgrade to es2022/nx monorepo
+
+  - Upgrade to es2022/nx monorepo
+
 ## V1.1.41: Upgrade libs
 
   - Upgrade libs
