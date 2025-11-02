@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.1.44: Update i18n/ecies
+
+  - Update i18n/ecies
+
 ## V1.1.43: Re-release with js
 
   - Re-release with js
