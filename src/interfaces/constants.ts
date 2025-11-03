@@ -1,4 +1,3 @@
-import { IBackupCodeConstants } from './backup-code-consts';
 import { ICoreConstants } from './core-consts';
 
 export interface IConstants extends ICoreConstants {

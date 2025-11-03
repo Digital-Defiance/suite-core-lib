@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.3.20: Add strings, version bump
+
+  - Add a few strings, but mainly version bump/alignment
+
 ## V1.3.17: Upgrade i18n
 
   - Skip 1.3.16 for homogenization

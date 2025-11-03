@@ -370,6 +370,7 @@ export const SuiteCoreComponentStrings: Record<
       'Invalid or incorrect login challenge response',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: 'Invalid checksum constants',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Invalid email.',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: 'Invalid email token type.',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} is not a valid email address.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Missing email.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
@@ -940,6 +941,7 @@ export const SuiteCoreComponentStrings: Record<
       'Invalid or incorrect login challenge response',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: 'Invalid checksum constants',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Invalid email.',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: 'Invalid email token type.',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} is not a valid email address.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Missing email.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
@@ -1549,6 +1551,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Constantes de somme de contrôle invalides',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Email invalide.',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: 'Type de jeton d\'email invalide.',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} n\'est pas une adresse e-mail valide.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Email manquant.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
@@ -2181,6 +2184,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Ungültige Prüfsummen-Konstanten',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Ungültige E-Mail.',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: 'Ungültiger E-Mail-Token-Typ.',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} ist keine gültige E-Mail-Adresse.',
   [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'E-Mail fehlt.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
@@ -2814,6 +2818,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Constantes de suma de verificación no válidas',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Correo electrónico inválido.',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: 'Tipo de token de correo electrónico inválido.',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} no es una dirección de correo electrónico válida.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Email faltante.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
@@ -3371,6 +3376,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChallengeResponse]: '无效或不正确的登录挑战响应',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: '无效的校验和常量',
     [SuiteCoreStringKey.Error_InvalidEmail]: '无效的电子邮件。',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: '无效的电子邮件令牌类型。',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} 不是有效的电子邮件地址。',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: '缺少电子邮件。',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]: '电子邮件前后包含空格。',
@@ -3948,6 +3954,7 @@ export const SuiteCoreComponentStrings: Record<
       '無効または不正なログインチャレンジ応答',
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]: '無効なチェックサム定数',
     [SuiteCoreStringKey.Error_InvalidEmail]: '無効なメールアドレス。',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: '無効なメールトークンタイプ。',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} は有効なメールアドレスではありません。',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'メールアドレスがありません。',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:
@@ -4554,6 +4561,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidChecksumConstants]:
       'Недійсні константи контрольної суми',
     [SuiteCoreStringKey.Error_InvalidEmail]: 'Недійсна електронна адреса.',
+    [SuiteCoreStringKey.Error_InvalidEmailTokenType]: 'Недійсний тип токена електронної пошти.',
     [SuiteCoreStringKey.Error_InvalidEmailTemplate]: '{email} не є дійсною адресою електронної пошти.',
     [SuiteCoreStringKey.Error_InvalidEmailMissing]: 'Відсутня електронна адреса.',
     [SuiteCoreStringKey.Error_InvalidEmailWhitespace]:

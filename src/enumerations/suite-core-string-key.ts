@@ -263,6 +263,7 @@ export enum SuiteCoreStringKey {
   Error_InvalidEmailTemplate = 'Error_InvalidEmailTemplate',
   Error_InvalidEmailMissing = 'Error_InvalidEmailMissing',
   Error_InvalidEmailWhitespace = 'Error_InvalidEmailWhitespace',
+  Error_InvalidEmailTokenType = 'Error_InvalidEmailTokenType',
   Error_InvalidGuid = 'Error_InvalidGuid',
   Error_InvalidGuidTemplate = 'Error_InvalidGuidTemplate',
   Error_InvalidGuidUnknownBrandTemplate = 'Error_InvalidGuidUnknownBrandTemplate',
