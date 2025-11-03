@@ -326,6 +326,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V1.3.27: Upgrade i18n, ecies, version bump
+
+ - Upgrade i18n, ecies, version bump
+
 ## V1.3.20: Add strings, version bump
 
   - Add a few strings, but mainly version bump/alignment
