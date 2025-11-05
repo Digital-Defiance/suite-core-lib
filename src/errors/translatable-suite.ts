@@ -19,21 +19,12 @@ export class TranslatableSuiteError extends Error {
     const i18nEngine = getSuiteCoreI18nEngine();
     let translatedMessage: string;
     try {
-      // Try to find the string key in ExpressSuiteStringKey
-      const expressKey = Object.values(SuiteCoreStringKey).find(
-        key => key === string || string.includes(key)
+      translatedMessage = i18nEngine.translate(
+        SuiteCoreComponentId,
+        string,
+        otherVars,
+        language as any
       );
-      if (expressKey) {
-        translatedMessage = i18nEngine.translate(
-          SuiteCoreComponentId,
-          expressKey as SuiteCoreStringKey,
-          otherVars,
-          language as any
-        );
-      } else {
-        // Fallback to raw string
-        translatedMessage = string;
-      }
     } catch (error) {
       translatedMessage = string;
     }

@@ -247,7 +247,76 @@ The **@digitaldefiance/node-ecies** and **@digitaldefiance/node-express-suite** 
 - Mobile and desktop SDKs for React Native, Flutter, Electron, and Tauri
 - DevOps and deployment tooling including Docker, Kubernetes, and CI/CD pipelines
 
-## 🧪 Testing & Quality
+## 🆕 What's New in v2.1
+
+### New Modules
+
+#### Builders - Fluent APIs
+```typescript
+import { UserBuilder, RoleBuilder } from '@digitaldefiance/suite-core-lib';
+
+const user = UserBuilder.create()
+  .withUsername('admin')
+  .withEmail('admin@example.com')
+  .withEmailVerified(true)
+  .build();
+
+const role = RoleBuilder.create()
+  .withName(Role.Admin)
+  .asAdmin()
+  .build();
+```
+
+#### Core - Result Pattern & Type Exports
+```typescript
+import { Result, success, failure, isSuccess } from '@digitaldefiance/suite-core-lib';
+
+function processUser(id: string): Result<User, UserNotFoundError> {
+  const user = findUser(id);
+  return user ? success(user) : failure(new UserNotFoundError(id));
+}
+
+if (isSuccess(result)) {
+  console.log('User:', result.data);
+} else {
+  console.error('Error:', result.error);
+}
+```
+
+#### Lib - Validators & Formatters
+```typescript
+import { 
+  isValidUsername, 
+  isValidEmail, 
+  isValidPassword,
+  createValidators,
+  createConstants 
+} from '@digitaldefiance/suite-core-lib';
+
+// Use default validators with built-in constants
+if (!isValidUsername('test123')) {
+  throw new InvalidUsernameError('test123');
+}
+
+// Create validators with custom constants
+const myConstants = createConstants('myapp.com', {
+  UsernameRegex: /^[a-z0-9_]{4,20}$/,
+  UsernameMinLength: 4,
+  UsernameMaxLength: 20,
+});
+
+const validators = createValidators(myConstants);
+if (!validators.isValidUsername('user_name')) {
+  throw new Error('Invalid username');
+}
+```
+
+### Improved Architecture
+
+- **70% Code Reduction**: `TranslatableSuiteHandleableError` now extends i18n-lib base classes
+- **Organized Structure**: New `builders/`, `core/`, `lib/` folders
+- **Custom Constants**: Validators accept custom `IConstants` for flexibility
+- **Better Type Safety**: Enhanced TypeScript types throughout
 
 ## 🛠️ Runtime Configuration Registry
 
@@ -283,14 +352,23 @@ All constants are immutable and accessible via the registry/config API. See `src
 # Run the comprehensive test suite
 yarn test
 
-# 104 tests covering:
+# 409 tests covering:
 # ✅ Type safety and interface validation
 # ✅ Cryptographic security functions  
 # ✅ Multi-language localization
 # ✅ Error handling and edge cases
 # ✅ Integration scenarios
-# ✅ Performance benchmarks
+# ✅ Builders and fluent APIs
+# ✅ Result pattern and core utilities
+# ✅ Validators with custom constants
 ```
+
+### Coverage Metrics (v2.1.3)
+
+- **Statements**: 98.47%
+- **Branches**: 94.56%
+- **Functions**: 88.09%
+- **Lines**: 98.63%
 
 ## 🤝 Contributing
 
@@ -325,6 +403,42 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 **Building user management primitives?** Start with `@digitaldefiance/suite-core-lib` for type-safe, secure, and internationalized user system foundations. For complete frameworks, check out the **node-ecies** and **node-express-suite** projects! 🚀
 
 ## ChangeLog
+
+## V2.1.3: New Modules & Architecture Improvements
+
+### New Features
+ - **Builders Module**: UserBuilder, RoleBuilder with fluent APIs
+ - **Core Module**: Result<T,E> pattern, type exports, error exports
+ - **Lib Module**: Validators, formatters, custom constants support
+ - **Custom Constants**: `createValidators(constants)` for flexible validation rules
+
+### Architecture Improvements
+ - TranslatableSuiteHandleableError extends i18n-lib base (70% code reduction)
+ - Organized folder structure: builders/, core/, lib/
+ - Enhanced type safety throughout
+
+### Quality Improvements
+ - 409 tests (was 313)
+ - 94.56% branch coverage (was 59.3%)
+ - 98.47% statement coverage (was 92.86%)
+ - 88.09% function coverage (was 67.53%)
+
+### Documentation
+ - Complete migration guide in [MIGRATION_V2.md](./docs/MIGRATION_V2.md)
+ - Comprehensive examples in [V2_IMPROVEMENTS_COMPLETE.md](./docs/V2_IMPROVEMENTS_COMPLETE.md)
+ - Final metrics in [V2_FINAL_SUMMARY.md](./docs/V2_FINAL_SUMMARY.md)
+
+### Breaking Changes
+ - **None** - 100% backwards compatible
+
+## V2.0.0: Major Version - Dependency Upgrades
+
+ - Upgraded all @digitaldefiance dependencies to v2.0
+   - @digitaldefiance/ecies-lib: 2.0.1
+   - @digitaldefiance/i18n-lib: 2.0.0
+   - @digitaldefiance/node-ecies-lib: 2.0.0
+ - No breaking API changes
+ - See [MIGRATION_V2.md](./docs/MIGRATION_V2.md) for upgrade guide
 
 ## V1.3.27: Upgrade i18n, ecies, version bump
 

@@ -5,8 +5,7 @@ import {
   HandleableError,
   HandleableErrorOptions,
   IHandleable,
-  PluginI18nEngine,
-  PluginTypedHandleableError,
+  TypedHandleableError,
 } from '@digitaldefiance/i18n-lib';
 
 export class CoreTypedHandleableError<TEnum extends Record<string, string>>
@@ -21,13 +20,12 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>>
   constructor(
     type: TEnum[keyof TEnum],
     reasonMap: CompleteReasonMap<TEnum, CoreStringKey>,
-    engine: PluginI18nEngine<string>,
     source: Error,
     options?: HandleableErrorOptions,
     language?: string,
     otherVars?: Record<string, string | number>
   ) {
-    super(engine, type, reasonMap, language, otherVars);
+    super(type, reasonMap, language, otherVars);
     this.cause = source;
     this.statusCode = options?.statusCode ?? 500;
     this._handled = options?.handled ?? false;
@@ -61,7 +59,7 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>>
       stack: this.stack,
       cause:
         this.cause instanceof HandleableError ||
-        this.cause instanceof PluginTypedHandleableError ||
+        this.cause instanceof TypedHandleableError ||
         this.cause instanceof CoreTypedHandleableError
           ? this.cause.toJSON()
           : this.cause?.message,

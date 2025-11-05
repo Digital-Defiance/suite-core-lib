@@ -1,12 +1,16 @@
 {
   "name": "@digitaldefiance/suite-core-lib",
-  "version": "1.3.27",
+  "version": "2.1.3",
   "description": "Generic user system and document system common core for applications",
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "scripts": {
     "build": "npx nx build digitaldefiance-suite-core-lib",
+    "build:stream": "npx nx build --outputStyle=stream digitaldefiance-suite-core-lib",
+    "build:logged": "npx nx build --outputStyle=stream digitaldefiance-suite-core-lib 2>&1 | ansifilter -o build.log",
     "test": "npx nx test digitaldefiance-suite-core-lib",
+    "test:stream": "npx nx test --outputStyle=stream digitaldefiance-suite-core-lib",
+    "test:logged": "npx nx test --outputStyle=stream digitaldefiance-suite-core-lib 2>&1 | ansifilter -o test.log",
     "lint": "npx nx lint digitaldefiance-suite-core-lib",
     "lint:fix": "npx nx lint digitaldefiance-suite-core-lib --fix",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
@@ -17,9 +21,8 @@
     "publish:public": "npm publish --access public"
   },
   "dependencies": {
-    "@digitaldefiance/ecies-lib": "1.3.27",
-    "@digitaldefiance/i18n-lib": "1.3.27",
-    "@digitaldefiance/node-ecies-lib": "1.3.27"
+    "@digitaldefiance/ecies-lib": "2.1.3",
+    "@digitaldefiance/i18n-lib": "2.1.1"
   },
   "files": [
     "src",

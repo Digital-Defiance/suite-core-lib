@@ -1,16 +1,8 @@
-import { IHandleable } from '@digitaldefiance/i18n-lib';
+import { TranslatableHandleableGenericError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
-import { TranslatableSuiteError } from './translatable-suite';
+import { SuiteCoreComponentId } from '../i18n-setup';
 
-export class TranslatableSuiteHandleableError
-  extends TranslatableSuiteError
-  implements IHandleable
-{
-  public override readonly cause?: Error;
-  public readonly statusCode: number;
-  public readonly sourceData?: unknown;
-  private _handled = false;
-
+export class TranslatableSuiteHandleableError extends TranslatableHandleableGenericError<SuiteCoreStringKey> {
   constructor(
     messageKey: SuiteCoreStringKey,
     otherVars?: Record<string, string | number>,
@@ -21,23 +13,15 @@ export class TranslatableSuiteHandleableError
       sourceData?: unknown;
     }
   ) {
-    super(messageKey, otherVars, language);
-    this.statusCode = handleableOptions?.statusCode ?? 500;
-    this.cause = handleableOptions?.cause;
-    this.sourceData = handleableOptions?.sourceData;
-  }
-  public get handled(): boolean {
-    return this._handled;
-  }
-  public set handled(value: boolean) {
-    this._handled = value;
-  }
-  toJSON(): Record<string, unknown> {
-    return {
-      statusCode: this.statusCode,
-      message: this.message,
-      cause: this.cause,
-      sourceData: this.sourceData,
-    };
+    super(
+      SuiteCoreComponentId,
+      messageKey,
+      otherVars,
+      language,
+      undefined, // metadata
+      'default', // instanceKey
+      handleableOptions
+    );
+    this.name = 'TranslatableSuiteHandleableError';
   }
 }

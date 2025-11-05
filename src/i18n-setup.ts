@@ -1,30 +1,20 @@
 import {
-  ComponentDefinition,
-  ComponentRegistration,
+  I18nEngine,
+  I18nBuilder,
   LanguageCodes,
-  createCoreI18nEngine,
-  PluginI18nEngine,
-  LanguageContextSpace,
-  GlobalActiveContext,
-  CoreLanguageCode,
-  IActiveContext,
+  ComponentConfig,
+  ComponentDefinition,
   createDefaultLanguages,
 } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
 
-export const SuiteCoreI18nEngineKey =
-  'DigitalDefiance.SuiteCore.I18nEngine' as const;
+export const SuiteCoreI18nEngineKey = 'default' as const;
 export const SuiteCoreComponentId = 'suite-core-lib' as const;
-export const DefaultLanguageCode = LanguageCodes.EN_US;
-
-// Define the Suite Core component
 export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {
   id: SuiteCoreComponentId,
   name: 'Suite Core Library Component',
   stringKeys: Object.values(SuiteCoreStringKey),
 };
-
-// Create complete component strings for all supported languages
 export const SuiteCoreComponentStrings: Record<
   string,
   Record<SuiteCoreStringKey, string>
@@ -103,6 +93,17 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Missing required environment variable: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'Environment variable {key} is empty',
     [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Recursive error handling detected',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET must be a 64 character hex string',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY must be a 64 character hex string',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: 'ADMIN_MNEMONIC must be a valid mnemonic phrase',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'MEMBER_MNEMONIC must be a valid mnemonic phrase',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS must be greater than 0',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'Environment is required',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'API router factory is required',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'Schema map factory is required',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'Database init function is required',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: 'Init result hash function is required',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'Service {key} not registered',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: 'Value is required',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: 'Value must be one of the available options',
 
@@ -279,6 +280,8 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'Verification email resent successfully',
     [SuiteCoreStringKey.EmailVerification_Success]: 'Email verified successfully',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'System user must be of MemberType.System',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Invalid CSP or Helmet options provided.',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Error producing challenge',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'Direct login token has already been used',
@@ -647,6 +650,19 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]: 'Invalid assets path: escapes base directory',
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Missing required environment variable: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'Environment variable {key} is empty',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'System user must be of MemberType.System',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET must be a 64 character hex string',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY must be a 64 character hex string',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: 'ADMIN_MNEMONIC must be a valid mnemonic phrase',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'MEMBER_MNEMONIC must be a valid mnemonic phrase',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS must be greater than 0',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Invalid CSP or Helmet options provided.',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'Environment is required',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'API router factory is required',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'Schema map factory is required',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'Database init function is required',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: 'Init result hash function is required',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'Service {key} not registered',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: 'Value is required',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: 'Value must be one of the available options',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'An unexpected error occurred',
@@ -1233,6 +1249,19 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Variable d\'environnement requise manquante : {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'La variable d\'environnement {key} est vide',
     [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Gestion d\'erreur récursive détectée',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'L\'utilisateur système doit être de MemberType.System',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET doit être une chaîne hexadécimale de 64 caractères',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY doit être une chaîne hexadécimale de 64 caractères',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: 'La phrase mnémonique d\'administrateur doit être une phrase mnémonique valide',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'La phrase mnémonique de membre doit être une phrase mnémonique valide',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS doit être supérieur à 0',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Options CSP ou Helmet invalides fournies',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'L\'environnement est requis',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'La fabrique de routeur API est requise',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'La fabrique de carte de schéma est requise',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'La fonction d\'initialisation de la base de données est requise',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: 'La fonction de hachage du résultat d\'initialisation est requise',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'Service {key} non enregistré',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: 'La valeur est requise',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: 'La valeur doit être l\'une des options disponibles',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Une erreur inattendue s\'est produite',
@@ -1866,6 +1895,19 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Erforderliche Umgebungsvariable fehlt: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'Umgebungsvariable {key} ist leer',
     [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Rekursive Fehlerbehandlung erkannt',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'Systembenutzer muss vom MemberType.System sein',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET muss eine hexadezimale Zeichenkette mit 64 Zeichen sein',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY muss eine hexadezimale Zeichenkette mit 64 Zeichen sein',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: 'ADMIN_MNEMONIC muss eine gültige BIP39-Phrase sein',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'MEMBER_MNEMONIC muss eine gültige BIP39-Phrase sein',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS muss größer als 0 sein',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Ungültige CSP- oder Helmet-Optionen bereitgestellt',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'Umgebung ist erforderlich',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'API-Router-Factory ist erforderlich',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'Schema-Map-Factory ist erforderlich',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'Datenbank-Initialisierungsfunktion ist erforderlich',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: 'Init-Ergebnis-Hash-Funktion ist erforderlich',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'Service {key} nicht registriert',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: 'Wert ist erforderlich',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: 'Wert muss eine der verfügbaren Optionen sein',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ein unerwarteter Fehler ist aufgetreten',
@@ -2499,6 +2541,19 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: 'Falta la variable de entorno requerida: {key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: 'La variable de entorno {key} está vacía',
     [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Manejo de errores recursivo detectado',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'El usuario del sistema debe ser de tipo MemberType.System',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET debe ser una cadena hexadecimal de 64 caracteres',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY debe ser una cadena hexadecimal de 64 caracteres',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: 'La frase mnemotécnica del administrador debe ser una frase mnemotécnica válida',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'La frase mnemotécnica del miembro debe ser una frase mnemotécnica válida',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS debe ser mayor que 0',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'El entorno es requerido',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'La fábrica de enrutador API es requerida',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'La fábrica de mapa de esquema es requerida',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'La función de inicialización de base de datos es requerida',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: 'La función de hash de resultado de inicialización es requerida',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Opciones CSP o Helmet inválidas proporcionadas',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'Servicio {key} no registrado',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: 'Se requiere un valor',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: 'El valor debe ser una de las opciones disponibles',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ocurrió un error inesperado',
@@ -2523,7 +2578,6 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_InvalidModelKeyTemplate]: 'Clave de modelo inválida: {modelKey}',
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Modelo no registrado: {modelName}',
     [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Error al crear el rol {NAME}',
-
     [SuiteCoreStringKey.ValidationError]: 'Error de Validación',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Faltan datos validados',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Faltan datos validados para el campo: {field}',
@@ -3124,6 +3178,19 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]: '缺少必需的环境变量：{key}',
     [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]: '环境变量 {key} 为空',
     [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: '检测到递归错误处理',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: '系统用户必须是 MemberType.System 类型',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET 必须是 64 字符的十六进制字符串',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY 必须是 64 字符的十六进制字符串',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: '管理员助记词必须是有效的助记词短语',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'MEMBER_MNEMONIC 必须是有效的助记词短语',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS 必须大于 0',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: '提供的 CSP 或 Helmet 选项无效',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: '环境是必需的',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'API 路由器工厂是必需的',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: '架构映射工厂是必需的',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: '数据库初始化函数是必需的',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: '初始化结果哈希函数是必需的',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: '服务 {key} 未注册',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: '值是必需的',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: '值必须是可用选项之一',
     [SuiteCoreStringKey.Common_UnexpectedError]: '发生了意外错误',
@@ -3642,6 +3709,19 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_NoActiveResponse]: 'アクティブなレスポンスがありません',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: '子ロールはシステムロールにできません',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: '子ロールは管理者ロールにできません',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'システムユーザーは MemberType.System である必要があります',
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET は64文字の16進数文字列である必要があります',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY は64文字の16進数文字列である必要があります',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: '管理者のMNEMONIC は有効なフレーズである必要があります',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'MEMBER_MNEMONIC は有効な助記詞フレーズである必要があります',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS は 0 より大きい値である必要があります',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: '無効な CSP または Helmet オプションが提供されました',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: '環境が必要です',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'APIルーターファクトリが必要です',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'スキーママップファクトリが必要です',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'データベース初期化関数が必要です',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: '初期化結果ハッシュ関数が必要です',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'サービス {key} は登録されていません',
     [SuiteCoreStringKey.Error_EngineAlreadySet]:
       'I18nエンジンは既に設定されています',
     [SuiteCoreStringKey.Error_EngineNotSet]:
@@ -4248,6 +4328,11 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'Дочірня роль не може бути системною роллю',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'Дочірня роль не може бути роллю адміністратора',
     [SuiteCoreStringKey.Error_RecursiveErrorHandlingDetected]: 'Виявлено рекурсивну обробку помилок',
+    [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'Системний користувач повинен бути типу MemberType.System',
+    [SuiteCoreStringKey.Error_MnemonicEncryptionKeyMustBe64CharHexString]: 'MNEMONIC_ENCRYPTION_KEY повинен бути шістнадцятковим рядком з 64 символів',
+    [SuiteCoreStringKey.Error_AdminMnemonicMustBeValidMnemonicPhrase]: 'ADMIN_MNEMONIC повинен бути дійсною мнемонічною фразою',
+    [SuiteCoreStringKey.Error_MemberMnemonicMustBeValidMnemonicPhrase]: 'MEMBER_MNEMONIC повинен бути дійсною мнемонічною фразою',
+    [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Надано недійсні параметри CSP або Helmet',
     [SuiteCoreStringKey.Validation_ValueIsRequired]: 'Значення є обов\'язковим',
     [SuiteCoreStringKey.Validation_ValueMustBeOneOfTheAvailableOptions]: 'Значення повинно бути одним з доступних варіантів',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Сталася неочікувана помилка',
@@ -4272,7 +4357,14 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_ModelNotRegisteredTemplate]: 'Модель не зареєстрована: {modelName}',
     [SuiteCoreStringKey.Error_FailedToCreateRoleTemplate]: 'Не вдалося створити роль {NAME}',
     [SuiteCoreStringKey.Error_ValidationFunctionNotRegisteredInAllowlist]: 'Функцію валідації не зареєстровано в allowlist',
-
+    [SuiteCoreStringKey.Error_MnemonicHmacSecretMustBe64CharHexString]: 'MNEMONIC_HMAC_SECRET повинен бути шістнадцятковим рядком з 64 символів',
+    [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]: 'PBKDF2_ITERATIONS повинен бути більше 0',
+    [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'Середовище є обов\'язковим',
+    [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]: 'Фабрика API-маршрутизатора є обов\'язковою',
+    [SuiteCoreStringKey.Error_SchemaMapFactoryIsRequired]: 'Фабрика карти схеми є обов\'язковою',
+    [SuiteCoreStringKey.Error_DatabaseInitFunctionIsRequired]: 'Функція ініціалізації бази даних є обов\'язковою',
+    [SuiteCoreStringKey.Error_InitResultHashFunctionIsRequired]: 'Функція хешування результату ініціалізації є обов\'язковою',
+    [SuiteCoreStringKey.Error_ServiceIsNotRegisteredTemplate]: 'Сервіс {key} не зареєстровано',
     [SuiteCoreStringKey.ValidationError]: 'Помилка Валідації',
     [SuiteCoreStringKey.Validation_MissingValidatedData]: 'Відсутні валідовані дані',
     [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]: 'Відсутні валідовані дані для поля: {field}',
@@ -4805,143 +4897,52 @@ export const SuiteCoreComponentStrings: Record<
   },
 };
 
-// Create the component registration
-export const SuiteCoreComponentRegistration = {
-  component: SuiteCoreComponent,
+// Suite Core component config
+const SuiteCoreComponentConfig: ComponentConfig = {
+  id: SuiteCoreComponentId,
   strings: SuiteCoreComponentStrings,
-  enumName: 'SuiteCoreStringKey',
-  enumObject: SuiteCoreStringKey,
-  aliases: ['suite-core', 'suiteCore'],
-} as ComponentRegistration<SuiteCoreStringKey, string>;
+};
 
+let _engine: I18nEngine | undefined;
 
-/**
- * Create a pre-configured I18n engine with core components
- * Returns engine with string type - use registry for language validation
- */
-export function createSuiteCoreI18nEngine(
-  instanceKey: string = SuiteCoreI18nEngineKey,
-): PluginI18nEngine<CoreLanguageCode> {
-  const languages = createDefaultLanguages();
-  const engine = PluginI18nEngine.createInstance<CoreLanguageCode>(
-    instanceKey,
-    languages,
-  );
-  engine.registerComponent(SuiteCoreComponentRegistration);
-  return engine;
-}
-
-/**
- * Initialize or get the User System i18n engine instance
- */
-export function initSuiteCoreI18nEngine(
-  instanceKey?: string,
-): PluginI18nEngine<CoreLanguageCode> {
-  const key = instanceKey || SuiteCoreI18nEngineKey;
-
-  // Check if instance already exists
-  let engine: PluginI18nEngine<CoreLanguageCode>;
-
-  if (PluginI18nEngine.hasInstance(key)) {
-    engine = PluginI18nEngine.getInstance<CoreLanguageCode>(key);
-  } else {
-    engine = createSuiteCoreI18nEngine(key);
+export function getSuiteCoreI18nEngine(): I18nEngine {
+  if (!_engine || !I18nEngine.hasInstance(SuiteCoreI18nEngineKey)) {
+    _engine = I18nBuilder.create()
+      .withLanguages(createDefaultLanguages())
+      .withDefaultLanguage(LanguageCodes.EN_US)
+      .withInstanceKey(SuiteCoreI18nEngineKey)
+      .build();
+    
+    _engine.register(SuiteCoreComponentConfig);
   }
-
-  return engine;
+  return _engine;
 }
 
-// Singleton instance management
-let _SuiteCoreI18nEngine: PluginI18nEngine<CoreLanguageCode> | null = null;
-
-/**
- * Get the User System i18n engine instance (singleton)
- */
-export function getSuiteCoreI18nEngine(): PluginI18nEngine<CoreLanguageCode> {
-  if (!_SuiteCoreI18nEngine) {
-    _SuiteCoreI18nEngine = initSuiteCoreI18nEngine();
-  }
-  return _SuiteCoreI18nEngine;
-}
-
-/**
- * Reset the User System i18n engine instance
- */
-export function resetSuiteCoreI18nEngine(): void {
-  if (_SuiteCoreI18nEngine) {
-    PluginI18nEngine.removeInstance(SuiteCoreI18nEngineKey);
-    _SuiteCoreI18nEngine = null;
-  }
-}
-
-/**
- * Helper function to get user system translations
- */
 export function getSuiteCoreTranslation(
   key: SuiteCoreStringKey,
-  variables?: Record<string, string | number>,
-  language?: CoreLanguageCode,
+  variables?: Record<string, any>,
+  language?: string,
 ): string {
-  const engine = getSuiteCoreI18nEngine();
-  return engine.translate(SuiteCoreComponentId, key, variables, language);
+  return getSuiteCoreI18nEngine().translate(SuiteCoreComponentId, key, variables, language);
 }
 
-export function contextualSuiteCoreTranslation<TLanguage extends CoreLanguageCode = CoreLanguageCode, TLanguageContextSpace extends LanguageContextSpace = LanguageContextSpace>(
-  contextSpace: TLanguageContextSpace,
-  key: SuiteCoreStringKey,
-  variables?: Record<string, string | number>,
-  language?: TLanguage,
-): string {
-  const engine = getSuiteCoreI18nEngine();
-  const globalContext = GlobalActiveContext.getInstance<TLanguage, IActiveContext<TLanguage>>();
-  // fetch current context
-  const engineContext = engine.getContext();
-  const currentGlobalSpace = globalContext.getLanguageContextSpace();
-  const currentEngineSpace = engineContext.currentContext;
-  // set new context
-  globalContext.setLanguageContextSpace(contextSpace);
-  engineContext.currentContext = contextSpace;
-  // translate
-  const translated = engine.translate(SuiteCoreComponentId, key, variables, language);
-  // restore context
-  globalContext.setLanguageContextSpace(currentGlobalSpace);
-  engineContext.currentContext = currentEngineSpace;
-  return translated;
+export function resetSuiteCoreI18nEngine(): void {
+  I18nEngine.removeInstance(SuiteCoreI18nEngineKey);
+  _engine = undefined;
 }
 
-export function getSuiteCoreGlobalActiveContext<TCoreLanguageCode extends CoreLanguageCode = CoreLanguageCode>(): GlobalActiveContext<TCoreLanguageCode, IActiveContext<TCoreLanguageCode>> {
-  return GlobalActiveContext.getInstance<TCoreLanguageCode, IActiveContext<TCoreLanguageCode>>();
+export function initSuiteCoreI18nEngine(): I18nEngine {
+  return getSuiteCoreI18nEngine();
 }
 
-
-/**
- * Safe translation helper that provides fallback
- */
 export function safeGetSuiteCoreTranslation(
   key: SuiteCoreStringKey,
-  variables?: Record<string, string | number>,
-  language?: CoreLanguageCode,
+  variables?: Record<string, any>,
+  language?: string,
 ): string {
-  const engine = getSuiteCoreI18nEngine();
-  return engine.safeTranslate(SuiteCoreComponentId, key, variables, language);
-}
-
-/**
- * Register the User System component with an existing i18n engine
- */
-export function registerSuiteCoreComponent(
-  engine: PluginI18nEngine<string>,
-): void {
-  const validationResult = engine.registerComponent(
-    SuiteCoreComponentRegistration,
-  );
-
-  if (!validationResult.isValid) {
-    console.warn(
-      'User System component registration incomplete:',
-      validationResult.missingKeys,
-    );
+  try {
+    return getSuiteCoreTranslation(key, variables, language);
+  } catch (error) {
+    return key;
   }
 }
-
-

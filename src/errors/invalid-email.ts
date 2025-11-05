@@ -1,10 +1,10 @@
 import { InvalidEmailErrorType } from '@digitaldefiance/ecies-lib';
-import { CoreLanguageCode, PluginTypedError } from '@digitaldefiance/i18n-lib';
+import { PluginTypedError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 
-export class InvalidEmailError extends PluginTypedError<typeof InvalidEmailErrorType, SuiteCoreStringKey, CoreLanguageCode> {
-  constructor(type: InvalidEmailErrorType, language?: CoreLanguageCode) {
+export class InvalidEmailError extends PluginTypedError<typeof InvalidEmailErrorType, SuiteCoreStringKey> {
+  constructor(type: InvalidEmailErrorType, language?: string) {
     const engine = getSuiteCoreI18nEngine();
     const reasonMap: Record<InvalidEmailErrorType, SuiteCoreStringKey> = {
       [InvalidEmailErrorType.Invalid]: SuiteCoreStringKey.Error_InvalidEmail,
@@ -12,7 +12,7 @@ export class InvalidEmailError extends PluginTypedError<typeof InvalidEmailError
       [InvalidEmailErrorType.Whitespace]:
         SuiteCoreStringKey.Error_InvalidEmailWhitespace,
     };
-    super(engine, SuiteCoreComponentId, type, reasonMap, language, {
+    super(SuiteCoreComponentId, type, reasonMap, language, {
       statusCode: 422,
     });
     this.name = 'InvalidEmailError';

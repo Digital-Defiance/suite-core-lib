@@ -35,4 +35,21 @@ describe('Suite Core Runtime Configuration Registry', () => {
     expect(config.AdministratorEmail).toBe('root@custom.org');
     expect(config.BcryptRounds).toBe(20);
   });
+
+  it('should handle undefined overrides', () => {
+    const config = createSuiteCoreRuntimeConfiguration('test.com', undefined);
+    expect(config.AdministratorEmail).toBe('admin@test.com');
+  });
+
+  it('should clone RegExp correctly', () => {
+    const config = createSuiteCoreRuntimeConfiguration('test.com');
+    expect(config.UsernameRegex).toBeInstanceOf(RegExp);
+    expect(config.UsernameRegex.source).toBe(/^[A-Za-z0-9]{3,30}$/.source);
+  });
+
+  it('should register with default key when no key provided', () => {
+    const config = registerSuiteCoreRuntimeConfiguration();
+    expect(config).toBeDefined();
+    expect(config.AdministratorEmail).toBe('admin@localhost');
+  });
 });
