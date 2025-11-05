@@ -404,6 +404,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.11 rename getSuiteCoreComponentConfig() to createSuiteCoreComponentConfig() for homogeneity
+
+## V2.1.10 Convergence bump
+
 ## V2.1.7: export getSuiteCoreComponentConfig()
 
 ## V2.1.6: Minor version bump from i18n/ecies

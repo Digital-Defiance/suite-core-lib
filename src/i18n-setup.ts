@@ -4898,7 +4898,7 @@ export const SuiteCoreComponentStrings: Record<
 };
 
 // Suite Core component config
-export function getSuiteCoreComponentConfig(): ComponentConfig {
+export function createSuiteCoreComponentConfig(): ComponentConfig {
   const SuiteCoreComponentConfig: ComponentConfig = {
     id: SuiteCoreComponentId,
     strings: SuiteCoreComponentStrings,
@@ -4917,7 +4917,7 @@ export function getSuiteCoreI18nEngine(): I18nEngine {
       .withInstanceKey(SuiteCoreI18nEngineKey)
       .build();
     
-    _engine.register(getSuiteCoreComponentConfig());
+    _engine.register(createSuiteCoreComponentConfig());
   }
   return _engine;
 }
