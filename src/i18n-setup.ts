@@ -4898,10 +4898,13 @@ export const SuiteCoreComponentStrings: Record<
 };
 
 // Suite Core component config
-const SuiteCoreComponentConfig: ComponentConfig = {
-  id: SuiteCoreComponentId,
-  strings: SuiteCoreComponentStrings,
-};
+export function getSuiteCoreComponentConfig(): ComponentConfig {
+  const SuiteCoreComponentConfig: ComponentConfig = {
+    id: SuiteCoreComponentId,
+    strings: SuiteCoreComponentStrings,
+  };
+  return SuiteCoreComponentConfig;
+}
 
 let _engine: I18nEngine | undefined;
 
@@ -4913,7 +4916,7 @@ export function getSuiteCoreI18nEngine(): I18nEngine {
       .withInstanceKey(SuiteCoreI18nEngineKey)
       .build();
     
-    _engine.register(SuiteCoreComponentConfig);
+    _engine.register(getSuiteCoreComponentConfig());
   }
   return _engine;
 }
