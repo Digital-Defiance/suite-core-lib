@@ -4902,6 +4902,7 @@ export function getSuiteCoreComponentConfig(): ComponentConfig {
   const SuiteCoreComponentConfig: ComponentConfig = {
     id: SuiteCoreComponentId,
     strings: SuiteCoreComponentStrings,
+    aliases: ['SuiteCoreStringKey', 'suite-core'],
   };
   return SuiteCoreComponentConfig;
 }
