@@ -404,6 +404,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.12: minor i18n upgrade
+
 ## V2.1.11 rename getSuiteCoreComponentConfig() to createSuiteCoreComponentConfig() for homogeneity
 
 ## V2.1.10 Convergence bump
