@@ -404,6 +404,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.5: Minor version bump from i18n/ecies
+
 ## V2.1.4: Minor version bump from i18n/ecies
 
 ## V2.1.3: New Modules & Architecture Improvements
