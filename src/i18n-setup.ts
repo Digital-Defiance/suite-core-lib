@@ -4911,13 +4911,13 @@ let _engine: I18nEngine | undefined;
 
 export function getSuiteCoreI18nEngine(): I18nEngine {
   if (!_engine || !I18nEngine.hasInstance(SuiteCoreI18nEngineKey)) {
-    _engine = I18nBuilder.create()
-      .withLanguages(createDefaultLanguages())
-      .withDefaultLanguage(LanguageCodes.EN_US)
-      .withInstanceKey(SuiteCoreI18nEngineKey)
-      .build();
+    _engine = I18nEngine.registerIfNotExists(
+      SuiteCoreI18nEngineKey,
+      createDefaultLanguages(),
+      { defaultLanguage: LanguageCodes.EN_US }
+    );
     
-    _engine.register(createSuiteCoreComponentConfig());
+    _engine.registerIfNotExists(createSuiteCoreComponentConfig());
   }
   return _engine;
 }
