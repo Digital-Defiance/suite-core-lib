@@ -9,7 +9,7 @@ import {
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
 
 export const SuiteCoreI18nEngineKey = 'default' as const;
-export const SuiteCoreComponentId = 'suite-core-lib' as const;
+export const SuiteCoreComponentId = 'suite-core' as const;
 export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {
   id: SuiteCoreComponentId,
   name: 'Suite Core Library Component',
@@ -4918,7 +4918,7 @@ export function createSuiteCoreComponentConfig(): ComponentConfig {
   const SuiteCoreComponentConfig: ComponentConfig = {
     id: SuiteCoreComponentId,
     strings: SuiteCoreComponentStrings,
-    aliases: ['SuiteCoreStringKey', 'suite-core'],
+    aliases: ['SuiteCoreStringKey'],
   };
   return SuiteCoreComponentConfig;
 }

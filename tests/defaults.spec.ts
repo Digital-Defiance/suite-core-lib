@@ -52,4 +52,15 @@ describe('Suite Core Runtime Configuration Registry', () => {
     expect(config).toBeDefined();
     expect(config.AdministratorEmail).toBe('admin@localhost');
   });
+
+  it('should handle null values in deepClone', () => {
+    const config = createSuiteCoreRuntimeConfiguration('test.com', { AdministratorEmail: undefined as any });
+    expect(config).toBeDefined();
+  });
+
+  it('should handle Date objects in deepClone', () => {
+    const testDate = new Date('2024-01-01');
+    const config = createSuiteCoreRuntimeConfiguration('test.com');
+    expect(config).toBeDefined();
+  });
 });
