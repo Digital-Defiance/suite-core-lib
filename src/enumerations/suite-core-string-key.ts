@@ -132,6 +132,8 @@ export enum SuiteCoreStringKey {
   Common_Cancel = 'common_cancel',
   Common_ChangePassword = 'common_changePassword',
   Common_ChangingPassword = 'common_changingPassword',
+  Common_ClearMnemonic = 'common_clearMnemonic',
+  Common_ClearWallet = 'common_clearWallet',
   Common_Confirm = 'common_confirm',
   Common_ConfirmNewPassword = 'common_confirmNewPassword',
   Common_Connected = 'common_connected',
