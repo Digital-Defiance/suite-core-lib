@@ -404,6 +404,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.23: update ecies
+
 ## V2.1.22: add strings
 
 ## V2.1.16: upgrade i18n
