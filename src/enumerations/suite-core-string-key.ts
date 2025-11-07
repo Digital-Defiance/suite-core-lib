@@ -371,6 +371,8 @@ export enum SuiteCoreStringKey {
   PasswordReset_AlreadySent = 'passwordReset_alreadySent',
   PasswordReset_EmailNotVerified = 'passwordReset_emailNotVerified',
   PasswordReset_Success = 'passwordReset_success',
+  PasswordReset_Title = 'passwordReset_title',
+  PasswordReset_Button = 'passwordReset_button',
   ProceedToLogin = 'proceedToLogin',
   Register_RegisterButton = 'register_RegisterButton',
   RegisterButton = 'registerButton',

@@ -511,6 +511,8 @@ export const SuiteCoreComponentStrings: Record<
       'Please verify your email address before resetting your password.',
     [SuiteCoreStringKey.PasswordReset_Success]:
       'If an account with that email exists, a password reset link has been sent.',
+    [SuiteCoreStringKey.PasswordReset_Title]: 'Password Reset',
+    [SuiteCoreStringKey.PasswordReset_Button]: 'Reset Password',
     [SuiteCoreStringKey.ProceedToLogin]: 'Proceed to login',
     [SuiteCoreStringKey.Register_RegisterButton]: 'Get Started',
     [SuiteCoreStringKey.RegisterButton]: 'Register',
@@ -1098,6 +1100,8 @@ export const SuiteCoreComponentStrings: Record<
       'Please verify your email address before resetting your password.',
     [SuiteCoreStringKey.PasswordReset_Success]:
       'If an account with that email exists, a password reset link has been sent.',
+    [SuiteCoreStringKey.PasswordReset_Title]: 'Password Reset',
+    [SuiteCoreStringKey.PasswordReset_Button]: 'Reset Password',
     [SuiteCoreStringKey.ProceedToLogin]: 'Proceed to login',
     [SuiteCoreStringKey.Register_RegisterButton]: 'Get Started',
     [SuiteCoreStringKey.RegisterButton]: 'Register',
@@ -1734,6 +1738,8 @@ export const SuiteCoreComponentStrings: Record<
       'Veuillez vérifier votre adresse e-mail avant de réinitialiser votre mot de passe.',
     [SuiteCoreStringKey.PasswordReset_Success]:
       'Si un compte avec cet e-mail existe, un lien de réinitialisation du mot de passe a été envoyé.',
+      [SuiteCoreStringKey.PasswordReset_Title]: 'Réinitialisation du mot de passe',
+      [SuiteCoreStringKey.PasswordReset_Button]: 'Envoyer le lien de réinitialisation',
     [SuiteCoreStringKey.ProceedToLogin]: 'Procéder à la connexion',
     [SuiteCoreStringKey.Register_RegisterButton]: 'Commencer',
     [SuiteCoreStringKey.RegisterButton]: "S'inscrire",
@@ -2383,7 +2389,9 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.PasswordReset_EmailNotVerified]:
       'Bitte überprüfen Sie Ihre E-Mail-Adresse, bevor Sie Ihr Passwort zurücksetzen.',
     [SuiteCoreStringKey.PasswordReset_Success]:
-      'Wenn ein Konto mit dieser E-Mail existiert, wurde ein Link zum Zurücksetzen des Passworts gesendet.',
+      'Wenn ein Konto mit dieser E-Mail existiert, wurde ein SLink zum Zurücksetzen des Passworts gesendet.',
+    [SuiteCoreStringKey.PasswordReset_Button]: 'Passwort zurücksetzen',
+    [SuiteCoreStringKey.PasswordReset_Title]: 'Passwort Zurücksetzen', 
     [SuiteCoreStringKey.ProceedToLogin]: 'Zur Anmeldung fortfahren',
     [SuiteCoreStringKey.Register_RegisterButton]: 'Loslegen',
     [SuiteCoreStringKey.RegisterButton]: "Registrieren",
@@ -3030,6 +3038,8 @@ export const SuiteCoreComponentStrings: Record<
       'Por favor, verifique su dirección de correo electrónico antes de restablecer su contraseña.',
     [SuiteCoreStringKey.PasswordReset_Success]:
       'Si existe una cuenta con ese correo electrónico, se ha enviado un enlace para restablecer la contraseña.',
+    [SuiteCoreStringKey.PasswordReset_Button]: 'Restablecer Contraseña',
+    [SuiteCoreStringKey.PasswordReset_Title]: 'Restablecer Contraseña',
     [SuiteCoreStringKey.ProceedToLogin]: 'Proceder a iniciar sesión',
     [SuiteCoreStringKey.Register_RegisterButton]: 'Comenzar',
     [SuiteCoreStringKey.RegisterButton]: 'Registrarse',
@@ -3578,6 +3588,8 @@ export const SuiteCoreComponentStrings: Record<
       '请在重置密码前验证您的邮箱地址。',
     [SuiteCoreStringKey.PasswordReset_Success]:
       '如果该邮箱存在账户，密码重置链接已发送。',
+    [SuiteCoreStringKey.PasswordReset_Title]: '重置密码',
+    [SuiteCoreStringKey.PasswordReset_Button]: '发送重置链接',
     [SuiteCoreStringKey.ProceedToLogin]: '继续登录',
     [SuiteCoreStringKey.Register_RegisterButton]: '开始使用',
     [SuiteCoreStringKey.RegisterButton]: '注册',
@@ -4185,6 +4197,8 @@ export const SuiteCoreComponentStrings: Record<
       'パスワードをリセットする前にメールアドレスを確認してください。',
     [SuiteCoreStringKey.PasswordReset_Success]:
       'そのメールアドレスのアカウントが存在する場合、パスワードリセットリンクが送信されました。',
+    [SuiteCoreStringKey.PasswordReset_Title]: 'パスワードリセット',
+    [SuiteCoreStringKey.PasswordReset_Button]: 'パスワードをリセット',
     [SuiteCoreStringKey.ProceedToLogin]: 'ログインに進む',
     [SuiteCoreStringKey.Register_RegisterButton]: '始める',
     [SuiteCoreStringKey.RegisterButton]: '登録',
@@ -4808,6 +4822,8 @@ export const SuiteCoreComponentStrings: Record<
       'Будь ласка, підтвердіть свою електронну адресу перед скиданням пароля.',
     [SuiteCoreStringKey.PasswordReset_Success]:
       'Якщо аккаунт з такою електронною поштою існує, посилання для скидання пароля було надіслано.',
+    [SuiteCoreStringKey.PasswordReset_Title]: 'Скидання Пароля',
+    [SuiteCoreStringKey.PasswordReset_Button]: 'Скинути Пароль',
     [SuiteCoreStringKey.ProceedToLogin]: 'Перейти до входу',
     [SuiteCoreStringKey.Register_RegisterButton]: 'Почати',
     [SuiteCoreStringKey.RegisterButton]: 'Зареєструватися',
