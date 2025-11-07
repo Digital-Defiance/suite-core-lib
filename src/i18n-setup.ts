@@ -6,8 +6,10 @@ import {
   ComponentDefinition,
   createDefaultLanguages,
   EngineConfig,
+  CoreLanguageCode,
 } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
+import { Role } from './enumerations/role';
 
 export const SuiteCoreI18nEngineKey = 'default' as const;
 export const SuiteCoreComponentId = 'suite-core' as const;
@@ -4930,6 +4932,49 @@ export const SuiteCoreComponentStrings: Record<
   },
 };
 
+const roleTranslations: Record<CoreLanguageCode, Record<Role, string>> = {
+  [LanguageCodes.EN_US]: {
+    [Role.Admin]: 'Administrator',
+    [Role.Member]: 'Member',
+    [Role.System]: 'System',
+  },
+  [LanguageCodes.EN_GB]: {
+    [Role.Admin]: 'Administrator',
+    [Role.Member]: 'Member',
+    [Role.System]: 'System',
+  },
+  [LanguageCodes.FR]: {
+    [Role.Admin]: 'Administrateur',
+    [Role.Member]: 'Membre',
+    [Role.System]: 'Système',
+  },
+  [LanguageCodes.ES]: {
+    [Role.Admin]: 'Administrador',
+    [Role.Member]: 'Miembro',
+    [Role.System]: 'Sistema',
+  },
+  [LanguageCodes.DE]: {
+    [Role.Admin]: 'Administrator',
+    [Role.Member]: 'Mitglied',
+    [Role.System]: 'System',
+  },
+  [LanguageCodes.ZH_CN]: {
+    [Role.Admin]: '管理员',
+    [Role.Member]: '成员',
+    [Role.System]: '系统',
+  },
+  [LanguageCodes.JA]: {
+    [Role.Admin]: '管理者',
+    [Role.Member]: 'メンバー',
+    [Role.System]: 'システム',
+  },
+  [LanguageCodes.UK]: {
+    [Role.Admin]: 'Адміністратор',
+    [Role.Member]: 'Учасник',
+    [Role.System]: 'Система',
+  },
+};
+
 // Suite Core component config
 export function createSuiteCoreComponentConfig(): ComponentConfig {
   const SuiteCoreComponentConfig: ComponentConfig = {
@@ -4951,6 +4996,7 @@ export function getSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
     );
     
     _engine.registerIfNotExists(createSuiteCoreComponentConfig());
+    _engine.registerEnum(Role, roleTranslations, 'Role');
   }
   return _engine;
 }
