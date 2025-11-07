@@ -4959,8 +4959,9 @@ export function getSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, any>,
   language?: string,
+  config?: EngineConfig,
 ): string {
-  return getSuiteCoreI18nEngine().translate(SuiteCoreComponentId, key, variables, language);
+  return getSuiteCoreI18nEngine(config).translate(SuiteCoreComponentId, key, variables, language);
 }
 
 export function resetSuiteCoreI18nEngine(): void {
@@ -4976,9 +4977,10 @@ export function safeGetSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, any>,
   language?: string,
+  config?: EngineConfig,
 ): string {
   try {
-    return getSuiteCoreTranslation(key, variables, language);
+    return getSuiteCoreTranslation(key, variables, language, config);
   } catch (error) {
     return key;
   }

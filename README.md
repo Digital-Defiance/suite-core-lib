@@ -404,6 +404,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.34: Expose config on getSuiteCoreTranslation
+
 ## V2.1.33: Add config to i18n setup
 
 ## V2.1.30: Alignment bump. add strings.
