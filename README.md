@@ -404,6 +404,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.33: Add config to i18n setup
+
 ## V2.1.30: Alignment bump. add strings.
 
 ## V2.1.25: update i18n, fix bug with i18n alias, add tests

@@ -5,6 +5,7 @@ import {
   ComponentConfig,
   ComponentDefinition,
   createDefaultLanguages,
+  EngineConfig,
 } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
 
@@ -4941,12 +4942,12 @@ export function createSuiteCoreComponentConfig(): ComponentConfig {
 
 let _engine: I18nEngine | undefined;
 
-export function getSuiteCoreI18nEngine(): I18nEngine {
+export function getSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
   if (!_engine || !I18nEngine.hasInstance(SuiteCoreI18nEngineKey)) {
     _engine = I18nEngine.registerIfNotExists(
       SuiteCoreI18nEngineKey,
       createDefaultLanguages(),
-      { defaultLanguage: LanguageCodes.EN_US }
+      { defaultLanguage: LanguageCodes.EN_US, ...config }
     );
     
     _engine.registerIfNotExists(createSuiteCoreComponentConfig());
@@ -4967,8 +4968,8 @@ export function resetSuiteCoreI18nEngine(): void {
   _engine = undefined;
 }
 
-export function initSuiteCoreI18nEngine(): I18nEngine {
-  return getSuiteCoreI18nEngine();
+export function initSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
+  return getSuiteCoreI18nEngine(config);
 }
 
 export function safeGetSuiteCoreTranslation(
