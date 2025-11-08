@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/suite-core-lib",
-  "version": "2.1.35",
+  "version": "2.1.40",
   "description": "Generic user system and document system common core for applications",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -22,8 +22,8 @@
     "publish:public": "npm publish --access public"
   },
   "dependencies": {
-    "@digitaldefiance/ecies-lib": "2.1.32",
-    "@digitaldefiance/i18n-lib": "2.1.32"
+    "@digitaldefiance/ecies-lib": "2.1.40",
+    "@digitaldefiance/i18n-lib": "2.1.40"
   },
   "files": [
     "src",
