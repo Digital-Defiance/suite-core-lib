@@ -163,7 +163,9 @@ describe('Constants Module', () => {
         'PasswordMinLength',
         'PasswordRegex',
         'MnemonicRegex',
-        'HmacRegex',
+        'MnemonicHmacRegex',
+        'MnemonicEncryptionKeyRegex',
+        'JwtSecretRegex',
         'EmailTokenResendInterval',
         'EmailTokenResendIntervalMinutes',
       ];
@@ -382,36 +384,62 @@ describe('Constants Module', () => {
       });
     });
 
-    describe('HMAC validation', () => {
-      it('should have valid HmacRegex for SHA-256', () => {
-        const { HmacRegex } = constants;
+    describe('HMAC and encryption validation', () => {
+      it('should have valid MnemonicHmacRegex for SHA-256', () => {
+        const { MnemonicHmacRegex } = constants;
 
         // Test valid 64-character hex strings (SHA-256)
-        expect(HmacRegex.test('a'.repeat(64))).toBe(true);
-        expect(HmacRegex.test('0'.repeat(64))).toBe(true);
-        expect(HmacRegex.test('f'.repeat(64))).toBe(true);
-        expect(HmacRegex.test('0123456789abcdef'.repeat(4))).toBe(true);
+        expect(MnemonicHmacRegex.test('a'.repeat(64))).toBe(true);
+        expect(MnemonicHmacRegex.test('0'.repeat(64))).toBe(true);
+        expect(MnemonicHmacRegex.test('f'.repeat(64))).toBe(true);
+        expect(MnemonicHmacRegex.test('0123456789abcdef'.repeat(4))).toBe(true);
         expect(
-          HmacRegex.test(
+          MnemonicHmacRegex.test(
             'deadbeefcafebabe0123456789abcdefdeadbeefcafebabe0123456789abcdef',
           ),
         ).toBe(true);
 
         // Test invalid cases - wrong length
-        expect(HmacRegex.test('a'.repeat(63))).toBe(false); // too short
-        expect(HmacRegex.test('a'.repeat(65))).toBe(false); // too long
-        expect(HmacRegex.test('')).toBe(false); // empty
+        expect(MnemonicHmacRegex.test('a'.repeat(63))).toBe(false); // too short
+        expect(MnemonicHmacRegex.test('a'.repeat(65))).toBe(false); // too long
+        expect(MnemonicHmacRegex.test('')).toBe(false); // empty
 
         // Test invalid cases - uppercase letters
-        expect(HmacRegex.test('A'.repeat(64))).toBe(false);
-        expect(HmacRegex.test('a'.repeat(63) + 'A')).toBe(false);
+        expect(MnemonicHmacRegex.test('A'.repeat(64))).toBe(false);
+        expect(MnemonicHmacRegex.test('a'.repeat(63) + 'A')).toBe(false);
 
         // Test invalid cases - invalid characters
-        expect(HmacRegex.test('g' + 'a'.repeat(63))).toBe(false);
-        expect(HmacRegex.test('a'.repeat(63) + '!')).toBe(false);
-        expect(HmacRegex.test('a'.repeat(32) + ' ' + 'a'.repeat(31))).toBe(
+        expect(MnemonicHmacRegex.test('g' + 'a'.repeat(63))).toBe(false);
+        expect(MnemonicHmacRegex.test('a'.repeat(63) + '!')).toBe(false);
+        expect(MnemonicHmacRegex.test('a'.repeat(32) + ' ' + 'a'.repeat(31))).toBe(
           false,
         );
+      });
+
+      it('should have valid MnemonicEncryptionKeyRegex', () => {
+        const { MnemonicEncryptionKeyRegex } = constants;
+
+        // Test valid 64-character hex strings
+        expect(MnemonicEncryptionKeyRegex.test('a'.repeat(64))).toBe(true);
+        expect(MnemonicEncryptionKeyRegex.test('0'.repeat(64))).toBe(true);
+        expect(MnemonicEncryptionKeyRegex.test('f'.repeat(64))).toBe(true);
+
+        // Test invalid cases
+        expect(MnemonicEncryptionKeyRegex.test('A'.repeat(64))).toBe(false);
+        expect(MnemonicEncryptionKeyRegex.test('a'.repeat(63))).toBe(false);
+      });
+
+      it('should have valid JwtSecretRegex', () => {
+        const { JwtSecretRegex } = constants;
+
+        // Test valid 64-character hex strings (case insensitive)
+        expect(JwtSecretRegex.test('a'.repeat(64))).toBe(true);
+        expect(JwtSecretRegex.test('A'.repeat(64))).toBe(true);
+        expect(JwtSecretRegex.test('0'.repeat(64))).toBe(true);
+
+        // Test invalid cases
+        expect(JwtSecretRegex.test('a'.repeat(63))).toBe(false);
+        expect(JwtSecretRegex.test('g'.repeat(64))).toBe(false);
       });
     });
 

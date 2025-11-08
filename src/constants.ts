@@ -94,6 +94,10 @@ export const CORE: ICoreConstants = Object.freeze({
   PasswordRegex:
     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[A-Za-z\d!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}$/,
   /**
+   * The regular expression for valid JWT tokens.
+   */
+  JwtSecretRegex: /^[0-9a-f]{64}$/i,
+  /**
    * The regular expression for valid mnemonic phrases.
    * BIP39 - supports 12, 15, 18, 21, or 24 word mnemonics
    */
@@ -102,7 +106,11 @@ export const CORE: ICoreConstants = Object.freeze({
   /**
    * Matches a 64-character hexadecimal string (SHA-256).
    */
-  HmacRegex: /^[a-f0-9]{64}$/,
+  MnemonicHmacRegex: /^[a-f0-9]{64}$/,
+  /**
+   * The regular expression for valid encryption keys.
+   */
+  MnemonicEncryptionKeyRegex: /^[a-f0-9]{64}$/,
   /**
    * The amount of time in milliseconds after which an email token can be resent.
    */

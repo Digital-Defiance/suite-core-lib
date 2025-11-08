@@ -61,6 +61,7 @@ export enum SuiteCoreStringKey {
   Error_DatabaseInitFunctionIsRequired = 'error_databaseInitFunctionIsRequired',
   Error_InitResultHashFunctionIsRequired = 'error_initResultHashFunctionIsRequired',
   Error_ServiceIsNotRegisteredTemplate = 'error_serviceIsNotRegisteredTemplate',
+  Error_MustMatchRegexTemplate = 'error_mustMatchRegexTemplate',
   Validation_ValueIsRequired = 'validation_valueIsRequired',
   Validation_ValueMustBeOneOfTheAvailableOptions = 'validation_valueMustBeOneOfTheAvailableOptions',
 

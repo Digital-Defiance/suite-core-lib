@@ -78,6 +78,10 @@ export interface ICoreConstants {
    */
   PasswordRegex: RegExp;
   /**
+   * The regular expression for valid JWT tokens.
+   */
+  JwtSecretRegex: RegExp;
+  /**
    * The regular expression for valid mnemonic phrases.
    * BIP39
    */
@@ -85,7 +89,11 @@ export interface ICoreConstants {
   /**
    * The regular expression for valid HMAC keys.
    */
-  HmacRegex: RegExp;
+  MnemonicHmacRegex: RegExp;
+  /**
+   * The regular expression for valid encryption keys.
+   */
+  MnemonicEncryptionKeyRegex: RegExp;
   /**
    * The amount of time in milliseconds after which an email token can be resent.
    */
