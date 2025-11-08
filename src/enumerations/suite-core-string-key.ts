@@ -49,6 +49,7 @@ export enum SuiteCoreStringKey {
   Error_EmptyEnvironmentVariableTemplate = 'error_emptyEnvironmentVariableTemplate',
   Error_RecursiveErrorHandlingDetected = 'error_recursiveErrorHandlingDetected',
   Error_SystemUserMustBeSystemMemberType = 'error_systemUserMustBeSystemMemberType',
+  Error_JwtSecretMustBe64CharHexString = 'error_jwtSecretMustBe64CharHexString',
   Error_MnemonicHmacSecretMustBe64CharHexString = 'error_mnemonicHmacSecretMustBe64CharHexString',
   Error_MnemonicEncryptionKeyMustBe64CharHexString = 'error_mnemonicEncryptionKeyMustBe64CharHexString',
   Error_AdminMnemonicMustBeValidMnemonicPhrase = 'error_adminMnemonicMustBeValidMnemonicPhrase',
