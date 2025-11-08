@@ -6,6 +6,8 @@
 
 A comprehensive library providing higher-level primitives and foundational building blocks for creating a cryptographically-secure user management system and Node.js Express server framework. Built on top of **@digitaldefiance/ecies-lib** and **@digitaldefiance/node-ecies-lib**, this package serves as the core foundation for the **node-ecies** and **node-express-suite** projects, which together form a complete full-stack security and user management ecosystem.
 
+Part of [Express Suite](https://github.com/Digital-Defiance/express-suite)
+
 ## 🚀 Framework Ecosystem
 
 `@digitaldefiance/suite-core-lib` offers the essential **core primitives and abstractions** that power:
