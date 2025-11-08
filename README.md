@@ -406,6 +406,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.42: Upgrade ecies
+
 ## V2.1.41: Improve environment
 
 ## V2.1.40: Alignment
