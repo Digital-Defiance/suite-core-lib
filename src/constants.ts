@@ -131,6 +131,10 @@ export const CORE: ICoreConstants = Object.freeze({
    * The site description. Overridden by specific site constants.
    */
   SiteDescription: 'Description of the new site' as const,
+  /**
+   * Email domain of usernames on the site. Overridden by specific site constants.
+   */
+  SiteEmailDomain: 'localhost' as const,
 } as const);
 
 export const createConstants: (
@@ -151,6 +155,10 @@ export const createConstants: (
      * The email of the system user.
      */
     SystemEmail: `system@${siteDomain}` as const,
+    /**
+     * The email domain of usernames on the site.
+     */
+    SiteEmailDomain: siteDomain,
     ...(overrides ?? {}),
   } as const);
 };
