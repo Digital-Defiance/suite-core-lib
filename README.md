@@ -406,6 +406,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.46: Export ISuccessMessage
+
 ## V2.1.45: Extend flags list
 
 ## V2.1.44: Export flags
