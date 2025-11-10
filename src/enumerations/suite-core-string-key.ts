@@ -3,6 +3,7 @@ export enum SuiteCoreStringKey {
   Common_Stopping = 'common_stopping',
   Common_Stopped = 'common_stopped',
   Common_ApplicationAndDatabase = 'common_applicationAndDatabase',
+  Common_CheckingAuthentication = 'common_checkingAuthentication',
 
   // Validation errors
   Validation_InvalidUsername = 'validation_invalidUsername',

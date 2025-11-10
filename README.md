@@ -406,6 +406,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.50: Add string
+
 ## V2.1.47: Expose SiteEmailDomain
 
 ## V2.1.46: Export ISuccessMessage
