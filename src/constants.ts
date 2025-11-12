@@ -135,12 +135,17 @@ export const CORE: ICoreConstants = Object.freeze({
    * Email domain of usernames on the site. Overridden by specific site constants.
    */
   SiteEmailDomain: 'localhost' as const,
+  /**
+   * The hostname of the site. Overridden by specific site constants.
+   */
+  SiteHostname: 'localhost' as const,
 } as const);
 
 export const createConstants: (
   siteDomain: string,
+  siteHostname: string,
   overrides?: Partial<IConstants>,
-) => IConstants = (siteDomain: string, overrides?: Partial<IConstants>) => {
+) => IConstants = (siteDomain: string, siteHostname: string, overrides?: Partial<IConstants>) => {
   return Object.freeze({
     ...CORE,
     /**
@@ -159,8 +164,12 @@ export const createConstants: (
      * The email domain of usernames on the site.
      */
     SiteEmailDomain: siteDomain,
+    /**
+     * The hostname of the site.
+     */
+    SiteHostname: siteHostname,
     ...(overrides ?? {}),
   } as const);
 };
 
-export const Constants = createConstants('localhost');
+export const Constants = createConstants('localhost', 'localhost');

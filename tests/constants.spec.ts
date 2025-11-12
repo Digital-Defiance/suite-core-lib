@@ -131,7 +131,7 @@ describe('Constants Module', () => {
     let constants: IConstants;
 
     beforeEach(() => {
-      constants = createConstants(testDomain);
+      constants = createConstants(testDomain, testDomain);
     });
 
     it('should return an object that conforms to IConstants interface', () => {
@@ -235,7 +235,7 @@ describe('Constants Module', () => {
 
       it('should use the provided domain in email addresses', () => {
         const customDomain = 'custom-domain.org';
-        const customConstants = createConstants(customDomain);
+        const customConstants = createConstants(customDomain, customDomain);
 
         expect(customConstants.AdministratorEmail).toBe(
           `admin@${customDomain}`,
@@ -453,8 +453,8 @@ describe('Constants Module', () => {
       }).toThrow();
     });
     it('should create consistent objects for same domain', () => {
-      const constants1 = createConstants(testDomain);
-      const constants2 = createConstants(testDomain);
+      const constants1 = createConstants(testDomain, testDomain);
+      const constants2 = createConstants(testDomain, testDomain);
 
       expect(constants1).toEqual(constants2);
       expect(constants1.AdministratorEmail).toBe(constants2.AdministratorEmail);
@@ -466,8 +466,8 @@ describe('Constants Module', () => {
       const domain1 = 'example.com';
       const domain2 = 'test.org';
 
-      const constants1 = createConstants(domain1);
-      const constants2 = createConstants(domain2);
+      const constants1 = createConstants(domain1, domain1);
+      const constants2 = createConstants(domain2, domain2);
 
       expect(constants1.AdministratorEmail).not.toBe(
         constants2.AdministratorEmail,
@@ -481,7 +481,7 @@ describe('Constants Module', () => {
 
     describe('edge cases and error conditions', () => {
       it('should handle empty domain string', () => {
-        const constants = createConstants('');
+        const constants = createConstants('', '');
         expect(constants.AdministratorEmail).toBe('admin@');
         expect(constants.MemberEmail).toBe('test@');
         expect(constants.SystemEmail).toBe('system@');
@@ -489,7 +489,7 @@ describe('Constants Module', () => {
 
       it('should handle domain with special characters', () => {
         const specialDomain = 'test-domain.co.uk';
-        const constants = createConstants(specialDomain);
+        const constants = createConstants(specialDomain, specialDomain);
         expect(constants.AdministratorEmail).toBe(`admin@${specialDomain}`);
         expect(constants.MemberEmail).toBe(`test@${specialDomain}`);
         expect(constants.SystemEmail).toBe(`system@${specialDomain}`);
@@ -497,7 +497,7 @@ describe('Constants Module', () => {
 
       it('should handle very long domain names', () => {
         const longDomain = 'a'.repeat(100) + '.com';
-        const constants = createConstants(longDomain);
+        const constants = createConstants(longDomain, longDomain);
         expect(constants.AdministratorEmail).toBe(`admin@${longDomain}`);
         expect(constants.MemberEmail).toBe(`test@${longDomain}`);
         expect(constants.SystemEmail).toBe(`system@${longDomain}`);
@@ -508,7 +508,7 @@ describe('Constants Module', () => {
       it('should have readonly properties due to const assertions', () => {
         // These tests verify that the const assertions are working
         // TypeScript should treat these as literal types, not just numbers
-        const constTest = createConstants('test.com');
+        const constTest = createConstants('test.com', 'test.com');
 
         // The values should be the exact literals, not just any number
         expect(constTest.DefaultExpireMemoryMnemonicSeconds).toBe(300);
@@ -526,7 +526,7 @@ describe('Constants Module', () => {
       });
 
       it('should have string literal types for user/role constants', () => {
-        const constTest = createConstants('test.com');
+        const constTest = createConstants('test.com', 'test.com');
 
         expect(constTest.AdministratorUser).toBe('admin');
         expect(constTest.MemberUser).toBe('test');
@@ -582,7 +582,7 @@ describe('Constants Module', () => {
         const customBcryptRounds = 15;
         const customTokenExpiration = 7200000; // 2 hours
 
-        const constants = createConstants('test.com', {
+        const constants = createConstants('test.com', 'test.com', {
           BcryptRounds: customBcryptRounds,
           EmailTokenExpiration: customTokenExpiration,
         });
@@ -596,7 +596,7 @@ describe('Constants Module', () => {
       });
 
       it('should handle partial overrides', () => {
-        const constants = createConstants('test.com', {
+        const constants = createConstants('test.com', 'test.com',{
           BcryptRounds: 12,
         });
 
@@ -606,14 +606,14 @@ describe('Constants Module', () => {
       });
 
       it('should handle empty overrides', () => {
-        const constants1 = createConstants('test.com', {});
-        const constants2 = createConstants('test.com');
+        const constants1 = createConstants('test.com', 'test.com', {});
+        const constants2 = createConstants('test.com', 'test.com');
 
         expect(constants1).toEqual(constants2);
       });
 
       it('should handle undefined overrides', () => {
-        const constants = createConstants('test.com', undefined);
+        const constants = createConstants('test.com', 'test.com',undefined);
 
         expect(constants.BcryptRounds).toBe(10); // default
         expect(constants.EmailTokenExpiration).toBe(86400000); // default
@@ -621,7 +621,7 @@ describe('Constants Module', () => {
 
       it('should allow regex overrides', () => {
         const customUsernameRegex = /^[a-zA-Z0-9_]{4,25}$/;
-        const constants = createConstants('test.com', {
+        const constants = createConstants('test.com', 'test.com', {
           UsernameRegex: customUsernameRegex,
         });
 
@@ -650,7 +650,7 @@ describe('Constants Module', () => {
     });
 
     it('should have the same structure as createConstants result', () => {
-      const created = createConstants('localhost');
+      const created = createConstants('localhost', 'localhost');
       expect(Constants).toEqual(created);
     });
 

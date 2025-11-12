@@ -118,4 +118,8 @@ export interface ICoreConstants {
    * The email domain of usernames on the site.
    */
   SiteEmailDomain: string;
+  /**
+   * The hostname of the site.
+   */
+  SiteHostname: string;
 }

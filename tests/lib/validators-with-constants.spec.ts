@@ -73,7 +73,7 @@ describe('Validators with Constants', () => {
 
   describe('usage with createConstants', () => {
     it('should work with createConstants helper', () => {
-      const customConstants = createConstants('example.com', {
+      const customConstants = createConstants('example.com', 'example.com',{
         UsernameRegex: /^[a-z0-9_]{4,20}$/,
         UsernameMinLength: 4,
         UsernameMaxLength: 20,

@@ -17,7 +17,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
 
   it('should allow registering and retrieving a custom configuration', () => {
     const customKey = Symbol('custom-suite-core-config');
-    registerSuiteCoreRuntimeConfiguration(customKey, 'example.com', { BcryptRounds: 12 });
+    registerSuiteCoreRuntimeConfiguration(customKey, 'example.com', 'example.com', { BcryptRounds: 12 });
     const customConfig = getSuiteCoreRuntimeConfiguration(customKey);
     expect(customConfig.BcryptRounds).toBe(12);
     expect(customConfig.AdministratorEmail).toBe('admin@example.com');
@@ -31,18 +31,18 @@ describe('Suite Core Runtime Configuration Registry', () => {
 
   it('should apply overrides correctly', () => {
     const overrides = { AdministratorEmail: 'root@custom.org', BcryptRounds: 20 };
-    const config = createSuiteCoreRuntimeConfiguration('custom.org', overrides);
+    const config = createSuiteCoreRuntimeConfiguration('custom.org', 'custom.org', overrides);
     expect(config.AdministratorEmail).toBe('root@custom.org');
     expect(config.BcryptRounds).toBe(20);
   });
 
   it('should handle undefined overrides', () => {
-    const config = createSuiteCoreRuntimeConfiguration('test.com', undefined);
+    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com', undefined);
     expect(config.AdministratorEmail).toBe('admin@test.com');
   });
 
   it('should clone RegExp correctly', () => {
-    const config = createSuiteCoreRuntimeConfiguration('test.com');
+    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com');
     expect(config.UsernameRegex).toBeInstanceOf(RegExp);
     expect(config.UsernameRegex.source).toBe(/^[A-Za-z0-9]{3,30}$/.source);
   });
@@ -54,13 +54,13 @@ describe('Suite Core Runtime Configuration Registry', () => {
   });
 
   it('should handle null values in deepClone', () => {
-    const config = createSuiteCoreRuntimeConfiguration('test.com', { AdministratorEmail: undefined as any });
+    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com', { AdministratorEmail: undefined as any });
     expect(config).toBeDefined();
   });
 
   it('should handle Date objects in deepClone', () => {
     const testDate = new Date('2024-01-01');
-    const config = createSuiteCoreRuntimeConfiguration('test.com');
+    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com');
     expect(config).toBeDefined();
   });
 });

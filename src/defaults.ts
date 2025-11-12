@@ -47,18 +47,20 @@ function applyOverrides<T>(target: T, overrides?: DeepPartial<T>): T {
 
 export function createSuiteCoreRuntimeConfiguration(
   siteDomain: string = 'localhost',
+  siteHostname: string = 'localhost',
   overrides?: DeepPartial<IConstants>,
 ): IConstants {
-  const config = applyOverrides(createConstants(siteDomain), overrides);
+  const config = applyOverrides(createConstants(siteDomain, siteHostname), overrides);
   return deepFreeze(config);
 }
 
 export function registerSuiteCoreRuntimeConfiguration(
   key: ConfigurationKey = DEFAULT_CONFIGURATION_KEY,
   siteDomain: string = 'localhost',
+  siteHostname: string = 'localhost',
   overrides?: DeepPartial<IConstants>,
 ): IConstants {
-  const config = createSuiteCoreRuntimeConfiguration(siteDomain, overrides);
+  const config = createSuiteCoreRuntimeConfiguration(siteDomain, siteHostname, overrides);
   registry.set(key, config);
   return config;
 }
