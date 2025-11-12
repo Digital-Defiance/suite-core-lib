@@ -406,6 +406,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.52: Remove =='s
+
 ## V2.1.51: Add string
 
 ## V2.1.50: Add string
