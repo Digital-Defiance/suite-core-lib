@@ -262,6 +262,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'Use mnemonic only',
     [SuiteCoreStringKey.Common_UsePassword]: 'Set password',
     [SuiteCoreStringKey.Common_User]: 'User',
+    [SuiteCoreStringKey.Common_UserID]: 'User ID',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE} user {NAME} created successfully',
     [SuiteCoreStringKey.Common_Username]: 'Username',
@@ -856,6 +857,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'Use mnemonic only',
     [SuiteCoreStringKey.Common_UsePassword]: 'Set password',
     [SuiteCoreStringKey.Common_User]: 'User',
+    [SuiteCoreStringKey.Common_UserID]: 'User ID',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE} user {NAME} created successfully',
     [SuiteCoreStringKey.Common_Username]: 'Username',
@@ -1473,6 +1475,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'Utiliser uniquement la mnémotechnique',
     [SuiteCoreStringKey.Common_UsePassword]: 'Définir le mot de passe',
     [SuiteCoreStringKey.Common_User]: 'Utilisateur',
+    [SuiteCoreStringKey.Common_UserID]: "ID d'utilisateur",
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE} utilisateur {NAME} créé avec succès',
     [SuiteCoreStringKey.Common_Username]: "Nom d'utilisateur",
@@ -2128,6 +2131,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'Nur Mnemonik verwenden',
     [SuiteCoreStringKey.Common_UsePassword]: 'Passwort festlegen',
     [SuiteCoreStringKey.Common_User]: 'Benutzer',
+    [SuiteCoreStringKey.Common_UserID]: 'Benutzer-ID',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE} Benutzer {NAME} erfolgreich erstellt',
     [SuiteCoreStringKey.Common_Username]: "Benutzername",
@@ -2782,6 +2786,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'Utilizar únicamente la mnémotechnique',
     [SuiteCoreStringKey.Common_UsePassword]: 'Definir la contraseña',
     [SuiteCoreStringKey.Common_User]: 'Usuario',
+    [SuiteCoreStringKey.Common_UserID]: 'ID de usuario',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE} usuario {NAME} creado con éxito',
     [SuiteCoreStringKey.Common_Username]: 'Nombre de usuario',
@@ -3399,6 +3404,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: '仅使用助记符',
     [SuiteCoreStringKey.Common_UsePassword]: '设置密码',
     [SuiteCoreStringKey.Common_User]: '用户',
+    [SuiteCoreStringKey.Common_UserID]: '用户 ID',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]: '{TYPE} 用户 {NAME} 创建成功',
     [SuiteCoreStringKey.Common_Username]: '用户名',
     [SuiteCoreStringKey.Common_Using]: '使用',
@@ -3978,6 +3984,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'ニーモニックのみを使用',
     [SuiteCoreStringKey.Common_UsePassword]: 'パスワードを設定',
     [SuiteCoreStringKey.Common_User]: 'ユーザー',
+    [SuiteCoreStringKey.Common_UserID]: 'ユーザーID',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE}ユーザー{NAME}が正常に作成されました',
     [SuiteCoreStringKey.Common_Username]: 'ユーザー名',
@@ -4594,6 +4601,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Common_UseMnemonic]: 'Використовувати лише мнемоніку',
     [SuiteCoreStringKey.Common_UsePassword]: 'Встановити пароль',
     [SuiteCoreStringKey.Common_User]: 'Користувач',
+    [SuiteCoreStringKey.Common_UserID]: 'ID користувача',
     [SuiteCoreStringKey.Common_UserCreatedTemplate]:
       '{TYPE} користувача {NAME} успішно створено',
     [SuiteCoreStringKey.Common_Username]: "Ім'я користувача",

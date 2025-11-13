@@ -200,6 +200,7 @@ export enum SuiteCoreStringKey {
   Common_UseMnemonic = 'common_useMnemonic',
   Common_UsePassword = 'common_usePassword',
   Common_User = 'common_user',
+  Common_UserID = 'common_userID',
   Common_UserCreatedTemplate = 'common_userCreatedTemplate',
   Common_Username = 'common_username',
   Common_Using = 'common_using',

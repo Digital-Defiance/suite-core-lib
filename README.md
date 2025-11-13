@@ -406,6 +406,8 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## V2.1.54: Add UserID string
+
 ## V2.1.53: Add SiteHostname to constants
 
 ## V2.1.52: Remove =='s
