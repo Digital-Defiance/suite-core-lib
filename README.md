@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.0
+
+- Update ecies
+
 ## V2.1.54: Add UserID string
 
 ## V2.1.53: Add SiteHostname to constants
