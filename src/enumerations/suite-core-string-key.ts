@@ -4,6 +4,7 @@ export enum SuiteCoreStringKey {
   Common_Stopped = 'common_stopped',
   Common_ApplicationAndDatabase = 'common_applicationAndDatabase',
   Common_CheckingAuthentication = 'common_checkingAuthentication',
+  Common_StackTrace = 'common_stackTrace',
 
   // Validation errors
   Validation_InvalidUsername = 'validation_invalidUsername',
@@ -32,6 +33,7 @@ export enum SuiteCoreStringKey {
   Error_AccountStatus_PendingEmailVerification = 'error_accountStatus_pendingEmailVerification',
 
   // Error messages
+  Error_UnexpectedErrorInAuthenticateCrypto = 'error_unexpectedErrorInAuthenticateCrypto',
   Error_EngineAlreadySet = 'error_engineAlreadySet',
   Error_EngineNotSet = 'error_engineNotSet',
   Error_FailedToStartApplication = 'error_failedToStartApplication',
