@@ -9,4 +9,5 @@ export interface IRequestUserDTO {
   siteLanguage: string;
   lastLogin?: string;
   emailVerified: boolean;
+  darkMode: boolean;
 }

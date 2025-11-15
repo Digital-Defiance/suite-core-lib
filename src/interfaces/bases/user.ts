@@ -40,6 +40,10 @@ export interface IUserBase<
    */
   siteLanguage: S;
   /**
+   * Whether the user prefers dark mode
+   */
+  darkMode: boolean;
+  /**
    * The date the user last logged in
    */
   lastLogin?: D;

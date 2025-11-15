@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.5
+
+- Add user DarkMode preference
+
 ## v2.2.4
 
 - Add strings
