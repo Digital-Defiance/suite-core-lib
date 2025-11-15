@@ -1,8 +1,8 @@
-import { SecureString } from '@digitaldefiance/ecies-lib';
 import { Constants } from './constants';
 import { InvalidBackupCodeError } from './errors/invalid-backup-code';
+import { IConstants } from './interfaces';
 
-export class BackupCodeString extends SecureString {
+export class BackupCodeString {
   private readonly _normalizedCode: string;
 
   constructor(code: string) {
@@ -10,19 +10,18 @@ export class BackupCodeString extends SecureString {
     if (!Constants.BACKUP_CODES.NormalizedHexRegex.test(normalizedCode)) {
       throw new InvalidBackupCodeError();
     }
-    super(normalizedCode);
     this._normalizedCode = normalizedCode;
   }
 
-  public override get value(): string {
-    return this.notNullValue;
-  }
-
-  public override get notNullValue(): string {
+  public get value(): string {
     return BackupCodeString.formatBackupCode(this._normalizedCode);
   }
 
-  public override get valueAsHexString(): string {
+  public get notNullValue(): string {
+    return BackupCodeString.formatBackupCode(this._normalizedCode);
+  }
+
+  public get valueAsHexString(): string {
     const formattedValue = BackupCodeString.formatBackupCode(
       this._normalizedCode,
     );
@@ -31,18 +30,31 @@ export class BackupCodeString extends SecureString {
     }, '');
   }
 
-  public override get valueAsBase64String(): string {
+  public get valueAsBase64String(): string {
     const formattedValue = BackupCodeString.formatBackupCode(
       this._normalizedCode,
     );
     return btoa(formattedValue);
   }
 
-  public override get valueAsUint8Array(): Uint8Array {
+  public get valueAsUint8Array(): Uint8Array {
     const formattedValue = BackupCodeString.formatBackupCode(
       this._normalizedCode,
     );
     return new TextEncoder().encode(formattedValue);
+  }
+
+  public get hasValue(): boolean {
+    return this._normalizedCode.length > 0;
+  }
+
+  public get length(): number {
+    return this._normalizedCode.length;
+  }
+
+  public dispose(): void {
+    // Backup codes are not sensitive enough to require secure disposal
+    // They're already encrypted when stored in the database
   }
 
   /**
@@ -74,9 +86,9 @@ export class BackupCodeString extends SecureString {
    * Generate the configured number of backup codes.
    * Note: If generation alphabet/length is controlled elsewhere, prefer that path.
    */
-  public static generateBackupCodes(): Array<BackupCodeString> {
+  public static generateBackupCodes(constants: IConstants = Constants): Array<BackupCodeString> {
     const codes: Array<BackupCodeString> = [];
-    for (let i = 0; i < Constants.BACKUP_CODES.Count; i++) {
+    for (let i = 0; i < constants.BACKUP_CODES.Count; i++) {
       codes.push(new BackupCodeString(BackupCodeString.generateBackupCode()));
     }
     return codes;

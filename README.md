@@ -406,6 +406,15 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.3
+
+- Fix BackupCodeString
+
+## v2.2.2
+
+- Fix InvalidEmailError
+- Update ecies
+
 ## v2.2.1
 
 - Update ecies
