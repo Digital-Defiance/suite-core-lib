@@ -299,6 +299,7 @@ export enum SuiteCoreStringKey {
   Error_LengthIsInvalidType = 'error_lengthIsInvalidType',
   Error_Login_ChallengeExpiredTemplate = 'error_login_challengeExpiredTemplate',
   Error_Login_DirectLoginNotAllowed = 'error_login_directLoginNotAllowed',
+  Error_Login_DirectChallengeNotEnabled = 'error_login_directChallengeNotEnabled',
   Error_MemberErrorEncryptionDataTooLarge = 'Error_MemberErrorEncryptionDataTooLarge',
   Error_MemberErrorFailedToConvertMemberData = 'Error_MemberErrorFailedToConvertMemberData',
   Error_MemberErrorFailedToHydrateMember = 'Error_MemberErrorFailedToHydrateMember',
