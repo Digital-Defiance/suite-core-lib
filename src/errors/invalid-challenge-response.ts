@@ -7,5 +7,6 @@ export class InvalidChallengeResponseError extends HandleableError {
     super(new Error(getSuiteCoreTranslation(SuiteCoreStringKey.Error_InvalidChallengeResponse)), {
       statusCode: 401,
     });
+    this.name = 'InvalidChallengeResponseError';
   }
 }

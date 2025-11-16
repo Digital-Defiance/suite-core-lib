@@ -7,5 +7,6 @@ export class DirectChallengeNotEnabledError extends HandleableError {
     super(new Error(getSuiteCoreTranslation(SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled)), {
       statusCode: 403,
     });
+    this.name = 'DirectChallengeNotEnabledError';
   }
 }

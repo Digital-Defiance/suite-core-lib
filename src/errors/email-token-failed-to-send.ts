@@ -15,5 +15,6 @@ export class EmailTokenFailedToSendError extends HandleableError {
     super(
       new Error(`${getSuiteCoreTranslation(SuiteCoreStringKey.Email_TokenFailedToSend, undefined, language)}: ${translate}`), options
     );
+    this.name = 'EmailTokenFailedToSendError';
   }
 }

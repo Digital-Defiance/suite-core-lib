@@ -4,5 +4,6 @@ import { TranslatableSuiteHandleableError } from './translatable-suite-handleabl
 export class DirectTokenUsedError extends TranslatableSuiteHandleableError {
   constructor() {
     super(SuiteCoreStringKey.Error_DirectTokenAlreadyUsed, undefined, undefined, { statusCode: 401 });
+    this.name = 'DirectTokenUsedError';
   }
 }

@@ -6,5 +6,6 @@ import {
 export class GenericValidationError extends HandleableError {
   constructor(message: string, options?: HandleableErrorOptions) {
     super(new Error(message), { ...options, statusCode: 422 });
+    this.name = 'GenericValidationError';
   }
 }

@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.7
+
+- Add this.name to errors
+
 ## v2.2.6
 
 - Add DirectChallengeNotEnabled error
