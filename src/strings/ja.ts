@@ -569,6 +569,7 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: '設定を保存中...',
     [SuiteCoreStringKey.Settings_Save]: '設定を保存',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: '設定が正常に取得されました',
+    [SuiteCoreStringKey.Settings_UpdateFailed]: '設定の更新に失敗しました',
     [SuiteCoreStringKey.SignInButton]: 'サインイン',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count}個のアイテム',
     [SuiteCoreStringKey.TestTemplate]:

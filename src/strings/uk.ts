@@ -578,6 +578,7 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: 'Збереження налаштувань...',
     [SuiteCoreStringKey.Settings_Save]: 'Зберегти налаштування',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Налаштування успішно отримано',
+    [SuiteCoreStringKey.Settings_UpdateFailed]: 'Не вдалося оновити налаштування',
     [SuiteCoreStringKey.SignInButton]: 'Увійти',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} елементів',
     [SuiteCoreStringKey.TestTemplate]: 'Це тест: {variable1}, {AdministratorEmail}',

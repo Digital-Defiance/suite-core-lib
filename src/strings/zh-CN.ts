@@ -488,6 +488,7 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: '正在保存设置...',
     [SuiteCoreStringKey.Settings_Save]: '保存设置',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: '设置检索成功',
+    [SuiteCoreStringKey.Settings_UpdateFailed]: '更新设置失败',
     [SuiteCoreStringKey.SignInButton]: '登录',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} 项',
     [SuiteCoreStringKey.TestTemplate]: '这是一个测试: {variable1}, {AdministratorEmail}',

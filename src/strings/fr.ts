@@ -593,6 +593,7 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: 'Enregistrement des paramètres...',
     [SuiteCoreStringKey.Settings_Save]: 'Enregistrer les paramètres',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Paramètres récupérés avec succès',
+    [SuiteCoreStringKey.Settings_UpdateFailed]: 'Échec de la mise à jour des paramètres',
     [SuiteCoreStringKey.SignInButton]: 'Se connecter',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} éléments',
     [SuiteCoreStringKey.TestTemplate]:

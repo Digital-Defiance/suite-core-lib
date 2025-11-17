@@ -415,6 +415,7 @@ export enum SuiteCoreStringKey {
   Settings_Save = 'settings_save',
   Settings_DarkModeSuccess = 'settings_darkModeSuccess',
   Settings_RetrievedSuccess = 'settings_retrievedSuccess',
+  Settings_UpdateFailed = 'settings_updateFailed',
   SignInButton = 'signInButton',
   TestItemCountTemplate = 'testItemCountTemplate',
   TestTemplate = 'testTemplate',

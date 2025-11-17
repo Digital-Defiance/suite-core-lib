@@ -597,6 +597,7 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: 'Einstellungen werden gespeichert...',
     [SuiteCoreStringKey.Settings_Save]: 'Einstellungen speichern',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Einstellungen erfolgreich abgerufen',
+    [SuiteCoreStringKey.Settings_UpdateFailed]: 'Fehler beim Aktualisieren der Einstellungen',
     [SuiteCoreStringKey.SignInButton]: 'Anmelden',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} Elemente',
     [SuiteCoreStringKey.TestTemplate]:

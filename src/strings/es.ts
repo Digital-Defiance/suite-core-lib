@@ -593,6 +593,7 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: 'Guardando configuración...',
     [SuiteCoreStringKey.Settings_Save]: 'Guardar configuración',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Configuración recuperada con éxito',
+    [SuiteCoreStringKey.Settings_UpdateFailed]: 'Error al actualizar la configuración',
     [SuiteCoreStringKey.SignInButton]: 'Iniciar sesión',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} elementos',
     [SuiteCoreStringKey.TestTemplate]:
