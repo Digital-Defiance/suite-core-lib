@@ -4,6 +4,8 @@ export * from './admin-role-not-found';
 export * from './core-typed-handleable';
 export * from './direct-challenge-not-enabled';
 export * from './direct-token-used';
+export * from './password-login-not-enabled';
+export * from './password-login-not-setup';
 export * from './email-in-use';
 export * from './email-token-expired';
 export * from './email-token-failed-to-send';

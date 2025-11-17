@@ -412,6 +412,10 @@ export const SuiteCoreComponentStrings: Record<
       'Direct login is not allowed for this account. Please request an email login link.',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       'Direct challenge login is not enabled for this account. Please use email login or contact support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'Password login is not enabled for this account. Please use email login or contact support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'Password login is not set up for this browser. Please use email login or contact support.',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       'Encryption data too large.',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
@@ -1010,6 +1014,10 @@ export const SuiteCoreComponentStrings: Record<
       'Direct login is not allowed for this account. Please request an email login link.',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       'Direct challenge login is not enabled for this account. Please use email login or contact support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'Password login is not enabled for this account. Please use email login or contact support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'Password login is not set up for this browser. Please use email login or contact support.',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       'Encryption data too large.',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
@@ -1647,7 +1655,11 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.Error_Login_DirectLoginNotAllowed]:
       'La connexion directe n’est pas autorisée pour ce compte. Veuillez demander un lien de connexion par e-mail.',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
-      'La connexion par défi direct n\'est pas activée pour ce compte. Veuillez utiliser la connexion par e-mail ou contacter le support.',     
+      'La connexion par défi direct n\'est pas activée pour ce compte. Veuillez utiliser la connexion par e-mail ou contacter le support.',  
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'La connexion par mot de passe n\'est pas activée pour ce compte. Veuillez utiliser la connexion par e-mail ou contacter le support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'La connexion par mot de passe n\'est pas configurée pour ce navigateur. Veuillez utiliser la connexion par e-mail ou contacter le support.',   
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       'Les données de chiffrement sont trop volumineuses.',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
@@ -2309,6 +2321,10 @@ export const SuiteCoreComponentStrings: Record<
       'Die direkte Anmeldung ist für dieses Konto nicht erlaubt. Bitte fordern Sie einen Anmeldelink per E-Mail an.',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       'Die direkte Challenge-Anmeldung ist für dieses Konto nicht aktiviert. Bitte verwenden Sie die E-Mail-Anmeldung oder kontaktieren Sie den Support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'Passwort-Anmeldung ist für dieses Konto nicht aktiviert. Bitte verwenden Sie die E-Mail-Anmeldung oder kontaktieren Sie den Support.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'Passwort-Anmeldung ist für diesen Browser nicht eingerichtet. Bitte verwenden Sie die E-Mail-Anmeldung oder kontaktieren Sie den Support.',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       'Die Verschlüsselungsdaten sind zu groß.',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
@@ -2970,6 +2986,10 @@ export const SuiteCoreComponentStrings: Record<
       'No se permite el inicio de sesión directo para esta cuenta. Por favor, solicite un enlace de inicio de sesión por correo electrónico.',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       'El inicio de sesión por desafío directo no está habilitado para esta cuenta. Por favor, use el inicio de sesión por correo electrónico o contacte al soporte.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'El inicio de sesión con contraseña no está habilitado para esta cuenta. Por favor, use el inicio de sesión por correo electrónico o contacte al soporte.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'El inicio de sesión con contraseña no está configurado para este navegador. Por favor, use el inicio de sesión por correo electrónico o contacte al soporte.',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       'Los datos de cifrado son demasiado grandes.',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
@@ -3555,6 +3575,10 @@ export const SuiteCoreComponentStrings: Record<
       '不允许直接登录此帐户。请请求电子邮件登录链接。',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       '此账户未启用直接挑战登录。请使用电子邮件登录或联系支持。',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      '此账户未启用密码登录。请使用电子邮件登录或联系支持。',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      '此浏览器未设置密码登录。请使用电子邮件登录或联系支持。',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       '加密数据过大。请确保数据不超过 1MB。',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]: '转换成员数据失败。',
@@ -4162,6 +4186,10 @@ export const SuiteCoreComponentStrings: Record<
       'このアカウントではダイレクトログインが許可されていません。メールログインリンクをリクエストしてください。',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       'このアカウントではダイレクトチャレンジログインが有効になっていません。メールログインを使用するか、サポートにお問い合わせください。',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'このアカウントではパスワードログインが有効になっていません。メールログインを使用するか、サポートにお問い合わせください。',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'このブラウザではパスワードログインが設定されていません。メールログインを使用するか、サポートにお問い合わせください。',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       '暗号化データが大きすぎます。',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
@@ -4795,6 +4823,10 @@ export const SuiteCoreComponentStrings: Record<
       'Прямий вхід не дозволений для цього облікового запису. Будь ласка, запитайте посилання для входу електронною поштою.',
     [SuiteCoreStringKey.Error_Login_DirectChallengeNotEnabled]:
       'Прямий виклик входу не ввімкнено для цього облікового запису. Будь ласка, використовуйте вхід через електронну пошту або зверніться до служби підтримки.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled]:
+      'Вхід за паролем не ввімкнено для цього облікового запису. Будь ласка, використовуйте вхід через електронну пошту або зверніться до служби підтримки.',
+    [SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup]:
+      'Вхід за паролем не налаштовано для цього браузера. Будь ласка, використовуйте вхід через електронну пошту або зверніться до служби підтримки.',
     [SuiteCoreStringKey.Error_MemberErrorEncryptionDataTooLarge]:
       'Дані шифрування занадто великі.',
     [SuiteCoreStringKey.Error_MemberErrorFailedToConvertMemberData]:
