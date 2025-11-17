@@ -293,6 +293,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'Verification email resent successfully',
     [SuiteCoreStringKey.EmailVerification_Success]: 'Email verified successfully',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'No password or mnemonic provided',
     [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'System user must be of MemberType.System',
     [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Invalid CSP or Helmet options provided.',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Error producing challenge',
@@ -892,6 +893,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'Verification email resent successfully',
     [SuiteCoreStringKey.EmailVerification_Success]: 'Email verified successfully',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'No password or mnemonic provided',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Error producing challenge',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'Direct login token has already been used',
@@ -1263,6 +1265,7 @@ export const SuiteCoreComponentStrings: Record<
       'Échec de la validation Express',
     [SuiteCoreStringKey.Validation_MongooseValidationError]:
       'Une erreur de validation Mongoose s\'est produite',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'Aucun mot de passe ou phrase mnémonique fourni',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Le compte est actif',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'Le compte est verrouillé par un administrateur',
@@ -2176,6 +2179,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'E-Mail-Verifizierung erfolgreich erneut gesendet',
     [SuiteCoreStringKey.EmailVerification_Success]: 'E-Mail erfolgreich verifiziert',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'Kein Passwort oder mnemonische Phrase angegeben',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Fehler bei der Generierung der Herausforderung',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'Der Direktanmeldetoken wurde bereits verwendet',
@@ -2838,6 +2842,7 @@ export const SuiteCoreComponentStrings: Record<
       'Correo de verificación reenviado con éxito',
     [SuiteCoreStringKey.EmailVerification_Success]:
       'Correo electrónico verificado con éxito',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'No se proporcionó contraseña o frase mnemotécnica',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Error al generar el desafío',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'El token de inicio de sesión directo ya ha sido utilizado',
@@ -3448,6 +3453,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.EmailVerification_Failed]: '邮箱验证失败。请重试。',
     [SuiteCoreStringKey.EmailVerification_Resent]: '验证邮件已成功重新发送',
     [SuiteCoreStringKey.EmailVerification_Success]: '邮箱验证成功',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: '未提供密码或助记词',
     [SuiteCoreStringKey.Error_ChallengeError]: '生成挑战时出错',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]: '直接登录令牌已被使用',
     [SuiteCoreStringKey.Error_Disposed]: '「已处理」',
@@ -4039,6 +4045,7 @@ export const SuiteCoreComponentStrings: Record<
     [SuiteCoreStringKey.EmailVerification_Resent]:
       '確認メールを再送信しました',
     [SuiteCoreStringKey.EmailVerification_Success]: 'メールが正常に確認されました',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'パスワードまたはニーモニックフレーズが提供されていません',
     [SuiteCoreStringKey.Error_ChallengeError]: 'チャレンジの生成エラー',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'ダイレクトログイントークンはすでに使用されています',
@@ -4662,6 +4669,7 @@ export const SuiteCoreComponentStrings: Record<
       'Лист для підтвердження електронної пошти успішно відправлено повторно',
     [SuiteCoreStringKey.EmailVerification_Success]:
       'Електронну пошту успішно підтверджено',
+    [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'Не надано пароль або мнемонічну фразу',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Помилка під час створення виклику',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'Токен прямого входу вже був використаний',

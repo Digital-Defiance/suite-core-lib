@@ -227,6 +227,7 @@ export enum SuiteCoreStringKey {
   Error_ChallengeError = 'error_challengeError',
   Error_DirectTokenAlreadyUsed = 'error_directTokenAlreadyUsed',
   Error_Disposed = 'error_disposed',
+  Error_NoPasswordOrMnemonicProvided = 'error_noPasswordOrMnemonicProvided',
   Error_EciesError_InvalidMultipleMessageOverheadSize = 'Error_EciesError_InvalidMultipleMessageOverheadSize',
   Error_EciesError_InvalidPublicKeyLength = 'Error_EciesError_InvalidPublicKeyLength',
   Error_EciesError_InvalidRecipientCount = 'Error_EciesError_InvalidRecipientCount',
