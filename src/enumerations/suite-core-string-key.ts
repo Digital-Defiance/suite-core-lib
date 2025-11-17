@@ -365,7 +365,7 @@ export enum SuiteCoreStringKey {
   Login_LoginButton = 'login_loginButton',
   Login_SignUp = 'login_signUp',
   Login_Title = 'login_title',
-  Login_UseEmail = 'login_useEmail',
+  Login_UseEmailAddress = 'login_useEmail',
   Login_UseUsername = 'login_useUsername',
   LogoutButton = 'logoutButton',
   MemberRoleNotFound = 'memberRoleNotFound',
