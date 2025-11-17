@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.14
+
+- Update ecies, i18n
+
 ## v2.2.13
 
 - Add currency,directChallenge to IRequestUserDTO
