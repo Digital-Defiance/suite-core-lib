@@ -185,6 +185,8 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: 'Rol de administrador no encontrado',
     [SuiteCoreStringKey.ApiAccess_Title]: 'Su token de acceso',
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'El token no está disponible',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'Error al obtener los códigos de respaldo',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'Error al generar los códigos de respaldo',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} códigos de respaldo restantes',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:
@@ -297,6 +299,7 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
       'Correo de verificación reenviado con éxito',
     [SuiteCoreStringKey.EmailVerification_Success]:
       'Correo electrónico verificado con éxito',
+    [SuiteCoreStringKey.Error_VerificationFailed]: 'La verificación falló.',
     [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'No se proporcionó contraseña o frase mnemotécnica',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Error al generar el desafío',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
@@ -594,6 +597,7 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: 'Guardar configuración',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Configuración recuperada con éxito',
     [SuiteCoreStringKey.Settings_UpdateFailed]: 'Error al actualizar la configuración',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: 'Error al recuperar la configuración',
     [SuiteCoreStringKey.SignInButton]: 'Iniciar sesión',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} elementos',
     [SuiteCoreStringKey.TestTemplate]:

@@ -30,6 +30,7 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
       'Express验证失败',
     [SuiteCoreStringKey.Validation_MongooseValidationError]:
       '发生了Mongoose验证错误',
+    [SuiteCoreStringKey.Error_VerificationFailed]: '验证失败',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: '账户处于激活状态',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]: '账户被管理员锁定',
     [SuiteCoreStringKey.Error_AccountStatus_PendingEmailVerification]:
@@ -154,6 +155,8 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: '未找到管理员角色',
     [SuiteCoreStringKey.ApiAccess_Title]: '您的访问令牌',
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: '令牌不可用',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: '获取备份代码失败',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: '生成备份代码失败',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} 个备份代码剩余',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]: '生成新的备份代码',
@@ -489,6 +492,7 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: '保存设置',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: '设置检索成功',
     [SuiteCoreStringKey.Settings_UpdateFailed]: '更新设置失败',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: '检索设置失败',
     [SuiteCoreStringKey.SignInButton]: '登录',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} 项',
     [SuiteCoreStringKey.TestTemplate]: '这是一个测试: {variable1}, {AdministratorEmail}',

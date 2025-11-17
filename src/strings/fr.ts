@@ -190,6 +190,8 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: 'Rôle administrateur non trouvé',
     [SuiteCoreStringKey.ApiAccess_Title]: "Votre jeton d'accès",
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Jeton non disponible',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'Échec de la récupération des codes de sauvegarde',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'Échec de la génération des codes de sauvegarde',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} codes de sauvegarde restants',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:
@@ -296,6 +298,7 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'E-mail de vérification renvoyé avec succès',
     [SuiteCoreStringKey.EmailVerification_Success]: 'E-mail vérifié avec succès',
+    [SuiteCoreStringKey.Error_VerificationFailed]: 'Échec de la vérification',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Erreur lors de la génération du défi',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
       'Le jeton de connexion directe a déjà été utilisé',
@@ -594,6 +597,7 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: 'Enregistrer les paramètres',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Paramètres récupérés avec succès',
     [SuiteCoreStringKey.Settings_UpdateFailed]: 'Échec de la mise à jour des paramètres',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: 'Échec de la récupération des paramètres',
     [SuiteCoreStringKey.SignInButton]: 'Se connecter',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} éléments',
     [SuiteCoreStringKey.TestTemplate]:

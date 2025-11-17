@@ -79,6 +79,7 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_NoActiveRequest]: 'No active request',
     [SuiteCoreStringKey.Common_NoUserOnRequest]: 'No user on request',
     [SuiteCoreStringKey.Common_NoActiveResponse]: 'No active response',
+    [SuiteCoreStringKey.Error_VerificationFailed]: 'Verification failed',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]: 'A child role cannot be a system role',
     [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]: 'A child role cannot be an admin role',
     [SuiteCoreStringKey.Error_EngineAlreadySet]: 'I18n engine already set',
@@ -171,6 +172,8 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: 'Admin role not found',
     [SuiteCoreStringKey.ApiAccess_Title]: 'Your Access Token',
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Token not available',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'Failed to fetch backup codes',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'Failed to generate backup codes',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} backup codes remaining',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]: 'Generate New Backup Codes',
@@ -542,6 +545,7 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: 'Save Settings',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Settings retrieved successfully',
     [SuiteCoreStringKey.Settings_UpdateFailed]: 'Failed to update settings',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: 'Failed to retrieve settings',
     [SuiteCoreStringKey.SignInButton]: 'Sign In',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} items',
     [SuiteCoreStringKey.TestTemplate]:

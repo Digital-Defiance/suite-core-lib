@@ -172,6 +172,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: 'Admin role not found',
     [SuiteCoreStringKey.ApiAccess_Title]: 'Your Access Token',
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Token not available',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'Failed to fetch backup codes',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'Failed to generate backup codes',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} backup codes remaining',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]: 'Generate New Backup Codes',
@@ -272,6 +274,7 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'Verification email resent successfully',
     [SuiteCoreStringKey.EmailVerification_Success]: 'Email verified successfully',
+    [SuiteCoreStringKey.Error_VerificationFailed]: 'Verification failed',
     [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'No password or mnemonic provided',
     [SuiteCoreStringKey.Error_SystemUserMustBeSystemMemberType]: 'System user must be of MemberType.System',
     [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]: 'Invalid CSP or Helmet options provided.',
@@ -544,6 +547,7 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dark mode updated successfully',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Settings retrieved successfully',
     [SuiteCoreStringKey.Settings_UpdateFailed]: 'Failed to update settings',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: 'Failed to retrieve settings',
     [SuiteCoreStringKey.SignInButton]: 'Sign In',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} items',
     [SuiteCoreStringKey.TestTemplate]:

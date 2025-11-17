@@ -190,6 +190,8 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: 'Administratorrolle nicht gefunden',
     [SuiteCoreStringKey.ApiAccess_Title]: "Ihr Zugriffstoken",
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Token nicht verfügbar',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'Fehler beim Abrufen der Backup-Codes',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'Fehler beim Generieren der Backup-Codes',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       'Verbleibende Backup-Codes: {count}',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:
@@ -297,6 +299,7 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.EmailVerification_Resent]:
       'E-Mail-Verifizierung erfolgreich erneut gesendet',
     [SuiteCoreStringKey.EmailVerification_Success]: 'E-Mail erfolgreich verifiziert',
+    [SuiteCoreStringKey.Error_VerificationFailed]: 'Verifizierung fehlgeschlagen',
     [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'Kein Passwort oder mnemonische Phrase angegeben',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Fehler bei der Generierung der Herausforderung',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
@@ -598,6 +601,7 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: 'Einstellungen speichern',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Einstellungen erfolgreich abgerufen',
     [SuiteCoreStringKey.Settings_UpdateFailed]: 'Fehler beim Aktualisieren der Einstellungen',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: 'Fehler beim Abrufen der Einstellungen',
     [SuiteCoreStringKey.SignInButton]: 'Anmelden',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} Elemente',
     [SuiteCoreStringKey.TestTemplate]:

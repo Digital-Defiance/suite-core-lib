@@ -34,6 +34,7 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
       'Expressの検証に失敗しました',
     [SuiteCoreStringKey.Validation_MongooseValidationError]:
       'Mongooseの検証に失敗しました',
+    [SuiteCoreStringKey.Error_VerificationFailed]: '検証に失敗しました',
     [SuiteCoreStringKey.Error_AccountStatus_Active]: 'アカウントはアクティブです',
     [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
       'アカウントは管理者によってロックされています',
@@ -198,6 +199,8 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: '管理者役割が見つかりません',
     [SuiteCoreStringKey.ApiAccess_Title]: 'アクセストークン',
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'トークンが利用できません',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'バックアップコードの取得に失敗しました',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'バックアップコードの生成に失敗しました',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} バックアップコードが残っています',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]: '新しいバックアップコードを生成',
@@ -570,6 +573,7 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: '設定を保存',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: '設定が正常に取得されました',
     [SuiteCoreStringKey.Settings_UpdateFailed]: '設定の更新に失敗しました',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: '設定の取得に失敗しました',
     [SuiteCoreStringKey.SignInButton]: 'サインイン',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count}個のアイテム',
     [SuiteCoreStringKey.TestTemplate]:

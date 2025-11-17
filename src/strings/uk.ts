@@ -186,6 +186,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.AdminRoleNotFound]: 'Роль адміністратора не знайдено',
     [SuiteCoreStringKey.ApiAccess_Title]: 'Ваш токен доступу',
     [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Токен недоступний',
+    [SuiteCoreStringKey.BackupCodes_FailedToFetch]: 'Не вдалося отримати коди резервної копії',
+    [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: 'Не вдалося згенерувати коди резервної копії',
     [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
       '{count} кодів резервної копії залишилося',
     [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:
@@ -294,6 +296,7 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
       'Лист для підтвердження електронної пошти успішно відправлено повторно',
     [SuiteCoreStringKey.EmailVerification_Success]:
       'Електронну пошту успішно підтверджено',
+    [SuiteCoreStringKey.Error_VerificationFailed]: 'Верифікація не вдалася',
     [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]: 'Не надано пароль або мнемонічну фразу',
     [SuiteCoreStringKey.Error_ChallengeError]: 'Помилка під час створення виклику',
     [SuiteCoreStringKey.Error_DirectTokenAlreadyUsed]:
@@ -579,6 +582,7 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Save]: 'Зберегти налаштування',
     [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Налаштування успішно отримано',
     [SuiteCoreStringKey.Settings_UpdateFailed]: 'Не вдалося оновити налаштування',
+    [SuiteCoreStringKey.Settings_RetrieveFailure]: 'Не вдалося отримати налаштування',
     [SuiteCoreStringKey.SignInButton]: 'Увійти',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} елементів',
     [SuiteCoreStringKey.TestTemplate]: 'Це тест: {variable1}, {AdministratorEmail}',
