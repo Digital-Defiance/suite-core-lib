@@ -525,6 +525,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Registration_Success]:
       'Registration successful. Please check your email to verify your account.',
     [SuiteCoreStringKey.Registration_SuccessTitle]: 'Registration successful.',
+    [SuiteCoreStringKey.Registration_DirectChallengeLabel]: 'Enable Direct Challenge Login',
+    [SuiteCoreStringKey.Registration_DirectChallengeHelper]: 'Allow logging in directly with your mnemonic phrase without email verification. This is more convenient but less secure if your mnemonic is compromised.',
     [SuiteCoreStringKey.RemoveAdmin_Success]: 'Admin removed successfully',
     [SuiteCoreStringKey.RemoveAdmin_Unauthorized]: 'Unauthorized to remove an admin',
     [SuiteCoreStringKey.RemoveMember_Success]: 'Member removed successfully',

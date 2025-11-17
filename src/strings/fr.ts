@@ -573,6 +573,8 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Registration_Success]:
       'Inscription réussie. Veuillez vérifier votre e-mail pour vérifier votre compte.',
     [SuiteCoreStringKey.Registration_SuccessTitle]: 'Inscription réussie.',
+    [SuiteCoreStringKey.Registration_DirectChallengeLabel]: 'Activer la connexion par défi direct',
+    [SuiteCoreStringKey.Registration_DirectChallengeHelper]: 'Permettre de se connecter directement avec votre phrase mnémotechnique sans vérification par e-mail. C\'est plus pratique mais moins sécurisé si votre phrase mnémotechnique est compromise.',
     [SuiteCoreStringKey.RemoveAdmin_Success]: 'Administrateur supprimé avec succès',
     [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
       'Non autorisé à supprimer un administrateur',

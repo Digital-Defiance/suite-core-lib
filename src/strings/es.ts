@@ -572,6 +572,8 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Registration_Success]:
       'Registro exitoso. Por favor, verifique su correo electrónico para verificar su cuenta.',
     [SuiteCoreStringKey.Registration_SuccessTitle]: 'Registro exitoso.',
+    [SuiteCoreStringKey.Registration_DirectChallengeLabel]: 'Habilitar inicio de sesión por desafío directo',
+    [SuiteCoreStringKey.Registration_DirectChallengeHelper]: 'Permitir iniciar sesión directamente con su frase mnemotécnica sin verificación por correo electrónico. Esto es más conveniente pero menos seguro si su frase mnemotécnica se ve comprometida.',
     [SuiteCoreStringKey.RemoveAdmin_Success]: 'Administrador eliminado con éxito',
     [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
       'No autorizado para eliminar un administrador',

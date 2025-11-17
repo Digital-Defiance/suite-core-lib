@@ -551,6 +551,8 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Registration_Success]:
       '登録に成功しました。アカウントを確認するためにメールを確認してください。',
     [SuiteCoreStringKey.Registration_SuccessTitle]: '登録に成功しました。',
+    [SuiteCoreStringKey.Registration_DirectChallengeLabel]: 'ダイレクトチャレンジログインを有効にする',
+    [SuiteCoreStringKey.Registration_DirectChallengeHelper]: 'メール確認なしでニーモニックフレーズを使用して直接ログインできるようにします。これはより便利ですが、ニーモニックが漏洩した場合はセキュリティが低下します。',
     [SuiteCoreStringKey.RemoveAdmin_Success]: '管理者が正常に削除されました',
     [SuiteCoreStringKey.RemoveAdmin_Unauthorized]: '管理者を削除する権限がありません',
     [SuiteCoreStringKey.RemoveMember_Success]: 'メンバーが正常に削除されました',

@@ -577,6 +577,8 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Registration_Success]:
       'Registrierung erfolgreich. Bitte überprüfen Sie Ihre E-Mail, um Ihr Konto zu verifizieren.',
     [SuiteCoreStringKey.Registration_SuccessTitle]: 'Registrierung erfolgreich.',
+    [SuiteCoreStringKey.Registration_DirectChallengeLabel]: 'Direkte Challenge-Anmeldung aktivieren',
+    [SuiteCoreStringKey.Registration_DirectChallengeHelper]: 'Ermöglichen Sie die direkte Anmeldung mit Ihrer mnemonischen Phrase ohne E-Mail-Verifizierung. Dies ist bequemer, aber weniger sicher, wenn Ihre mnemonische Phrase kompromittiert wird.',
     [SuiteCoreStringKey.RemoveAdmin_Success]: 'Administrator erfolgreich entfernt',
     [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
       'Nicht berechtigt, einen Administrator zu entfernen',

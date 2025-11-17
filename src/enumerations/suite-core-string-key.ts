@@ -397,6 +397,8 @@ export enum SuiteCoreStringKey {
   Registration_RegisteringMessage = 'registration_registeringMessage',
   Registration_Success = 'registration_success',
   Registration_SuccessTitle = 'registration_successTitle',
+  Registration_DirectChallengeLabel = 'registration_directChallengeLabel',
+  Registration_DirectChallengeHelper = 'registration_directChallengeHelper',
   RemoveAdmin_Success = 'removeAdmin_success',
   RemoveAdmin_Unauthorized = 'removeAdmin_unauthorized',
   RemoveMember_Success = 'removeMember_success',

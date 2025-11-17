@@ -470,6 +470,8 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Registration_Success]:
       '注册成功。请检查您的电子邮件以验证您的账户。',
     [SuiteCoreStringKey.Registration_SuccessTitle]: '注册成功。',
+    [SuiteCoreStringKey.Registration_DirectChallengeLabel]: '启用直接挑战登录',
+    [SuiteCoreStringKey.Registration_DirectChallengeHelper]: '允许直接使用您的助记词登录，无需电子邮件验证。这更方便，但如果您的助记词泄露，安全性会降低。',
     [SuiteCoreStringKey.RemoveAdmin_Success]: '管理员移除成功',
     [SuiteCoreStringKey.RemoveAdmin_Unauthorized]: '未授权移除管理员',
     [SuiteCoreStringKey.RemoveMember_Success]: '成员移除成功',
