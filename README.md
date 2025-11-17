@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.13
+
+- Add currency,directChallenge to IRequestUserDTO
+
 ## v2.2.12
 
 - Add strings

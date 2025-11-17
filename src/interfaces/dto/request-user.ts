@@ -10,4 +10,6 @@ export interface IRequestUserDTO {
   lastLogin?: string;
   emailVerified: boolean;
   darkMode: boolean;
+  currency: string;
+  directChallenge: boolean;
 }
