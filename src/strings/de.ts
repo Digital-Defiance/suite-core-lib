@@ -592,6 +592,7 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: 'Seitensprache',
     [SuiteCoreStringKey.Settings_Currency]: 'Bevorzugte Währung',
     [SuiteCoreStringKey.Settings_DarkMode]: 'Dunkelmodus',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dunkelmodus erfolgreich aktualisiert',
     [SuiteCoreStringKey.Settings_Saving]: 'Einstellungen werden gespeichert...',
     [SuiteCoreStringKey.Settings_Save]: 'Einstellungen speichern',
     [SuiteCoreStringKey.SignInButton]: 'Anmelden',

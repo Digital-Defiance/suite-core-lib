@@ -412,6 +412,7 @@ export enum SuiteCoreStringKey {
   Settings_DarkMode = 'settings_darkMode',
   Settings_Saving = 'settings_saving',
   Settings_Save = 'settings_save',
+  Settings_DarkModeSuccess = 'settings_darkModeSuccess',
   SignInButton = 'signInButton',
   TestItemCountTemplate = 'testItemCountTemplate',
   TestTemplate = 'testTemplate',

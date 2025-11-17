@@ -564,6 +564,7 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: 'サイト言語',
     [SuiteCoreStringKey.Settings_Currency]: '希望通貨',
     [SuiteCoreStringKey.Settings_DarkMode]: 'ダークモード',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'ダークモードが正常に更新されました',
     [SuiteCoreStringKey.Settings_Saving]: '設定を保存中...',
     [SuiteCoreStringKey.Settings_Save]: '設定を保存',
     [SuiteCoreStringKey.SignInButton]: 'サインイン',

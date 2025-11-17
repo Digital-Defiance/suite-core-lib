@@ -588,6 +588,7 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: 'Idioma del sitio',
     [SuiteCoreStringKey.Settings_Currency]: 'Moneda preferida',
     [SuiteCoreStringKey.Settings_DarkMode]: 'Modo oscuro',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Modo oscuro actualizado con éxito',
     [SuiteCoreStringKey.Settings_Saving]: 'Guardando configuración...',
     [SuiteCoreStringKey.Settings_Save]: 'Guardar configuración',
     [SuiteCoreStringKey.SignInButton]: 'Iniciar sesión',

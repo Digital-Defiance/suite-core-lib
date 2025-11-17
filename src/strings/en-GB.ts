@@ -536,6 +536,7 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: 'Site Language',
     [SuiteCoreStringKey.Settings_Currency]: 'Preferred Currency',
     [SuiteCoreStringKey.Settings_DarkMode]: 'Dark Mode',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dark mode updated successfully',
     [SuiteCoreStringKey.Settings_Saving]: 'Saving settings...',
     [SuiteCoreStringKey.Settings_Save]: 'Save Settings',
     [SuiteCoreStringKey.SignInButton]: 'Sign In',

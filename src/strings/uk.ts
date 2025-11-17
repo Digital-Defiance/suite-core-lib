@@ -573,6 +573,7 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: 'Мова сайту',
     [SuiteCoreStringKey.Settings_Currency]: 'Бажана валюта',
     [SuiteCoreStringKey.Settings_DarkMode]: 'Темний режим',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Темний режим успішно оновлено',
     [SuiteCoreStringKey.Settings_Saving]: 'Збереження налаштувань...',
     [SuiteCoreStringKey.Settings_Save]: 'Зберегти налаштування',
     [SuiteCoreStringKey.SignInButton]: 'Увійти',

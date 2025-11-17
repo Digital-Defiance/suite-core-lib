@@ -588,6 +588,7 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: 'Langue du site',
     [SuiteCoreStringKey.Settings_Currency]: 'Devise préférée',
     [SuiteCoreStringKey.Settings_DarkMode]: 'Mode sombre',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Mode sombre mis à jour avec succès',
     [SuiteCoreStringKey.Settings_Saving]: 'Enregistrement des paramètres...',
     [SuiteCoreStringKey.Settings_Save]: 'Enregistrer les paramètres',
     [SuiteCoreStringKey.SignInButton]: 'Se connecter',

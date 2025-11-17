@@ -540,6 +540,7 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkMode]: 'Dark Mode',
     [SuiteCoreStringKey.Settings_Saving]: 'Saving settings...',
     [SuiteCoreStringKey.Settings_Save]: 'Save Settings',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dark mode updated successfully',
     [SuiteCoreStringKey.SignInButton]: 'Sign In',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} items',
     [SuiteCoreStringKey.TestTemplate]:

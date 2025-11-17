@@ -483,6 +483,7 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_SiteLanguage]: '网站语言',
     [SuiteCoreStringKey.Settings_Currency]: '首选货币',
     [SuiteCoreStringKey.Settings_DarkMode]: '深色模式',
+    [SuiteCoreStringKey.Settings_DarkModeSuccess]: '深色模式已成功更新',
     [SuiteCoreStringKey.Settings_Saving]: '正在保存设置...',
     [SuiteCoreStringKey.Settings_Save]: '保存设置',
     [SuiteCoreStringKey.SignInButton]: '登录',
