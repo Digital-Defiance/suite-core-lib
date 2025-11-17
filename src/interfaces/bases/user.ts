@@ -32,6 +32,10 @@ export interface IUserBase<
    */
   publicKey: string;
   /**
+   * The currency preference of the user
+   */
+  currency: string;
+  /**
    * The timezone of the user
    */
   timezone: string;

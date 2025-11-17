@@ -586,6 +586,14 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.RemoveMember_Unauthorized]: 'Nicht berechtigt, ein Mitglied zu entfernen',
     [SuiteCoreStringKey.RequestNewVerificationEmail]:
       'Neue Verifizierungs-E-Mail anfordern',
+    [SuiteCoreStringKey.Settings_SaveSuccess]: 'Einstellungen erfolgreich gespeichert',
+    [SuiteCoreStringKey.Settings_Title]: 'Einstellungen',
+    [SuiteCoreStringKey.Settings_EmailHelper]: 'Wenn Sie Ihre E-Mail-Adresse ändern, ist eine erneute Verifizierung erforderlich. Wir senden eine Verifizierungs-E-Mail an die neue Adresse zur Bestätigung. Bitte überprüfen Sie Ihren Posteingang nach dem Speichern der Änderungen und folgen Sie den Anweisungen in der E-Mail, um Ihre neue Adresse zu verifizieren.',
+    [SuiteCoreStringKey.Settings_SiteLanguage]: 'Seitensprache',
+    [SuiteCoreStringKey.Settings_Currency]: 'Bevorzugte Währung',
+    [SuiteCoreStringKey.Settings_DarkMode]: 'Dunkelmodus',
+    [SuiteCoreStringKey.Settings_Saving]: 'Einstellungen werden gespeichert...',
+    [SuiteCoreStringKey.Settings_Save]: 'Einstellungen speichern',
     [SuiteCoreStringKey.SignInButton]: 'Anmelden',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} Elemente',
     [SuiteCoreStringKey.TestTemplate]:

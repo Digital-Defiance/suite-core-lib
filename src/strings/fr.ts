@@ -582,6 +582,14 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.RemoveMember_Unauthorized]: 'Non autorisé à supprimer un membre',
     [SuiteCoreStringKey.RequestNewVerificationEmail]:
       'Demander un nouvel e-mail de vérification',
+    [SuiteCoreStringKey.Settings_SaveSuccess]: 'Paramètres enregistrés avec succès',
+    [SuiteCoreStringKey.Settings_Title]: 'Paramètres',
+    [SuiteCoreStringKey.Settings_EmailHelper]: 'La modification de votre adresse e-mail nécessitera une nouvelle vérification. Nous enverrons un e-mail de vérification à la nouvelle adresse pour confirmer. Veuillez vérifier votre boîte de réception après avoir enregistré les modifications et suivre les instructions dans l\'e-mail pour vérifier votre nouvelle adresse.',
+    [SuiteCoreStringKey.Settings_SiteLanguage]: 'Langue du site',
+    [SuiteCoreStringKey.Settings_Currency]: 'Devise préférée',
+    [SuiteCoreStringKey.Settings_DarkMode]: 'Mode sombre',
+    [SuiteCoreStringKey.Settings_Saving]: 'Enregistrement des paramètres...',
+    [SuiteCoreStringKey.Settings_Save]: 'Enregistrer les paramètres',
     [SuiteCoreStringKey.SignInButton]: 'Se connecter',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} éléments',
     [SuiteCoreStringKey.TestTemplate]:

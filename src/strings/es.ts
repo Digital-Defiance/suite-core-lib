@@ -582,6 +582,14 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
       'No autorizado para eliminar un miembro',
     [SuiteCoreStringKey.RequestNewVerificationEmail]:
       'Solicitar un nuevo correo electrónico de verificación',
+    [SuiteCoreStringKey.Settings_SaveSuccess]: 'Configuración guardada correctamente',
+    [SuiteCoreStringKey.Settings_Title]: 'Configuración',
+    [SuiteCoreStringKey.Settings_EmailHelper]: 'Cambiar su dirección de correo electrónico requerirá una nueva verificación. Enviaremos un correo electrónico de verificación a la nueva dirección para confirmar. Por favor, revise su bandeja de entrada después de guardar los cambios y siga las instrucciones en el correo electrónico para verificar su nueva dirección.',
+    [SuiteCoreStringKey.Settings_SiteLanguage]: 'Idioma del sitio',
+    [SuiteCoreStringKey.Settings_Currency]: 'Moneda preferida',
+    [SuiteCoreStringKey.Settings_DarkMode]: 'Modo oscuro',
+    [SuiteCoreStringKey.Settings_Saving]: 'Guardando configuración...',
+    [SuiteCoreStringKey.Settings_Save]: 'Guardar configuración',
     [SuiteCoreStringKey.SignInButton]: 'Iniciar sesión',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} elementos',
     [SuiteCoreStringKey.TestTemplate]:
