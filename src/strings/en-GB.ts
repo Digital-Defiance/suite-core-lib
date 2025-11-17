@@ -182,6 +182,7 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
       'Here are your new backup codes. Please write them down in a safe location, they cannot be viewed again.',
     [SuiteCoreStringKey.CannotRemoveLastAdmin]: 'Cannot remove last admin',
     [SuiteCoreStringKey.ChangePassword_ChangePasswordButton]: 'Change Password',
+    [SuiteCoreStringKey.Common_Success]: 'Success',
     [SuiteCoreStringKey.Common_Admin]: 'Admin',
     [SuiteCoreStringKey.Common_Amount]: 'Amount',
     [SuiteCoreStringKey.Common_BackupCode]: 'Backup Code',
@@ -539,6 +540,7 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dark mode updated successfully',
     [SuiteCoreStringKey.Settings_Saving]: 'Saving settings...',
     [SuiteCoreStringKey.Settings_Save]: 'Save Settings',
+    [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Settings retrieved successfully',
     [SuiteCoreStringKey.SignInButton]: 'Sign In',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} items',
     [SuiteCoreStringKey.TestTemplate]:

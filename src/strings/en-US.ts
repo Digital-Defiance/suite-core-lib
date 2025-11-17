@@ -40,6 +40,7 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_StackTrace]: 'Stack trace',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'An unexpected error occurred',
     [SuiteCoreStringKey.Common_Ready]: 'Ready',
+    [SuiteCoreStringKey.Common_Success]: 'Success',
     [SuiteCoreStringKey.Common_Stopping]: 'Stopping',
     [SuiteCoreStringKey.Common_Stopped]: 'Stopped',
     [SuiteCoreStringKey.Common_Connecting]: 'Connecting',
@@ -541,6 +542,7 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_Saving]: 'Saving settings...',
     [SuiteCoreStringKey.Settings_Save]: 'Save Settings',
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dark mode updated successfully',
+    [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Settings retrieved successfully',
     [SuiteCoreStringKey.SignInButton]: 'Sign In',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} items',
     [SuiteCoreStringKey.TestTemplate]:

@@ -41,6 +41,7 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
       'アカウントはメール確認待ちです',
     [SuiteCoreStringKey.Common_UnexpectedError]: '予期しないエラーが発生しました',
     [SuiteCoreStringKey.Common_Ready]: '準備完了',
+    [SuiteCoreStringKey.Common_Success]: '成功',
     [SuiteCoreStringKey.Common_Stopping]: '停止中',
     [SuiteCoreStringKey.Common_Stopped]: '停止済み',
     [SuiteCoreStringKey.Common_Connecting]: '接続中',
@@ -567,6 +568,7 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'ダークモードが正常に更新されました',
     [SuiteCoreStringKey.Settings_Saving]: '設定を保存中...',
     [SuiteCoreStringKey.Settings_Save]: '設定を保存',
+    [SuiteCoreStringKey.Settings_RetrievedSuccess]: '設定が正常に取得されました',
     [SuiteCoreStringKey.SignInButton]: 'サインイン',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count}個のアイテム',
     [SuiteCoreStringKey.TestTemplate]:

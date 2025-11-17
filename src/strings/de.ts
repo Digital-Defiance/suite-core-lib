@@ -80,6 +80,7 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_StackTrace]: 'Stapelverfolgung',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Ein unerwarteter Fehler ist aufgetreten',
     [SuiteCoreStringKey.Common_Ready]: 'Bereit',
+    [SuiteCoreStringKey.Common_Success]: 'Erfolg',
     [SuiteCoreStringKey.Common_Stopping]: 'Anhalten',
     [SuiteCoreStringKey.Common_Stopped]: 'Angehalten',
     [SuiteCoreStringKey.Common_Connecting]: 'Verbinden',
@@ -595,6 +596,7 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Dunkelmodus erfolgreich aktualisiert',
     [SuiteCoreStringKey.Settings_Saving]: 'Einstellungen werden gespeichert...',
     [SuiteCoreStringKey.Settings_Save]: 'Einstellungen speichern',
+    [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Einstellungen erfolgreich abgerufen',
     [SuiteCoreStringKey.SignInButton]: 'Anmelden',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} Elemente',
     [SuiteCoreStringKey.TestTemplate]:

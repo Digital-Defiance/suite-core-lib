@@ -243,6 +243,7 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       '{timezone} no es una zona horaria válida',
     [SuiteCoreStringKey.Common_OK]: 'Aceptar',
+    [SuiteCoreStringKey.Common_Success]: 'Éxito',
     [SuiteCoreStringKey.Common_Online]: 'En línea',
     [SuiteCoreStringKey.Common_Password]: 'Contraseña',
     [SuiteCoreStringKey.Common_PrivateKey]: 'Clave privada',
@@ -591,6 +592,7 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Modo oscuro actualizado con éxito',
     [SuiteCoreStringKey.Settings_Saving]: 'Guardando configuración...',
     [SuiteCoreStringKey.Settings_Save]: 'Guardar configuración',
+    [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Configuración recuperada con éxito',
     [SuiteCoreStringKey.SignInButton]: 'Iniciar sesión',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} elementos',
     [SuiteCoreStringKey.TestTemplate]:

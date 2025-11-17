@@ -79,6 +79,7 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_StackTrace]: 'Trace de pile',
     [SuiteCoreStringKey.Common_UnexpectedError]: 'Une erreur inattendue s\'est produite',
     [SuiteCoreStringKey.Common_Ready]: 'Prêt',
+    [SuiteCoreStringKey.Common_Success]: 'Succès',
     [SuiteCoreStringKey.Common_Stopping]: 'Arrêt',
     [SuiteCoreStringKey.Common_Stopped]: 'Arrêté',
     [SuiteCoreStringKey.Common_Connecting]: 'Connexion',
@@ -591,6 +592,7 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Settings_DarkModeSuccess]: 'Mode sombre mis à jour avec succès',
     [SuiteCoreStringKey.Settings_Saving]: 'Enregistrement des paramètres...',
     [SuiteCoreStringKey.Settings_Save]: 'Enregistrer les paramètres',
+    [SuiteCoreStringKey.Settings_RetrievedSuccess]: 'Paramètres récupérés avec succès',
     [SuiteCoreStringKey.SignInButton]: 'Se connecter',
     [SuiteCoreStringKey.TestItemCountTemplate]: '{count} éléments',
     [SuiteCoreStringKey.TestTemplate]:
