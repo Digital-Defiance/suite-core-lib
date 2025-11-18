@@ -207,6 +207,8 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_NewPassword]: '新密码',
     [SuiteCoreStringKey.Common_Notification]: '通知',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]: '{timezone} 不是有效的时区',
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} 不是有效的货币代码',
     [SuiteCoreStringKey.Common_OK]: '确定',
     [SuiteCoreStringKey.Common_Online]: '在线',
     [SuiteCoreStringKey.Common_Password]: '密码',

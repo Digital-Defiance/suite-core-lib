@@ -247,6 +247,8 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_Notification]: 'Notification',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       "{timezone} n'est pas un fuseau horaire valide",
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} n\'est pas un code de devise valide',
     [SuiteCoreStringKey.Common_OK]: "D'accord",
     [SuiteCoreStringKey.Common_Online]: 'En ligne',
     [SuiteCoreStringKey.Common_Password]: 'Mot de passe',

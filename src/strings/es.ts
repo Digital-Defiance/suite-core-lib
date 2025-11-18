@@ -244,6 +244,8 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_Notification]: 'Notificación',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       '{timezone} no es una zona horaria válida',
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} no es un código de moneda válido',
     [SuiteCoreStringKey.Common_OK]: 'Aceptar',
     [SuiteCoreStringKey.Common_Success]: 'Éxito',
     [SuiteCoreStringKey.Common_Online]: 'En línea',

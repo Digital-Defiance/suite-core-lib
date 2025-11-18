@@ -406,6 +406,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.21
+
+- Add strings
+- Add IUserSettings/IUserSettingsDTO and hydrate/dehydrate methods
+
 ## v2.2.20
 
 - Update i18n/ecies

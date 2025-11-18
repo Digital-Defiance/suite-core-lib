@@ -19,3 +19,4 @@ export * from './has-updates';
 export * from './models';
 export * from './success-message';
 export * from './token-user';
+export * from './user-settings';

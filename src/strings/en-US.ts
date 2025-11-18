@@ -225,6 +225,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_Notification]: 'Notification',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       '{timezone} is not a valid timezone',
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} is not a valid currency code',
     [SuiteCoreStringKey.Common_OK]: 'OK',
     [SuiteCoreStringKey.Common_Online]: 'Online',
     [SuiteCoreStringKey.Common_Password]: 'Password',

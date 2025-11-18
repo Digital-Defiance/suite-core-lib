@@ -6,3 +6,4 @@ export * from './flags';
 export * from './formatters';
 export * from './validators';
 export * from './validators-with-constants';
+export * from './hydrate-dehydrate';

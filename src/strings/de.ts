@@ -248,6 +248,8 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_Notification]: 'Benachrichtigung',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       '{timezone} ist keine gültige Zeitzone',
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} ist kein gültiger Währungscode',
     [SuiteCoreStringKey.Common_OK]: 'OK',
     [SuiteCoreStringKey.Common_Online]: 'Online',
     [SuiteCoreStringKey.Common_Password]: 'Passwort',

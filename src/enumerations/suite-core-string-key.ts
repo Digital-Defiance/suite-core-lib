@@ -177,6 +177,7 @@ export enum SuiteCoreStringKey {
   Common_NoActiveResponse = 'common_noActiveResponse',
   Common_Notification = 'common_notification',
   Common_NotValidTimeZoneTemplate = 'common_notValidTimeZoneTemplate',
+  Common_NotValidCurrencyTemplate = 'common_notValidCurrencyTemplate',
   Common_NoUserOnRequest = 'common_noUserOnRequest',
   Common_OK = 'common_ok',
   Common_Online = 'common_online',

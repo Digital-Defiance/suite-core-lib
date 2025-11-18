@@ -244,6 +244,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_Notification]: 'Сповіщення',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       '{timezone} не є дійсним часовим поясом',
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} не є дійсним кодом валюти',
     [SuiteCoreStringKey.Common_OK]: 'Давати Згоду',
     [SuiteCoreStringKey.Common_Online]: 'Онлайн',
     [SuiteCoreStringKey.Common_Password]: 'Пароль',

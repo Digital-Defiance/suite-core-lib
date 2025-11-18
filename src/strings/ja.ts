@@ -252,6 +252,8 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     [SuiteCoreStringKey.Common_Notification]: '通知',
     [SuiteCoreStringKey.Common_NotValidTimeZoneTemplate]:
       '{timezone} は有効なタイムゾーンではありません',
+    [SuiteCoreStringKey.Common_NotValidCurrencyTemplate]:
+      '{currency} は有効な通貨コードではありません',
     [SuiteCoreStringKey.Common_OK]: 'OK',
     [SuiteCoreStringKey.Common_Online]: 'オンライン',
     [SuiteCoreStringKey.Common_Password]: 'パスワード',
