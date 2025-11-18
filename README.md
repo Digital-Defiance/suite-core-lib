@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.20
+
+- Update i18n/ecies
+
 ## v2.2.19
 
 - Update i18n/ecies
