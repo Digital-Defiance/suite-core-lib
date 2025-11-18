@@ -281,5 +281,6 @@ export const BCP47_TO_FLAG_CDN: Record<string, string> = {
  * Get FlagCDN flag code from BCP-47 language code
  */
 export function getFlagCode(bcp47: string): string | undefined {
+  if (!bcp47) return undefined;
   return BCP47_TO_FLAG_CDN[bcp47] || BCP47_TO_FLAG_CDN[bcp47.toLowerCase()];
 }

@@ -26,6 +26,29 @@ export class HandleableError extends Error {
   }
 }
 
+export class EmailString {
+  public readonly email: string;
+
+  constructor(email: string) {
+    const trimmedEmail = email.trim();
+    if (trimmedEmail.length === 0) {
+      throw new Error('Email cannot be empty');
+    }
+    if (trimmedEmail.length !== email.length) {
+      throw new Error('Email cannot have leading/trailing whitespace');
+    }
+    // Basic email validation
+    if (!trimmedEmail.includes('@') || !trimmedEmail.includes('.')) {
+      throw new Error('Invalid email format');
+    }
+    this.email = trimmedEmail;
+  }
+
+  toString(): string {
+    return this.email;
+  }
+}
+
 export class SecureString {
   constructor(private _value: string) {}
   

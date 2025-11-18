@@ -13,8 +13,8 @@ module.exports = {
     ...pathsToModuleNameMapper(compilerOptions.paths, {
       prefix: '<rootDir>/../../',
     }),
-    '^@digitaldefiance/ecies-lib$':
-      '<rootDir>/tests/__mocks__/@digitaldefiance/ecies-lib.ts',
+    // Removed mock - using real ecies-lib implementation
+    // '^@digitaldefiance/ecies-lib$': '<rootDir>/tests/__mocks__/@digitaldefiance/ecies-lib.ts',
   },
   collectCoverageFrom: ['src/**/*.ts', '!src/**/*.d.ts'],
   maxWorkers: 1,
