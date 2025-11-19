@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.23
+
+- Add new role interface
+
 ## v2.2.22
 
 - Update libs
