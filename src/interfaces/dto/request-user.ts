@@ -1,14 +1,16 @@
 import { IRoleDTO } from '../dto/role';
 
-export interface IRequestUserDTO {
+export interface IRequestUserDTO  {
+  // IUserDTO
   id: string;
   roles: Array<IRoleDTO>;
   username: string;
   email: string;
+  emailVerified: boolean;
+  lastLogin?: string;
+  // IUserSettingsDTO
   timezone: string;
   siteLanguage: string;
-  lastLogin?: string;
-  emailVerified: boolean;
   darkMode: boolean;
   currency: string;
   directChallenge: boolean;
