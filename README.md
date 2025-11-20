@@ -408,6 +408,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## v2.2.24
 
+- Add CSS warning color constant
+
+## v2.2.24
+
 - Add CSS constants
 
 ## v2.2.23

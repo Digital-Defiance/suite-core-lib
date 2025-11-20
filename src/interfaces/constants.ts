@@ -18,6 +18,10 @@ export interface IConstants extends ICoreConstants {
    */
   success_color: string;
   /**
+   * The color used to indicate warning states.
+   */
+  warning_color: string;
+  /**
    * The color used to indicate failure states.
    */
   failure_color: string;

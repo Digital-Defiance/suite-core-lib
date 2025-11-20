@@ -177,6 +177,10 @@ export const createConstants: (
      */
     failure_color: '#F44336',
     /**
+     * The color used to indicate warning states.
+     */
+    warning_color: '#FF9800',
+    /**
      * The light variant of the primary text color.
      */
     primary_text_light: '#ffffff',
