@@ -406,6 +406,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v2.2.24
+
+- Add CSS constants
+
 ## v2.2.23
 
 - Add new role interface

@@ -168,6 +168,30 @@ export const createConstants: (
      * The hostname of the site.
      */
     SiteHostname: siteHostname,
+    /**
+     * The color used to indicate success states.
+     */
+    success_color: '#4CAF50',
+    /**
+     * The color used to indicate failure states.
+     */
+    failure_color: '#F44336',
+    /**
+     * The light variant of the primary text color.
+     */
+    primary_text_light: '#ffffff',
+    /**
+     * The dark variant of the primary text color.
+     */
+    primary_text_dark: '#000000',
+    /**
+     * The light variant of the secondary text color.
+     */
+    secondary_text_light: '#ffffff',
+    /**
+     * The dark variant of the secondary text color.
+     */
+    secondary_text_dark: '#000000',
     ...(overrides ?? {}),
   } as const);
 };
