@@ -196,6 +196,18 @@ export const createConstants: (
      * The dark variant of the secondary text color.
      */
     secondary_text_dark: '#000000',
+    /**
+     * The primary brand color (used for primary theme color)
+     */
+    logo_primary_color: '#050505ff',
+    /**
+     * The primary text color (used for logo and text)
+     */
+    logo_primary_text: '#212121',
+    /**
+     * The secondary text color (used for logo and accents)
+     */
+    logo_secondary_text: '#757575',
     ...(overrides ?? {}),
   } as const);
 };

@@ -14,6 +14,18 @@ export interface IConstants extends ICoreConstants {
    */
   SystemEmail: string;
   /**
+   * The primary brand color (used for primary theme color)
+   */
+  logo_primary_color: string;
+  /**
+   * The primary text color (used for logo and text)
+   */
+  logo_primary_text: string;
+  /**
+   * The secondary text color (used for logo and accents)
+   */
+  logo_secondary_text: string;
+  /**
    * The color used to indicate success states.
    */
   success_color: string;

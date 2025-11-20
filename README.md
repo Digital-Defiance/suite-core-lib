@@ -406,7 +406,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
-## v2.2.24
+## v2.2.26
+
+- Add CSS warning logo constants
+
+## v2.2.25
 
 - Add CSS warning color constant
 
