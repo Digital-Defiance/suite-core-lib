@@ -58,11 +58,18 @@ interface AppUser extends IFrontendUser<'en'> {
   accountStatus: AccountStatus;
 }
 
-// Backend database interface supporting ObjectId types  
+// Backend database interface supporting ObjectId types (Default)
 interface DatabaseUser extends IBackendUser<'en'> {
   _id: Types.ObjectId;
   createdBy: Types.ObjectId;
   updatedBy: Types.ObjectId;
+}
+
+// Example: Backend interface using UUIDs (Strings)
+interface SqlUser extends IBackendUser<'en', string> {
+  _id: string;
+  createdBy: string;
+  updatedBy: string;
 }
 ```
 
@@ -249,7 +256,20 @@ The **@digitaldefiance/node-ecies** and **@digitaldefiance/node-express-suite** 
 - Mobile and desktop SDKs for React Native, Flutter, Electron, and Tauri
 - DevOps and deployment tooling including Docker, Kubernetes, and CI/CD pipelines
 
-## 🆕 What's New in v2.1
+## 🆕 What's New in v3.0
+
+### Generic ID Support
+Core interfaces (`IBackendUser`, `IBackendRole`, etc.) now support generic ID types. This enables seamless integration with the new **Pluggable ID Providers** (ObjectId, UUID, GUID) introduced in `@digitaldefiance/ecies-lib` v4.1.0.
+
+```typescript
+// Default behavior (MongoDB ObjectId)
+interface MongoUser extends IBackendUser<'en'> {}
+
+// Custom ID type (e.g. UUID string)
+interface SqlUser extends IBackendUser<'en', string> {}
+```
+
+## ✨ Key Features (v2.1+)
 
 ### New Modules
 
@@ -365,7 +385,7 @@ yarn test
 # ✅ Validators with custom constants
 ```
 
-### Coverage Metrics (v2.1.3)
+### Coverage Metrics
 
 - **Statements**: 98.47%
 - **Branches**: 94.56%
@@ -405,6 +425,11 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 **Building user management primitives?** Start with `@digitaldefiance/suite-core-lib` for type-safe, secure, and internationalized user system foundations. For complete frameworks, check out the **node-ecies** and **node-express-suite** projects! 🚀
 
 ## ChangeLog
+
+## v3.0.0
+
+- Upgrade ECIES to 4.1.0
+- Update backend interfaces (`IBackendUser`, `IBackendUserRole`, `IBackendTokenRole`, `IBackendUsedDirectLoginToken`) to support generic ID types (defaulting to `Types.ObjectId` for backward compatibility). This enables support for pluggable ID providers (e.g. GUIDs, strings, numbers) introduced in `@digitaldefiance/ecies-lib` v4.1.0.
 
 ## v2.2.26
 

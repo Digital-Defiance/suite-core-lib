@@ -14,8 +14,8 @@ export type IFrontendUser<TLanguage extends string> = IUserBase<
 /**
  * Back-end Base interface for user collection documents
  */
-export type IBackendUser<TLanguage extends string> = IUserBase<
-  Types.ObjectId,
+export type IBackendUser<TLanguage extends string, I = Types.ObjectId> = IUserBase<
+  I,
   Date,
   TLanguage,
   AccountStatus

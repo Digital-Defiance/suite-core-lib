@@ -8,5 +8,5 @@ export type IFrontendUsedDirectLoginToken = IUsedDirectLoginTokenBase<string>;
 /**
  * Base interface for back-end used direct login token collection documents
  */
-export type IBackendUsedDirectLoginToken =
-  IUsedDirectLoginTokenBase<Types.ObjectId>;
+export type IBackendUsedDirectLoginToken<I = Types.ObjectId> =
+  IUsedDirectLoginTokenBase<I>;
