@@ -426,6 +426,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v3.0.2
+
+- Update ECIES to 4.2.0
+
 ## v3.0.1
 
 - Update ECIES to 4.1.1
