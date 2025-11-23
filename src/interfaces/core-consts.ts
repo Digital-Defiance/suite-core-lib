@@ -1,6 +1,11 @@
+import { IIdProvider } from '@digitaldefiance/ecies-lib';
 import { IBackupCodeConstants } from './backup-code-consts';
 
 export interface ICoreConstants {
+  /**
+   * The ID provider to use for generating and parsing IDs
+   */
+  idProvider: IIdProvider;
   /**
    * Backup code related constants
    */

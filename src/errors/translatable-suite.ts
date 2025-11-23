@@ -1,7 +1,6 @@
 import { SuiteCoreStringKey } from '../enumerations/suite-core-string-key';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 
-
 export class TranslatableSuiteError extends Error {
   public readonly StringName: SuiteCoreStringKey;
   /**
@@ -14,7 +13,7 @@ export class TranslatableSuiteError extends Error {
   constructor(
     string: SuiteCoreStringKey,
     otherVars?: Record<string, string | number>,
-    language?: string,
+    language?: string
   ) {
     const i18nEngine = getSuiteCoreI18nEngine();
     let translatedMessage: string;
@@ -23,7 +22,7 @@ export class TranslatableSuiteError extends Error {
         SuiteCoreComponentId,
         string,
         otherVars,
-        language as any
+        language
       );
     } catch (error) {
       translatedMessage = string;

@@ -1,3 +1,4 @@
+import { ObjectIdProvider } from '@digitaldefiance/ecies-lib';
 import { Role } from './enumerations/role';
 import { IBackupCodeConstants, ICoreConstants } from './interfaces';
 import { IConstants } from './interfaces/constants';
@@ -12,6 +13,10 @@ export const BACKUP_CODES: IBackupCodeConstants = Object.freeze({
 } as const);
 
 export const CORE: ICoreConstants = Object.freeze({
+  /**
+   * The ID provider to use for generating and parsing IDs
+   */
+  idProvider: new ObjectIdProvider(),
   /**
    * Default duration in seconds for which a mnemonic is kept in memory
    */

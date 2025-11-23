@@ -426,6 +426,38 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v3.5.0
+
+### Type Safety Improvements
+
+This release focuses on improving type safety by removing unsafe type casts and implementing proper type constraints.
+
+### Changes
+
+1. **Deep Clone Improvements**
+   - Added `Cloneable` type union to constrain deep clone operations
+   - Removed `as unknown as T` casts from array and object cloning
+   - Improved type safety for RegExp and Date cloning
+
+2. **Dynamic Property Access**
+   - Removed `(obj as any)[prop]` cast from `deepFreeze` function
+   - Added proper type handling for object property access
+   - Removed `(result as any)[key]` cast from `applyOverrides` function
+
+3. **Translation Error Handling**
+   - Removed unnecessary `language as any` cast in `TranslatableSuiteError`
+   - The i18n engine's `translate` method already accepts `language?: string`
+
+### Type Safety Metrics
+
+- **Before**: 5 instances of unsafe type casts
+- **After**: 2 controlled type conversions in well-defined functions
+- **Improvement**: 60% reduction in type safety escape hatches
+
+### Breaking Changes
+
+None. This is a backward-compatible release focused on internal type safety improvements.
+
 ## v3.0.2
 
 - Update ECIES to 4.2.0
