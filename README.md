@@ -426,6 +426,10 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 ## ChangeLog
 
+## v.3.5.5
+
+- Bump versions to 4.2.6 ECIES / i18n 3.7.5
+
 ## v3.5.0
 
 ### Type Safety Improvements
