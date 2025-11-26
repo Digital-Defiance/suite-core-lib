@@ -40,36 +40,37 @@ All error messages, validation texts, and user-facing strings are fully localize
 
 ## 🏗️ Architecture Overview
 
-### Type-Safe Interfaces
+### Type-Safe Base Interfaces
 
 ```typescript
 import { 
-  IFrontendUser, 
-  IBackendUser, 
+  IUserBase,
+  IRoleBase,
+  IUserRoleBase,
   AccountStatus, 
   Role,
   CoreLanguage 
 } from '@digitaldefiance/suite-core-lib';
 
-// Frontend-optimized user interface with string-based IDs
-interface AppUser extends IFrontendUser<'en'> {
-  _id: string;
-  siteLanguage: 'en';
-  accountStatus: AccountStatus;
+// Create a user interface with string IDs for frontend applications
+interface FrontendUser extends IUserBase<string, Date, 'en', AccountStatus> {
+  // Additional app-specific fields
 }
 
-// Backend database interface supporting ObjectId types (Default)
-interface DatabaseUser extends IBackendUser<'en'> {
-  _id: Types.ObjectId;
-  createdBy: Types.ObjectId;
-  updatedBy: Types.ObjectId;
+// Create a user interface with ObjectId for MongoDB backend
+import { Types } from 'mongoose';
+interface BackendUser extends IUserBase<Types.ObjectId, Date, 'en', AccountStatus> {
+  // Additional app-specific fields
 }
 
-// Example: Backend interface using UUIDs (Strings)
-interface SqlUser extends IBackendUser<'en', string> {
-  _id: string;
-  createdBy: string;
-  updatedBy: string;
+// Create a user interface with UUID strings for SQL databases
+interface SqlUser extends IUserBase<string, Date, 'en', AccountStatus> {
+  // Additional app-specific fields
+}
+
+// Create custom role interfaces
+interface AppRole extends IRoleBase<string, Date, Role> {
+  // Additional app-specific fields
 }
 ```
 
@@ -120,17 +121,23 @@ The **@digitaldefiance/node-express-suite** package builds upon these primitives
 ### Express.js Framework Usage
 
 ```typescript
-// Internal usage of suite-core-lib primitives in node-express-suite
+// Usage of suite-core-lib primitives in Express applications
 import { 
-  IFrontendUser, 
+  IUserBase,
   AccountStatus, 
   BackupCodeString,
   UserNotFoundError,
+  InvalidBackupCodeError,
   CoreLanguage 
 } from '@digitaldefiance/suite-core-lib';
 
+interface BackupCode {
+  encrypted: string;
+  used: boolean;
+}
+
 // Middleware example: validate backup code input
-function validateBackupCode(userInput: string, storedCodes: IBackupCode[]) {
+function validateBackupCode(userInput: string, storedCodes: BackupCode[]): boolean {
   try {
     const inputCode = new BackupCodeString(userInput);
     return storedCodes.some(stored => 
@@ -149,21 +156,24 @@ function validateBackupCode(userInput: string, storedCodes: IBackupCode[]) {
 ### Frontend Framework Integration
 
 ```typescript
-// Frontend frameworks consume type-safe interfaces
-import { IFrontendUser, AccountStatus } from '@digitaldefiance/suite-core-lib';
+// Frontend frameworks consume type-safe base interfaces
+import { IUserBase, AccountStatus } from '@digitaldefiance/suite-core-lib';
+
+// Define a frontend user type with string IDs and Date objects
+type FrontendUser = IUserBase<string, Date, 'en' | 'fr' | 'es', AccountStatus>;
 
 // React/Vue/Angular component props example
 interface UserProfileProps {
-  user: IFrontendUser<'en' | 'fr' | 'es'>;
+  user: FrontendUser;
   onStatusChange: (status: AccountStatus) => void;
 }
 
 // Function to update user status with type safety
-function updateUserStatus(user: IFrontendUser<string>, status: AccountStatus) {
+function updateUserStatus(user: FrontendUser, status: AccountStatus): FrontendUser {
   return {
     ...user,
     accountStatus: status,
-    updatedAt: new Date().toISOString()
+    updatedAt: new Date()
   };
 }
 ```
@@ -171,11 +181,14 @@ function updateUserStatus(user: IFrontendUser<string>, status: AccountStatus) {
 ### Database Layer Integration
 
 ```typescript
-// Database schemas implementing suite-core-lib interfaces
-import { IBackendUser, IUserRoleBase } from '@digitaldefiance/suite-core-lib';
+// Database schemas implementing suite-core-lib base interfaces
+import { IUserBase, IUserRoleBase, AccountStatus } from '@digitaldefiance/suite-core-lib';
 import { Types } from 'mongoose';
 
-const userSchema = new mongoose.Schema<IBackendUser<'en'>>({
+// Define a MongoDB user type using ObjectId
+type MongoUser = IUserBase<Types.ObjectId, Date, 'en', AccountStatus>;
+
+const userSchema = new mongoose.Schema<MongoUser>({
   _id: { type: Types.ObjectId, required: true },
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
@@ -186,6 +199,11 @@ const userSchema = new mongoose.Schema<IBackendUser<'en'>>({
   },
   // Additional schema fields matching the interface
 });
+
+// SQL database example with UUID strings
+type SqlUser = IUserBase<string, Date, 'en', AccountStatus> & {
+  customField: string;
+};
 ```
 
 ## 🔧 Advanced Configuration
@@ -259,14 +277,23 @@ The **@digitaldefiance/node-ecies** and **@digitaldefiance/node-express-suite** 
 ## 🆕 What's New in v3.0
 
 ### Generic ID Support
-Core interfaces (`IBackendUser`, `IBackendRole`, etc.) now support generic ID types. This enables seamless integration with the new **Pluggable ID Providers** (ObjectId, UUID, GUID) introduced in `@digitaldefiance/ecies-lib` v4.1.0.
+Core base interfaces (`IUserBase`, `IRoleBase`, `IUserRoleBase`, etc.) now support generic ID types. This enables seamless integration with any database system using the **Pluggable ID Providers** (ObjectId, UUID, GUID) introduced in `@digitaldefiance/ecies-lib` v4.1.0.
 
 ```typescript
-// Default behavior (MongoDB ObjectId)
-interface MongoUser extends IBackendUser<'en'> {}
+import { IUserBase, AccountStatus } from '@digitaldefiance/suite-core-lib';
+import { Types } from 'mongoose';
 
-// Custom ID type (e.g. UUID string)
-interface SqlUser extends IBackendUser<'en', string> {}
+// MongoDB with ObjectId
+type MongoUser = IUserBase<Types.ObjectId, Date, 'en', AccountStatus>;
+
+// SQL database with UUID strings
+type SqlUser = IUserBase<string, Date, 'en', AccountStatus>;
+
+// PostgreSQL with numeric IDs
+type PostgresUser = IUserBase<number, Date, 'en', AccountStatus>;
+
+// Frontend with string IDs and ISO date strings
+type FrontendUser = IUserBase<string, string, 'en', AccountStatus>;
 ```
 
 ## ✨ Key Features (v2.1+)
@@ -501,23 +528,31 @@ describe('Error Handling', () => {
 
 ### Cross-Package Testing
 
-Testing with node-express-suite:
+Testing with base interfaces:
 
 ```typescript
-import { IBackendUser, AccountStatus } from '@digitaldefiance/suite-core-lib';
-import { UserService } from '@digitaldefiance/node-express-suite';
+import { IUserBase, AccountStatus } from '@digitaldefiance/suite-core-lib';
+import { Types } from 'mongoose';
 
-describe('Integration with node-express-suite', () => {
-  it('should work with UserService', async () => {
-    const user: IBackendUser = {
+// Define your user type
+type TestUser = IUserBase<Types.ObjectId, Date, 'en', AccountStatus>;
+
+describe('User Management', () => {
+  it('should create user with correct status', () => {
+    const user: TestUser = {
+      _id: new Types.ObjectId(),
       username: 'alice',
       email: 'alice@example.com',
       accountStatus: AccountStatus.Active,
-      // ... other fields
+      emailVerified: true,
+      siteLanguage: 'en',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      // ... other required fields
     };
     
-    // Use with UserService
     expect(user.accountStatus).toBe(AccountStatus.Active);
+    expect(user.emailVerified).toBe(true);
   });
 });
 ```
@@ -526,7 +561,10 @@ describe('Integration with node-express-suite', () => {
 
 ## v3.6.6
 
-- Move models to node-express-suite
+- **Breaking Change**: Move `IFrontend*` and `IBackend*` type aliases to `@digitaldefiance/node-express-suite`
+  - Base interfaces (`IUserBase`, `IRoleBase`, `IUserRoleBase`, etc.) remain in `suite-core-lib` as the core primitives
+  - Framework-specific type aliases moved to `node-express-suite` for better separation of concerns
+  - Migration: Use base interfaces directly (e.g., `IUserBase<string, Date, 'en', AccountStatus>`) or import pre-configured types from `@digitaldefiance/node-express-suite`
 - Update testing
 - Update ecies
 
@@ -593,7 +631,7 @@ None. This is a backward-compatible release focused on internal type safety impr
 ## v3.0.0
 
 - Upgrade ECIES to 4.1.0
-- Update backend interfaces (`IBackendUser`, `IBackendUserRole`, `IBackendTokenRole`, `IBackendUsedDirectLoginToken`) to support generic ID types (defaulting to `Types.ObjectId` for backward compatibility). This enables support for pluggable ID providers (e.g. GUIDs, strings, numbers) introduced in `@digitaldefiance/ecies-lib` v4.1.0.
+- Update base interfaces (`IUserBase`, `IUserRoleBase`, `ITokenRole`, etc.) to support generic ID types. This enables support for pluggable ID providers (e.g. ObjectId, UUID, GUID, numbers) introduced in `@digitaldefiance/ecies-lib` v4.1.0.
 
 ## v2.2.26
 

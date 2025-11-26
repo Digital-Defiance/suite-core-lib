@@ -1,9 +1,6 @@
-import {
-  IBackendUser,
-  IFrontendUser,
-} from '../../../digitaldefiance-node-express-suite/src/interfaces/models/user';
 import { AccountStatus } from '../../src/enumerations/account-status';
 import { IBackupCode } from '../../src/interfaces/backup-code';
+import { IUserBase } from '../../src/interfaces/bases/user';
 
 // Mock ObjectId for testing
 class MockObjectId {
@@ -13,9 +10,9 @@ class MockObjectId {
   }
 }
 
-describe('User interfaces', () => {
-  describe('IFrontendUser', () => {
-    it('should accept valid frontend user object', () => {
+describe('IUserBase interface', () => {
+  describe('with string IDs (frontend-style)', () => {
+    it('should accept valid user object with string IDs', () => {
       const backupCode: IBackupCode = {
         version: '1.0',
         checksumSalt: 'salt',
@@ -23,7 +20,7 @@ describe('User interfaces', () => {
         encrypted: 'encrypted',
       };
 
-      const user: IFrontendUser<'en'> = {
+      const user: IUserBase<string, Date, 'en', AccountStatus> = {
         _id: 'user123',
         username: 'testuser',
         email: 'test@example.com',
@@ -50,7 +47,7 @@ describe('User interfaces', () => {
     });
 
     it('should handle optional fields', () => {
-      const user: Partial<IFrontendUser<'en'>> = {
+      const user: Partial<IUserBase<string, Date, 'en', AccountStatus>> = {
         _id: 'user123',
         username: 'testuser',
         email: 'test@example.com',
@@ -73,8 +70,8 @@ describe('User interfaces', () => {
     });
   });
 
-  describe('IBackendUser', () => {
-    it('should accept valid backend user object with ObjectId-like structure', () => {
+  describe('with ObjectId (backend-style)', () => {
+    it('should accept valid user object with ObjectId-like structure', () => {
       const objectId = new MockObjectId() as any;
       const backupCode: IBackupCode = {
         version: '1.0',
@@ -83,7 +80,7 @@ describe('User interfaces', () => {
         encrypted: 'encrypted',
       };
 
-      const user: IBackendUser<'en'> = {
+      const user: IUserBase<MockObjectId, Date, 'en', AccountStatus> = {
         _id: objectId,
         username: 'testuser',
         email: 'test@example.com',
@@ -106,18 +103,65 @@ describe('User interfaces', () => {
       expect(user.updatedBy).toBeInstanceOf(MockObjectId);
     });
 
+    it('should work with numeric IDs', () => {
+      const user: Partial<IUserBase<number, Date, 'en', AccountStatus>> = {
+        _id: 12345,
+        createdBy: 1,
+        updatedBy: 1,
+      };
+
+      expect(typeof user._id).toBe('number');
+      expect(user._id).toBe(12345);
+    });
+  });
+
+  describe('generic language support', () => {
     it('should work with different language types', () => {
       type CustomLanguage = 'en' | 'es' | 'fr';
 
-      const user: Partial<IBackendUser<CustomLanguage>> = {
+      const user: Partial<
+        IUserBase<string, Date, CustomLanguage, AccountStatus>
+      > = {
         siteLanguage: 'es',
       };
 
       expect(user.siteLanguage).toBe('es');
     });
+
+    it('should work with string language type', () => {
+      const user: Partial<IUserBase<string, Date, string, AccountStatus>> = {
+        siteLanguage: 'de',
+      };
+
+      expect(user.siteLanguage).toBe('de');
+    });
   });
 
-  describe('User interface validation', () => {
+  describe('generic date support', () => {
+    it('should work with Date objects', () => {
+      const now = new Date();
+      const user: Partial<IUserBase<string, Date, 'en', AccountStatus>> = {
+        createdAt: now,
+        updatedAt: now,
+      };
+
+      expect(user.createdAt).toBeInstanceOf(Date);
+      expect(user.updatedAt).toBe(now);
+    });
+
+    it('should work with ISO date strings', () => {
+      const isoDate = '2025-11-25T00:00:00.000Z';
+      const user: Partial<IUserBase<string, string, 'en', AccountStatus>> = {
+        createdAt: isoDate,
+        updatedAt: isoDate,
+      };
+
+      expect(typeof user.createdAt).toBe('string');
+      expect(user.createdAt).toBe(isoDate);
+    });
+  });
+
+  describe('interface validation', () => {
     it('should enforce required fields through TypeScript', () => {
       // This test validates that TypeScript compilation would catch missing required fields
       const requiredFields = [
@@ -149,7 +193,7 @@ describe('User interfaces', () => {
       ];
 
       statuses.forEach((status) => {
-        const user: Partial<IFrontendUser<'en'>> = {
+        const user: Partial<IUserBase<string, Date, 'en', AccountStatus>> = {
           accountStatus: status,
         };
         expect(Object.values(AccountStatus)).toContain(user.accountStatus);
