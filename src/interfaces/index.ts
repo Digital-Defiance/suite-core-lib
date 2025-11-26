@@ -1,6 +1,7 @@
 export * from './backup-code';
 export * from './backup-code-consts';
 export * from './bases';
+export * from './combined-role-privileges';
 export * from './constants';
 export * from './core-consts';
 export * from './deep-partial';
@@ -16,8 +17,6 @@ export * from './has-timestamp-owners';
 export * from './has-timestamps';
 export * from './has-updater';
 export * from './has-updates';
-export * from './models';
 export * from './success-message';
 export * from './token-user';
 export * from './user-settings';
-export * from './combined-role-privileges';

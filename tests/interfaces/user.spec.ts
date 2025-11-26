@@ -1,11 +1,16 @@
+import {
+  IBackendUser,
+  IFrontendUser,
+} from '../../../digitaldefiance-node-express-suite/src/interfaces/models/user';
 import { AccountStatus } from '../../src/enumerations/account-status';
-import { IFrontendUser, IBackendUser } from '../../src/interfaces/models/user';
 import { IBackupCode } from '../../src/interfaces/backup-code';
 
 // Mock ObjectId for testing
 class MockObjectId {
   constructor(public id: string = 'mockid123') {}
-  toString() { return this.id; }
+  toString() {
+    return this.id;
+  }
 }
 
 describe('User interfaces', () => {
@@ -15,7 +20,7 @@ describe('User interfaces', () => {
         version: '1.0',
         checksumSalt: 'salt',
         checksum: 'checksum',
-        encrypted: 'encrypted'
+        encrypted: 'encrypted',
       };
 
       const user: IFrontendUser<'en'> = {
@@ -33,7 +38,7 @@ describe('User interfaces', () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         createdBy: 'creator123',
-        updatedBy: 'updater123'
+        updatedBy: 'updater123',
       };
 
       expect(user._id).toBe('user123');
@@ -56,10 +61,10 @@ describe('User interfaces', () => {
           iv: 'iv',
           authTag: 'authTag',
           ciphertext: 'ciphertext',
-          iterations: 10000
+          iterations: 10000,
         },
         deletedAt: new Date(),
-        deletedBy: 'deleter123'
+        deletedBy: 'deleter123',
       };
 
       expect(user.lastLogin).toBeInstanceOf(Date);
@@ -75,7 +80,7 @@ describe('User interfaces', () => {
         version: '1.0',
         checksumSalt: 'salt',
         checksum: 'checksum',
-        encrypted: 'encrypted'
+        encrypted: 'encrypted',
       };
 
       const user: IBackendUser<'en'> = {
@@ -93,7 +98,7 @@ describe('User interfaces', () => {
         createdAt: new Date(),
         updatedAt: new Date(),
         createdBy: objectId,
-        updatedBy: objectId
+        updatedBy: objectId,
       };
 
       expect(user._id).toBeInstanceOf(MockObjectId);
@@ -103,9 +108,9 @@ describe('User interfaces', () => {
 
     it('should work with different language types', () => {
       type CustomLanguage = 'en' | 'es' | 'fr';
-      
+
       const user: Partial<IBackendUser<CustomLanguage>> = {
-        siteLanguage: 'es'
+        siteLanguage: 'es',
       };
 
       expect(user.siteLanguage).toBe('es');
@@ -116,9 +121,21 @@ describe('User interfaces', () => {
     it('should enforce required fields through TypeScript', () => {
       // This test validates that TypeScript compilation would catch missing required fields
       const requiredFields = [
-        '_id', 'username', 'email', 'publicKey', 'timezone', 'siteLanguage',
-        'emailVerified', 'accountStatus', 'directChallenge', 'backupCodes',
-        'mnemonicRecovery', 'createdAt', 'updatedAt', 'createdBy', 'updatedBy'
+        '_id',
+        'username',
+        'email',
+        'publicKey',
+        'timezone',
+        'siteLanguage',
+        'emailVerified',
+        'accountStatus',
+        'directChallenge',
+        'backupCodes',
+        'mnemonicRecovery',
+        'createdAt',
+        'updatedAt',
+        'createdBy',
+        'updatedBy',
       ];
 
       expect(requiredFields).toHaveLength(15);
@@ -128,12 +145,12 @@ describe('User interfaces', () => {
       const statuses = [
         AccountStatus.PendingEmailVerification,
         AccountStatus.Active,
-        AccountStatus.AdminLock
+        AccountStatus.AdminLock,
       ];
 
-      statuses.forEach(status => {
+      statuses.forEach((status) => {
         const user: Partial<IFrontendUser<'en'>> = {
-          accountStatus: status
+          accountStatus: status,
         };
         expect(Object.values(AccountStatus)).toContain(user.accountStatus);
       });

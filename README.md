@@ -524,6 +524,12 @@ describe('Integration with node-express-suite', () => {
 
 ## ChangeLog
 
+## v3.6.6
+
+- Move models to node-express-suite
+- Update testing
+- Update ecies
+
 ## v3.6.5
 
 - Update testing
