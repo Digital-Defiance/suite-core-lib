@@ -424,7 +424,113 @@ MIT © [Digital Defiance](https://github.com/digitaldefiance)
 
 **Building user management primitives?** Start with `@digitaldefiance/suite-core-lib` for type-safe, secure, and internationalized user system foundations. For complete frameworks, check out the **node-ecies** and **node-express-suite** projects! 🚀
 
+## Testing
+
+### Testing Approach
+
+The suite-core-lib package uses comprehensive testing with 409 tests covering all user management primitives, validation logic, and error handling.
+
+**Test Framework**: Jest with TypeScript support  
+**Property-Based Testing**: fast-check for validation properties  
+**Coverage**: 98.47% statements, 94.56% branches, 88.09% functions
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run with coverage
+npm test -- --coverage
+
+# Run specific test suite
+npm test -- user-builder.spec.ts
+```
+
+### Test Patterns
+
+#### Testing Builders
+
+```typescript
+import { UserBuilder, RoleBuilder, Role } from '@digitaldefiance/suite-core-lib';
+
+describe('User Builder', () => {
+  it('should build user with fluent API', () => {
+    const user = UserBuilder.create()
+      .withUsername('alice')
+      .withEmail('alice@example.com')
+      .withEmailVerified(true)
+      .build();
+    
+    expect(user.username).toBe('alice');
+    expect(user.emailVerified).toBe(true);
+  });
+});
+```
+
+#### Testing Validators
+
+```typescript
+import { isValidUsername, isValidEmail, isValidPassword } from '@digitaldefiance/suite-core-lib';
+
+describe('Validators', () => {
+  it('should validate usernames', () => {
+    expect(isValidUsername('alice123')).toBe(true);
+    expect(isValidUsername('ab')).toBe(false); // too short
+  });
+
+  it('should validate emails', () => {
+    expect(isValidEmail('alice@example.com')).toBe(true);
+    expect(isValidEmail('invalid')).toBe(false);
+  });
+});
+```
+
+#### Testing Error Handling
+
+```typescript
+import { UserNotFoundError, UsernameInUseError, CoreLanguage } from '@digitaldefiance/suite-core-lib';
+
+describe('Error Handling', () => {
+  it('should throw localized errors', () => {
+    const error = new UserNotFoundError(CoreLanguage.French);
+    expect(error.message).toContain('utilisateur');
+  });
+});
+```
+
+### Cross-Package Testing
+
+Testing with node-express-suite:
+
+```typescript
+import { IBackendUser, AccountStatus } from '@digitaldefiance/suite-core-lib';
+import { UserService } from '@digitaldefiance/node-express-suite';
+
+describe('Integration with node-express-suite', () => {
+  it('should work with UserService', async () => {
+    const user: IBackendUser = {
+      username: 'alice',
+      email: 'alice@example.com',
+      accountStatus: AccountStatus.Active,
+      // ... other fields
+    };
+    
+    // Use with UserService
+    expect(user.accountStatus).toBe(AccountStatus.Active);
+  });
+});
+```
+
 ## ChangeLog
+
+## v3.6.5
+
+- Update testing
+
+## v3.6.0
+
+- Upgrade ecies to 4.4.0
 
 ## v.3.5.8
 
