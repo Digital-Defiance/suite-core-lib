@@ -1,6 +1,11 @@
 {
   "name": "@digitaldefiance/suite-core-lib",
-  "version": "3.6.6",
+  "version": "3.6.7",
+  "homepage": "https://github.com/Digital-Defiance/suite-core-lib",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digital-Defiance/suite-core-lib.git"
+  },
   "description": "Generic user system and document system common core for applications",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -22,8 +27,8 @@
     "publish:public": "npm publish --access public"
   },
   "dependencies": {
-    "@digitaldefiance/ecies-lib": "4.4.2",
-    "@digitaldefiance/i18n-lib": "3.8.0"
+    "@digitaldefiance/ecies-lib": "4.4.6",
+    "@digitaldefiance/i18n-lib": "3.8.2"
   },
   "files": [
     "src",
