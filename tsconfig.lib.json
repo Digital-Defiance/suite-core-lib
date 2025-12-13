@@ -1,8 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/packages/digitaldefiance-suite-core-lib",
-    "rootDir": "./src",
+    "outDir": "../../dist/packages/digitaldefiance-suite-core-lib",
     "target": "es2022",
     "module": "nodenext",
     "moduleResolution": "nodenext",
