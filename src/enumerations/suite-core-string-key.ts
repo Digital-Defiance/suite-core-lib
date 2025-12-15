@@ -10,8 +10,8 @@ export enum SuiteCoreStringKey {
   Validation_InvalidUsername = 'validation_invalidUsername',
   Validation_PasswordTooWeak = 'validation_passwordTooWeak',
   Validation_InvalidJwtToken = 'validation_invalidJwtToken',
-  Validation_ExpressValidationFailed = "validation_expressValidationFailed",
-  Validation_MongooseValidationError = "validation_mongooseValidationError",
+  Validation_ExpressValidationFailed = 'validation_expressValidationFailed',
+  Validation_MongooseValidationError = 'validation_mongooseValidationError',
 
   // Authentication errors
   Auth_UserNotFound = 'auth_userNotFound',
@@ -119,6 +119,7 @@ export enum SuiteCoreStringKey {
   Admin_TransactionTimeoutTemplate = 'admin_transactionTimeoutTemplate',
   Admin_UserDatabaseInitialized = 'admin_userDatabaseInitialized',
   Admin_UserRoleCreatedTemplate = 'admin_userRoleCreatedTemplate',
+  Admin_CredentialsWrittenToEnv = 'admin_credentialsWrittenToEnv',
   Admin_UsingMongoDbMemoryWithTransactions = 'admin_usingMongoDbMemoryWithTransactions',
   AdminRoleNotFound = 'adminRoleNotFound',
   ApiAccess_Title = 'apiAccess_title',
