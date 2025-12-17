@@ -1,6 +1,6 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { TranslatableSuiteHandleableError } from '../../src/errors/translatable-suite-handleable';
 import { SuiteCoreStringKey } from '../../src/enumerations/suite-core-string-key';
+import { TranslatableSuiteHandleableError } from '../../src/errors/translatable-suite-handleable';
 import {
   initSuiteCoreI18nEngine,
   resetSuiteCoreI18nEngine,
@@ -159,7 +159,7 @@ describe('TranslatableSuiteHandleableError', () => {
         { NAME: 'Admin' },
         LanguageCodes.FR
       );
-      expect(error.message).toBe('Échec de la création de l\'utilisateur Admin');
+      expect(error.message).toBe("Échec de la création de l'utilisateur Admin");
     });
   });
 
@@ -228,7 +228,7 @@ describe('TranslatableSuiteHandleableError', () => {
         LanguageCodes.ES,
       ];
 
-      languages.forEach(lang => {
+      languages.forEach((lang) => {
         const error = new TranslatableSuiteHandleableError(
           SuiteCoreStringKey.User_NotFound,
           undefined,

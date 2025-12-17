@@ -7,7 +7,7 @@ export class InvalidUsernameError extends TranslatableSuiteHandleableError {
       SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate,
       undefined,
       language,
-      { statusCode },
+      { statusCode }
     );
     this.name = 'InvalidUsernameError';
   }

@@ -70,13 +70,12 @@ describe('Suite Core Runtime Configuration Registry', () => {
 
   it('should handle null values in deepClone', () => {
     const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com', {
-      AdministratorEmail: undefined as any,
+      AdministratorEmail: undefined as unknown as string,
     });
     expect(config).toBeDefined();
   });
 
   it('should handle Date objects in deepClone', () => {
-    const testDate = new Date('2024-01-01');
     const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com');
     expect(config).toBeDefined();
   });
@@ -118,7 +117,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
 
       // Verify that frozen objects cannot be modified
       expect(() => {
-        (config as any).BcryptRounds = 999;
+        (config as Record<string, unknown>).BcryptRounds = 999;
       }).toThrow(); // Frozen objects throw in strict mode
     });
 

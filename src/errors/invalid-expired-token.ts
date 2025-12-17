@@ -1,11 +1,18 @@
-import { HandleableErrorOptions } from '@digitaldefiance/i18n-lib';
-import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
+import {
+  CoreLanguageCode,
+  HandleableErrorOptions,
+} from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
-import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
+import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 
 export class InvalidExpiredTokenError extends TranslatableSuiteHandleableError {
   constructor(language?: CoreLanguageCode, options?: HandleableErrorOptions) {
-    super(SuiteCoreStringKey.ForgotPassword_InvalidToken, undefined, language, options);
+    super(
+      SuiteCoreStringKey.ForgotPassword_InvalidToken,
+      undefined,
+      language,
+      options
+    );
     this.name = 'InvalidExpiredTokenError';
   }
 }

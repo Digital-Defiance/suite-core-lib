@@ -6,7 +6,9 @@ describe('EmailTokenType', () => {
     expect(EmailTokenType.PasswordReset).toBe('PasswordReset');
     expect(EmailTokenType.LoginRequest).toBe('LoginRequest');
     expect(EmailTokenType.PrivateKeyRequest).toBe('PrivateKeyRequest');
-    expect(EmailTokenType.MnemonicRecoveryRequest).toBe('MnemonicRecoveryRequest');
+    expect(EmailTokenType.MnemonicRecoveryRequest).toBe(
+      'MnemonicRecoveryRequest'
+    );
   });
 
   it('should have all expected enum members', () => {

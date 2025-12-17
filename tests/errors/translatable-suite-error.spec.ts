@@ -1,6 +1,6 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { TranslatableSuiteError } from '../../src/errors/translatable-suite';
 import { SuiteCoreStringKey } from '../../src/enumerations/suite-core-string-key';
+import { TranslatableSuiteError } from '../../src/errors/translatable-suite';
 import {
   initSuiteCoreI18nEngine,
   resetSuiteCoreI18nEngine,
@@ -20,7 +20,9 @@ describe('TranslatableSuiteError', () => {
 
   describe('Error instantiation and translation', () => {
     it('should create error with English message by default', () => {
-      const error = new TranslatableSuiteError(SuiteCoreStringKey.User_NotFound);
+      const error = new TranslatableSuiteError(
+        SuiteCoreStringKey.User_NotFound
+      );
       expect(error.message).toBe('User not found');
       expect(error.name).toBe('TranslatableSuiteError');
       expect(error.StringName).toBe(SuiteCoreStringKey.User_NotFound);
@@ -97,7 +99,9 @@ describe('TranslatableSuiteError', () => {
         { variable1: 'test-value', AdministratorEmail: 'admin@example.com' },
         LanguageCodes.EN_US
       );
-      expect(error.message).toBe('This is a test: test-value, admin@example.com');
+      expect(error.message).toBe(
+        'This is a test: test-value, admin@example.com'
+      );
     });
   });
 
@@ -133,28 +137,38 @@ describe('TranslatableSuiteError', () => {
 
   describe('Error properties', () => {
     it('should be instanceof Error', () => {
-      const error = new TranslatableSuiteError(SuiteCoreStringKey.User_NotFound);
+      const error = new TranslatableSuiteError(
+        SuiteCoreStringKey.User_NotFound
+      );
       expect(error instanceof Error).toBe(true);
     });
 
     it('should be instanceof TranslatableSuiteError', () => {
-      const error = new TranslatableSuiteError(SuiteCoreStringKey.User_NotFound);
+      const error = new TranslatableSuiteError(
+        SuiteCoreStringKey.User_NotFound
+      );
       expect(error instanceof TranslatableSuiteError).toBe(true);
     });
 
     it('should have proper stack trace', () => {
-      const error = new TranslatableSuiteError(SuiteCoreStringKey.User_NotFound);
+      const error = new TranslatableSuiteError(
+        SuiteCoreStringKey.User_NotFound
+      );
       expect(error.stack).toBeDefined();
       expect(error.stack).toContain('TranslatableSuiteError');
     });
 
     it('should have correct name property', () => {
-      const error = new TranslatableSuiteError(SuiteCoreStringKey.User_NotFound);
+      const error = new TranslatableSuiteError(
+        SuiteCoreStringKey.User_NotFound
+      );
       expect(error.name).toBe('TranslatableSuiteError');
     });
 
     it('should store the StringName property', () => {
-      const error = new TranslatableSuiteError(SuiteCoreStringKey.User_NotFound);
+      const error = new TranslatableSuiteError(
+        SuiteCoreStringKey.User_NotFound
+      );
       expect(error.StringName).toBe(SuiteCoreStringKey.User_NotFound);
     });
   });
@@ -186,7 +200,9 @@ describe('TranslatableSuiteError', () => {
         { TYPE: 'Member', NAME: 'Alice' },
         LanguageCodes.EN_US
       );
-      expect(error.toString()).toContain('Member user Alice created successfully');
+      expect(error.toString()).toContain(
+        'Member user Alice created successfully'
+      );
     });
 
     it('should print error with message property', () => {
@@ -201,7 +217,8 @@ describe('TranslatableSuiteError', () => {
 
   describe('Fallback behavior', () => {
     it('should fallback to raw string if translation fails', () => {
-      const invalidKey = 'invalid_key_that_does_not_exist' as SuiteCoreStringKey;
+      const invalidKey =
+        'invalid_key_that_does_not_exist' as SuiteCoreStringKey;
       const error = new TranslatableSuiteError(invalidKey);
       expect(error.message).toBe(invalidKey);
     });
@@ -217,7 +234,7 @@ describe('TranslatableSuiteError', () => {
         LanguageCodes.ES,
       ];
 
-      languages.forEach(lang => {
+      languages.forEach((lang) => {
         const error = new TranslatableSuiteError(
           SuiteCoreStringKey.User_NotFound,
           undefined,

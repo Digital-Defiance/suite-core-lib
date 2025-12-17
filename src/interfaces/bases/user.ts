@@ -13,7 +13,7 @@ export interface IUserBase<
   I,
   D extends Date | string,
   S extends string,
-  A extends AccountStatus | string,
+  A extends AccountStatus | string
 > extends IHasId<I>,
     IHasTimestamps<D>,
     IHasTimestampOwners<I>,

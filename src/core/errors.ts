@@ -3,15 +3,15 @@
  */
 
 // Base error classes
+export { CoreTypedHandleableError } from '../errors/core-typed-handleable';
 export { TranslatableSuiteError } from '../errors/translatable-suite';
 export { TranslatableSuiteHandleableError } from '../errors/translatable-suite-handleable';
-export { CoreTypedHandleableError } from '../errors/core-typed-handleable';
 
 // Common error classes
-export { UserNotFoundError } from '../errors/user-not-found';
+export { EmailInUseError } from '../errors/email-in-use';
+export { GenericValidationError } from '../errors/generic-validation';
 export { InvalidCredentialsError } from '../errors/invalid-credentials';
 export { InvalidEmailError } from '../errors/invalid-email';
 export { InvalidUsernameError } from '../errors/invalid-username';
-export { EmailInUseError } from '../errors/email-in-use';
+export { UserNotFoundError } from '../errors/user-not-found';
 export { UsernameInUseError } from '../errors/username-in-use';
-export { GenericValidationError } from '../errors/generic-validation';

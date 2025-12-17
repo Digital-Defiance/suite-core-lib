@@ -1,9 +1,9 @@
 import {
+  failure,
+  isFailure,
+  isSuccess,
   Result,
   success,
-  failure,
-  isSuccess,
-  isFailure,
 } from '../../src/core/result';
 
 describe('Result Type', () => {
@@ -62,12 +62,12 @@ describe('Result Type', () => {
   describe('type safety', () => {
     it('should provide type-safe access to data and error', () => {
       const result: Result<string, Error> = success('test');
-      
+
       if (isSuccess(result)) {
         const data: string = result.data;
         expect(data).toBe('test');
       }
-      
+
       if (isFailure(result)) {
         const error: Error = result.error;
         expect(error).toBeInstanceOf(Error);

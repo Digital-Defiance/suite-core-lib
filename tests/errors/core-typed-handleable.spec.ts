@@ -1,5 +1,11 @@
+import {
+  CoreComponentDefinition,
+  CoreStringKey,
+  I18nEngine,
+  createCoreComponentStrings,
+  createDefaultLanguages,
+} from '@digitaldefiance/i18n-lib';
 import { CoreTypedHandleableError } from '../../src/errors/core-typed-handleable';
-import { CoreStringKey, I18nEngine, createDefaultLanguages, CoreComponentDefinition, createCoreComponentStrings } from '@digitaldefiance/i18n-lib';
 
 enum TestErrorType {
   TypeA = 'TYPE_A',
@@ -11,14 +17,17 @@ describe('CoreTypedHandleableError', () => {
     try {
       I18nEngine.getInstance('default');
     } catch {
-      const engine = I18nEngine.createInstance('default', createDefaultLanguages());
+      const engine = I18nEngine.createInstance(
+        'default',
+        createDefaultLanguages()
+      );
       engine.register({
         id: CoreComponentDefinition.id,
         strings: createCoreComponentStrings(),
       });
     }
   });
-  
+
   const reasonMap = {
     [TestErrorType.TypeA]: CoreStringKey.Error_InvalidInput,
     [TestErrorType.TypeB]: CoreStringKey.Error_ValidationFailed,
@@ -26,8 +35,12 @@ describe('CoreTypedHandleableError', () => {
 
   it('should create error with default options', () => {
     const source = new Error('Source error');
-    const error = new CoreTypedHandleableError(TestErrorType.TypeA, reasonMap, source);
-    
+    const error = new CoreTypedHandleableError(
+      TestErrorType.TypeA,
+      reasonMap,
+      source
+    );
+
     expect(error).toBeInstanceOf(Error);
     expect(error.statusCode).toBe(500);
     expect(error.handled).toBe(false);
@@ -42,7 +55,7 @@ describe('CoreTypedHandleableError', () => {
       source,
       { statusCode: 422, handled: true, sourceData: { foo: 'bar' } }
     );
-    
+
     expect(error.statusCode).toBe(422);
     expect(error.handled).toBe(true);
     expect(error.sourceData).toEqual({ foo: 'bar' });
@@ -50,8 +63,12 @@ describe('CoreTypedHandleableError', () => {
 
   it('should allow setting handled flag', () => {
     const source = new Error('Source error');
-    const error = new CoreTypedHandleableError(TestErrorType.TypeA, reasonMap, source);
-    
+    const error = new CoreTypedHandleableError(
+      TestErrorType.TypeA,
+      reasonMap,
+      source
+    );
+
     expect(error.handled).toBe(false);
     error.handled = true;
     expect(error.handled).toBe(true);
@@ -65,7 +82,7 @@ describe('CoreTypedHandleableError', () => {
       source,
       { statusCode: 400, sourceData: { test: 123 } }
     );
-    
+
     const json = error.toJSON();
     expect(json.statusCode).toBe(400);
     expect(json.handled).toBe(false);
@@ -76,16 +93,28 @@ describe('CoreTypedHandleableError', () => {
   it('should handle source without stack', () => {
     const source = new Error('No stack');
     delete source.stack;
-    const error = new CoreTypedHandleableError(TestErrorType.TypeA, reasonMap, source);
-    
+    const error = new CoreTypedHandleableError(
+      TestErrorType.TypeA,
+      reasonMap,
+      source
+    );
+
     expect(error.stack).toBeDefined();
   });
 
   it('should serialize nested handleable errors', () => {
     const innerSource = new Error('Inner error');
-    const innerError = new CoreTypedHandleableError(TestErrorType.TypeA, reasonMap, innerSource);
-    const outerError = new CoreTypedHandleableError(TestErrorType.TypeB, reasonMap, innerError);
-    
+    const innerError = new CoreTypedHandleableError(
+      TestErrorType.TypeA,
+      reasonMap,
+      innerSource
+    );
+    const outerError = new CoreTypedHandleableError(
+      TestErrorType.TypeB,
+      reasonMap,
+      innerError
+    );
+
     const json = outerError.toJSON();
     expect(json.cause).toEqual(innerError.toJSON());
   });

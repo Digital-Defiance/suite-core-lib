@@ -1,10 +1,10 @@
 import { EmailString } from '@digitaldefiance/ecies-lib';
 import { CurrencyCode, Timezone } from '@digitaldefiance/i18n-lib';
-import {
-  hydrateUserSettings,
-  dehydrateUserSettings,
-} from '../../src/lib/hydrate-dehydrate';
 import { IUserSettings, IUserSettingsDTO } from '../../src/interfaces';
+import {
+  dehydrateUserSettings,
+  hydrateUserSettings,
+} from '../../src/lib/hydrate-dehydrate';
 
 // Helper to create EmailString safely
 function createEmailString(email: string): EmailString {
@@ -32,7 +32,9 @@ describe('Hydrate/Dehydrate Functions', () => {
 
       expect(result).toBeDefined();
       expect(result.email).toBeDefined();
-      expect(result.email.email || (result.email as any)).toBe('test@example.com');
+      expect(result.email.email || (result.email as unknown as string)).toBe(
+        'test@example.com'
+      );
       expect(result.timezone).toBeDefined();
       expect(result.timezone.value).toBe('America/New_York');
       expect(result.currency).toBeDefined();
@@ -139,7 +141,9 @@ describe('Hydrate/Dehydrate Functions', () => {
       const result = hydrateUserSettings(dto);
 
       // Verify instances have the expected methods/properties
-      expect(result.email.email || (result.email as any)).toBe('test@example.com');
+      expect(result.email.email || (result.email as unknown as string)).toBe(
+        'test@example.com'
+      );
       expect(result.timezone.value).toBe('Europe/London');
       expect(result.currency.value).toBe('GBP');
     });

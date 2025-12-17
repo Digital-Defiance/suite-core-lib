@@ -1,9 +1,12 @@
+import { PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { InvalidChallengeError } from '../../src/errors/invalid-challenge';
 import { InvalidExpiredTokenError } from '../../src/errors/invalid-expired-token';
 import { LastAdminError } from '../../src/errors/last-admin-error';
 import { PrivateKeyRequiredError } from '../../src/errors/private-key-required';
-import { PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { initSuiteCoreI18nEngine, resetSuiteCoreI18nEngine } from '../../src/i18n-setup';
+import {
+  initSuiteCoreI18nEngine,
+  resetSuiteCoreI18nEngine,
+} from '../../src/i18n-setup';
 
 describe('Previously Uncovered Error Classes', () => {
   beforeEach(() => {
@@ -37,7 +40,9 @@ describe('Previously Uncovered Error Classes', () => {
     });
 
     it('should create error with options', () => {
-      const error = new InvalidExpiredTokenError(undefined, { statusCode: 401 });
+      const error = new InvalidExpiredTokenError(undefined, {
+        statusCode: 401,
+      });
       expect(error.statusCode).toBe(401);
     });
   });

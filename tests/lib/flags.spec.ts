@@ -157,7 +157,7 @@ describe('Flag Mapping Functions', () => {
       // Spanish
       expect(getFlagCode('es')).toBe('es');
       expect(getFlagCode('es-ES')).toBe('es');
-      
+
       // Portuguese (defaults to Portugal if using 'pt')
       expect(getFlagCode('pt')).toBe('pt');
       expect(getFlagCode('br')).toBe('br'); // Brazil
@@ -169,8 +169,8 @@ describe('Flag Mapping Functions', () => {
     });
 
     it('should handle edge cases', () => {
-      expect(getFlagCode(null as any)).toBeUndefined();
-      expect(getFlagCode(undefined as any)).toBeUndefined();
+      expect(getFlagCode(null as unknown as string)).toBeUndefined();
+      expect(getFlagCode(undefined as unknown as string)).toBeUndefined();
       expect(getFlagCode('   ')).toBeUndefined();
       expect(getFlagCode('123')).toBeUndefined();
     });
@@ -230,7 +230,7 @@ describe('Flag Mapping Functions', () => {
   describe('Data integrity', () => {
     it('should not have duplicate flag codes for different language codes (except intentional)', () => {
       const flagToLanguages: Record<string, string[]> = {};
-      
+
       Object.entries(BCP47_TO_FLAG_CDN).forEach(([lang, flag]) => {
         if (!flagToLanguages[flag]) {
           flagToLanguages[flag] = [];
@@ -251,8 +251,26 @@ describe('Flag Mapping Functions', () => {
     it('should have all ISO 3166-1 alpha-2 codes as valid flag codes', () => {
       // Check a representative sample of ISO codes
       const isoCodes = [
-        'us', 'gb', 'ca', 'au', 'de', 'fr', 'it', 'es', 'jp', 'cn',
-        'br', 'mx', 'in', 'za', 'ru', 'kr', 'nl', 'se', 'ch', 'pl',
+        'us',
+        'gb',
+        'ca',
+        'au',
+        'de',
+        'fr',
+        'it',
+        'es',
+        'jp',
+        'cn',
+        'br',
+        'mx',
+        'in',
+        'za',
+        'ru',
+        'kr',
+        'nl',
+        'se',
+        'ch',
+        'pl',
       ];
 
       isoCodes.forEach((code) => {

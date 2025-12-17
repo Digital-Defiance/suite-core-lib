@@ -2,7 +2,8 @@
   "root": true,
   "ignorePatterns": [
     "node_modules",
-    "dist"
+    "dist",
+    "**/*.d.ts"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [

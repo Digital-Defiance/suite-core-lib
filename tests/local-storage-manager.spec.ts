@@ -4,7 +4,7 @@ describe('LocalStorageManager', () => {
   // Mock localStorage
   const mockLocalStorage = (() => {
     let store: Record<string, string> = {};
-    
+
     return {
       getItem: jest.fn((key: string) => store[key] || null),
       setItem: jest.fn((key: string, value: string) => {
@@ -30,7 +30,7 @@ describe('LocalStorageManager', () => {
     // Clear all mocks and reset localStorage
     jest.clearAllMocks();
     mockLocalStorage.clear();
-    
+
     // Mock localStorage globally for Node.js environment
     Object.defineProperty(globalThis, 'localStorage', {
       value: mockLocalStorage,
@@ -50,7 +50,10 @@ describe('LocalStorageManager', () => {
 
   describe('getValue', () => {
     it('should return default value when key does not exist', () => {
-      const result = LocalStorageManager.getValue('nonExistentKey', 'defaultValue');
+      const result = LocalStorageManager.getValue(
+        'nonExistentKey',
+        'defaultValue'
+      );
       expect(result).toBe('defaultValue');
       expect(mockLocalStorage.getItem).toHaveBeenCalledWith('nonExistentKey');
     });
@@ -90,7 +93,10 @@ describe('LocalStorageManager', () => {
     it('should return default value when JSON parsing fails', () => {
       mockLocalStorage.getItem.mockReturnValueOnce('invalid json {');
       const defaultObject = { default: true };
-      const result = LocalStorageManager.getValue('invalidJsonKey', defaultObject);
+      const result = LocalStorageManager.getValue(
+        'invalidJsonKey',
+        defaultObject
+      );
       expect(result).toEqual(defaultObject);
     });
 
@@ -120,7 +126,10 @@ describe('LocalStorageManager', () => {
     it('should store string value correctly', () => {
       const testValue = 'test string';
       LocalStorageManager.setValue('stringKey', testValue);
-      expect(mockLocalStorage.setItem).toHaveBeenCalledWith('stringKey', testValue);
+      expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
+        'stringKey',
+        testValue
+      );
     });
 
     it('should store number value as string', () => {
@@ -140,7 +149,10 @@ describe('LocalStorageManager', () => {
 
     it('should store boolean value as JSON string', () => {
       LocalStorageManager.setValue('booleanKey', true);
-      expect(mockLocalStorage.setItem).toHaveBeenCalledWith('booleanKey', 'true');
+      expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
+        'booleanKey',
+        'true'
+      );
     });
 
     it('should store array value as JSON string', () => {
@@ -156,7 +168,7 @@ describe('LocalStorageManager', () => {
       mockLocalStorage.setItem.mockImplementationOnce(() => {
         throw new Error('localStorage error');
       });
-      
+
       LocalStorageManager.setValue('errorKey', 'test value');
       expect(consoleWarnSpy).toHaveBeenCalledWith(
         'Failed to save to localStorage (errorKey):',
@@ -172,7 +184,10 @@ describe('LocalStorageManager', () => {
     it('should handle undefined values', () => {
       LocalStorageManager.setValue('undefinedKey', undefined);
       // JSON.stringify(undefined) returns undefined (primitive), not "undefined" string
-      expect(mockLocalStorage.setItem).toHaveBeenCalledWith('undefinedKey', undefined);
+      expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
+        'undefinedKey',
+        undefined
+      );
     });
   });
 
@@ -186,7 +201,7 @@ describe('LocalStorageManager', () => {
       mockLocalStorage.removeItem.mockImplementationOnce(() => {
         throw new Error('localStorage error');
       });
-      
+
       LocalStorageManager.removeValue('errorKey');
       expect(consoleWarnSpy).toHaveBeenCalledWith(
         'Failed to remove from localStorage (errorKey):',
@@ -203,14 +218,16 @@ describe('LocalStorageManager', () => {
         '__localStorage_test__',
         '__localStorage_test__'
       );
-      expect(mockLocalStorage.removeItem).toHaveBeenCalledWith('__localStorage_test__');
+      expect(mockLocalStorage.removeItem).toHaveBeenCalledWith(
+        '__localStorage_test__'
+      );
     });
 
     it('should return false when localStorage is not available', () => {
       mockLocalStorage.setItem.mockImplementationOnce(() => {
         throw new Error('localStorage not available');
       });
-      
+
       const result = LocalStorageManager.isAvailable();
       expect(result).toBe(false);
     });
@@ -219,7 +236,7 @@ describe('LocalStorageManager', () => {
       mockLocalStorage.removeItem.mockImplementationOnce(() => {
         throw new Error('localStorage error');
       });
-      
+
       const result = LocalStorageManager.isAvailable();
       expect(result).toBe(false);
     });
@@ -229,40 +246,40 @@ describe('LocalStorageManager', () => {
     it('should store and retrieve string values correctly', () => {
       const key = 'testString';
       const value = 'Hello, World!';
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, '');
-      
+
       expect(retrieved).toBe(value);
     });
 
     it('should store and retrieve number values correctly', () => {
       const key = 'testNumber';
       const value = 42;
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, 0);
-      
+
       expect(retrieved).toBe(value);
     });
 
     it('should store and retrieve object values correctly', () => {
       const key = 'testObject';
       const value = { name: 'test', id: 123, active: true };
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, {});
-      
+
       expect(retrieved).toEqual(value);
     });
 
     it('should store and retrieve array values correctly', () => {
       const key = 'testArray';
       const value = [1, 'two', { three: 3 }, true];
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, []);
-      
+
       expect(retrieved).toEqual(value);
     });
 
@@ -270,12 +287,14 @@ describe('LocalStorageManager', () => {
       const key = 'testRemoval';
       const value = 'to be removed';
       const defaultValue = 'default';
-      
+
       LocalStorageManager.setValue(key, value);
       expect(LocalStorageManager.getValue(key, defaultValue)).toBe(value);
-      
+
       LocalStorageManager.removeValue(key);
-      expect(LocalStorageManager.getValue(key, defaultValue)).toBe(defaultValue);
+      expect(LocalStorageManager.getValue(key, defaultValue)).toBe(
+        defaultValue
+      );
     });
   });
 
@@ -283,41 +302,41 @@ describe('LocalStorageManager', () => {
     it('should handle empty string values', () => {
       const key = 'emptyString';
       const value = '';
-      
+
       // Mock localStorage to return empty string
       mockLocalStorage.getItem.mockReturnValueOnce(value);
       const retrieved = LocalStorageManager.getValue(key, 'default');
-      
+
       expect(retrieved).toBe(value);
     });
 
     it('should handle zero number values', () => {
       const key = 'zeroNumber';
       const value = 0;
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, 42);
-      
+
       expect(retrieved).toBe(value);
     });
 
     it('should handle negative number values', () => {
       const key = 'negativeNumber';
       const value = -123;
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, 0);
-      
+
       expect(retrieved).toBe(value);
     });
 
     it('should handle floating point number values', () => {
       const key = 'floatNumber';
       const value = 3.14159;
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, 0);
-      
+
       // Note: parseInt will truncate, so this tests the current behavior
       expect(retrieved).toBe(3);
     });
@@ -325,20 +344,20 @@ describe('LocalStorageManager', () => {
     it('should handle empty object values', () => {
       const key = 'emptyObject';
       const value = {};
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, { default: true });
-      
+
       expect(retrieved).toEqual(value);
     });
 
     it('should handle empty array values', () => {
       const key = 'emptyArray';
-      const value: any[] = [];
-      
+      const value: unknown[] = [];
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, ['default']);
-      
+
       expect(retrieved).toEqual(value);
     });
 
@@ -353,10 +372,10 @@ describe('LocalStorageManager', () => {
           },
         },
       };
-      
+
       LocalStorageManager.setValue(key, value);
       const retrieved = LocalStorageManager.getValue(key, {});
-      
+
       expect(retrieved).toEqual(value);
     });
   });

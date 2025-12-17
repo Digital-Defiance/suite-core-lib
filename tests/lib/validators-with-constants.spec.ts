@@ -1,6 +1,9 @@
-import { createValidators, defaultValidators } from '../../src/lib/validators-with-constants';
-import { createConstants, CORE } from '../../src/constants';
+import { CORE, createConstants } from '../../src/constants';
 import { IConstants } from '../../src/interfaces/constants';
+import {
+  createValidators,
+  defaultValidators,
+} from '../../src/lib/validators-with-constants';
 
 describe('Validators with Constants', () => {
   describe('createValidators', () => {
@@ -30,7 +33,7 @@ describe('Validators with Constants', () => {
       expect(validators.isValidUsername('hi')).toBe(false);
       expect(validators.isValidUsernameLength('hello')).toBe(true);
       expect(validators.isValidUsernameLength('hi')).toBe(false);
-      
+
       expect(validators.isValidPassword('simple')).toBe(true);
       expect(validators.isValidPasswordLength('simple')).toBe(true);
       expect(validators.isValidPasswordLength('short')).toBe(false);
@@ -60,7 +63,11 @@ describe('Validators with Constants', () => {
     it('should validate backup codes', () => {
       const validators = createValidators();
       expect(validators.isValidBackupCodeNormalized('a'.repeat(32))).toBe(true);
-      expect(validators.isValidBackupCodeDisplay('abcd-1234-efgh-5678-ijkl-9012-mnop-3456')).toBe(true);
+      expect(
+        validators.isValidBackupCodeDisplay(
+          'abcd-1234-efgh-5678-ijkl-9012-mnop-3456'
+        )
+      ).toBe(true);
     });
   });
 
@@ -73,14 +80,14 @@ describe('Validators with Constants', () => {
 
   describe('usage with createConstants', () => {
     it('should work with createConstants helper', () => {
-      const customConstants = createConstants('example.com', 'example.com',{
+      const customConstants = createConstants('example.com', 'example.com', {
         UsernameRegex: /^[a-z0-9_]{4,20}$/,
         UsernameMinLength: 4,
         UsernameMaxLength: 20,
       });
 
       const validators = createValidators(customConstants);
-      
+
       expect(validators.isValidUsername('user_name')).toBe(true);
       expect(validators.isValidUsername('usr')).toBe(false);
       expect(validators.isValidUsernameLength('user')).toBe(true);

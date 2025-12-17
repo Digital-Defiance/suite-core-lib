@@ -6,7 +6,7 @@ describe('IBackupCode interface', () => {
       version: '1.0',
       checksumSalt: 'salt123',
       checksum: 'checksum456',
-      encrypted: 'encryptedData789'
+      encrypted: 'encryptedData789',
     };
 
     expect(backupCode.version).toBe('1.0');
@@ -21,14 +21,14 @@ describe('IBackupCode interface', () => {
         version: '1.0.0',
         checksumSalt: 'salt1',
         checksum: 'check1',
-        encrypted: 'enc1'
+        encrypted: 'enc1',
       },
       {
         version: 'v2',
         checksumSalt: 'salt2',
         checksum: 'check2',
-        encrypted: 'enc2'
-      }
+        encrypted: 'enc2',
+      },
     ];
 
     expect(backupCodes).toHaveLength(2);
@@ -41,7 +41,7 @@ describe('IBackupCode interface', () => {
       version: '',
       checksumSalt: '',
       checksum: '',
-      encrypted: ''
+      encrypted: '',
     };
 
     expect(typeof backupCode.version).toBe('string');

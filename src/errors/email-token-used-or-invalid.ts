@@ -1,5 +1,4 @@
 import { SuiteCoreStringKey } from '../enumerations';
-
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 
 export class EmailTokenUsedOrInvalidError extends TranslatableSuiteHandleableError {

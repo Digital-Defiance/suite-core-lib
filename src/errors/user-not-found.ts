@@ -3,12 +3,9 @@ import { TranslatableSuiteHandleableError } from './translatable-suite-handleabl
 
 export class UserNotFoundError extends TranslatableSuiteHandleableError {
   constructor(language?: string, statusCode = 404) {
-    super(
-      SuiteCoreStringKey.Auth_UserNotFound,
-      undefined,
-      language,
-      { statusCode },
-    );
+    super(SuiteCoreStringKey.Auth_UserNotFound, undefined, language, {
+      statusCode,
+    });
     this.name = 'UserNotFoundError';
   }
 }

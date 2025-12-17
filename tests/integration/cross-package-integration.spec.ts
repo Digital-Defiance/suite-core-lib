@@ -10,6 +10,8 @@
  * - suite-core-lib → i18n-lib
  */
 
+/* eslint-disable @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */
+
 import { ECIESService } from '@digitaldefiance/ecies-lib';
 import { I18nEngine, LanguageRegistry } from '@digitaldefiance/i18n-lib';
 
@@ -52,61 +54,76 @@ describe('Cross-Package Integration: suite-core-lib', () => {
   describe('Integration with ecies-lib', () => {
     it('should use ecies-lib for encryption', async () => {
       const ecies = createECIESService();
-      const mnemonic = ecies.generateNewMnemonic();
-      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic);
+      const mnemonic = ecies.generateNewMnemonic() as string;
+      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic) as {
+        privateKey: Uint8Array;
+        publicKey: Uint8Array;
+      };
 
       const message = new Uint8Array([1, 2, 3, 4, 5]);
-      const encrypted = await ecies.encryptSimple(keyPair.publicKey, message);
-      const decrypted = await ecies.decryptSimple(
+      const encrypted = (await ecies.encryptSimple(
+        keyPair.publicKey,
+        message
+      )) as Uint8Array;
+      const decrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
         encrypted
-      );
+      )) as Uint8Array;
 
       expect(decrypted).toEqual(message);
     });
 
     it('should handle ecies-lib errors properly', async () => {
       const ecies = createECIESService();
-      const mnemonic = ecies.generateNewMnemonic();
-      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic);
+      const mnemonic = ecies.generateNewMnemonic() as string;
+      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic) as {
+        privateKey: Uint8Array;
+        publicKey: Uint8Array;
+      };
 
       const invalidData = new Uint8Array([1, 2, 3]);
 
       await expect(
-        ecies.decryptSimple(keyPair.privateKey, invalidData)
+        ecies.decryptSimple(
+          keyPair.privateKey,
+          invalidData
+        ) as Promise<Uint8Array>
       ).rejects.toThrow();
     });
 
     it('should support multiple encryption modes from ecies-lib', async () => {
       const ecies = createECIESService();
-      const mnemonic = ecies.generateNewMnemonic();
-      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic);
+      const mnemonic = ecies.generateNewMnemonic() as string;
+      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic) as {
+        privateKey: Uint8Array;
+        publicKey: Uint8Array;
+      };
       const message = new Uint8Array([1, 2, 3, 4, 5]);
 
       // Simple mode
-      const simpleEncrypted = await ecies.encryptSimple(
+      const simpleEncrypted = (await ecies.encryptSimple(
         keyPair.publicKey,
         message
-      );
-      const simpleDecrypted = await ecies.decryptSimple(
+      )) as Uint8Array;
+      const simpleDecrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
         simpleEncrypted
-      );
+      )) as Uint8Array;
       expect(simpleDecrypted).toEqual(message);
 
       // Single recipient mode
       const recipientId = new Uint8Array(12);
       crypto.getRandomValues(recipientId);
-      const singleEncrypted = await ecies.encryptSingle(
+      const singleEncrypted = (await ecies.encryptSingle(
         recipientId,
         keyPair.publicKey,
         message
-      );
-      const singleDecrypted = await ecies.decryptSingle(
+      )) as Uint8Array;
+      const singleDecrypted = (await ecies.decryptSingle(
         recipientId,
         keyPair.privateKey,
         singleEncrypted
-      );
+      )) as Uint8Array;
       expect(singleDecrypted).toEqual(message);
     });
   });
@@ -119,9 +136,9 @@ describe('Cross-Package Integration: suite-core-lib', () => {
         { id: 'fr', name: 'French', code: 'fr' },
       ];
 
-      const engine = new I18nEngine(languages);
+      const engine = new I18nEngine(languages) as I18nEngine;
       expect(engine).toBeDefined();
-      expect(engine.getCurrentLanguage()).toBe('en-US');
+      expect((engine.getCurrentLanguage as () => string)()).toBe('en-US');
     });
 
     it('should handle i18n-lib language switching', () => {
@@ -131,20 +148,29 @@ describe('Cross-Package Integration: suite-core-lib', () => {
         { id: 'fr', name: 'French', code: 'fr' },
       ];
 
-      const engine = new I18nEngine(languages);
+      // Create engine to initialize language registry
+      new I18nEngine(languages) as I18nEngine;
 
       // Should support multiple languages
-      expect(LanguageRegistry.has('en-US')).toBe(true);
-      expect(LanguageRegistry.has('es')).toBe(true);
-      expect(LanguageRegistry.has('fr')).toBe(true);
-      expect(LanguageRegistry.has('de')).toBe(false);
+      expect((LanguageRegistry.has as (code: string) => boolean)('en-US')).toBe(
+        true
+      );
+      expect((LanguageRegistry.has as (code: string) => boolean)('es')).toBe(
+        true
+      );
+      expect((LanguageRegistry.has as (code: string) => boolean)('fr')).toBe(
+        true
+      );
+      expect((LanguageRegistry.has as (code: string) => boolean)('de')).toBe(
+        false
+      );
     });
 
     it('should integrate i18n-lib with error messages', () => {
-      const engine = createI18nEngine();
+      const engine = createI18nEngine() as I18nEngine;
 
       // Should be able to use i18n for error messages
-      expect(engine.getCurrentLanguage()).toBe('en-US');
+      expect((engine.getCurrentLanguage as () => string)()).toBe('en-US');
     });
   });
 
@@ -155,27 +181,36 @@ describe('Cross-Package Integration: suite-core-lib', () => {
 
       // Set up ecies
       const ecies = createECIESService();
-      const mnemonic = ecies.generateNewMnemonic();
-      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic);
+      const mnemonic = ecies.generateNewMnemonic() as string;
+      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic) as {
+        privateKey: Uint8Array;
+        publicKey: Uint8Array;
+      };
 
       // Use both together
       const message = new Uint8Array([1, 2, 3, 4, 5]);
-      const encrypted = await ecies.encryptSimple(keyPair.publicKey, message);
-      const decrypted = await ecies.decryptSimple(
+      const encrypted = (await ecies.encryptSimple(
+        keyPair.publicKey,
+        message
+      )) as Uint8Array;
+      const decrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
         encrypted
-      );
+      )) as Uint8Array;
 
       expect(decrypted).toEqual(message);
-      expect(i18n.getCurrentLanguage()).toBe('en-US');
+      expect((i18n.getCurrentLanguage as () => string)()).toBe('en-US');
     });
 
     it('should handle errors from both libraries', async () => {
-      const i18n = createI18nEngine(['es']);
+      const i18n = createI18nEngine(['es']) as I18nEngine;
 
       const ecies = createECIESService();
-      const mnemonic = ecies.generateNewMnemonic();
-      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic);
+      const mnemonic = ecies.generateNewMnemonic() as string;
+      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic) as {
+        privateKey: Uint8Array;
+        publicKey: Uint8Array;
+      };
 
       const invalidData = new Uint8Array([1, 2, 3]);
 
@@ -185,7 +220,7 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       ).rejects.toThrow();
 
       // i18n should still work
-      expect(i18n.getCurrentLanguage()).toBe('en-US');
+      expect((i18n.getCurrentLanguage as () => string)()).toBe('en-US');
     });
   });
 
@@ -193,7 +228,7 @@ describe('Cross-Package Integration: suite-core-lib', () => {
     it('should have compatible types across packages', () => {
       // Verify that types from different packages work together
       const ecies = createECIESService();
-      const i18n = createI18nEngine(['es']);
+      const i18n = createI18nEngine(['es']) as I18nEngine;
 
       expect(ecies).toBeDefined();
       expect(i18n).toBeDefined();
@@ -205,15 +240,21 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       // This test ensures that the current versions of ecies-lib and i18n-lib
       // work correctly with suite-core-lib
       const ecies = createECIESService();
-      const mnemonic = ecies.generateNewMnemonic();
-      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic);
+      const mnemonic = ecies.generateNewMnemonic() as string;
+      const keyPair = ecies.mnemonicToSimpleKeyPair(mnemonic) as {
+        privateKey: Uint8Array;
+        publicKey: Uint8Array;
+      };
 
       const message = new Uint8Array([1, 2, 3, 4, 5]);
-      const encrypted = await ecies.encryptSimple(keyPair.publicKey, message);
-      const decrypted = await ecies.decryptSimple(
+      const encrypted = (await ecies.encryptSimple(
+        keyPair.publicKey,
+        message
+      )) as Uint8Array;
+      const decrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
         encrypted
-      );
+      )) as Uint8Array;
 
       expect(decrypted).toEqual(message);
 

@@ -2,7 +2,9 @@ import { AccountStatus } from '../../src/enumerations/account-status';
 
 describe('AccountStatus', () => {
   it('should have correct enum values', () => {
-    expect(AccountStatus.PendingEmailVerification).toBe('PendingEmailVerification');
+    expect(AccountStatus.PendingEmailVerification).toBe(
+      'PendingEmailVerification'
+    );
     expect(AccountStatus.Active).toBe('Active');
     expect(AccountStatus.AdminLock).toBe('AdminLock');
   });

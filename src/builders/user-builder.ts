@@ -8,7 +8,11 @@ import { IUserBase } from '../interfaces/bases/user';
 /**
  * Builder for creating user objects with fluent API
  */
-export class UserBuilder<I = string, D extends Date | string = Date, S extends string = string> {
+export class UserBuilder<
+  I = string,
+  D extends Date | string = Date,
+  S extends string = string
+> {
   private data: Partial<IUserBase<I, D, S, AccountStatus>> = {
     emailVerified: false,
     accountStatus: AccountStatus.Active,
@@ -17,7 +21,11 @@ export class UserBuilder<I = string, D extends Date | string = Date, S extends s
     timezone: 'UTC',
   };
 
-  static create<I = string, D extends Date | string = Date, S extends string = string>(): UserBuilder<I, D, S> {
+  static create<
+    I = string,
+    D extends Date | string = Date,
+    S extends string = string
+  >(): UserBuilder<I, D, S> {
     return new UserBuilder<I, D, S>();
   }
 

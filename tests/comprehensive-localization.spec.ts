@@ -1,10 +1,10 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../src/enumerations';
-import { UsernameInUseError } from '../src/errors/username-in-use';
+import { AccountLockedError } from '../src/errors/account-locked';
 import { EmailInUseError } from '../src/errors/email-in-use';
 import { InvalidCredentialsError } from '../src/errors/invalid-credentials';
 import { UserNotFoundError } from '../src/errors/user-not-found';
-import { AccountLockedError } from '../src/errors/account-locked';
+import { UsernameInUseError } from '../src/errors/username-in-use';
 import {
   getSuiteCoreI18nEngine,
   getSuiteCoreTranslation,
@@ -41,7 +41,9 @@ describe('Comprehensive Localization Testing', () => {
       testLanguages.forEach((lang) => {
         const error = new UsernameInUseError(lang);
         expect(error.message).toBeTruthy();
-        expect(error.message).not.toBe(SuiteCoreStringKey.Validation_UsernameInUse);
+        expect(error.message).not.toBe(
+          SuiteCoreStringKey.Validation_UsernameInUse
+        );
         expect(error.statusCode).toBe(422);
       });
     });
@@ -50,7 +52,9 @@ describe('Comprehensive Localization Testing', () => {
       testLanguages.forEach((lang) => {
         const error = new EmailInUseError(lang);
         expect(error.message).toBeTruthy();
-        expect(error.message).not.toBe(SuiteCoreStringKey.Validation_EmailInUse);
+        expect(error.message).not.toBe(
+          SuiteCoreStringKey.Validation_EmailInUse
+        );
         expect(error.statusCode).toBe(422);
       });
     });
@@ -59,7 +63,9 @@ describe('Comprehensive Localization Testing', () => {
       testLanguages.forEach((lang) => {
         const error = new InvalidCredentialsError(lang);
         expect(error.message).toBeTruthy();
-        expect(error.message).not.toBe(SuiteCoreStringKey.Validation_InvalidCredentials);
+        expect(error.message).not.toBe(
+          SuiteCoreStringKey.Validation_InvalidCredentials
+        );
         expect(error.statusCode).toBe(401);
       });
     });
@@ -95,7 +101,11 @@ describe('Comprehensive Localization Testing', () => {
       ];
 
       validationKeys.forEach((key) => {
-        const enMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.EN_US);
+        const enMsg = getSuiteCoreTranslation(
+          key,
+          undefined,
+          LanguageCodes.EN_US
+        );
         const frMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.FR);
         const deMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.DE);
         const esMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.ES);
@@ -122,7 +132,11 @@ describe('Comprehensive Localization Testing', () => {
       ];
 
       authKeys.forEach((key) => {
-        const enMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.EN_US);
+        const enMsg = getSuiteCoreTranslation(
+          key,
+          undefined,
+          LanguageCodes.EN_US
+        );
         const frMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.FR);
         const deMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.DE);
         const esMsg = getSuiteCoreTranslation(key, undefined, LanguageCodes.ES);
@@ -146,24 +160,24 @@ describe('Comprehensive Localization Testing', () => {
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_UsernameInUse,
           undefined,
-          LanguageCodes.EN_US,
-        ),
+          LanguageCodes.EN_US
+        )
       ).toBe('Username is already in use');
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_EmailInUse,
           undefined,
-          LanguageCodes.EN_US,
-        ),
+          LanguageCodes.EN_US
+        )
       ).toBe('Email address is already in use');
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Auth_UserNotFound,
           undefined,
-          LanguageCodes.EN_US,
-        ),
+          LanguageCodes.EN_US
+        )
       ).toBe('User account not found');
     });
 
@@ -172,24 +186,24 @@ describe('Comprehensive Localization Testing', () => {
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_UsernameInUse,
           undefined,
-          LanguageCodes.FR,
-        ),
+          LanguageCodes.FR
+        )
       ).toBe("Le nom d'utilisateur est déjà utilisé");
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_EmailInUse,
           undefined,
-          LanguageCodes.FR,
-        ),
+          LanguageCodes.FR
+        )
       ).toBe("L'adresse e-mail est déjà utilisée");
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Auth_UserNotFound,
           undefined,
-          LanguageCodes.FR,
-        ),
+          LanguageCodes.FR
+        )
       ).toBe('Compte utilisateur introuvable');
     });
 
@@ -198,24 +212,24 @@ describe('Comprehensive Localization Testing', () => {
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_UsernameInUse,
           undefined,
-          LanguageCodes.DE,
-        ),
+          LanguageCodes.DE
+        )
       ).toBe('Benutzername wird bereits verwendet');
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_EmailInUse,
           undefined,
-          LanguageCodes.DE,
-        ),
+          LanguageCodes.DE
+        )
       ).toBe('E-Mail-Adresse wird bereits verwendet');
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Auth_UserNotFound,
           undefined,
-          LanguageCodes.DE,
-        ),
+          LanguageCodes.DE
+        )
       ).toBe('Benutzerkonto nicht gefunden');
     });
 
@@ -224,24 +238,24 @@ describe('Comprehensive Localization Testing', () => {
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_UsernameInUse,
           undefined,
-          LanguageCodes.ES,
-        ),
+          LanguageCodes.ES
+        )
       ).toBe('El nombre de usuario ya está en uso');
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Validation_EmailInUse,
           undefined,
-          LanguageCodes.ES,
-        ),
+          LanguageCodes.ES
+        )
       ).toBe('La dirección de correo electrónico ya está en uso');
 
       expect(
         getSuiteCoreTranslation(
           SuiteCoreStringKey.Auth_UserNotFound,
           undefined,
-          LanguageCodes.ES,
-        ),
+          LanguageCodes.ES
+        )
       ).toBe('Cuenta de usuario no encontrada');
     });
   });
@@ -257,12 +271,15 @@ describe('Comprehensive Localization Testing', () => {
       ];
 
       testCases.forEach(({ ErrorClass, expectedCode }) => {
-        [LanguageCodes.EN_US, LanguageCodes.FR, LanguageCodes.DE, LanguageCodes.ES].forEach(
-          (lang) => {
-            const error = new ErrorClass(lang);
-            expect(error.statusCode).toBe(expectedCode);
-          },
-        );
+        [
+          LanguageCodes.EN_US,
+          LanguageCodes.FR,
+          LanguageCodes.DE,
+          LanguageCodes.ES,
+        ].forEach((lang) => {
+          const error = new ErrorClass(lang);
+          expect(error.statusCode).toBe(expectedCode);
+        });
       });
     });
 
@@ -306,19 +323,19 @@ describe('Comprehensive Localization Testing', () => {
 
     it('should translate through engine directly', () => {
       const engine = getSuiteCoreI18nEngine();
-      
+
       const enMsg = engine.translate(
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.EN_US,
+        LanguageCodes.EN_US
       );
-      
+
       const frMsg = engine.translate(
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.FR,
+        LanguageCodes.FR
       );
 
       expect(enMsg).toBe('Username is already in use');

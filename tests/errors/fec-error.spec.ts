@@ -1,6 +1,6 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { FecError } from '../../src/errors/fec-error';
 import { FecErrorType } from '../../src/enumerations/fec-error-type';
+import { FecError } from '../../src/errors/fec-error';
 import {
   initSuiteCoreI18nEngine,
   resetSuiteCoreI18nEngine,
@@ -57,7 +57,9 @@ describe('FecError', () => {
         LanguageCodes.FR,
         { LENGTH: '100', EXPECTED: '256' }
       );
-      expect(error.message).toBe('Longueur de données invalide : 100, attendu 256');
+      expect(error.message).toBe(
+        'Longueur de données invalide : 100, attendu 256'
+      );
     });
 
     it('should substitute template parameters for ShardSizeExceedsMaximum', () => {
@@ -149,7 +151,10 @@ describe('FecError', () => {
 
   describe('Translation printing', () => {
     it('should print translated message when converted to string', () => {
-      const error = new FecError(FecErrorType.DataRequired, LanguageCodes.EN_US);
+      const error = new FecError(
+        FecErrorType.DataRequired,
+        LanguageCodes.EN_US
+      );
       const errorString = String(error);
       expect(errorString).toContain('Data is required');
     });
@@ -166,7 +171,9 @@ describe('FecError', () => {
         LanguageCodes.EN_US,
         { LENGTH: '50', EXPECTED: '100' }
       );
-      expect(error.toString()).toContain('Invalid data length: 50, expected 100');
+      expect(error.toString()).toContain(
+        'Invalid data length: 50, expected 100'
+      );
     });
   });
 });

@@ -3,7 +3,7 @@ import { Constants } from '../src/constants';
 import { InvalidBackupCodeError } from '../src/errors/invalid-backup-code';
 
 // Polyfill btoa for Node/Jest
-const g = globalThis as any;
+const g = globalThis as typeof globalThis & { btoa?: (s: string) => string };
 if (typeof g.btoa === 'undefined') {
   g.btoa = (s: string) => Buffer.from(s, 'utf8').toString('base64');
 }
@@ -12,20 +12,20 @@ describe('BackupCodeString', () => {
   describe('constructor validation', () => {
     it('accepts normalized 32-char lowercase hex', () => {
       expect(
-        () => new BackupCodeString('deadbeefcafebabefeedface01234567'),
+        () => new BackupCodeString('deadbeefcafebabefeedface01234567')
       ).not.toThrow();
     });
 
     it('accepts messy input that normalizes to valid hex', () => {
       expect(
-        () => new BackupCodeString('DEAD-BEEF CAFE-babe FEED FACE 0123 4567'),
+        () => new BackupCodeString('DEAD-BEEF CAFE-babe FEED FACE 0123 4567')
       ).not.toThrow();
     });
 
     it('throws InvalidBackupCodeError for non-alphanumeric characters even if 32 chars', () => {
       const invalid = '0123456789abcde!0123456789abcdef'; // contains "!"
       expect(() => new BackupCodeString(invalid)).toThrow(
-        InvalidBackupCodeError,
+        InvalidBackupCodeError
       );
     });
 
@@ -33,29 +33,29 @@ describe('BackupCodeString', () => {
       const tooShort = '0123456789abcdef0123456789abcde'; // 31
       const tooLong = '0123456789abcdef0123456789abcdef0'; // 33
       expect(() => new BackupCodeString(tooShort)).toThrow(
-        InvalidBackupCodeError,
+        InvalidBackupCodeError
       );
       expect(() => new BackupCodeString(tooLong)).toThrow(
-        InvalidBackupCodeError,
+        InvalidBackupCodeError
       );
       expect(() => new BackupCodeString('----0123 4567----')).toThrow(
-        InvalidBackupCodeError,
+        InvalidBackupCodeError
       );
     });
 
     it('throws for empty/whitespace-only input', () => {
       expect(() => new BackupCodeString('')).toThrow(InvalidBackupCodeError);
       expect(() => new BackupCodeString('    ')).toThrow(
-        InvalidBackupCodeError,
+        InvalidBackupCodeError
       );
       expect(
-        () => new BackupCodeString('---- ---- ---- ---- ---- ---- ---- ----'),
+        () => new BackupCodeString('---- ---- ---- ---- ---- ---- ---- ----')
       ).toThrow(InvalidBackupCodeError);
     });
 
     it('throws for invalid separators or symbols that survive normalization (e.g., underscores)', () => {
       expect(
-        () => new BackupCodeString('dead_beefcafebabefeedface01234567'),
+        () => new BackupCodeString('dead_beefcafebabefeedface01234567')
       ).toThrow(InvalidBackupCodeError);
     });
   });
@@ -161,7 +161,7 @@ describe('BackupCodeString', () => {
     it('is idempotent for already-normalized strings', () => {
       const s = 'abcdef0123456789';
       expect(
-        BackupCodeString.normalizeCode(BackupCodeString.normalizeCode(s)),
+        BackupCodeString.normalizeCode(BackupCodeString.normalizeCode(s))
       ).toBe(s);
     });
 
@@ -175,14 +175,14 @@ describe('BackupCodeString', () => {
     it('formats 32-char string into 8 groups of 4', () => {
       const s = '0123456789abcdef0123456789abcdef';
       expect(BackupCodeString.formatBackupCode(s)).toBe(
-        '0123-4567-89ab-cdef-0123-4567-89ab-cdef',
+        '0123-4567-89ab-cdef-0123-4567-89ab-cdef'
       );
     });
 
     it('handles non-hex input without restriction (grouping only)', () => {
       const s = 'zzzzYYYYxxxx!!!!----@@@@';
       expect(BackupCodeString.formatBackupCode(s)).toBe(
-        'zzzz-YYYY-xxxx-!!!!------@@@@',
+        'zzzz-YYYY-xxxx-!!!!------@@@@'
       );
     });
 
@@ -191,7 +191,7 @@ describe('BackupCodeString', () => {
       expect(BackupCodeString.formatBackupCode('abcde')).toBe('abcd-e');
       expect(BackupCodeString.formatBackupCode('abcdefgh')).toBe('abcd-efgh');
       expect(BackupCodeString.formatBackupCode('abcdefghi')).toBe(
-        'abcd-efgh-i',
+        'abcd-efgh-i'
       );
     });
 
@@ -225,10 +225,18 @@ describe('BackupCodeString', () => {
   });
 
   describe('generateBackupCodes', () => {
-    const originalCrypto = (globalThis as any).crypto;
+    const originalCrypto = (
+      globalThis as typeof globalThis & {
+        crypto?: { getRandomValues: (arr: Uint8Array) => Uint8Array };
+      }
+    ).crypto;
 
     afterEach(() => {
-      (globalThis as any).crypto = originalCrypto;
+      (
+        globalThis as typeof globalThis & {
+          crypto?: { getRandomValues: (arr: Uint8Array) => Uint8Array };
+        }
+      ).crypto = originalCrypto;
     });
 
     it('calls crypto.getRandomValues once per code with a 32-byte buffer', () => {
@@ -237,12 +245,16 @@ describe('BackupCodeString', () => {
         arr.fill(0);
         return arr;
       });
-      (globalThis as any).crypto = { getRandomValues: mockGetRandomValues };
+      (
+        globalThis as typeof globalThis & {
+          crypto?: { getRandomValues: (arr: Uint8Array) => Uint8Array };
+        }
+      ).crypto = { getRandomValues: mockGetRandomValues };
 
       const codes = BackupCodeString.generateBackupCodes();
       expect(codes.length).toBe(Constants.BACKUP_CODES.Count);
       expect(mockGetRandomValues).toHaveBeenCalledTimes(
-        Constants.BACKUP_CODES.Count,
+        Constants.BACKUP_CODES.Count
       );
       for (const call of mockGetRandomValues.mock.calls) {
         expect(call).toHaveLength(1);
@@ -254,7 +266,11 @@ describe('BackupCodeString', () => {
 
     it('maps RNG bytes via modulo alphabet length (e.g., 255 -> "d")', () => {
       // 255 % 36 === 3 -> alphabet[3] === 'd'
-      (globalThis as any).crypto = {
+      (
+        globalThis as typeof globalThis & {
+          crypto?: { getRandomValues: (arr: Uint8Array) => Uint8Array };
+        }
+      ).crypto = {
         getRandomValues: (arr: Uint8Array) => {
           arr.fill(255);
           return arr;
@@ -270,7 +286,7 @@ describe('BackupCodeString', () => {
         expect(c).toBeInstanceOf(BackupCodeString);
         expect(c.value).toBe(expectedFormatted);
         expect(BackupCodeString.normalizeCode(c.value)).toBe(
-          expectedNormalized,
+          expectedNormalized
         );
 
         // Encodings consistent with formatted string
@@ -289,7 +305,11 @@ describe('BackupCodeString', () => {
       const allowedIndices = [
         0, 1, 2, 3, 4, 5, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
       ]; // a..f then 0..9
-      (globalThis as any).crypto = {
+      (
+        globalThis as typeof globalThis & {
+          crypto?: { getRandomValues: (arr: Uint8Array) => Uint8Array };
+        }
+      ).crypto = {
         getRandomValues: (arr: Uint8Array) => {
           for (let i = 0; i < arr.length; i++) {
             arr[i] = allowedIndices[i % allowedIndices.length];

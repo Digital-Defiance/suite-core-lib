@@ -149,8 +149,12 @@ export const CORE: ICoreConstants = Object.freeze({
 export const createConstants: (
   siteDomain: string,
   siteHostname: string,
-  overrides?: Partial<IConstants>,
-) => IConstants = (siteDomain: string, siteHostname: string, overrides?: Partial<IConstants>) => {
+  overrides?: Partial<IConstants>
+) => IConstants = (
+  siteDomain: string,
+  siteHostname: string,
+  overrides?: Partial<IConstants>
+) => {
   return Object.freeze({
     ...CORE,
     /**

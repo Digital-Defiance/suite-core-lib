@@ -72,7 +72,9 @@ describe('IUserBase interface', () => {
 
   describe('with ObjectId (backend-style)', () => {
     it('should accept valid user object with ObjectId-like structure', () => {
-      const objectId = new MockObjectId() as any;
+      const objectId = new MockObjectId() as unknown as {
+        toString: () => string;
+      };
       const backupCode: IBackupCode = {
         version: '1.0',
         checksumSalt: 'salt',

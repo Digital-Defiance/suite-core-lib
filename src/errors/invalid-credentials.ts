@@ -4,10 +4,12 @@ import { TranslatableSuiteHandleableError } from './translatable-suite-handleabl
 export class InvalidCredentialsError extends TranslatableSuiteHandleableError {
   constructor(language?: string) {
     super(
-      SuiteCoreStringKey.Validation_InvalidCredentials, undefined, language,
+      SuiteCoreStringKey.Validation_InvalidCredentials,
+      undefined,
+      language,
       {
         statusCode: 401,
-      },
+      }
     );
     this.name = 'InvalidCredentialsError';
   }

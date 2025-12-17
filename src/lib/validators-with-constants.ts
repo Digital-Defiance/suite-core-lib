@@ -3,14 +3,16 @@
  * Allows consumers to pass their own IConstants implementation
  */
 
+import { CORE } from '../constants';
 import { IConstants } from '../interfaces/constants';
 import { ICoreConstants } from '../interfaces/core-consts';
-import { CORE } from '../constants';
 
 /**
  * Create validators bound to specific constants
  */
-export function createValidators(constants: ICoreConstants | IConstants = CORE) {
+export function createValidators(
+  constants: ICoreConstants | IConstants = CORE
+) {
   return {
     /**
      * Validate username format using provided constants

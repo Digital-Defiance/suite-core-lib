@@ -1,8 +1,8 @@
+import { EmailTokenType } from '../../src/enumerations/email-token-type';
 import { EmailTokenExpiredError } from '../../src/errors/email-token-expired';
 import { EmailTokenFailedToSendError } from '../../src/errors/email-token-failed-to-send';
 import { EmailTokenSentTooRecentlyError } from '../../src/errors/email-token-sent-too-recently';
 import { EmailTokenUsedOrInvalidError } from '../../src/errors/email-token-used-or-invalid';
-import { EmailTokenType } from '../../src/enumerations/email-token-type';
 
 describe('Email Token Errors', () => {
   describe('EmailTokenExpiredError', () => {
@@ -26,31 +26,41 @@ describe('Email Token Errors', () => {
 
   describe('EmailTokenFailedToSendError', () => {
     it('should create error for account verification', () => {
-      const error = new EmailTokenFailedToSendError(EmailTokenType.AccountVerification);
+      const error = new EmailTokenFailedToSendError(
+        EmailTokenType.AccountVerification
+      );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Account Verification');
     });
 
     it('should create error for password reset', () => {
-      const error = new EmailTokenFailedToSendError(EmailTokenType.PasswordReset);
+      const error = new EmailTokenFailedToSendError(
+        EmailTokenType.PasswordReset
+      );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Password Reset');
     });
 
     it('should create error for login request', () => {
-      const error = new EmailTokenFailedToSendError(EmailTokenType.LoginRequest);
+      const error = new EmailTokenFailedToSendError(
+        EmailTokenType.LoginRequest
+      );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Login Request');
     });
 
     it('should create error for mnemonic recovery', () => {
-      const error = new EmailTokenFailedToSendError(EmailTokenType.MnemonicRecoveryRequest);
+      const error = new EmailTokenFailedToSendError(
+        EmailTokenType.MnemonicRecoveryRequest
+      );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Mnemonic Recovery');
     });
 
     it('should create error for private key request', () => {
-      const error = new EmailTokenFailedToSendError(EmailTokenType.PrivateKeyRequest);
+      const error = new EmailTokenFailedToSendError(
+        EmailTokenType.PrivateKeyRequest
+      );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Private Key');
     });

@@ -3,7 +3,12 @@ import { TranslatableSuiteHandleableError } from './translatable-suite-handleabl
 
 export class FailedToUseDirectTokenError extends TranslatableSuiteHandleableError {
   constructor() {
-    super(SuiteCoreStringKey.Error_FailedToUseDirectLoginToken, undefined, undefined, { statusCode: 401 });
+    super(
+      SuiteCoreStringKey.Error_FailedToUseDirectLoginToken,
+      undefined,
+      undefined,
+      { statusCode: 401 }
+    );
     this.name = 'FailedToUseDirectTokenError';
   }
 }

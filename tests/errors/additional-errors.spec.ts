@@ -1,22 +1,15 @@
-import { InvalidUserIdError } from '../../src/errors/invalid-userid';
-import { InvalidUsernameError } from '../../src/errors/invalid-username';
-import { InvalidTokenError } from '../../src/errors/invalid-token';
-import { TokenNotFoundError } from '../../src/errors/token-not-found';
-import { UsernameEmailRequiredError } from '../../src/errors/username-email-required';
-import { EmailVerifiedError } from '../../src/errors/email-verified';
-import { PendingEmailVerificationError } from '../../src/errors/pending-email-verification';
-import { LastAdminError } from '../../src/errors/last-admin-error';
-import { PrivateKeyRequiredError } from '../../src/errors/private-key-required';
-import { InvalidExpiredTokenError } from '../../src/errors/invalid-expired-token';
-import { InvalidChallengeError } from '../../src/errors/invalid-challenge';
-import { InvalidChallengeResponseError } from '../../src/errors/invalid-challenge-response';
-import { LoginChallengeExpiredError } from '../../src/errors/login-challenge-expired';
+import { AccountStatus } from '../../src/enumerations/account-status';
+import { AccountLockedError } from '../../src/errors/account-locked';
+import { AccountStatusError } from '../../src/errors/account-status';
 import { DirectTokenUsedError } from '../../src/errors/direct-token-used';
 import { FailedToUseDirectTokenError } from '../../src/errors/failed-to-use-direct-token';
 import { GenericValidationError } from '../../src/errors/generic-validation';
-import { AccountStatusError } from '../../src/errors/account-status';
-import { AccountLockedError } from '../../src/errors/account-locked';
-import { AccountStatus } from '../../src/enumerations/account-status';
+import { InvalidChallengeResponseError } from '../../src/errors/invalid-challenge-response';
+import { InvalidUserIdError } from '../../src/errors/invalid-userid';
+import { InvalidUsernameError } from '../../src/errors/invalid-username';
+import { LoginChallengeExpiredError } from '../../src/errors/login-challenge-expired';
+import { PendingEmailVerificationError } from '../../src/errors/pending-email-verification';
+import { TokenNotFoundError } from '../../src/errors/token-not-found';
 
 describe('Additional Error Classes', () => {
   describe('InvalidUserIdError', () => {
@@ -40,8 +33,6 @@ describe('Additional Error Classes', () => {
     });
   });
 
-
-
   describe('TokenNotFoundError', () => {
     it('should create error with default status code', () => {
       const error = new TokenNotFoundError('token123');
@@ -56,10 +47,6 @@ describe('Additional Error Classes', () => {
     });
   });
 
-
-
-
-
   describe('PendingEmailVerificationError', () => {
     it('should create error with default status code', () => {
       const error = new PendingEmailVerificationError();
@@ -67,14 +54,6 @@ describe('Additional Error Classes', () => {
       expect(error.statusCode).toBe(403);
     });
   });
-
-
-
-
-
-
-
-
 
   describe('InvalidChallengeResponseError', () => {
     it('should create error with default status code', () => {
@@ -123,8 +102,10 @@ describe('Additional Error Classes', () => {
       expect(error.statusCode).toBe(403);
     });
 
-    it('should create error for Deleted status', () => {
-      const error = new AccountStatusError(AccountStatus.Deleted);
+    it('should create error for PendingEmailVerification status', () => {
+      const error = new AccountStatusError(
+        AccountStatus.PendingEmailVerification
+      );
       expect(error).toBeInstanceOf(Error);
       expect(error.statusCode).toBe(403);
     });

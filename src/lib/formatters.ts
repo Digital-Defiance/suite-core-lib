@@ -2,8 +2,6 @@
  * Common formatting helpers
  */
 
-import { BackupCodeString } from '../backup-code-string';
-
 /**
  * Format backup code with dashes (XXXX-XXXX-XXXX-XXXX)
  */

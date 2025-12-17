@@ -1,9 +1,9 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { UsernameInUseError } from '../../src/errors/username-in-use';
-import { UserNotFoundError } from '../../src/errors/user-not-found';
 import { AdminRoleNotFoundError } from '../../src/errors/admin-role-not-found';
 import { MemberRoleNotFoundError } from '../../src/errors/member-role-not-found';
 import { SystemRoleNotFoundError } from '../../src/errors/system-role-not-found';
+import { UserNotFoundError } from '../../src/errors/user-not-found';
+import { UsernameInUseError } from '../../src/errors/username-in-use';
 import {
   initSuiteCoreI18nEngine,
   resetSuiteCoreI18nEngine,
@@ -31,7 +31,7 @@ describe('Specific Error Classes', () => {
 
     it('should create error with French translation', () => {
       const error = new UsernameInUseError(LanguageCodes.FR);
-      expect(error.message).toBe('Le nom d\'utilisateur est déjà utilisé');
+      expect(error.message).toBe("Le nom d'utilisateur est déjà utilisé");
     });
 
     it('should create error with German translation', () => {
@@ -51,7 +51,9 @@ describe('Specific Error Classes', () => {
 
     it('should print translated message', () => {
       const error = new UsernameInUseError(LanguageCodes.FR);
-      expect(error.toString()).toContain('Le nom d\'utilisateur est déjà utilisé');
+      expect(error.toString()).toContain(
+        "Le nom d'utilisateur est déjà utilisé"
+      );
     });
   });
 
@@ -194,7 +196,7 @@ describe('Specific Error Classes', () => {
         new SystemRoleNotFoundError(),
       ];
 
-      errors.forEach(error => {
+      errors.forEach((error) => {
         expect(error.stack).toBeDefined();
         expect(error.stack).toContain(error.name);
       });
@@ -219,8 +221,8 @@ describe('Specific Error Classes', () => {
         SystemRoleNotFoundError,
       ];
 
-      errorClasses.forEach(ErrorClass => {
-        languages.forEach(lang => {
+      errorClasses.forEach((ErrorClass) => {
+        languages.forEach((lang) => {
           const error = new ErrorClass(lang);
           expect(error.message).toBeTruthy();
           expect(error.message.length).toBeGreaterThan(0);

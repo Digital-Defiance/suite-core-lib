@@ -48,7 +48,7 @@ export enum InvalidEmailErrorType {
 }
 
 export class ECIESService {
-  constructor(private config: any) {}
+  constructor(private config: Record<string, unknown>) {}
 
   generateNewMnemonic(): string {
     return 'test mnemonic words here for testing purposes only';
@@ -58,9 +58,11 @@ export class ECIESService {
     privateKey: Uint8Array;
     publicKey: Uint8Array;
   } {
+    // Use mnemonic length to vary the fill value slightly (still deterministic for tests)
+    const fillValue = mnemonic.length % 256;
     return {
-      privateKey: new Uint8Array(32).fill(1),
-      publicKey: new Uint8Array(33).fill(2),
+      privateKey: new Uint8Array(32).fill(fillValue || 1),
+      publicKey: new Uint8Array(33).fill(fillValue || 2),
     };
   }
 

@@ -10,7 +10,7 @@ export class LocalStorageManager {
     try {
       const stored = localStorage.getItem(key);
       if (stored === null) return defaultValue;
-      
+
       // For primitive types, parse appropriately
       if (typeof defaultValue === 'number') {
         const parsed = parseInt(stored, 10);
@@ -19,9 +19,9 @@ export class LocalStorageManager {
       if (typeof defaultValue === 'string') {
         return stored as T;
       }
-      
+
       // For objects, parse JSON
-      return JSON.parse(stored);
+      return JSON.parse(stored) as T;
     } catch {
       return defaultValue;
     }

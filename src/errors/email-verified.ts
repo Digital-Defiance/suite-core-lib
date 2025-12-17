@@ -3,9 +3,14 @@ import { TranslatableSuiteHandleableError } from './translatable-suite-handleabl
 
 export class EmailVerifiedError extends TranslatableSuiteHandleableError {
   constructor(statusCode = 409) {
-    super(SuiteCoreStringKey.EmailVerification_AlreadyVerified, undefined, undefined, {
-      statusCode,
-    });
+    super(
+      SuiteCoreStringKey.EmailVerification_AlreadyVerified,
+      undefined,
+      undefined,
+      {
+        statusCode,
+      }
+    );
     this.name = 'EmailVerifiedError';
   }
 }

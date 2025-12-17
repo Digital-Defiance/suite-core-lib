@@ -36,7 +36,7 @@ describe('User System I18n Setup', () => {
       // Verify we can translate a user system string
       const translation = engine.translate(
         SuiteCoreComponentId,
-        SuiteCoreStringKey.Auth_UserNotFound,
+        SuiteCoreStringKey.Auth_UserNotFound
       );
       expect(translation).toBe('User account not found');
     });
@@ -48,7 +48,7 @@ describe('User System I18n Setup', () => {
         const translation = getSuiteCoreTranslation(
           key,
           undefined,
-          LanguageCodes.EN_US,
+          LanguageCodes.EN_US
         );
         expect(translation).toBeTruthy();
         expect(translation).not.toBe(key);
@@ -62,7 +62,7 @@ describe('User System I18n Setup', () => {
         const translation = getSuiteCoreTranslation(
           key,
           undefined,
-          LanguageCodes.FR,
+          LanguageCodes.FR
         );
         expect(translation).toBeTruthy();
         expect(translation).not.toBe(key);
@@ -93,7 +93,7 @@ describe('User System I18n Setup', () => {
 
     it('should translate user system strings', () => {
       const translation = getSuiteCoreTranslation(
-        SuiteCoreStringKey.Validation_UsernameInUse,
+        SuiteCoreStringKey.Validation_UsernameInUse
       );
       expect(translation).toBe('Username is already in use');
     });
@@ -103,7 +103,7 @@ describe('User System I18n Setup', () => {
       const translation = getSuiteCoreTranslation(
         SuiteCoreStringKey.Auth_UserNotFound,
         undefined,
-        LanguageCodes.FR,
+        LanguageCodes.FR
       );
       expect(translation).toBe('Compte utilisateur introuvable');
     });
@@ -112,12 +112,12 @@ describe('User System I18n Setup', () => {
       const englishTranslation = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.EN_US,
+        LanguageCodes.EN_US
       );
       const frenchTranslation = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.FR,
+        LanguageCodes.FR
       );
 
       expect(englishTranslation).toBe('Username is already in use');
@@ -132,7 +132,7 @@ describe('User System I18n Setup', () => {
 
     it('should provide safe translation with fallback', () => {
       const translation = safeGetSuiteCoreTranslation(
-        SuiteCoreStringKey.Validation_UsernameInUse,
+        SuiteCoreStringKey.Validation_UsernameInUse
       );
       expect(translation).toBe('Username is already in use');
     });
@@ -147,12 +147,12 @@ describe('User System I18n Setup', () => {
       const englishMsg = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.EN_US,
+        LanguageCodes.EN_US
       );
       const frenchMsg = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.FR,
+        LanguageCodes.FR
       );
 
       expect(englishMsg).not.toBe(frenchMsg);
@@ -174,12 +174,12 @@ describe('User System I18n Setup', () => {
         const englishMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          LanguageCodes.EN_US,
+          LanguageCodes.EN_US
         );
         const frenchMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          LanguageCodes.FR,
+          LanguageCodes.FR
         );
 
         expect(englishMsg).toBeTruthy();
@@ -201,12 +201,12 @@ describe('User System I18n Setup', () => {
         const englishMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          LanguageCodes.EN_US,
+          LanguageCodes.EN_US
         );
         const frenchMsg = getSuiteCoreTranslation(
           key,
           undefined,
-          LanguageCodes.FR,
+          LanguageCodes.FR
         );
 
         expect(englishMsg).toBeTruthy();
@@ -231,7 +231,7 @@ describe('User System I18n Setup', () => {
         const translation = getSuiteCoreTranslation(
           SuiteCoreStringKey.Auth_UserNotFound,
           undefined,
-          language,
+          language
         );
         expect(translation).toBeTruthy();
         expect(translation).not.toBe(SuiteCoreStringKey.Auth_UserNotFound);

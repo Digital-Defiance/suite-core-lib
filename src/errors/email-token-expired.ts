@@ -1,6 +1,5 @@
-import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 import { SuiteCoreStringKey } from '../enumerations';
-
+import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 
 export class EmailTokenExpiredError extends TranslatableSuiteHandleableError {
   constructor(language?: string, statusCode = 422) {

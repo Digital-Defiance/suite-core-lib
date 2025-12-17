@@ -24,7 +24,7 @@ export class TranslatableSuiteError extends Error {
         otherVars,
         language
       );
-    } catch (error) {
+    } catch {
       translatedMessage = string;
     }
     super(translatedMessage);

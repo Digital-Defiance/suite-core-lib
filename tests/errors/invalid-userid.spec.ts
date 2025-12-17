@@ -1,5 +1,6 @@
-import { InvalidUserIdError } from '../../src/errors/invalid-userid';
+import { LanguageCodes } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../../src/enumerations';
+import { InvalidUserIdError } from '../../src/errors/invalid-userid';
 
 describe('InvalidUserIdError', () => {
   it('should create error without detail', () => {
@@ -10,23 +11,38 @@ describe('InvalidUserIdError', () => {
   });
 
   it('should create error with detail', () => {
-    const error = new InvalidUserIdError(SuiteCoreStringKey.Error_InvalidInput);
+    const error = new InvalidUserIdError(
+      SuiteCoreStringKey.Error_InvalidInput as SuiteCoreStringKey
+    );
     expect(error).toBeInstanceOf(Error);
     expect(error.statusCode).toBe(422);
   });
 
   it('should create error with custom status code', () => {
-    const error = new InvalidUserIdError(undefined, undefined, 400);
+    const error = new InvalidUserIdError(
+      undefined as SuiteCoreStringKey | undefined,
+      undefined as
+        | (typeof LanguageCodes)[keyof typeof LanguageCodes]
+        | undefined,
+      400
+    );
     expect(error.statusCode).toBe(400);
   });
 
   it('should create error with language', () => {
-    const error = new InvalidUserIdError(undefined, 'fr');
+    const error = new InvalidUserIdError(
+      undefined as SuiteCoreStringKey | undefined,
+      LanguageCodes.French as (typeof LanguageCodes)[keyof typeof LanguageCodes]
+    );
     expect(error).toBeInstanceOf(Error);
   });
 
   it('should create error with detail and language', () => {
-    const error = new InvalidUserIdError(SuiteCoreStringKey.Error_InvalidInput, 'es', 400);
+    const error = new InvalidUserIdError(
+      SuiteCoreStringKey.Error_InvalidInput as SuiteCoreStringKey,
+      LanguageCodes.Spanish as (typeof LanguageCodes)[keyof typeof LanguageCodes],
+      400
+    );
     expect(error.statusCode).toBe(400);
   });
 });

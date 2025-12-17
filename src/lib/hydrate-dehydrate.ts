@@ -1,6 +1,6 @@
 import { EmailString } from '@digitaldefiance/ecies-lib';
-import { IUserSettings, IUserSettingsDTO } from '../interfaces';
 import { CurrencyCode, Timezone } from '@digitaldefiance/i18n-lib';
+import { IUserSettings, IUserSettingsDTO } from '../interfaces';
 
 export function hydrateUserSettings(dto: IUserSettingsDTO): IUserSettings {
   return {
@@ -14,7 +14,7 @@ export function hydrateUserSettings(dto: IUserSettingsDTO): IUserSettings {
 }
 
 export function dehydrateUserSettings(
-  settings: IUserSettings,
+  settings: IUserSettings
 ): IUserSettingsDTO {
   return {
     email: settings.email.email,

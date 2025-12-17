@@ -16,7 +16,10 @@ export class RoleBuilder<I = string, D extends Date | string = Date> {
     system: false,
   };
 
-  static create<I = string, D extends Date | string = Date>(): RoleBuilder<I, D> {
+  static create<I = string, D extends Date | string = Date>(): RoleBuilder<
+    I,
+    D
+  > {
     return new RoleBuilder<I, D>();
   }
 
