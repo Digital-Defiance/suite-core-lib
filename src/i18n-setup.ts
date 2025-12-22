@@ -99,7 +99,7 @@ export function getSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
     _engine = I18nEngine.registerIfNotExists(
       SuiteCoreI18nEngineKey,
       createDefaultLanguages(),
-      { defaultLanguage: LanguageCodes.EN_US, ...config }
+      { defaultLanguage: LanguageCodes.EN_US, ...config },
     );
 
     _engine.registerIfNotExists(createSuiteCoreComponentConfig());
@@ -112,13 +112,13 @@ export function getSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, unknown>,
   language?: string,
-  config?: EngineConfig
+  config?: EngineConfig,
 ): string {
   return getSuiteCoreI18nEngine(config).translate(
     SuiteCoreComponentId,
     key,
     variables,
-    language
+    language,
   );
 }
 
@@ -135,7 +135,7 @@ export function safeGetSuiteCoreTranslation(
   key: SuiteCoreStringKey,
   variables?: Record<string, unknown>,
   language?: string,
-  config?: EngineConfig
+  config?: EngineConfig,
 ): string {
   try {
     return getSuiteCoreTranslation(key, variables, language, config);

@@ -17,7 +17,7 @@ class EmailInUseError extends HandleableError {
     const message = getSuiteCoreTranslation(
       SuiteCoreStringKey.Validation_EmailInUse,
       undefined,
-      language
+      language,
     );
     const error = new Error(message);
     super(error, { statusCode });
@@ -31,7 +31,7 @@ class InvalidCredentialsError extends HandleableError {
     const message = getSuiteCoreTranslation(
       SuiteCoreStringKey.Validation_InvalidCredentials,
       undefined,
-      language
+      language,
     );
     const error = new Error(message);
     super(error, { statusCode });
@@ -59,7 +59,7 @@ describe('Multiple Error Types Localization', () => {
 
       expect(emailError.message).toBe("L'adresse e-mail est déjà utilisée");
       expect(credentialsError.message).toBe(
-        "Nom d'utilisateur ou mot de passe invalide"
+        "Nom d'utilisateur ou mot de passe invalide",
       );
     });
 
@@ -112,7 +112,7 @@ describe('Multiple Error Types Localization', () => {
         const error = new EmailInUseError(language);
         expect(error.message).toBeTruthy();
         expect(error.message).not.toBe(
-          SuiteCoreStringKey.Validation_EmailInUse
+          SuiteCoreStringKey.Validation_EmailInUse,
         );
       });
     });

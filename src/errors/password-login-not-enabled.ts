@@ -7,12 +7,12 @@ export class PasswordLoginNotEnabledError extends HandleableError {
     super(
       new Error(
         getSuiteCoreTranslation(
-          SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled
-        )
+          SuiteCoreStringKey.Error_Login_PasswordLoginNotEnabled,
+        ),
       ),
       {
         statusCode: 403,
-      }
+      },
     );
     this.name = 'PasswordLoginNotEnabledError';
   }

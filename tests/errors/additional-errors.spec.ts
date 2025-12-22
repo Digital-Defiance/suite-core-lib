@@ -104,7 +104,7 @@ describe('Additional Error Classes', () => {
 
     it('should create error for PendingEmailVerification status', () => {
       const error = new AccountStatusError(
-        AccountStatus.PendingEmailVerification
+        AccountStatus.PendingEmailVerification,
       );
       expect(error).toBeInstanceOf(Error);
       expect(error.statusCode).toBe(403);

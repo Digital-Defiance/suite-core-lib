@@ -21,7 +21,7 @@ describe('TranslatableSuiteHandleableError', () => {
   describe('Error instantiation and translation', () => {
     it('should create error with English message by default', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.message).toBe('User not found');
       expect(error.name).toBe('TranslatableSuiteHandleableError');
@@ -32,7 +32,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(error.message).toBe('Utilisateur introuvable');
     });
@@ -41,7 +41,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.DE
+        LanguageCodes.DE,
       );
       expect(error.message).toBe('Benutzer nicht gefunden');
     });
@@ -50,7 +50,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.ES
+        LanguageCodes.ES,
       );
       expect(error.message).toBe('Usuario no encontrado');
     });
@@ -59,7 +59,7 @@ describe('TranslatableSuiteHandleableError', () => {
   describe('Handleable properties', () => {
     it('should have default statusCode of 500', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.statusCode).toBe(500);
     });
@@ -69,21 +69,21 @@ describe('TranslatableSuiteHandleableError', () => {
         SuiteCoreStringKey.User_NotFound,
         undefined,
         undefined,
-        { statusCode: 404 }
+        { statusCode: 404 },
       );
       expect(error.statusCode).toBe(404);
     });
 
     it('should have handled property defaulting to false', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.handled).toBe(false);
     });
 
     it('should allow setting handled property', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       error.handled = true;
       expect(error.handled).toBe(true);
@@ -95,7 +95,7 @@ describe('TranslatableSuiteHandleableError', () => {
         SuiteCoreStringKey.User_NotFound,
         undefined,
         undefined,
-        { cause: causeError }
+        { cause: causeError },
       );
       expect(error.cause).toBe(causeError);
     });
@@ -106,7 +106,7 @@ describe('TranslatableSuiteHandleableError', () => {
         SuiteCoreStringKey.User_NotFound,
         undefined,
         undefined,
-        { sourceData }
+        { sourceData },
       );
       expect(error.sourceData).toEqual(sourceData);
     });
@@ -120,7 +120,7 @@ describe('TranslatableSuiteHandleableError', () => {
         SuiteCoreStringKey.User_NotFound,
         undefined,
         LanguageCodes.EN_US,
-        { statusCode: 404, cause: causeError, sourceData }
+        { statusCode: 404, cause: causeError, sourceData },
       );
 
       const json = error.toJSON();
@@ -132,7 +132,7 @@ describe('TranslatableSuiteHandleableError', () => {
 
     it('should serialize without optional properties', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
 
       const json = error.toJSON();
@@ -148,7 +148,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.Error_FailedToCreateUserTemplate,
         { NAME: 'Admin' },
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(error.message).toBe('Failed to create Admin user');
     });
@@ -157,7 +157,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.Error_FailedToCreateUserTemplate,
         { NAME: 'Admin' },
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(error.message).toBe("Échec de la création de l'utilisateur Admin");
     });
@@ -166,21 +166,21 @@ describe('TranslatableSuiteHandleableError', () => {
   describe('Error properties', () => {
     it('should be instanceof Error', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error instanceof Error).toBe(true);
     });
 
     it('should be instanceof TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error instanceof TranslatableSuiteHandleableError).toBe(true);
     });
 
     it('should have proper stack trace', () => {
       const error = new TranslatableSuiteHandleableError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.stack).toBeDefined();
       expect(error.stack).toContain('TranslatableSuiteHandleableError');
@@ -192,7 +192,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       const errorString = String(error);
       expect(errorString).toContain('User not found');
@@ -202,7 +202,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       const errorString = error.toString();
       expect(errorString).toContain('Utilisateur introuvable');
@@ -212,7 +212,7 @@ describe('TranslatableSuiteHandleableError', () => {
       const error = new TranslatableSuiteHandleableError(
         SuiteCoreStringKey.Error_FailedToCreateUserTemplate,
         { NAME: 'System' },
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(error.toString()).toContain('Failed to create System user');
     });
@@ -232,7 +232,7 @@ describe('TranslatableSuiteHandleableError', () => {
         const error = new TranslatableSuiteHandleableError(
           SuiteCoreStringKey.User_NotFound,
           undefined,
-          lang
+          lang,
         );
         expect(error.message).toBeTruthy();
         expect(error.message.length).toBeGreaterThan(0);

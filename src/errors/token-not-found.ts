@@ -13,7 +13,7 @@ export class TokenNotFoundError extends TranslatableSuiteHandleableError {
       language,
       {
         statusCode,
-      }
+      },
     );
     this.token = token;
     this.name = 'TokenNotFoundError';

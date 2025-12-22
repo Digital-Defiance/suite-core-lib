@@ -6,7 +6,8 @@ import { IHasTimestamps } from '../has-timestamps';
 import { IRoleDTO } from './role';
 
 export interface ITokenRoleDTO
-  extends IRoleDTO,
+  extends
+    IRoleDTO,
     IHasId<string>,
     IHasTimestamps<string>,
     IHasTimestampOwners<string>,

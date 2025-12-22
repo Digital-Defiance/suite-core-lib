@@ -20,7 +20,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
       customKey,
       'example.com',
       'example.com',
-      { BcryptRounds: 12 }
+      { BcryptRounds: 12 },
     );
     const customConfig = getSuiteCoreRuntimeConfiguration(customKey);
     expect(customConfig.BcryptRounds).toBe(12);
@@ -41,7 +41,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
     const config = createSuiteCoreRuntimeConfiguration(
       'custom.org',
       'custom.org',
-      overrides
+      overrides,
     );
     expect(config.AdministratorEmail).toBe('root@custom.org');
     expect(config.BcryptRounds).toBe(20);
@@ -51,7 +51,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
     const config = createSuiteCoreRuntimeConfiguration(
       'test.com',
       'test.com',
-      undefined
+      undefined,
     );
     expect(config.AdministratorEmail).toBe('admin@test.com');
   });
@@ -84,7 +84,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
     it('should deep clone nested objects without type casts', () => {
       const config = createSuiteCoreRuntimeConfiguration(
         'test.com',
-        'test.com'
+        'test.com',
       );
       expect(config).toBeDefined();
       expect(config.BACKUP_CODES).toBeDefined();
@@ -101,7 +101,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
       const config = createSuiteCoreRuntimeConfiguration(
         'example.com',
         'example.com',
-        overrides
+        overrides,
       );
       expect(config.BcryptRounds).toBe(15);
       expect(config.AdministratorEmail).toBe('test@example.com');
@@ -110,7 +110,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
     it('should deep freeze nested objects without type casts', () => {
       const config = createSuiteCoreRuntimeConfiguration(
         'test.com',
-        'test.com'
+        'test.com',
       );
       expect(Object.isFrozen(config)).toBe(true);
       expect(Object.isFrozen(config.BACKUP_CODES)).toBe(true);
@@ -124,7 +124,7 @@ describe('Suite Core Runtime Configuration Registry', () => {
     it('should handle primitive values in deep clone', () => {
       const config = createSuiteCoreRuntimeConfiguration(
         'test.com',
-        'test.com'
+        'test.com',
       );
       expect(typeof config.BcryptRounds).toBe('number');
       expect(typeof config.AdministratorEmail).toBe('string');

@@ -28,30 +28,30 @@ describe('Pbkdf2Error', () => {
     it('should create error with French translation', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidSaltLength,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(error.message).toBe(
-        'La longueur du sel ne correspond pas à la longueur attendue'
+        'La longueur du sel ne correspond pas à la longueur attendue',
       );
     });
 
     it('should create error with German translation', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidSaltLength,
-        LanguageCodes.DE
+        LanguageCodes.DE,
       );
       expect(error.message).toBe(
-        'Die Salt-Länge entspricht nicht der erwarteten Länge'
+        'Die Salt-Länge entspricht nicht der erwarteten Länge',
       );
     });
 
     it('should create error with Spanish translation', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidSaltLength,
-        LanguageCodes.ES
+        LanguageCodes.ES,
       );
       expect(error.message).toBe(
-        'La longitud del salt no coincide con la longitud esperada'
+        'La longitud del salt no coincide con la longitud esperada',
       );
     });
 
@@ -63,10 +63,10 @@ describe('Pbkdf2Error', () => {
     it('should handle InvalidHashLength in French', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidHashLength,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(error.message).toBe(
-        'La longueur du hachage ne correspond pas à la longueur attendue'
+        'La longueur du hachage ne correspond pas à la longueur attendue',
       );
     });
   });
@@ -98,42 +98,42 @@ describe('Pbkdf2Error', () => {
     it('should print translated message when converted to string', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidSaltLength,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       const errorString = String(error);
       expect(errorString).toContain(
-        'Salt length does not match expected length'
+        'Salt length does not match expected length',
       );
     });
 
     it('should print French translation when converted to string', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidHashLength,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       const errorString = error.toString();
       expect(errorString).toContain(
-        'La longueur du hachage ne correspond pas à la longueur attendue'
+        'La longueur du hachage ne correspond pas à la longueur attendue',
       );
     });
 
     it('should print German translation when converted to string', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidSaltLength,
-        LanguageCodes.DE
+        LanguageCodes.DE,
       );
       expect(error.toString()).toContain(
-        'Die Salt-Länge entspricht nicht der erwarteten Länge'
+        'Die Salt-Länge entspricht nicht der erwarteten Länge',
       );
     });
 
     it('should print Spanish translation when converted to string', () => {
       const error = new Pbkdf2Error(
         Pbkdf2ErrorType.InvalidHashLength,
-        LanguageCodes.ES
+        LanguageCodes.ES,
       );
       expect(error.toString()).toContain(
-        'La longitud del hash no coincide con la longitud esperada'
+        'La longitud del hash no coincide con la longitud esperada',
       );
     });
   });
@@ -144,10 +144,10 @@ describe('Pbkdf2Error', () => {
       const hashError = new Pbkdf2Error(Pbkdf2ErrorType.InvalidHashLength);
 
       expect(saltError.message).toBe(
-        'Salt length does not match expected length'
+        'Salt length does not match expected length',
       );
       expect(hashError.message).toBe(
-        'Hash length does not match expected length'
+        'Hash length does not match expected length',
       );
     });
 
@@ -162,11 +162,11 @@ describe('Pbkdf2Error', () => {
       languages.forEach((lang) => {
         const saltError = new Pbkdf2Error(
           Pbkdf2ErrorType.InvalidSaltLength,
-          lang
+          lang,
         );
         const hashError = new Pbkdf2Error(
           Pbkdf2ErrorType.InvalidHashLength,
-          lang
+          lang,
         );
 
         expect(saltError.message).toBeTruthy();

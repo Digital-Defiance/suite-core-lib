@@ -8,11 +8,11 @@ export class InvalidTokenError extends HandleableError {
       new TranslatableSuiteError(
         SuiteCoreStringKey.Validation_InvalidToken,
         undefined,
-        language
+        language,
       ),
       {
         statusCode,
-      }
+      },
     );
     this.name = 'InvalidTokenError';
   }

@@ -12,7 +12,7 @@ describe('InvalidUserIdError', () => {
 
   it('should create error with detail', () => {
     const error = new InvalidUserIdError(
-      SuiteCoreStringKey.Error_InvalidInput as SuiteCoreStringKey
+      SuiteCoreStringKey.Error_InvalidInput as SuiteCoreStringKey,
     );
     expect(error).toBeInstanceOf(Error);
     expect(error.statusCode).toBe(422);
@@ -24,7 +24,7 @@ describe('InvalidUserIdError', () => {
       undefined as
         | (typeof LanguageCodes)[keyof typeof LanguageCodes]
         | undefined,
-      400
+      400,
     );
     expect(error.statusCode).toBe(400);
   });
@@ -32,7 +32,7 @@ describe('InvalidUserIdError', () => {
   it('should create error with language', () => {
     const error = new InvalidUserIdError(
       undefined as SuiteCoreStringKey | undefined,
-      LanguageCodes.French as (typeof LanguageCodes)[keyof typeof LanguageCodes]
+      LanguageCodes.French as (typeof LanguageCodes)[keyof typeof LanguageCodes],
     );
     expect(error).toBeInstanceOf(Error);
   });
@@ -41,7 +41,7 @@ describe('InvalidUserIdError', () => {
     const error = new InvalidUserIdError(
       SuiteCoreStringKey.Error_InvalidInput as SuiteCoreStringKey,
       LanguageCodes.Spanish as (typeof LanguageCodes)[keyof typeof LanguageCodes],
-      400
+      400,
     );
     expect(error.statusCode).toBe(400);
   });

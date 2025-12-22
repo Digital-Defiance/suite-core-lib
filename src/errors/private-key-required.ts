@@ -6,7 +6,7 @@ export class PrivateKeyRequiredError extends TranslatableSuiteError {
     super(
       SuiteCoreStringKey.Error_MemberErrorMissingPrivateKey,
       undefined,
-      language
+      language,
     );
     this.name = 'PrivateKeyRequiredError';
   }

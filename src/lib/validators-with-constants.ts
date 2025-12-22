@@ -11,7 +11,7 @@ import { ICoreConstants } from '../interfaces/core-consts';
  * Create validators bound to specific constants
  */
 export function createValidators(
-  constants: ICoreConstants | IConstants = CORE
+  constants: ICoreConstants | IConstants = CORE,
 ) {
   return {
     /**

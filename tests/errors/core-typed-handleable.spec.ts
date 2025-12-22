@@ -19,7 +19,7 @@ describe('CoreTypedHandleableError', () => {
     } catch {
       const engine = I18nEngine.createInstance(
         'default',
-        createDefaultLanguages()
+        createDefaultLanguages(),
       );
       engine.register({
         id: CoreComponentDefinition.id,
@@ -38,7 +38,7 @@ describe('CoreTypedHandleableError', () => {
     const error = new CoreTypedHandleableError(
       TestErrorType.TypeA,
       reasonMap,
-      source
+      source,
     );
 
     expect(error).toBeInstanceOf(Error);
@@ -53,7 +53,7 @@ describe('CoreTypedHandleableError', () => {
       TestErrorType.TypeB,
       reasonMap,
       source,
-      { statusCode: 422, handled: true, sourceData: { foo: 'bar' } }
+      { statusCode: 422, handled: true, sourceData: { foo: 'bar' } },
     );
 
     expect(error.statusCode).toBe(422);
@@ -66,7 +66,7 @@ describe('CoreTypedHandleableError', () => {
     const error = new CoreTypedHandleableError(
       TestErrorType.TypeA,
       reasonMap,
-      source
+      source,
     );
 
     expect(error.handled).toBe(false);
@@ -80,7 +80,7 @@ describe('CoreTypedHandleableError', () => {
       TestErrorType.TypeA,
       reasonMap,
       source,
-      { statusCode: 400, sourceData: { test: 123 } }
+      { statusCode: 400, sourceData: { test: 123 } },
     );
 
     const json = error.toJSON();
@@ -96,7 +96,7 @@ describe('CoreTypedHandleableError', () => {
     const error = new CoreTypedHandleableError(
       TestErrorType.TypeA,
       reasonMap,
-      source
+      source,
     );
 
     expect(error.stack).toBeDefined();
@@ -107,12 +107,12 @@ describe('CoreTypedHandleableError', () => {
     const innerError = new CoreTypedHandleableError(
       TestErrorType.TypeA,
       reasonMap,
-      innerSource
+      innerSource,
     );
     const outerError = new CoreTypedHandleableError(
       TestErrorType.TypeB,
       reasonMap,
-      innerError
+      innerError,
     );
 
     const json = outerError.toJSON();

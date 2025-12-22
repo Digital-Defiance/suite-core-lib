@@ -10,7 +10,7 @@ export class EmailTokenFailedToSendError extends HandleableError {
   constructor(
     tokenType: EmailTokenType,
     language?: CoreLanguageCode,
-    options?: HandleableErrorOptions
+    options?: HandleableErrorOptions,
   ) {
     const map: Record<EmailTokenType, SuiteCoreStringKey> = {
       [EmailTokenType.AccountVerification]:
@@ -26,17 +26,17 @@ export class EmailTokenFailedToSendError extends HandleableError {
     const translate = getSuiteCoreTranslation(
       map[tokenType],
       undefined,
-      language
+      language,
     );
     super(
       new Error(
         `${getSuiteCoreTranslation(
           SuiteCoreStringKey.Email_TokenFailedToSend,
           undefined,
-          language
-        )}: ${translate}`
+          language,
+        )}: ${translate}`,
       ),
-      options
+      options,
     );
     this.name = 'EmailTokenFailedToSendError';
   }

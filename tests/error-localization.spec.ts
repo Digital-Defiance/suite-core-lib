@@ -63,7 +63,7 @@ describe('Error Message Localization', () => {
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(englishMessage).toBe('Username is already in use');
 
@@ -71,7 +71,7 @@ describe('Error Message Localization', () => {
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(frenchMessage).toBe("Le nom d'utilisateur est déjà utilisé");
     });
@@ -84,7 +84,7 @@ describe('Error Message Localization', () => {
         SuiteCoreComponentId,
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.ES
+        LanguageCodes.ES,
       );
       expect(spanishMessage).toBe('El nombre de usuario ya está en uso');
     });
@@ -93,14 +93,14 @@ describe('Error Message Localization', () => {
       const englishMessage = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(englishMessage).toBe('Username is already in use');
 
       const frenchMessage = getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(frenchMessage).toBe("Le nom d'utilisateur est déjà utilisé");
     });

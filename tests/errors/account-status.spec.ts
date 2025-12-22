@@ -35,7 +35,7 @@ describe('AccountStatusError', () => {
 
   it('should create error for PendingEmailVerification status', () => {
     const error = new AccountStatusError(
-      AccountStatus.PendingEmailVerification
+      AccountStatus.PendingEmailVerification,
     );
     expect(error).toBeInstanceOf(Error);
     expect(error.accountStatus).toBe(AccountStatus.PendingEmailVerification);
@@ -52,7 +52,7 @@ describe('AccountStatusError', () => {
     const error = new AccountStatusError(
       AccountStatus.AdminLock,
       undefined,
-      401
+      401,
     );
     expect(error.statusCode).toBe(401);
   });
@@ -60,7 +60,7 @@ describe('AccountStatusError', () => {
   it('should create error with language', () => {
     const error = new AccountStatusError(
       AccountStatus.AdminLock,
-      LanguageCodes.FR
+      LanguageCodes.FR,
     );
     expect(error).toBeInstanceOf(Error);
   });
@@ -69,7 +69,7 @@ describe('AccountStatusError', () => {
     const error = new AccountStatusError(
       AccountStatus.PendingEmailVerification,
       LanguageCodes.ES,
-      422
+      422,
     );
     expect(error.statusCode).toBe(422);
   });

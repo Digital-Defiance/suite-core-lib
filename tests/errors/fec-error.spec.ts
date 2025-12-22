@@ -46,7 +46,7 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.InvalidDataLength,
         LanguageCodes.EN_US,
-        { LENGTH: '100', EXPECTED: '256' }
+        { LENGTH: '100', EXPECTED: '256' },
       );
       expect(error.message).toBe('Invalid data length: 100, expected 256');
     });
@@ -55,10 +55,10 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.InvalidDataLength,
         LanguageCodes.FR,
-        { LENGTH: '100', EXPECTED: '256' }
+        { LENGTH: '100', EXPECTED: '256' },
       );
       expect(error.message).toBe(
-        'Longueur de données invalide : 100, attendu 256'
+        'Longueur de données invalide : 100, attendu 256',
       );
     });
 
@@ -66,7 +66,7 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.ShardSizeExceedsMaximum,
         LanguageCodes.EN_US,
-        { SIZE: '2048', MAXIMUM: '1024' }
+        { SIZE: '2048', MAXIMUM: '1024' },
       );
       expect(error.message).toBe('Shard size 2048 exceeds maximum 1024');
     });
@@ -75,7 +75,7 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.NotEnoughShardsAvailable,
         LanguageCodes.EN_US,
-        { AVAILABLE: '3', REQUIRED: '5' }
+        { AVAILABLE: '3', REQUIRED: '5' },
       );
       expect(error.message).toBe('Not enough shards available: 3, need 5');
     });
@@ -84,7 +84,7 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.FecEncodingFailed,
         LanguageCodes.EN_US,
-        { ERROR: 'Buffer overflow' }
+        { ERROR: 'Buffer overflow' },
       );
       expect(error.message).toBe('FEC encoding failed: Buffer overflow');
     });
@@ -93,7 +93,7 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.FecDecodingFailed,
         LanguageCodes.EN_US,
-        { ERROR: 'Corrupted data' }
+        { ERROR: 'Corrupted data' },
       );
       expect(error.message).toBe('FEC decoding failed: Corrupted data');
     });
@@ -153,7 +153,7 @@ describe('FecError', () => {
     it('should print translated message when converted to string', () => {
       const error = new FecError(
         FecErrorType.DataRequired,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       const errorString = String(error);
       expect(errorString).toContain('Data is required');
@@ -169,10 +169,10 @@ describe('FecError', () => {
       const error = new FecError(
         FecErrorType.InvalidDataLength,
         LanguageCodes.EN_US,
-        { LENGTH: '50', EXPECTED: '100' }
+        { LENGTH: '50', EXPECTED: '100' },
       );
       expect(error.toString()).toContain(
-        'Invalid data length: 50, expected 100'
+        'Invalid data length: 50, expected 100',
       );
     });
   });

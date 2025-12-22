@@ -33,7 +33,7 @@ describe('Hydrate/Dehydrate Functions', () => {
       expect(result).toBeDefined();
       expect(result.email).toBeDefined();
       expect(result.email.email || (result.email as unknown as string)).toBe(
-        'test@example.com'
+        'test@example.com',
       );
       expect(result.timezone).toBeDefined();
       expect(result.timezone.value).toBe('America/New_York');
@@ -142,7 +142,7 @@ describe('Hydrate/Dehydrate Functions', () => {
 
       // Verify instances have the expected methods/properties
       expect(result.email.email || (result.email as unknown as string)).toBe(
-        'test@example.com'
+        'test@example.com',
       );
       expect(result.timezone.value).toBe('Europe/London');
       expect(result.currency.value).toBe('GBP');

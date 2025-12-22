@@ -8,9 +8,9 @@ import { IHasTimestamps } from '../has-timestamps';
 export interface IEmailTokenBase<
   I,
   D extends Date | string,
-  E extends EmailTokenType | string
-> extends IHasId<I>,
-    IHasTimestamps<D> {
+  E extends EmailTokenType | string,
+>
+  extends IHasId<I>, IHasTimestamps<D> {
   /**
    * The user ID associated with the token
    */

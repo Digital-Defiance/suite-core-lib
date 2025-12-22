@@ -6,7 +6,7 @@ export class InvalidUserIdError extends HandleableError {
   constructor(
     detail?: SuiteCoreStringKey,
     language?: CoreLanguageCode,
-    statusCode = 422
+    statusCode = 422,
   ) {
     const engine = getSuiteCoreI18nEngine();
     const baseMessage = detail
@@ -18,16 +18,16 @@ export class InvalidUserIdError extends HandleableError {
               SuiteCoreComponentId,
               detail,
               undefined,
-              language
+              language,
             ),
           },
-          language
+          language,
         )
       : engine.translate(
           SuiteCoreComponentId,
           SuiteCoreStringKey.Validation_InvalidUserId,
           undefined,
-          language
+          language,
         );
     super(new Error(baseMessage), { statusCode });
     this.name = 'InvalidUserIdError';

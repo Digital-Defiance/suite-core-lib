@@ -11,7 +11,7 @@ import { IUserBase } from '../interfaces/bases/user';
 export class UserBuilder<
   I = string,
   D extends Date | string = Date,
-  S extends string = string
+  S extends string = string,
 > {
   private data: Partial<IUserBase<I, D, S, AccountStatus>> = {
     emailVerified: false,
@@ -24,7 +24,7 @@ export class UserBuilder<
   static create<
     I = string,
     D extends Date | string = Date,
-    S extends string = string
+    S extends string = string,
   >(): UserBuilder<I, D, S> {
     return new UserBuilder<I, D, S>();
   }

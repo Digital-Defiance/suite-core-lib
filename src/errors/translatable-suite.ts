@@ -13,7 +13,7 @@ export class TranslatableSuiteError extends Error {
   constructor(
     string: SuiteCoreStringKey,
     otherVars?: Record<string, string | number>,
-    language?: string
+    language?: string,
   ) {
     const i18nEngine = getSuiteCoreI18nEngine();
     let translatedMessage: string;
@@ -22,7 +22,7 @@ export class TranslatableSuiteError extends Error {
         SuiteCoreComponentId,
         string,
         otherVars,
-        language
+        language,
       );
     } catch {
       translatedMessage = string;

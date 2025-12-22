@@ -9,11 +9,11 @@ export class UsernameOrEmailRequiredError extends GenericValidationError {
       getSuiteCoreTranslation(
         SuiteCoreStringKey.Validation_UsernameOrEmailRequired,
         undefined,
-        language
+        language,
       ),
       {
         statusCode,
-      }
+      },
     );
     this.name = 'UsernameOrEmailRequiredError';
   }

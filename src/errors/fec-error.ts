@@ -9,7 +9,7 @@ export class FecError extends PluginTypedError<
   constructor(
     type: FecErrorType,
     language?: string,
-    templateParams?: Record<string, string>
+    templateParams?: Record<string, string>,
   ) {
     super(
       SuiteCoreComponentId,
@@ -39,7 +39,7 @@ export class FecError extends PluginTypedError<
           SuiteCoreStringKey.Error_FecErrorParityDataRequired,
       },
       language,
-      templateParams
+      templateParams,
     );
     this.name = 'FecError';
   }

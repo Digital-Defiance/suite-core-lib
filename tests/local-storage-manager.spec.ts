@@ -52,7 +52,7 @@ describe('LocalStorageManager', () => {
     it('should return default value when key does not exist', () => {
       const result = LocalStorageManager.getValue(
         'nonExistentKey',
-        'defaultValue'
+        'defaultValue',
       );
       expect(result).toBe('defaultValue');
       expect(mockLocalStorage.getItem).toHaveBeenCalledWith('nonExistentKey');
@@ -95,7 +95,7 @@ describe('LocalStorageManager', () => {
       const defaultObject = { default: true };
       const result = LocalStorageManager.getValue(
         'invalidJsonKey',
-        defaultObject
+        defaultObject,
       );
       expect(result).toEqual(defaultObject);
     });
@@ -128,7 +128,7 @@ describe('LocalStorageManager', () => {
       LocalStorageManager.setValue('stringKey', testValue);
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
         'stringKey',
-        testValue
+        testValue,
       );
     });
 
@@ -143,7 +143,7 @@ describe('LocalStorageManager', () => {
       LocalStorageManager.setValue('objectKey', testObject);
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
         'objectKey',
-        JSON.stringify(testObject)
+        JSON.stringify(testObject),
       );
     });
 
@@ -151,7 +151,7 @@ describe('LocalStorageManager', () => {
       LocalStorageManager.setValue('booleanKey', true);
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
         'booleanKey',
-        'true'
+        'true',
       );
     });
 
@@ -160,7 +160,7 @@ describe('LocalStorageManager', () => {
       LocalStorageManager.setValue('arrayKey', testArray);
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
         'arrayKey',
-        JSON.stringify(testArray)
+        JSON.stringify(testArray),
       );
     });
 
@@ -172,7 +172,7 @@ describe('LocalStorageManager', () => {
       LocalStorageManager.setValue('errorKey', 'test value');
       expect(consoleWarnSpy).toHaveBeenCalledWith(
         'Failed to save to localStorage (errorKey):',
-        expect.any(Error)
+        expect.any(Error),
       );
     });
 
@@ -186,7 +186,7 @@ describe('LocalStorageManager', () => {
       // JSON.stringify(undefined) returns undefined (primitive), not "undefined" string
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
         'undefinedKey',
-        undefined
+        undefined,
       );
     });
   });
@@ -205,7 +205,7 @@ describe('LocalStorageManager', () => {
       LocalStorageManager.removeValue('errorKey');
       expect(consoleWarnSpy).toHaveBeenCalledWith(
         'Failed to remove from localStorage (errorKey):',
-        expect.any(Error)
+        expect.any(Error),
       );
     });
   });
@@ -216,10 +216,10 @@ describe('LocalStorageManager', () => {
       expect(result).toBe(true);
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
         '__localStorage_test__',
-        '__localStorage_test__'
+        '__localStorage_test__',
       );
       expect(mockLocalStorage.removeItem).toHaveBeenCalledWith(
-        '__localStorage_test__'
+        '__localStorage_test__',
       );
     });
 
@@ -293,7 +293,7 @@ describe('LocalStorageManager', () => {
 
       LocalStorageManager.removeValue(key);
       expect(LocalStorageManager.getValue(key, defaultValue)).toBe(
-        defaultValue
+        defaultValue,
       );
     });
   });

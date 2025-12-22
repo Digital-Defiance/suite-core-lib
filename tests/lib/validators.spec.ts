@@ -83,7 +83,7 @@ describe('Validators', () => {
     it('should validate normalized backup codes', () => {
       expect(isValidBackupCodeNormalized('a'.repeat(32))).toBe(true);
       expect(
-        isValidBackupCodeNormalized('0123456789abcdef0123456789abcdef')
+        isValidBackupCodeNormalized('0123456789abcdef0123456789abcdef'),
       ).toBe(true);
     });
 
@@ -98,16 +98,16 @@ describe('Validators', () => {
   describe('isValidBackupCodeDisplay', () => {
     it('should validate display format backup codes', () => {
       expect(
-        isValidBackupCodeDisplay('abcd-1234-efgh-5678-ijkl-9012-mnop-3456')
+        isValidBackupCodeDisplay('abcd-1234-efgh-5678-ijkl-9012-mnop-3456'),
       ).toBe(true);
     });
 
     it('should reject invalid display format backup codes', () => {
       expect(
-        isValidBackupCodeDisplay('ABCD-1234-EFGH-5678-IJKL-9012-MNOP-3456')
+        isValidBackupCodeDisplay('ABCD-1234-EFGH-5678-IJKL-9012-MNOP-3456'),
       ).toBe(false);
       expect(isValidBackupCodeDisplay('abcd1234efgh5678ijkl9012mnop3456')).toBe(
-        false
+        false,
       );
       expect(isValidBackupCodeDisplay('abcd-1234-efgh-5678')).toBe(false);
       expect(isValidBackupCodeDisplay('')).toBe(false);

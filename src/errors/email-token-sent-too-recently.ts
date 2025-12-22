@@ -9,18 +9,18 @@ export class EmailTokenSentTooRecentlyError extends TranslatableSuiteHandleableE
   constructor(lastSent: Date, statusCode = 429) {
     const now = Date.now();
     const nextAvailableTime = new Date(
-      lastSent.getTime() + AppConstants.EmailTokenResendInterval
+      lastSent.getTime() + AppConstants.EmailTokenResendInterval,
     );
     const timeRemaining = Math.max(
       0,
-      Math.ceil((nextAvailableTime.getTime() - now) / 1000)
+      Math.ceil((nextAvailableTime.getTime() - now) / 1000),
     );
 
     super(
       SuiteCoreStringKey.Error_EmailSentTooRecentlyTemplate,
       { timeRemaining: timeRemaining.toString() },
       undefined,
-      { statusCode }
+      { statusCode },
     );
     this.name = 'EmailTokenSentTooRecentlyError';
     this.lastSent = lastSent;

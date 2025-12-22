@@ -23,7 +23,7 @@ export class BackupCodeString {
 
   public get valueAsHexString(): string {
     const formattedValue = BackupCodeString.formatBackupCode(
-      this._normalizedCode
+      this._normalizedCode,
     );
     return new TextEncoder().encode(formattedValue).reduce((str, byte) => {
       return str + byte.toString(16).padStart(2, '0');
@@ -32,14 +32,14 @@ export class BackupCodeString {
 
   public get valueAsBase64String(): string {
     const formattedValue = BackupCodeString.formatBackupCode(
-      this._normalizedCode
+      this._normalizedCode,
     );
     return btoa(formattedValue);
   }
 
   public get valueAsUint8Array(): Uint8Array {
     const formattedValue = BackupCodeString.formatBackupCode(
-      this._normalizedCode
+      this._normalizedCode,
     );
     return new TextEncoder().encode(formattedValue);
   }
@@ -87,7 +87,7 @@ export class BackupCodeString {
    * Note: If generation alphabet/length is controlled elsewhere, prefer that path.
    */
   public static generateBackupCodes(
-    constants: IConstants = Constants
+    constants: IConstants = Constants,
   ): Array<BackupCodeString> {
     const codes: Array<BackupCodeString> = [];
     for (let i = 0; i < constants.BACKUP_CODES.Count; i++) {

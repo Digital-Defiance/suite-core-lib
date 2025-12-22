@@ -65,8 +65,8 @@ describe('Validators with Constants', () => {
       expect(validators.isValidBackupCodeNormalized('a'.repeat(32))).toBe(true);
       expect(
         validators.isValidBackupCodeDisplay(
-          'abcd-1234-efgh-5678-ijkl-9012-mnop-3456'
-        )
+          'abcd-1234-efgh-5678-ijkl-9012-mnop-3456',
+        ),
       ).toBe(true);
     });
   });

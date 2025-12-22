@@ -14,7 +14,7 @@ export function hydrateUserSettings(dto: IUserSettingsDTO): IUserSettings {
 }
 
 export function dehydrateUserSettings(
-  settings: IUserSettings
+  settings: IUserSettings,
 ): IUserSettingsDTO {
   return {
     email: settings.email.email,

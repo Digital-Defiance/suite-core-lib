@@ -8,8 +8,10 @@ import { IHasTimestamps } from '../has-timestamps';
 export interface IRoleBase<
   I,
   D extends Date | string = Date,
-  R extends Role | string = Role
-> extends IHasId<I>,
+  R extends Role | string = Role,
+>
+  extends
+    IHasId<I>,
     IHasTimestamps<D>,
     IHasTimestampOwners<I>,
     IHasSoftDelete<D>,

@@ -21,7 +21,7 @@ describe('TranslatableSuiteError', () => {
   describe('Error instantiation and translation', () => {
     it('should create error with English message by default', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.message).toBe('User not found');
       expect(error.name).toBe('TranslatableSuiteError');
@@ -32,7 +32,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(error.message).toBe('Utilisateur introuvable');
     });
@@ -41,7 +41,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.DE
+        LanguageCodes.DE,
       );
       expect(error.message).toBe('Benutzer nicht gefunden');
     });
@@ -50,7 +50,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.ES
+        LanguageCodes.ES,
       );
       expect(error.message).toBe('Usuario no encontrado');
     });
@@ -61,7 +61,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.Common_UserCreatedTemplate,
         { TYPE: 'Admin', NAME: 'John' },
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(error.message).toBe('Admin user John created successfully');
     });
@@ -70,7 +70,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.Common_UserCreatedTemplate,
         { TYPE: 'Admin', NAME: 'Jean' },
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       expect(error.message).toBe('Admin utilisateur Jean créé avec succès');
     });
@@ -79,7 +79,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.Common_UserCreatedTemplate,
         { TYPE: 'Admin', NAME: 'Hans' },
-        LanguageCodes.DE
+        LanguageCodes.DE,
       );
       expect(error.message).toBe('Admin Benutzer Hans erfolgreich erstellt');
     });
@@ -88,7 +88,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.Common_UserCreatedTemplate,
         { TYPE: 'Admin', NAME: 'Juan' },
-        LanguageCodes.ES
+        LanguageCodes.ES,
       );
       expect(error.message).toBe('Admin usuario Juan creado con éxito');
     });
@@ -97,10 +97,10 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.TestTemplate,
         { variable1: 'test-value', AdministratorEmail: 'admin@example.com' },
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(error.message).toBe(
-        'This is a test: test-value, admin@example.com'
+        'This is a test: test-value, admin@example.com',
       );
     });
   });
@@ -108,28 +108,28 @@ describe('TranslatableSuiteError', () => {
   describe('Various error types', () => {
     it('should handle validation errors', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.Validation_InvalidEmail
+        SuiteCoreStringKey.Validation_InvalidEmail,
       );
       expect(error.message).toBe('Invalid email address format');
     });
 
     it('should handle authentication errors', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.Auth_AccountLocked
+        SuiteCoreStringKey.Auth_AccountLocked,
       );
       expect(error.message).toBe('Account is temporarily locked');
     });
 
     it('should handle common errors', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.Common_UnexpectedError
+        SuiteCoreStringKey.Common_UnexpectedError,
       );
       expect(error.message).toBe('An unexpected error occurred');
     });
 
     it('should handle admin errors', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.AdminRoleNotFound
+        SuiteCoreStringKey.AdminRoleNotFound,
       );
       expect(error.message).toBe('Admin role not found');
     });
@@ -138,21 +138,21 @@ describe('TranslatableSuiteError', () => {
   describe('Error properties', () => {
     it('should be instanceof Error', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error instanceof Error).toBe(true);
     });
 
     it('should be instanceof TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error instanceof TranslatableSuiteError).toBe(true);
     });
 
     it('should have proper stack trace', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.stack).toBeDefined();
       expect(error.stack).toContain('TranslatableSuiteError');
@@ -160,14 +160,14 @@ describe('TranslatableSuiteError', () => {
 
     it('should have correct name property', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.name).toBe('TranslatableSuiteError');
     });
 
     it('should store the StringName property', () => {
       const error = new TranslatableSuiteError(
-        SuiteCoreStringKey.User_NotFound
+        SuiteCoreStringKey.User_NotFound,
       );
       expect(error.StringName).toBe(SuiteCoreStringKey.User_NotFound);
     });
@@ -178,7 +178,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       const errorString = String(error);
       expect(errorString).toContain('User not found');
@@ -188,7 +188,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.User_NotFound,
         undefined,
-        LanguageCodes.FR
+        LanguageCodes.FR,
       );
       const errorString = error.toString();
       expect(errorString).toContain('Utilisateur introuvable');
@@ -198,10 +198,10 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.Common_UserCreatedTemplate,
         { TYPE: 'Member', NAME: 'Alice' },
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(error.toString()).toContain(
-        'Member user Alice created successfully'
+        'Member user Alice created successfully',
       );
     });
 
@@ -209,7 +209,7 @@ describe('TranslatableSuiteError', () => {
       const error = new TranslatableSuiteError(
         SuiteCoreStringKey.Validation_InvalidEmail,
         undefined,
-        LanguageCodes.EN_US
+        LanguageCodes.EN_US,
       );
       expect(error.message).toBe('Invalid email address format');
     });
@@ -238,7 +238,7 @@ describe('TranslatableSuiteError', () => {
         const error = new TranslatableSuiteError(
           SuiteCoreStringKey.User_NotFound,
           undefined,
-          lang
+          lang,
         );
         expect(error.message).toBeTruthy();
         expect(error.message.length).toBeGreaterThan(0);

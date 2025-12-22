@@ -9,7 +9,7 @@ export class InvalidCredentialsError extends TranslatableSuiteHandleableError {
       language,
       {
         statusCode: 401,
-      }
+      },
     );
     this.name = 'InvalidCredentialsError';
   }

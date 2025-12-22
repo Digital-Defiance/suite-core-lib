@@ -18,7 +18,7 @@ describe('Suite Core Library Index', () => {
   it('should export base interfaces (type-only, verified by compilation)', () => {
     // Base interfaces are type-only exports, so we verify they exist by using them
     const testUserBase = (
-      user: SuiteCore.IUserBase<string, Date, 'en', AccountStatus>
+      user: SuiteCore.IUserBase<string, Date, 'en', AccountStatus>,
     ) => user;
     const testRoleBase = (role: SuiteCore.IRoleBase<string, Date, Role>) =>
       role;
@@ -67,7 +67,7 @@ describe('Suite Core Library Index', () => {
 
   it('should allow creating instances of exported classes', () => {
     const backupCode = new SuiteCore.BackupCodeString(
-      '0123456789abcdef0123456789abcdef'
+      '0123456789abcdef0123456789abcdef',
     );
 
     expect(backupCode).toBeInstanceOf(SuiteCore.BackupCodeString);

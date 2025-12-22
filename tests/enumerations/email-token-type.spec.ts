@@ -7,7 +7,7 @@ describe('EmailTokenType', () => {
     expect(EmailTokenType.LoginRequest).toBe('LoginRequest');
     expect(EmailTokenType.PrivateKeyRequest).toBe('PrivateKeyRequest');
     expect(EmailTokenType.MnemonicRecoveryRequest).toBe(
-      'MnemonicRecoveryRequest'
+      'MnemonicRecoveryRequest',
     );
   });
 

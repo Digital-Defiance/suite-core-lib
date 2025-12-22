@@ -15,7 +15,7 @@ export class InvalidEmailError extends TypedHandleableError<
     type: InvalidEmailErrorType,
     email?: string,
     options?: HandleableErrorOptions,
-    language?: string
+    language?: string,
   ) {
     const source =
       options?.cause instanceof Error ? options.cause : new Error();
@@ -35,7 +35,7 @@ export class InvalidEmailError extends TypedHandleableError<
       language,
       {
         email: email ?? '',
-      }
+      },
     );
     this.email = email;
     this.name = 'InvalidEmailError';

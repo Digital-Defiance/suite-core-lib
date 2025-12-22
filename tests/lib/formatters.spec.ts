@@ -13,7 +13,7 @@ describe('Formatters', () => {
 
     it('should handle already formatted codes', () => {
       expect(formatBackupCode('ABCD-1234-EFGH-5678')).toBe(
-        'ABCD-1234-EFGH-5678'
+        'ABCD-1234-EFGH-5678',
       );
     });
 
@@ -45,10 +45,10 @@ describe('Formatters', () => {
   describe('normalizeBackupCode', () => {
     it('should normalize backup code', () => {
       expect(normalizeBackupCode('ABCD-1234-EFGH-5678')).toBe(
-        'ABCD1234EFGH5678'
+        'ABCD1234EFGH5678',
       );
       expect(normalizeBackupCode('abcd-1234-efgh-5678')).toBe(
-        'ABCD1234EFGH5678'
+        'ABCD1234EFGH5678',
       );
       expect(normalizeBackupCode('abcd1234efgh5678')).toBe('ABCD1234EFGH5678');
     });

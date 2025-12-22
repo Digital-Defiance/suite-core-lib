@@ -5,7 +5,8 @@ import { IHasTimestampOwners } from '../has-timestamp-owners';
 import { IHasTimestamps } from '../has-timestamps';
 
 export interface IUserRoleBase<I, D extends Date | string>
-  extends IHasId<I>,
+  extends
+    IHasId<I>,
     IHasTimestamps<D>,
     IHasTimestampOwners<I>,
     IHasSoftDelete<D>,

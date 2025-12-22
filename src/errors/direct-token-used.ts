@@ -7,7 +7,7 @@ export class DirectTokenUsedError extends TranslatableSuiteHandleableError {
       SuiteCoreStringKey.Error_DirectTokenAlreadyUsed,
       undefined,
       undefined,
-      { statusCode: 401 }
+      { statusCode: 401 },
     );
     this.name = 'DirectTokenUsedError';
   }

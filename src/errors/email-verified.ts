@@ -9,7 +9,7 @@ export class EmailVerifiedError extends TranslatableSuiteHandleableError {
       undefined,
       {
         statusCode,
-      }
+      },
     );
     this.name = 'EmailVerifiedError';
   }

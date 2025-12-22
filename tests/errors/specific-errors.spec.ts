@@ -52,7 +52,7 @@ describe('Specific Error Classes', () => {
     it('should print translated message', () => {
       const error = new UsernameInUseError(LanguageCodes.FR);
       expect(error.toString()).toContain(
-        "Le nom d'utilisateur est déjà utilisé"
+        "Le nom d'utilisateur est déjà utilisé",
       );
     });
   });

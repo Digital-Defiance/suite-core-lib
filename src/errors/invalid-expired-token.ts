@@ -11,7 +11,7 @@ export class InvalidExpiredTokenError extends TranslatableSuiteHandleableError {
       SuiteCoreStringKey.ForgotPassword_InvalidToken,
       undefined,
       language,
-      options
+      options,
     );
     this.name = 'InvalidExpiredTokenError';
   }

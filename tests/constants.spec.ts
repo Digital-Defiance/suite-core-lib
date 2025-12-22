@@ -24,44 +24,44 @@ describe('Constants Module', () => {
 
       // Test valid normalized hex strings (32 chars, lowercase alphanumeric)
       expect(NormalizedHexRegex.test('deadbeefcafebabefeedface01234567')).toBe(
-        true
+        true,
       );
       expect(NormalizedHexRegex.test('0123456789abcdef0123456789abcdef')).toBe(
-        true
+        true,
       );
       expect(NormalizedHexRegex.test('ffffffffffffffffffffffffffffffff')).toBe(
-        true
+        true,
       );
       expect(NormalizedHexRegex.test('00000000000000000000000000000000')).toBe(
-        true
+        true,
       );
 
       // Test invalid cases - wrong length
       expect(NormalizedHexRegex.test('deadbeefcafebabefeedface0123456')).toBe(
-        false
+        false,
       ); // 31 chars
       expect(NormalizedHexRegex.test('deadbeefcafebabefeedface012345678')).toBe(
-        false
+        false,
       ); // 33 chars
       expect(NormalizedHexRegex.test('')).toBe(false); // empty
 
       // Test invalid cases - uppercase letters
       expect(NormalizedHexRegex.test('DEADBEEFCAFEBABEFEEDFACE01234567')).toBe(
-        false
+        false,
       );
       expect(NormalizedHexRegex.test('deadbeefcafebabefeedface0123456F')).toBe(
-        false
+        false,
       );
 
       // Test invalid cases - invalid characters
       expect(NormalizedHexRegex.test('deadbeefcafebabefeedface0123456!')).toBe(
-        false
+        false,
       );
       expect(NormalizedHexRegex.test('deadbeef-cafebabefeedface01234567')).toBe(
-        false
+        false,
       );
       expect(NormalizedHexRegex.test('deadbeef cafebabefeedface01234567')).toBe(
-        false
+        false,
       );
     });
 
@@ -70,41 +70,41 @@ describe('Constants Module', () => {
 
       // Test valid display format (xxxx-xxxx-xxxx-xxxx-xxxx-xxxx-xxxx-xxxx)
       expect(DisplayRegex.test('dead-beef-cafe-babe-feed-face-0123-4567')).toBe(
-        true
+        true,
       );
       expect(DisplayRegex.test('0123-4567-89ab-cdef-0123-4567-89ab-cdef')).toBe(
-        true
+        true,
       );
       expect(DisplayRegex.test('ffff-ffff-ffff-ffff-ffff-ffff-ffff-ffff')).toBe(
-        true
+        true,
       );
       expect(DisplayRegex.test('0000-0000-0000-0000-0000-0000-0000-0000')).toBe(
-        true
+        true,
       );
 
       // Test invalid cases - wrong format
       expect(DisplayRegex.test('deadbeefcafebabefeedface01234567')).toBe(false); // no dashes
       expect(DisplayRegex.test('dead-beef-cafe-babe-feed-face-0123-456')).toBe(
-        false
+        false,
       ); // short last group
       expect(
-        DisplayRegex.test('dead-beef-cafe-babe-feed-face-0123-45678')
+        DisplayRegex.test('dead-beef-cafe-babe-feed-face-0123-45678'),
       ).toBe(false); // long last group
       expect(DisplayRegex.test('dead-beef-cafe-babe-feed-face-0123')).toBe(
-        false
+        false,
       ); // missing groups
 
       // Test invalid cases - uppercase
       expect(DisplayRegex.test('DEAD-BEEF-CAFE-BABE-FEED-FACE-0123-4567')).toBe(
-        false
+        false,
       );
 
       // Test invalid cases - invalid characters
       expect(DisplayRegex.test('dead-beef-cafe-babe-feed-face-0123-456!')).toBe(
-        false
+        false,
       );
       expect(DisplayRegex.test('dead beef-cafe-babe-feed-face-0123-4567')).toBe(
-        false
+        false,
       );
     });
 
@@ -179,7 +179,7 @@ describe('Constants Module', () => {
       expect(constants.DefaultExpireMemoryMnemonicSeconds).toBe(300);
       expect(constants.DefaultExpireMemoryWalletSeconds).toBe(300);
       expect(typeof constants.DefaultExpireMemoryMnemonicSeconds).toBe(
-        'number'
+        'number',
       );
       expect(typeof constants.DefaultExpireMemoryWalletSeconds).toBe('number');
     });
@@ -204,7 +204,7 @@ describe('Constants Module', () => {
 
       // Verify the relationship between interval values
       expect(constants.EmailTokenResendInterval).toBe(
-        constants.EmailTokenResendIntervalMinutes * 60 * 1000
+        constants.EmailTokenResendIntervalMinutes * 60 * 1000,
       );
     });
 
@@ -238,7 +238,7 @@ describe('Constants Module', () => {
         const customConstants = createConstants(customDomain, customDomain);
 
         expect(customConstants.AdministratorEmail).toBe(
-          `admin@${customDomain}`
+          `admin@${customDomain}`,
         );
         expect(customConstants.MemberEmail).toBe(`test@${customDomain}`);
         expect(customConstants.SystemEmail).toBe(`system@${customDomain}`);
@@ -250,7 +250,7 @@ describe('Constants Module', () => {
         expect(constants.UsernameMinLength).toBe(3);
         expect(constants.UsernameMaxLength).toBe(30);
         expect(constants.UsernameMinLength).toBeLessThan(
-          constants.UsernameMaxLength
+          constants.UsernameMaxLength,
         );
       });
 
@@ -395,8 +395,8 @@ describe('Constants Module', () => {
         expect(MnemonicHmacRegex.test('0123456789abcdef'.repeat(4))).toBe(true);
         expect(
           MnemonicHmacRegex.test(
-            'deadbeefcafebabe0123456789abcdefdeadbeefcafebabe0123456789abcdef'
-          )
+            'deadbeefcafebabe0123456789abcdefdeadbeefcafebabe0123456789abcdef',
+          ),
         ).toBe(true);
 
         // Test invalid cases - wrong length
@@ -412,7 +412,7 @@ describe('Constants Module', () => {
         expect(MnemonicHmacRegex.test('g' + 'a'.repeat(63))).toBe(false);
         expect(MnemonicHmacRegex.test('a'.repeat(63) + '!')).toBe(false);
         expect(
-          MnemonicHmacRegex.test('a'.repeat(32) + ' ' + 'a'.repeat(31))
+          MnemonicHmacRegex.test('a'.repeat(32) + ' ' + 'a'.repeat(31)),
         ).toBe(false);
       });
 
@@ -470,7 +470,7 @@ describe('Constants Module', () => {
       const constants2 = createConstants(domain2, domain2);
 
       expect(constants1.AdministratorEmail).not.toBe(
-        constants2.AdministratorEmail
+        constants2.AdministratorEmail,
       );
       expect(constants1.MemberEmail).not.toBe(constants2.MemberEmail);
       expect(constants1.SystemEmail).not.toBe(constants2.SystemEmail);
@@ -541,7 +541,7 @@ describe('Constants Module', () => {
       it('should have consistent time-based relationships', () => {
         // Email token resend interval should be consistent between ms and minutes
         expect(constants.EmailTokenResendInterval).toBe(
-          constants.EmailTokenResendIntervalMinutes * 60 * 1000
+          constants.EmailTokenResendIntervalMinutes * 60 * 1000,
         );
 
         // Memory expiration times should be reasonable
@@ -563,7 +563,7 @@ describe('Constants Module', () => {
         // Username constraints should be reasonable
         expect(constants.UsernameMinLength).toBeGreaterThan(0);
         expect(constants.UsernameMaxLength).toBeGreaterThan(
-          constants.UsernameMinLength
+          constants.UsernameMinLength,
         );
 
         // Password minimum length should be secure

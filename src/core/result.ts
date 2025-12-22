@@ -25,7 +25,7 @@ export function failure<E>(error: E): Result<never, E> {
  * Check if result is successful
  */
 export function isSuccess<T, E>(
-  result: Result<T, E>
+  result: Result<T, E>,
 ): result is { success: true; data: T } {
   return result.success;
 }
@@ -34,7 +34,7 @@ export function isSuccess<T, E>(
  * Check if result is a failure
  */
 export function isFailure<T, E>(
-  result: Result<T, E>
+  result: Result<T, E>,
 ): result is { success: false; error: E } {
   return !result.success;
 }

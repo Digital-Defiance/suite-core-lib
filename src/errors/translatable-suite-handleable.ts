@@ -11,7 +11,7 @@ export class TranslatableSuiteHandleableError extends TranslatableHandleableGene
       statusCode?: number;
       cause?: Error;
       sourceData?: unknown;
-    }
+    },
   ) {
     super(
       SuiteCoreComponentId,
@@ -20,7 +20,7 @@ export class TranslatableSuiteHandleableError extends TranslatableHandleableGene
       language,
       undefined, // metadata
       'default', // instanceKey
-      handleableOptions
+      handleableOptions,
     );
     this.name = 'TranslatableSuiteHandleableError';
   }

@@ -12,20 +12,20 @@ describe('BackupCodeString', () => {
   describe('constructor validation', () => {
     it('accepts normalized 32-char lowercase hex', () => {
       expect(
-        () => new BackupCodeString('deadbeefcafebabefeedface01234567')
+        () => new BackupCodeString('deadbeefcafebabefeedface01234567'),
       ).not.toThrow();
     });
 
     it('accepts messy input that normalizes to valid hex', () => {
       expect(
-        () => new BackupCodeString('DEAD-BEEF CAFE-babe FEED FACE 0123 4567')
+        () => new BackupCodeString('DEAD-BEEF CAFE-babe FEED FACE 0123 4567'),
       ).not.toThrow();
     });
 
     it('throws InvalidBackupCodeError for non-alphanumeric characters even if 32 chars', () => {
       const invalid = '0123456789abcde!0123456789abcdef'; // contains "!"
       expect(() => new BackupCodeString(invalid)).toThrow(
-        InvalidBackupCodeError
+        InvalidBackupCodeError,
       );
     });
 
@@ -33,29 +33,29 @@ describe('BackupCodeString', () => {
       const tooShort = '0123456789abcdef0123456789abcde'; // 31
       const tooLong = '0123456789abcdef0123456789abcdef0'; // 33
       expect(() => new BackupCodeString(tooShort)).toThrow(
-        InvalidBackupCodeError
+        InvalidBackupCodeError,
       );
       expect(() => new BackupCodeString(tooLong)).toThrow(
-        InvalidBackupCodeError
+        InvalidBackupCodeError,
       );
       expect(() => new BackupCodeString('----0123 4567----')).toThrow(
-        InvalidBackupCodeError
+        InvalidBackupCodeError,
       );
     });
 
     it('throws for empty/whitespace-only input', () => {
       expect(() => new BackupCodeString('')).toThrow(InvalidBackupCodeError);
       expect(() => new BackupCodeString('    ')).toThrow(
-        InvalidBackupCodeError
+        InvalidBackupCodeError,
       );
       expect(
-        () => new BackupCodeString('---- ---- ---- ---- ---- ---- ---- ----')
+        () => new BackupCodeString('---- ---- ---- ---- ---- ---- ---- ----'),
       ).toThrow(InvalidBackupCodeError);
     });
 
     it('throws for invalid separators or symbols that survive normalization (e.g., underscores)', () => {
       expect(
-        () => new BackupCodeString('dead_beefcafebabefeedface01234567')
+        () => new BackupCodeString('dead_beefcafebabefeedface01234567'),
       ).toThrow(InvalidBackupCodeError);
     });
   });
@@ -161,7 +161,7 @@ describe('BackupCodeString', () => {
     it('is idempotent for already-normalized strings', () => {
       const s = 'abcdef0123456789';
       expect(
-        BackupCodeString.normalizeCode(BackupCodeString.normalizeCode(s))
+        BackupCodeString.normalizeCode(BackupCodeString.normalizeCode(s)),
       ).toBe(s);
     });
 
@@ -175,14 +175,14 @@ describe('BackupCodeString', () => {
     it('formats 32-char string into 8 groups of 4', () => {
       const s = '0123456789abcdef0123456789abcdef';
       expect(BackupCodeString.formatBackupCode(s)).toBe(
-        '0123-4567-89ab-cdef-0123-4567-89ab-cdef'
+        '0123-4567-89ab-cdef-0123-4567-89ab-cdef',
       );
     });
 
     it('handles non-hex input without restriction (grouping only)', () => {
       const s = 'zzzzYYYYxxxx!!!!----@@@@';
       expect(BackupCodeString.formatBackupCode(s)).toBe(
-        'zzzz-YYYY-xxxx-!!!!------@@@@'
+        'zzzz-YYYY-xxxx-!!!!------@@@@',
       );
     });
 
@@ -191,7 +191,7 @@ describe('BackupCodeString', () => {
       expect(BackupCodeString.formatBackupCode('abcde')).toBe('abcd-e');
       expect(BackupCodeString.formatBackupCode('abcdefgh')).toBe('abcd-efgh');
       expect(BackupCodeString.formatBackupCode('abcdefghi')).toBe(
-        'abcd-efgh-i'
+        'abcd-efgh-i',
       );
     });
 
@@ -254,7 +254,7 @@ describe('BackupCodeString', () => {
       const codes = BackupCodeString.generateBackupCodes();
       expect(codes.length).toBe(Constants.BACKUP_CODES.Count);
       expect(mockGetRandomValues).toHaveBeenCalledTimes(
-        Constants.BACKUP_CODES.Count
+        Constants.BACKUP_CODES.Count,
       );
       for (const call of mockGetRandomValues.mock.calls) {
         expect(call).toHaveLength(1);
@@ -286,7 +286,7 @@ describe('BackupCodeString', () => {
         expect(c).toBeInstanceOf(BackupCodeString);
         expect(c.value).toBe(expectedFormatted);
         expect(BackupCodeString.normalizeCode(c.value)).toBe(
-          expectedNormalized
+          expectedNormalized,
         );
 
         // Encodings consistent with formatted string

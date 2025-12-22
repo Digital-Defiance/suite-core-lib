@@ -27,7 +27,7 @@ describe('Email Token Errors', () => {
   describe('EmailTokenFailedToSendError', () => {
     it('should create error for account verification', () => {
       const error = new EmailTokenFailedToSendError(
-        EmailTokenType.AccountVerification
+        EmailTokenType.AccountVerification,
       );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Account Verification');
@@ -35,7 +35,7 @@ describe('Email Token Errors', () => {
 
     it('should create error for password reset', () => {
       const error = new EmailTokenFailedToSendError(
-        EmailTokenType.PasswordReset
+        EmailTokenType.PasswordReset,
       );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Password Reset');
@@ -43,7 +43,7 @@ describe('Email Token Errors', () => {
 
     it('should create error for login request', () => {
       const error = new EmailTokenFailedToSendError(
-        EmailTokenType.LoginRequest
+        EmailTokenType.LoginRequest,
       );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Login Request');
@@ -51,7 +51,7 @@ describe('Email Token Errors', () => {
 
     it('should create error for mnemonic recovery', () => {
       const error = new EmailTokenFailedToSendError(
-        EmailTokenType.MnemonicRecoveryRequest
+        EmailTokenType.MnemonicRecoveryRequest,
       );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Mnemonic Recovery');
@@ -59,7 +59,7 @@ describe('Email Token Errors', () => {
 
     it('should create error for private key request', () => {
       const error = new EmailTokenFailedToSendError(
-        EmailTokenType.PrivateKeyRequest
+        EmailTokenType.PrivateKeyRequest,
       );
       expect(error).toBeInstanceOf(Error);
       expect(error.message).toContain('Private Key');

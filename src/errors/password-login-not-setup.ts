@@ -7,12 +7,12 @@ export class PasswordLoginNotSetupError extends HandleableError {
     super(
       new Error(
         getSuiteCoreTranslation(
-          SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup
-        )
+          SuiteCoreStringKey.Error_Login_PasswordLoginNotSetup,
+        ),
       ),
       {
         statusCode: 403,
-      }
+      },
     );
     this.name = 'PasswordLoginNotSetupError';
   }

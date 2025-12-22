@@ -7,7 +7,7 @@ export class FailedToUseDirectTokenError extends TranslatableSuiteHandleableErro
       SuiteCoreStringKey.Error_FailedToUseDirectLoginToken,
       undefined,
       undefined,
-      { statusCode: 401 }
+      { statusCode: 401 },
     );
     this.name = 'FailedToUseDirectTokenError';
   }

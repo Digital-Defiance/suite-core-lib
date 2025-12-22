@@ -9,7 +9,7 @@ export class AccountStatusError extends HandleableError {
   constructor(
     accountStatus: AccountStatus,
     language?: string,
-    statusCode = 403
+    statusCode = 403,
   ) {
     // Map AccountStatus to SuiteCoreStringKey
     const getErrorKey = (status: AccountStatus): SuiteCoreStringKey => {

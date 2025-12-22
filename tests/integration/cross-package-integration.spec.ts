@@ -42,7 +42,7 @@ function createI18nEngine(additionalLanguages: string[] = []): I18nEngine {
   return new I18nEngine(
     languages,
     {},
-    { instanceKey: `test-${i18nCounter++}` }
+    { instanceKey: `test-${i18nCounter++}` },
   );
 }
 
@@ -63,11 +63,11 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       const message = new Uint8Array([1, 2, 3, 4, 5]);
       const encrypted = (await ecies.encryptSimple(
         keyPair.publicKey,
-        message
+        message,
       )) as Uint8Array;
       const decrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
-        encrypted
+        encrypted,
       )) as Uint8Array;
 
       expect(decrypted).toEqual(message);
@@ -86,8 +86,8 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       await expect(
         ecies.decryptSimple(
           keyPair.privateKey,
-          invalidData
-        ) as Promise<Uint8Array>
+          invalidData,
+        ) as Promise<Uint8Array>,
       ).rejects.toThrow();
     });
 
@@ -103,11 +103,11 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       // Simple mode
       const simpleEncrypted = (await ecies.encryptSimple(
         keyPair.publicKey,
-        message
+        message,
       )) as Uint8Array;
       const simpleDecrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
-        simpleEncrypted
+        simpleEncrypted,
       )) as Uint8Array;
       expect(simpleDecrypted).toEqual(message);
 
@@ -117,12 +117,12 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       const singleEncrypted = (await ecies.encryptSingle(
         recipientId,
         keyPair.publicKey,
-        message
+        message,
       )) as Uint8Array;
       const singleDecrypted = (await ecies.decryptSingle(
         recipientId,
         keyPair.privateKey,
-        singleEncrypted
+        singleEncrypted,
       )) as Uint8Array;
       expect(singleDecrypted).toEqual(message);
     });
@@ -153,16 +153,16 @@ describe('Cross-Package Integration: suite-core-lib', () => {
 
       // Should support multiple languages
       expect((LanguageRegistry.has as (code: string) => boolean)('en-US')).toBe(
-        true
+        true,
       );
       expect((LanguageRegistry.has as (code: string) => boolean)('es')).toBe(
-        true
+        true,
       );
       expect((LanguageRegistry.has as (code: string) => boolean)('fr')).toBe(
-        true
+        true,
       );
       expect((LanguageRegistry.has as (code: string) => boolean)('de')).toBe(
-        false
+        false,
       );
     });
 
@@ -191,11 +191,11 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       const message = new Uint8Array([1, 2, 3, 4, 5]);
       const encrypted = (await ecies.encryptSimple(
         keyPair.publicKey,
-        message
+        message,
       )) as Uint8Array;
       const decrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
-        encrypted
+        encrypted,
       )) as Uint8Array;
 
       expect(decrypted).toEqual(message);
@@ -216,7 +216,7 @@ describe('Cross-Package Integration: suite-core-lib', () => {
 
       // Should handle ecies errors
       await expect(
-        ecies.decryptSimple(keyPair.privateKey, invalidData)
+        ecies.decryptSimple(keyPair.privateKey, invalidData),
       ).rejects.toThrow();
 
       // i18n should still work
@@ -249,11 +249,11 @@ describe('Cross-Package Integration: suite-core-lib', () => {
       const message = new Uint8Array([1, 2, 3, 4, 5]);
       const encrypted = (await ecies.encryptSimple(
         keyPair.publicKey,
-        message
+        message,
       )) as Uint8Array;
       const decrypted = (await ecies.decryptSimple(
         keyPair.privateKey,
-        encrypted
+        encrypted,
       )) as Uint8Array;
 
       expect(decrypted).toEqual(message);

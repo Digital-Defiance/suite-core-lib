@@ -5,7 +5,7 @@ import { DeepPartial } from './interfaces/deep-partial';
 export type ConfigurationKey = string | symbol;
 
 const DEFAULT_CONFIGURATION_KEY: ConfigurationKey = Symbol.for(
-  'digitaldefiance.suite-core.defaults.default'
+  'digitaldefiance.suite-core.defaults.default',
 );
 
 const registry: Map<ConfigurationKey, IConstants> = new Map();
@@ -61,7 +61,7 @@ function deepFreeze<T>(obj: T): T {
 
 function applyOverrides<T extends object>(
   target: T,
-  overrides?: DeepPartial<T>
+  overrides?: DeepPartial<T>,
 ): T {
   if (!overrides) return target;
   const result = deepClone(target as Cloneable) as unknown as T;
@@ -76,11 +76,11 @@ function applyOverrides<T extends object>(
 export function createSuiteCoreRuntimeConfiguration(
   siteDomain: string = 'localhost',
   siteHostname: string = 'localhost',
-  overrides?: DeepPartial<IConstants>
+  overrides?: DeepPartial<IConstants>,
 ): IConstants {
   const config = applyOverrides(
     createConstants(siteDomain, siteHostname),
-    overrides
+    overrides,
   );
   return deepFreeze(config);
 }
@@ -89,19 +89,19 @@ export function registerSuiteCoreRuntimeConfiguration(
   key: ConfigurationKey = DEFAULT_CONFIGURATION_KEY,
   siteDomain: string = 'localhost',
   siteHostname: string = 'localhost',
-  overrides?: DeepPartial<IConstants>
+  overrides?: DeepPartial<IConstants>,
 ): IConstants {
   const config = createSuiteCoreRuntimeConfiguration(
     siteDomain,
     siteHostname,
-    overrides
+    overrides,
   );
   registry.set(key, config);
   return config;
 }
 
 export function getSuiteCoreRuntimeConfiguration(
-  key: ConfigurationKey = DEFAULT_CONFIGURATION_KEY
+  key: ConfigurationKey = DEFAULT_CONFIGURATION_KEY,
 ): IConstants {
   if (!registry.has(key)) {
     registry.set(key, createSuiteCoreRuntimeConfiguration());

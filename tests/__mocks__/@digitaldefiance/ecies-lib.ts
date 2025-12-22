@@ -68,7 +68,7 @@ export class ECIESService {
 
   async encryptSimple(
     publicKey: Uint8Array,
-    message: Uint8Array
+    message: Uint8Array,
   ): Promise<Uint8Array> {
     // Simple mock encryption - just prepend a header
     const result = new Uint8Array(message.length + 10);
@@ -79,7 +79,7 @@ export class ECIESService {
 
   async decryptSimple(
     privateKey: Uint8Array,
-    encrypted: Uint8Array
+    encrypted: Uint8Array,
   ): Promise<Uint8Array> {
     // Simple mock decryption - just remove the header
     if (encrypted.length < 10) {
@@ -91,7 +91,7 @@ export class ECIESService {
   async encryptSingle(
     recipientId: Uint8Array,
     publicKey: Uint8Array,
-    message: Uint8Array
+    message: Uint8Array,
   ): Promise<Uint8Array> {
     // Simple mock encryption with recipient ID
     const result = new Uint8Array(message.length + recipientId.length + 10);
@@ -104,7 +104,7 @@ export class ECIESService {
   async decryptSingle(
     recipientId: Uint8Array,
     privateKey: Uint8Array,
-    encrypted: Uint8Array
+    encrypted: Uint8Array,
   ): Promise<Uint8Array> {
     // Simple mock decryption - remove header and recipient ID
     const headerSize = 10 + recipientId.length;

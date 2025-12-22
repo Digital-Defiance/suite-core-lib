@@ -23,7 +23,7 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>>
     source: Error,
     options?: HandleableErrorOptions,
     language?: string,
-    otherVars?: Record<string, string | number>
+    otherVars?: Record<string, string | number>,
   ) {
     super(type, reasonMap, language, otherVars);
     this.cause = source;

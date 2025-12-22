@@ -15,7 +15,7 @@ describe('Integration Tests', () => {
     it('should validate codes using Constants regex', () => {
       const validCode = '0123456789abcdef0123456789abcdef';
       expect(Constants.BACKUP_CODES.NormalizedHexRegex.test(validCode)).toBe(
-        true
+        true,
       );
 
       const backupCode = new BackupCodeString(validCode);
@@ -38,7 +38,7 @@ describe('Integration Tests', () => {
       const codes = BackupCodeString.generateBackupCodes();
       expect(codes).toHaveLength(Constants.BACKUP_CODES.Count);
       expect(mockCrypto.getRandomValues).toHaveBeenCalledTimes(
-        Constants.BACKUP_CODES.Count
+        Constants.BACKUP_CODES.Count,
       );
     });
   });
@@ -46,10 +46,10 @@ describe('Integration Tests', () => {
   describe('Error handling integration', () => {
     it('should throw InvalidBackupCodeError for invalid codes', () => {
       expect(() => new BackupCodeString('invalid')).toThrow(
-        InvalidBackupCodeError
+        InvalidBackupCodeError,
       );
       expect(() => new BackupCodeString('invalid')).toThrow(
-        'Invalid backup code'
+        'Invalid backup code',
       );
     });
 
@@ -77,7 +77,7 @@ describe('Integration Tests', () => {
       }
 
       const backupCode = new BackupCodeString(
-        '0123456789abcdef0123456789abcdef'
+        '0123456789abcdef0123456789abcdef',
       );
       const user: TestUser = {
         id: 'user123',
@@ -104,7 +104,7 @@ describe('Integration Tests', () => {
       expect(formatted).toBe(reformatted);
       expect(Constants.BACKUP_CODES.DisplayRegex.test(formatted)).toBe(true);
       expect(Constants.BACKUP_CODES.NormalizedHexRegex.test(normalized)).toBe(
-        true
+        true,
       );
     });
 
@@ -117,7 +117,7 @@ describe('Integration Tests', () => {
 
       // Invalid characters
       expect(
-        () => new BackupCodeString('!123456789abcdef0123456789abcdef')
+        () => new BackupCodeString('!123456789abcdef0123456789abcdef'),
       ).toThrow(InvalidBackupCodeError);
     });
   });

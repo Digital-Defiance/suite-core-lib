@@ -7,12 +7,12 @@ export class LoginChallengeExpiredError extends HandleableError {
     super(
       new Error(
         getSuiteCoreTranslation(
-          SuiteCoreStringKey.Error_Login_ChallengeExpiredTemplate
-        )
+          SuiteCoreStringKey.Error_Login_ChallengeExpiredTemplate,
+        ),
       ),
       {
         statusCode: 401,
-      }
+      },
     );
     this.name = 'LoginChallengeExpiredError';
   }
