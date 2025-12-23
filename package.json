@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/suite-core-lib",
-  "version": "3.6.23",
+  "version": "3.6.24",
   "homepage": "https://github.com/Digital-Defiance/suite-core-lib",
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
     "publish:public": "npm publish --access public"
   },
   "dependencies": {
-    "@digitaldefiance/ecies-lib": "4.4.23",
-    "@digitaldefiance/i18n-lib": "3.8.15"
+    "@digitaldefiance/ecies-lib": "4.4.25",
+    "@digitaldefiance/i18n-lib": "3.8.16"
   },
   "files": [
     "src",

@@ -5,29 +5,30 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@digitaldefiance/ecies-lib@npm:4.4.19":
-  version: 4.4.19
-  resolution: "@digitaldefiance/ecies-lib@npm:4.4.19"
+"@digitaldefiance/ecies-lib@npm:4.4.25":
+  version: 4.4.25
+  resolution: "@digitaldefiance/ecies-lib@npm:4.4.25"
   dependencies:
-    "@digitaldefiance/i18n-lib": "npm:3.8.11"
+    "@digitaldefiance/i18n-lib": "npm:3.8.16"
     "@ethereumjs/wallet": "npm:^10.0.0"
     "@noble/curves": "npm:^2.0.1"
     "@noble/hashes": "npm:^2.0.1"
     "@scure/bip32": "npm:^2.0.0"
     bson: "npm:^6.10.4"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/4f4102892da9e7738e24e04eb1eb0264f2efe529c437f00855d43558612b743c0071f053893d5c9d200b929580a04dfd399a10ad707d5f41462732bb1842b262
+  checksum: 10c0/72a1ec331368aaff32209bf806ad61b090420730b542fc0f94d30a60d94fb42bf4510bc944d82a445ff6a1569af67973b33d5e5f0ba7eb00f6b80cb609b0c746
   languageName: node
   linkType: hard
 
-"@digitaldefiance/i18n-lib@npm:3.8.11":
-  version: 3.8.11
-  resolution: "@digitaldefiance/i18n-lib@npm:3.8.11"
+"@digitaldefiance/i18n-lib@npm:3.8.16":
+  version: 3.8.16
+  resolution: "@digitaldefiance/i18n-lib@npm:3.8.16"
   dependencies:
     currency-codes: "npm:^2.2.0"
+    lru-cache: "npm:^5.1.1"
     moment: "npm:^2.30.1"
     moment-timezone: "npm:^0.6.0"
-  checksum: 10c0/984f69d7be7a94d1b762d0fc4199ad159fca917be7ebe11355d7653cc4d55f1baf930263efffa96ee67c3cd0934a614d8a233494f9661bf75d09a44616fb42a6
+  checksum: 10c0/21288d1fa56bb75cf71b234705c9f3ba0fba1e5a5a8511b1e669dac4960ff92b95bbf3a57e57aa3b6c2061cc5629207843e058efb1474a99ed8b222c6df6202a
   languageName: node
   linkType: hard
 
@@ -35,8 +36,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@digitaldefiance/suite-core-lib@workspace:."
   dependencies:
-    "@digitaldefiance/ecies-lib": "npm:4.4.19"
-    "@digitaldefiance/i18n-lib": "npm:3.8.11"
+    "@digitaldefiance/ecies-lib": "npm:4.4.25"
+    "@digitaldefiance/i18n-lib": "npm:3.8.16"
     "@typescript-eslint/eslint-plugin": "npm:^8.48.0"
     "@typescript-eslint/parser": "npm:^8.48.0"
     eslint-plugin-import: "npm:^2.32.0"
@@ -1296,6 +1297,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lru-cache@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "lru-cache@npm:5.1.1"
+  dependencies:
+    yallist: "npm:^3.0.2"
+  checksum: 10c0/89b2ef2ef45f543011e38737b8a8622a2f8998cddf0e5437174ef8f1f70a8b9d14a918ab3e232cb3ba343b7abddffa667f0b59075b2b80e6b4d63c3de6127482
+  languageName: node
+  linkType: hard
+
 "math-intrinsics@npm:^1.1.0":
   version: 1.1.0
   resolution: "math-intrinsics@npm:1.1.0"
@@ -1903,5 +1913,12 @@ __metadata:
     gopd: "npm:^1.2.0"
     has-tostringtag: "npm:^1.0.2"
   checksum: 10c0/702b5dc878addafe6c6300c3d0af5983b175c75fcb4f2a72dfc3dd38d93cf9e89581e4b29c854b16ea37e50a7d7fca5ae42ece5c273d8060dcd603b2404bbb3f
+  languageName: node
+  linkType: hard
+
+"yallist@npm:^3.0.2":
+  version: 3.1.1
+  resolution: "yallist@npm:3.1.1"
+  checksum: 10c0/c66a5c46bc89af1625476f7f0f2ec3653c1a1791d2f9407cfb4c2ba812a1e1c9941416d71ba9719876530e3340a99925f697142989371b72d93b9ee628afd8c1
   languageName: node
   linkType: hard
