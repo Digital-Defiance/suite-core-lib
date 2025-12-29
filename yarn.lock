@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@digitaldefiance/ecies-lib@npm:4.6.3":
-  version: 4.6.3
-  resolution: "@digitaldefiance/ecies-lib@npm:4.6.3"
+"@digitaldefiance/ecies-lib@npm:4.7.0":
+  version: 4.7.0
+  resolution: "@digitaldefiance/ecies-lib@npm:4.7.0"
   dependencies:
     "@digitaldefiance/i18n-lib": "npm:3.8.16"
     "@ethereumjs/wallet": "npm:^10.0.0"
@@ -15,13 +15,9 @@ __metadata:
     "@noble/hashes": "npm:1.8.0"
     "@scure/bip32": "npm:1.7.0"
     bson: "npm:^6.10.4"
+    paillier-bigint: "npm:^3.4.1"
     ts-brand: "npm:^0.2.0"
-  peerDependencies:
-    paillier-bigint: ^3.4.1
-  peerDependenciesMeta:
-    paillier-bigint:
-      optional: true
-  checksum: 10c0/92fb5227cf32da46fe86ceccf1e22ea55d80aef097094e00e23d35979462cc0b1421e73c2b1c736e088e516db855dddd6cb58700afeb407521d57309890b4b3f
+  checksum: 10c0/8e3cc9cd926ebc3d1bbbd5f3fd96229cd842eeca3c6a6bb191697e50e1d93551b1fc16c9bacc3e13bd15ee0aa3c3af0ccd0378b540c1910a0431a1ed7185f937
   languageName: node
   linkType: hard
 
@@ -41,7 +37,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@digitaldefiance/suite-core-lib@workspace:."
   dependencies:
-    "@digitaldefiance/ecies-lib": "npm:4.6.3"
+    "@digitaldefiance/ecies-lib": "npm:4.7.0"
     "@digitaldefiance/i18n-lib": "npm:3.8.16"
     "@typescript-eslint/eslint-plugin": "npm:^8.48.0"
     "@typescript-eslint/parser": "npm:^8.48.0"
@@ -423,6 +419,13 @@ __metadata:
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
   checksum: 10c0/9308baf0a7e4838a82bbfd11e01b1cb0f0cf2893bc1676c27c2a8c0e70cbae1c59120c3268517a8ae7fb6376b4639ef81ca22582611dbee4ed28df945134aaee
+  languageName: node
+  linkType: hard
+
+"bigint-crypto-utils@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "bigint-crypto-utils@npm:3.3.0"
+  checksum: 10c0/7d06fa01d63e8e9513eee629fe8a426993276b1bdca5aefd0eb3188cee7026334d29e801ef6187a5bc6105ebf26e6e79e6fab544a7da769ccf55b913e66d2a14
   languageName: node
   linkType: hard
 
@@ -1417,6 +1420,15 @@ __metadata:
     object-keys: "npm:^1.1.1"
     safe-push-apply: "npm:^1.0.0"
   checksum: 10c0/6dfeb3455bff92ec3f16a982d4e3e65676345f6902d9f5ded1d8265a6318d0200ce461956d6d1c70053c7fe9f9fe65e552faac03f8140d37ef0fdd108e67013a
+  languageName: node
+  linkType: hard
+
+"paillier-bigint@npm:^3.4.1":
+  version: 3.4.3
+  resolution: "paillier-bigint@npm:3.4.3"
+  dependencies:
+    bigint-crypto-utils: "npm:^3.3.0"
+  checksum: 10c0/5e049a4e8d651fd2f62dc2e51987ccc1122872eb11369f3c94aab3c2e9453bb4d5fbf8d96baa49d0bc3eb6ddd1d06b9527c6942c33a7f32f2223f2ed0d0e8679
   languageName: node
   linkType: hard
 
