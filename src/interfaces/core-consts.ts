@@ -5,7 +5,7 @@ export interface ICoreConstants {
   /**
    * The ID provider to use for generating and parsing IDs
    */
-  idProvider: IIdProvider;
+  idProvider: IIdProvider<unknown>;
   /**
    * Backup code related constants
    */
