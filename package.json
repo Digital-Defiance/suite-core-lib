@@ -1,6 +1,6 @@
 {
   "name": "@digitaldefiance/suite-core-lib",
-  "version": "3.6.35",
+  "version": "3.6.36",
   "homepage": "https://github.com/Digital-Defiance/suite-core-lib",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "publish:public": "npm publish --access public"
   },
   "dependencies": {
-    "@digitaldefiance/ecies-lib": "4.8.7",
+    "@digitaldefiance/ecies-lib": "4.10.6",
     "@digitaldefiance/i18n-lib": "3.8.16"
   },
   "files": [
@@ -42,8 +42,8 @@
   "license": "MIT",
   "packageManager": "yarn@4.10.3",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.48.0",
-    "@typescript-eslint/parser": "^8.48.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4"
   }
