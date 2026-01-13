@@ -1,3 +1,6 @@
+/**
+ * Error class exports for the suite-core library.
+ */
 export * from './account-locked';
 export * from './account-status';
 export * from './admin-role-not-found';

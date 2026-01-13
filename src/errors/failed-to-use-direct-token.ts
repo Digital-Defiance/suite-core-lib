@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a direct login token fails to be used.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

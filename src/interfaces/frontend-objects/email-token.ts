@@ -1,3 +1,7 @@
+/**
+ * Email token frontend object type.
+ * Client-side representation of email token data with Date objects and typed enums.
+ */
 import { EmailTokenType } from '../../enumerations/email-token-type';
 import { IEmailTokenBase } from '../bases/email-token';
 

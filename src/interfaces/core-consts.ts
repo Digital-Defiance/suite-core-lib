@@ -1,3 +1,6 @@
+/**
+ * Core constants interface for authentication, validation, and system configuration.
+ */
 import { IIdProviderBase } from '@digitaldefiance/ecies-lib';
 import { IBackupCodeConstants } from './backup-code-consts';
 

@@ -1,3 +1,6 @@
+/**
+ * Translatable error class for suite-core library with i18n support.
+ */
 import { SuiteCoreStringKey } from '../enumerations/suite-core-string-key';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 

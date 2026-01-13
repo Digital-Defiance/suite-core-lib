@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a token cannot be found.
+ */
 import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';

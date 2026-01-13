@@ -1,3 +1,7 @@
+/**
+ * Token role base interface.
+ * Extended role interface with translated name for JWT token payloads.
+ */
 import { IRoleBase } from './role';
 
 export interface ITokenRole<

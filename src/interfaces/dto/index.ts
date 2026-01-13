@@ -1,3 +1,6 @@
+/**
+ * Data Transfer Object (DTO) interface exports.
+ */
 export * from './email-token';
 export * from './mnemonic';
 export * from './request-user';

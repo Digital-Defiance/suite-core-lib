@@ -1,3 +1,6 @@
+/**
+ * Base interface exports for domain models.
+ */
 export * from './email-token';
 export * from './mnemonic';
 export * from './role';

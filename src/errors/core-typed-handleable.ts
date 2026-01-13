@@ -1,3 +1,6 @@
+/**
+ * Core typed handleable error class combining typed errors with handleable error functionality.
+ */
 import {
   CompleteReasonMap,
   CoreStringKey,

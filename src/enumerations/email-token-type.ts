@@ -1,3 +1,6 @@
+/**
+ * Email token types for various authentication and recovery operations.
+ */
 export enum EmailTokenType {
   /**
    * A token for verifying an account

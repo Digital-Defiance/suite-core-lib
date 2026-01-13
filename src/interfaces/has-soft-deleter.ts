@@ -1,3 +1,6 @@
+/**
+ * Interface for objects that track who deleted them (soft delete).
+ */
 export interface IHasSoftDeleter<I> {
   /**
    * The unique identifier for the user who deleted the object.

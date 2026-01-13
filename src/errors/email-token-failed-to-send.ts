@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an email token fails to send.
+ */
 import {
   CoreLanguageCode,
   HandleableError,

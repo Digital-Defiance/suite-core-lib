@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an account is pending email verification.
+ */
 import { AccountStatus } from '../enumerations/account-status';
 import { AccountStatusError } from './account-status';
 

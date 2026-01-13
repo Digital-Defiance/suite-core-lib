@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an email token was sent too recently and must wait before resending.
+ */
 import { Constants as AppConstants } from '../constants';
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';

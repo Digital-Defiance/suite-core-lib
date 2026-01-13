@@ -1,3 +1,7 @@
+/**
+ * German (de) translation strings for suite-core library.
+ * Contains all localized error messages and user-facing text in German.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 
 export const germanStrings: Record<SuiteCoreStringKey, string> = {

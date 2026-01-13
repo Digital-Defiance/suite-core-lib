@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an email token has expired.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

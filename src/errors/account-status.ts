@@ -1,3 +1,6 @@
+/**
+ * Error thrown for account status-related issues.
+ */
 import { HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { AccountStatus } from '../enumerations/account-status';

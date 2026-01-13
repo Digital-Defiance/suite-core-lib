@@ -1,3 +1,6 @@
+/**
+ * Enumeration exports for the suite-core library.
+ */
 export * from './account-status';
 export * from './email-token-type';
 export * from './fec-error-type';

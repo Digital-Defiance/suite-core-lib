@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an email address is invalid.
+ */
 import { InvalidEmailErrorType } from '@digitaldefiance/ecies-lib';
 import {
   HandleableErrorOptions,

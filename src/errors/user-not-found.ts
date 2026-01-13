@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a user cannot be found.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

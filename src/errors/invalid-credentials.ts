@@ -1,3 +1,6 @@
+/**
+ * Error thrown when login credentials are invalid.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

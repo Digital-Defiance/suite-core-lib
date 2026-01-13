@@ -1,3 +1,7 @@
+/**
+ * Chinese (Mandarin, zh-CN) translation strings for suite-core library.
+ * Contains all localized error messages and user-facing text in Simplified Chinese.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 
 export const mandarinStrings: Record<SuiteCoreStringKey, string> = {

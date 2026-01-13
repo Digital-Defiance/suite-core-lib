@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an email token has been used or is invalid.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

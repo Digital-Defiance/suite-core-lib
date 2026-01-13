@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a username is invalid.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

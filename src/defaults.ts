@@ -1,3 +1,7 @@
+/**
+ * Default configuration management for suite-core library.
+ * Provides runtime configuration creation, registration, and retrieval with deep cloning and freezing.
+ */
 import { createConstants } from './constants';
 import { IConstants } from './interfaces/constants';
 import { DeepPartial } from './interfaces/deep-partial';

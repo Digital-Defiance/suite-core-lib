@@ -1,3 +1,8 @@
+/**
+ * Internationalization (i18n) setup and configuration for suite-core library.
+ * Manages i18n engine initialization, component registration, and translation string loading
+ * across 8 supported languages (en-US, en-GB, fr, de, es, zh-CN, ja, uk).
+ */
 import {
   ComponentConfig,
   ComponentDefinition,

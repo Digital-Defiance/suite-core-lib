@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a token is invalid.
+ */
 import { HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteError } from './translatable-suite';

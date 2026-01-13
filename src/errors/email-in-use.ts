@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an email address is already in use by another account.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

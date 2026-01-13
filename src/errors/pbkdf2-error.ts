@@ -1,3 +1,6 @@
+/**
+ * Error class for PBKDF2 (Password-Based Key Derivation Function 2) operations.
+ */
 import { CompleteReasonMap, PluginTypedError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { Pbkdf2ErrorType } from '../enumerations/pbkdf2-error-type';

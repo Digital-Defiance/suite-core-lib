@@ -1,3 +1,6 @@
+/**
+ * Generic validation error for general validation failures.
+ */
 import {
   HandleableError,
   HandleableErrorOptions,

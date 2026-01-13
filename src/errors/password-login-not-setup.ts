@@ -1,3 +1,6 @@
+/**
+ * Error thrown when password login is not set up for a user.
+ */
 import { HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreTranslation } from '../i18n-setup';

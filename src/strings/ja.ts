@@ -1,3 +1,7 @@
+/**
+ * Japanese (ja) translation strings for suite-core library.
+ * Contains all localized error messages and user-facing text in Japanese.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 
 export const japaneseStrings: Record<SuiteCoreStringKey, string> = {

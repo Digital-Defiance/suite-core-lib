@@ -1,3 +1,7 @@
+/**
+ * Ukrainian (uk) translation strings for suite-core library.
+ * Contains all localized error messages and user-facing text in Ukrainian.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 
 export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {

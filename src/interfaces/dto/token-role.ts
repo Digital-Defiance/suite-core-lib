@@ -1,3 +1,7 @@
+/**
+ * Token role Data Transfer Object (DTO) interface.
+ * Extended role DTO with optional translated name for JWT token payloads.
+ */
 import { IHasId } from '../has-id';
 import { IHasSoftDelete } from '../has-soft-delete';
 import { IHasSoftDeleter } from '../has-soft-deleter';

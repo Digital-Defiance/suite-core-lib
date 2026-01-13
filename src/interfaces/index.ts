@@ -1,3 +1,6 @@
+/**
+ * Interface exports for the suite-core library.
+ */
 export * from './backup-code';
 export * from './backup-code-consts';
 export * from './bases';

@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a challenge response is invalid.
+ */
 import { HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreTranslation } from '../i18n-setup';

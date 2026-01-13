@@ -1,3 +1,6 @@
+/**
+ * Extended constants interface with site-specific configuration and theme colors.
+ */
 import { ICoreConstants } from './core-consts';
 
 export interface IConstants extends ICoreConstants {

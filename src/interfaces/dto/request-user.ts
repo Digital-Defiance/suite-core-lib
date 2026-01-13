@@ -1,3 +1,7 @@
+/**
+ * Request user Data Transfer Object (DTO) interface.
+ * Combined user data with roles, privileges, and settings for authenticated requests.
+ */
 import { ICombinedRolePrivileges } from '../combined-role-privileges';
 import { IRoleDTO } from '../dto/role';
 

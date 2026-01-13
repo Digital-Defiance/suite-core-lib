@@ -1,3 +1,6 @@
+/**
+ * Backup code constants interface.
+ */
 export interface IBackupCodeConstants {
   /**
    * How many backup codes to generate for users

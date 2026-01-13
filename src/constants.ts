@@ -1,3 +1,8 @@
+/**
+ * Constants and configuration for the suite-core library.
+ * Provides runtime configuration including backup codes, authentication settings,
+ * validation rules, and site-specific constants.
+ */
 import { ObjectIdProvider } from '@digitaldefiance/ecies-lib';
 import { Role } from './enumerations/role';
 import { IBackupCodeConstants, ICoreConstants } from './interfaces';

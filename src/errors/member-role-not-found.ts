@@ -1,3 +1,6 @@
+/**
+ * Error thrown when the member role cannot be found in the system.
+ */
 import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';

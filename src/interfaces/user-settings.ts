@@ -1,3 +1,6 @@
+/**
+ * User settings interface with typed email, timezone, and currency.
+ */
 import { EmailString } from '@digitaldefiance/ecies-lib';
 import { CurrencyCode, Timezone } from '@digitaldefiance/i18n-lib';
 

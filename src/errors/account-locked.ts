@@ -1,3 +1,6 @@
+/**
+ * Error thrown when an account is locked by an administrator.
+ */
 import { AccountStatus } from '../enumerations/account-status';
 import { AccountStatusError } from './account-status';
 

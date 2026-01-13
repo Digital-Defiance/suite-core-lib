@@ -1,3 +1,8 @@
+/**
+ * English (US) translation strings for suite-core library.
+ * Contains all user-facing error messages, validation messages, and informational text
+ * for the suite-core implementation.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 
 export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {

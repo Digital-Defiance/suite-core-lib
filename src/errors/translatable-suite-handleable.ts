@@ -1,3 +1,6 @@
+/**
+ * Translatable handleable error class for suite-core library with i18n and error handling support.
+ */
 import { TranslatableHandleableGenericError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { SuiteCoreComponentId } from '../i18n-setup';

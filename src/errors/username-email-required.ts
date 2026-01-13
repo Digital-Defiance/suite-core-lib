@@ -1,3 +1,6 @@
+/**
+ * Error thrown when neither username nor email is provided.
+ */
 import { CoreLanguageCode } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreTranslation } from '../i18n-setup';

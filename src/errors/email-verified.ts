@@ -1,3 +1,6 @@
+/**
+ * Error thrown when attempting to verify an email that is already verified.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteHandleableError } from './translatable-suite-handleable';
 

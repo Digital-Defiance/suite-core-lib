@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a private key is required but not provided.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteError } from './translatable-suite';
 

@@ -1,3 +1,7 @@
+/**
+ * French (fr) translation strings for suite-core library.
+ * Contains all localized error messages and user-facing text in French.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 
 export const frenchStrings: Record<SuiteCoreStringKey, string> = {

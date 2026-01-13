@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a challenge is invalid.
+ */
 import { SuiteCoreStringKey } from '../enumerations';
 import { TranslatableSuiteError } from './translatable-suite';
 

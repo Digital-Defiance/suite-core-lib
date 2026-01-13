@@ -1,3 +1,7 @@
+/**
+ * String keys for internationalization (i18n) in the suite-core library.
+ * Contains all translatable strings used throughout the application.
+ */
 export enum SuiteCoreStringKey {
   // Common messages
   Common_Stopping = 'common_stopping',

@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a token is invalid or has expired.
+ */
 import {
   CoreLanguageCode,
   HandleableErrorOptions,

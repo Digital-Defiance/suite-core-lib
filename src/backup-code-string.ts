@@ -1,3 +1,7 @@
+/**
+ * Backup code string class for generating, validating, and formatting backup codes.
+ * Provides type-safe handling of backup codes with multiple output formats.
+ */
 import { Constants } from './constants';
 import { InvalidBackupCodeError } from './errors/invalid-backup-code';
 import { IConstants } from './interfaces';

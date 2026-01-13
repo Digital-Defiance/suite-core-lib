@@ -1,3 +1,6 @@
+/**
+ * Error thrown when a user ID is invalid.
+ */
 import { CoreLanguageCode, HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey } from '../enumerations';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
