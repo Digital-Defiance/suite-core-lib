@@ -32,6 +32,7 @@ export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
   [SuiteCoreStringKey.Validation_ExpressValidationFailed]: 'Express验证失败',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     '发生了Mongoose验证错误',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]: '数组长度必须相等',
   [SuiteCoreStringKey.Error_VerificationFailed]: '验证失败',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: '账户处于激活状态',
   [SuiteCoreStringKey.Error_AccountStatus_AdminLock]: '账户被管理员锁定',

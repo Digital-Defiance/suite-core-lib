@@ -45,6 +45,8 @@ export const spanishStrings: Record<SuiteCoreStringKey, string> = {
     'Express validación fallida',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     'Error de validación de Mongoose',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    'Los arrays deben tener la misma longitud',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: 'La cuenta está activa',
   [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
     'La cuenta está bloqueada por un administrador',

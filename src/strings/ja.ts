@@ -44,6 +44,8 @@ export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
     'Expressの検証に失敗しました',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     'Mongooseの検証に失敗しました',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    '配列の長さが一致している必要があります',
   [SuiteCoreStringKey.Error_VerificationFailed]: '検証に失敗しました',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: 'アカウントはアクティブです',
   [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:

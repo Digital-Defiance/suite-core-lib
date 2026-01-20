@@ -33,6 +33,8 @@ export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
     'Express validation failed',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     'Mongoose validation error occurred',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    'Arrays must be of equal length',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Account is active',
   [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
     'Account is locked by an administrator',

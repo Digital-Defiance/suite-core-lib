@@ -45,6 +45,8 @@ export const frenchStrings: Record<SuiteCoreStringKey, string> = {
     'Échec de la validation Express',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     "Une erreur de validation Mongoose s'est produite",
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    'Les tableaux doivent avoir la même longueur',
   [SuiteCoreStringKey.Error_NoPasswordOrMnemonicProvided]:
     'Aucun mot de passe ou phrase mnémonique fourni',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Le compte est actif',

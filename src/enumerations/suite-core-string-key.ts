@@ -37,6 +37,7 @@ export enum SuiteCoreStringKey {
   Error_AccountStatus_PendingEmailVerification = 'error_accountStatus_pendingEmailVerification',
 
   // Error messages
+  Error_ArrayLengthMismatch = 'error_arrayLengthMismatch',
   Error_UnexpectedErrorInAuthenticateCrypto = 'error_unexpectedErrorInAuthenticateCrypto',
   Error_EngineAlreadySet = 'error_engineAlreadySet',
   Error_EngineNotSet = 'error_engineNotSet',

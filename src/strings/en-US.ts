@@ -59,6 +59,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
   [SuiteCoreStringKey.Common_SiteTemplate]: '{Site}',
   [SuiteCoreStringKey.Common_SiteTaglineTemplate]: '{SiteTagline}',
   [SuiteCoreStringKey.Common_SiteDescriptionTemplate]: '{SiteDescription}',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    'Arrays must be of equal length',
   [SuiteCoreStringKey.Error_ChildRoleCannotBeASystemRole]:
     'A child role cannot be a system role',
   [SuiteCoreStringKey.Error_ChildRoleCannotBeAnAdminRole]:

@@ -46,6 +46,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
     'Не вдалося виконати перевірку Express',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     'Виникла помилка перевірки Mongoose',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    'Довжини масивів повинні бути однаковими',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Обліковий запис активний',
   [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
     'Обліковий запис заблоковано адміністратором',

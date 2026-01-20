@@ -44,6 +44,8 @@ export const germanStrings: Record<SuiteCoreStringKey, string> = {
     'Express-Validierung fehlgeschlagen',
   [SuiteCoreStringKey.Validation_MongooseValidationError]:
     'Mongoose-Validierungsfehler aufgetreten',
+  [SuiteCoreStringKey.Error_ArrayLengthMismatch]:
+    'Arrays müssen gleich lang sein',
   [SuiteCoreStringKey.Error_AccountStatus_Active]: 'Konto ist aktiv',
   [SuiteCoreStringKey.Error_AccountStatus_AdminLock]:
     'Konto ist von einem Administrator gesperrt',
