@@ -5,7 +5,9 @@
 import type { PlatformID } from '@digitaldefiance/ecies-lib';
 import { IHasId } from '../has-id';
 
-export interface IUsedDirectLoginTokenBase<TID extends PlatformID> extends IHasId<TID> {
+export interface IUsedDirectLoginTokenBase<
+  TID extends PlatformID,
+> extends IHasId<TID> {
   /**
    * The user ID associated with the token
    */

@@ -5,7 +5,10 @@ import { IHasSoftDeleter } from '../has-soft-deleter';
 import { IHasTimestampOwners } from '../has-timestamp-owners';
 import { IHasTimestamps } from '../has-timestamps';
 
-export interface IUserRoleBase<TID extends PlatformID, TDate extends Date | string>
+export interface IUserRoleBase<
+  TID extends PlatformID,
+  TDate extends Date | string,
+>
   extends
     IHasId<TID>,
     IHasTimestamps<TDate>,

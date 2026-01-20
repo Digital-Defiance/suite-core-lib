@@ -9,7 +9,10 @@ import { IRoleBase } from '../interfaces/bases/role';
 /**
  * Builder for creating role objects with fluent API
  */
-export class RoleBuilder<TID extends PlatformID = PlatformID, TDate extends Date | string = Date> {
+export class RoleBuilder<
+  TID extends PlatformID = PlatformID,
+  TDate extends Date | string = Date,
+> {
   private data: Partial<IRoleBase<TID, TDate, Role>> = {
     admin: false,
     member: false,
@@ -17,10 +20,10 @@ export class RoleBuilder<TID extends PlatformID = PlatformID, TDate extends Date
     system: false,
   };
 
-  static create<TID extends PlatformID = PlatformID, TDate extends Date | string = Date>(): RoleBuilder<
-    TID,
-    TDate
-  > {
+  static create<
+    TID extends PlatformID = PlatformID,
+    TDate extends Date | string = Date,
+  >(): RoleBuilder<TID, TDate> {
     return new RoleBuilder<TID, TDate>();
   }
 

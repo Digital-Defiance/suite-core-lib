@@ -1,4 +1,4 @@
-import type { PlatformID } from "@digitaldefiance/ecies-lib";
+import type { PlatformID } from '@digitaldefiance/ecies-lib';
 
 /**
  * Interface for objects that track who updated them.
