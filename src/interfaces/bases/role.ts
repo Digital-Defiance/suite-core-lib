@@ -1,3 +1,4 @@
+import type { PlatformID } from '@digitaldefiance/ecies-lib';
 import { Role } from '../../enumerations/role';
 import { IHasId } from '../has-id';
 import { IHasSoftDelete } from '../has-soft-delete';
@@ -6,20 +7,20 @@ import { IHasTimestampOwners } from '../has-timestamp-owners';
 import { IHasTimestamps } from '../has-timestamps';
 
 export interface IRoleBase<
-  I,
-  D extends Date | string = Date,
-  R extends Role | string = Role,
+  TID extends PlatformID,
+  TDate extends Date | string = Date,
+  TRole extends Role | string = Role,
 >
   extends
-    IHasId<I>,
-    IHasTimestamps<D>,
-    IHasTimestampOwners<I>,
-    IHasSoftDelete<D>,
-    IHasSoftDeleter<I> {
+    IHasId<TID>,
+    IHasTimestamps<TDate>,
+    IHasTimestampOwners<TID>,
+    IHasSoftDelete<TDate>,
+    IHasSoftDeleter<TID> {
   /**
    * The name of the role
    */
-  name: R;
+  name: TRole;
   /**
    * Whether the role is an admin
    */

@@ -4,8 +4,8 @@
 import { IHasCreation } from './has-creation';
 
 export interface IHasTimestamps<
-  D extends Date | string,
-> extends IHasCreation<D> {
-  createdAt: D;
-  updatedAt: D;
+  TDate extends Date | string,
+> extends IHasCreation<TDate> {
+  createdAt: TDate;
+  updatedAt: TDate;
 }

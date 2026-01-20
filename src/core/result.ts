@@ -3,9 +3,9 @@
  * Provides type-safe success/failure handling without exceptions
  */
 
-export type Result<T, E = Error> =
+export type Result<T, TError = Error> =
   | { success: true; data: T }
-  | { success: false; error: E };
+  | { success: false; error: TError };
 
 /**
  * Create a successful result

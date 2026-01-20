@@ -2,6 +2,7 @@
  * Fluent builder for creating user objects
  */
 
+import type { PlatformID } from '@digitaldefiance/ecies-lib';
 import { AccountStatus } from '../enumerations/account-status';
 import { IUserBase } from '../interfaces/bases/user';
 
@@ -9,11 +10,11 @@ import { IUserBase } from '../interfaces/bases/user';
  * Builder for creating user objects with fluent API
  */
 export class UserBuilder<
-  I = string,
-  D extends Date | string = Date,
-  S extends string = string,
+  TID extends PlatformID = PlatformID,
+  TDate extends Date | string = Date,
+  TLanguage extends string = string,
 > {
-  private data: Partial<IUserBase<I, D, S, AccountStatus>> = {
+  private data: Partial<IUserBase<TID, TDate, TLanguage, AccountStatus>> = {
     emailVerified: false,
     accountStatus: AccountStatus.Active,
     directChallenge: false,
@@ -22,11 +23,11 @@ export class UserBuilder<
   };
 
   static create<
-    I = string,
-    D extends Date | string = Date,
-    S extends string = string,
-  >(): UserBuilder<I, D, S> {
-    return new UserBuilder<I, D, S>();
+    TID extends PlatformID = PlatformID,
+    TDate extends Date | string = Date,
+    TLanguage extends string = string,
+  >(): UserBuilder<TID, TDate, TLanguage> {
+    return new UserBuilder<TID, TDate, TLanguage>();
   }
 
   withUsername(username: string): this {
@@ -49,7 +50,7 @@ export class UserBuilder<
     return this;
   }
 
-  withSiteLanguage(siteLanguage: S): this {
+  withSiteLanguage(siteLanguage: TLanguage): this {
     this.data.siteLanguage = siteLanguage;
     return this;
   }
@@ -74,7 +75,7 @@ export class UserBuilder<
     return this;
   }
 
-  build(): Partial<IUserBase<I, D, S, AccountStatus>> {
+  build(): Partial<IUserBase<TID, TDate, TLanguage, AccountStatus>> {
     return { ...this.data };
   }
 }

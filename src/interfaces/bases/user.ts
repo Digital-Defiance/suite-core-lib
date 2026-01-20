@@ -1,3 +1,4 @@
+import type { PlatformID } from '@digitaldefiance/ecies-lib';
 import { AccountStatus } from '../../enumerations/account-status';
 import { IBackupCode } from '../backup-code';
 import { IHasId } from '../has-id';
@@ -10,17 +11,17 @@ import { IHasTimestamps } from '../has-timestamps';
  * Base interface for user collection documents
  */
 export interface IUserBase<
-  I,
-  D extends Date | string,
-  S extends string,
-  A extends AccountStatus | string,
+  TID extends PlatformID,
+  TDate extends Date | string,
+  TLanguage extends string,
+  TAccountStatus extends AccountStatus | string,
 >
   extends
-    IHasId<I>,
-    IHasTimestamps<D>,
-    IHasTimestampOwners<I>,
-    IHasSoftDelete<D>,
-    IHasSoftDeleter<I> {
+    IHasId<TID>,
+    IHasTimestamps<TDate>,
+    IHasTimestampOwners<TID>,
+    IHasSoftDelete<TDate>,
+    IHasSoftDeleter<TID> {
   /**
    * The username of the user
    */
@@ -44,7 +45,7 @@ export interface IUserBase<
   /**
    * The language of the site for the user
    */
-  siteLanguage: S;
+  siteLanguage: TLanguage;
   /**
    * Whether the user prefers dark mode
    */
@@ -52,7 +53,7 @@ export interface IUserBase<
   /**
    * The date the user last logged in
    */
-  lastLogin?: D;
+  lastLogin?: TDate;
   /**
    * Whether the user has verified their email address
    */
@@ -60,11 +61,11 @@ export interface IUserBase<
   /**
    * The status of the user's account, eg 'AdminLock'
    */
-  accountStatus: A;
+  accountStatus: TAccountStatus;
   /**
    * Reference to the mnemonic document
    */
-  mnemonicId?: I;
+  mnemonicId?: TID;
   /**
    * Whether the user has enabled direct challenge
    */

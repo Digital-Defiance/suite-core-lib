@@ -2,25 +2,26 @@
  * Fluent builder for creating role objects
  */
 
+import type { PlatformID } from '@digitaldefiance/ecies-lib';
 import { Role } from '../enumerations/role';
 import { IRoleBase } from '../interfaces/bases/role';
 
 /**
  * Builder for creating role objects with fluent API
  */
-export class RoleBuilder<I = string, D extends Date | string = Date> {
-  private data: Partial<IRoleBase<I, D, Role>> = {
+export class RoleBuilder<TID extends PlatformID = PlatformID, TDate extends Date | string = Date> {
+  private data: Partial<IRoleBase<TID, TDate, Role>> = {
     admin: false,
     member: false,
     child: false,
     system: false,
   };
 
-  static create<I = string, D extends Date | string = Date>(): RoleBuilder<
-    I,
-    D
+  static create<TID extends PlatformID = PlatformID, TDate extends Date | string = Date>(): RoleBuilder<
+    TID,
+    TDate
   > {
-    return new RoleBuilder<I, D>();
+    return new RoleBuilder<TID, TDate>();
   }
 
   withName(name: Role): this {
@@ -60,7 +61,7 @@ export class RoleBuilder<I = string, D extends Date | string = Date> {
     return this;
   }
 
-  build(): Partial<IRoleBase<I, D, Role>> {
+  build(): Partial<IRoleBase<TID, TDate, Role>> {
     return { ...this.data };
   }
 }

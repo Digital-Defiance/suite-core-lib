@@ -1,22 +1,23 @@
+import type { PlatformID } from '@digitaldefiance/ecies-lib';
 import { IHasId } from '../has-id';
 import { IHasSoftDelete } from '../has-soft-delete';
 import { IHasSoftDeleter } from '../has-soft-deleter';
 import { IHasTimestampOwners } from '../has-timestamp-owners';
 import { IHasTimestamps } from '../has-timestamps';
 
-export interface IUserRoleBase<I, D extends Date | string>
+export interface IUserRoleBase<TID extends PlatformID, TDate extends Date | string>
   extends
-    IHasId<I>,
-    IHasTimestamps<D>,
-    IHasTimestampOwners<I>,
-    IHasSoftDelete<D>,
-    IHasSoftDeleter<I> {
+    IHasId<TID>,
+    IHasTimestamps<TDate>,
+    IHasTimestampOwners<TID>,
+    IHasSoftDelete<TDate>,
+    IHasSoftDeleter<TID> {
   /**
    * The user ID
    */
-  userId: I;
+  userId: TID;
   /**
    * The role ID
    */
-  roleId: I;
+  roleId: TID;
 }
