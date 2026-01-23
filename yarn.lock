@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@digitaldefiance/ecies-lib@npm:4.13.1":
-  version: 4.13.1
-  resolution: "@digitaldefiance/ecies-lib@npm:4.13.1"
+"@digitaldefiance/ecies-lib@npm:4.13.6":
+  version: 4.13.6
+  resolution: "@digitaldefiance/ecies-lib@npm:4.13.6"
   dependencies:
     "@digitaldefiance/i18n-lib": "npm:3.8.16"
     "@ethereumjs/wallet": "npm:^10.0.0"
@@ -19,7 +19,7 @@ __metadata:
     js-sha3: "npm:^0.9.3"
     paillier-bigint: "npm:^3.4.1"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/1b37d7fe08bd85ef6fdf185c22f1125d91b23ba56fd9914fb899e3d851922383b787cff4fe0eadfdd9746e1f16457a96653c1475f4ae9baa0a2512e1d48858e5
+  checksum: 10c0/cc3bb7295cab0286e757e45ac393251be513631430c72ecec75bfdac642a42280ebf68628736b1cf878393a082686a4a6c3cee53ace59ef8a88849e34e9a80d5
   languageName: node
   linkType: hard
 
@@ -39,7 +39,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@digitaldefiance/suite-core-lib@workspace:."
   dependencies:
-    "@digitaldefiance/ecies-lib": "npm:4.13.1"
+    "@digitaldefiance/ecies-lib": "npm:4.13.6"
     "@digitaldefiance/i18n-lib": "npm:3.8.16"
     "@typescript-eslint/eslint-plugin": "npm:^8.53.1"
     "@typescript-eslint/parser": "npm:^8.53.1"
