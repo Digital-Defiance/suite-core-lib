@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in French.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const frenchStrings: Record<SuiteCoreStringKey, string> = {
+export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]:
     'Le compte est temporairement verrouillé',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:

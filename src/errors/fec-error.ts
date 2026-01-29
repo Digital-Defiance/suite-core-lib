@@ -2,12 +2,16 @@
  * Error class for Forward Error Correction (FEC) operations.
  */
 import { PluginTypedError } from '@digitaldefiance/i18n-lib';
-import { FecErrorType, SuiteCoreStringKey } from '../enumerations';
+import {
+  FecErrorType,
+  SuiteCoreStringKey,
+  SuiteCoreStringKeyValue,
+} from '../enumerations';
 import { SuiteCoreComponentId } from '../i18n-setup';
 
 export class FecError extends PluginTypedError<
   typeof FecErrorType,
-  SuiteCoreStringKey
+  SuiteCoreStringKeyValue
 > {
   constructor(
     type: FecErrorType,

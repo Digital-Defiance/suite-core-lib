@@ -1,11 +1,11 @@
 /**
  * Translatable error class for suite-core library with i18n support.
  */
-import { SuiteCoreStringKey } from '../enumerations/suite-core-string-key';
+import { SuiteCoreStringKeyValue } from '../enumerations/suite-core-string-key';
 import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
 
 export class TranslatableSuiteError extends Error {
-  public readonly StringName: SuiteCoreStringKey;
+  public readonly StringName: SuiteCoreStringKeyValue;
   /**
    * @param string The translation key or raw string
    * @param otherVars Variables for interpolation
@@ -14,7 +14,7 @@ export class TranslatableSuiteError extends Error {
    * @param engine Optional i18n engine override (defaults to node-express-suite component)
    */
   constructor(
-    string: SuiteCoreStringKey,
+    string: SuiteCoreStringKeyValue,
     otherVars?: Record<string, string | number>,
     language?: string,
   ) {

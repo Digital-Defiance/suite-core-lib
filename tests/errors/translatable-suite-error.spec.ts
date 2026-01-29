@@ -1,5 +1,8 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { SuiteCoreStringKey } from '../../src/enumerations/suite-core-string-key';
+import {
+  SuiteCoreStringKey,
+  SuiteCoreStringKeyValue,
+} from '../../src/enumerations/suite-core-string-key';
 import { TranslatableSuiteError } from '../../src/errors/translatable-suite';
 import {
   initSuiteCoreI18nEngine,
@@ -218,7 +221,7 @@ describe('TranslatableSuiteError', () => {
   describe('Fallback behavior', () => {
     it('should fallback to raw string if translation fails', () => {
       const invalidKey =
-        'invalid_key_that_does_not_exist' as SuiteCoreStringKey;
+        'invalid_key_that_does_not_exist' as SuiteCoreStringKeyValue;
       const error = new TranslatableSuiteError(invalidKey);
       expect(error.message).toBe(invalidKey);
     });

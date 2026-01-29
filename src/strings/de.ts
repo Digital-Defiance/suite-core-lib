@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in German.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const germanStrings: Record<SuiteCoreStringKey, string> = {
+export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]: 'Konto ist vorübergehend gesperrt',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:
     'Unzureichende Berechtigungen für diese Aktion',

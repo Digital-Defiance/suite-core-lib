@@ -7,13 +7,18 @@ import {
   ComponentConfig,
   ComponentDefinition,
   CoreLanguageCode,
+  createCoreComponentRegistration,
   createDefaultLanguages,
   EngineConfig,
   I18nEngine,
   LanguageCodes,
 } from '@digitaldefiance/i18n-lib';
 import { Role } from './enumerations/role';
-import { SuiteCoreStringKey } from './enumerations/suite-core-string-key';
+import {
+  SuiteCoreComponentId,
+  SuiteCoreStringKey,
+} from './enumerations/suite-core-string-key';
+import type { SuiteCoreStringKeyValue } from './enumerations/suite-core-string-key';
 import { germanStrings } from './strings/de';
 import { britishEnglishStrings } from './strings/en-GB';
 import { americanEnglishStrings } from './strings/en-US';
@@ -24,15 +29,17 @@ import { ukrainianStrings } from './strings/uk';
 import { mandarinStrings } from './strings/zh-CN';
 
 export const SuiteCoreI18nEngineKey = 'default' as const;
-export const SuiteCoreComponentId = 'suite-core' as const;
-export const SuiteCoreComponent: ComponentDefinition<SuiteCoreStringKey> = {
+export { SuiteCoreComponentId };
+export const SuiteCoreComponent: ComponentDefinition<
+  typeof SuiteCoreStringKey
+> = {
   id: SuiteCoreComponentId,
   name: 'Suite Core Library Component',
-  stringKeys: Object.values(SuiteCoreStringKey),
+  stringKeys: SuiteCoreStringKey,
 };
 export const SuiteCoreComponentStrings: Record<
   string,
-  Record<SuiteCoreStringKey, string>
+  Record<SuiteCoreStringKeyValue, string>
 > = {
   [LanguageCodes.EN_US]: americanEnglishStrings,
   [LanguageCodes.EN_GB]: britishEnglishStrings,
@@ -107,6 +114,13 @@ export function getSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
       { defaultLanguage: LanguageCodes.EN_US, ...config },
     );
 
+    // Register core component first (required for error messages)
+    const coreReg = createCoreComponentRegistration();
+    _engine.registerIfNotExists({
+      id: coreReg.component.id,
+      strings: coreReg.strings as Record<string, Record<string, string>>,
+    });
+
     _engine.registerIfNotExists(createSuiteCoreComponentConfig());
     _engine.registerEnum(Role, roleTranslations, 'Role');
   }
@@ -114,7 +128,7 @@ export function getSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
 }
 
 export function getSuiteCoreTranslation(
-  key: SuiteCoreStringKey,
+  key: SuiteCoreStringKeyValue,
   variables?: Record<string, unknown>,
   language?: string,
   config?: EngineConfig,
@@ -137,7 +151,7 @@ export function initSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
 }
 
 export function safeGetSuiteCoreTranslation(
-  key: SuiteCoreStringKey,
+  key: SuiteCoreStringKeyValue,
   variables?: Record<string, unknown>,
   language?: string,
   config?: EngineConfig,

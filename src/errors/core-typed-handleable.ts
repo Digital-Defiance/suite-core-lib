@@ -3,13 +3,13 @@
  */
 import {
   CompleteReasonMap,
-  CoreStringKey,
   CoreTypedError,
   HandleableError,
   HandleableErrorOptions,
   IHandleable,
   TypedHandleableError,
 } from '@digitaldefiance/i18n-lib';
+import type { CoreStringKeyValue } from '@digitaldefiance/i18n-lib';
 
 export class CoreTypedHandleableError<TEnum extends Record<string, string>>
   extends CoreTypedError<TEnum>
@@ -22,7 +22,7 @@ export class CoreTypedHandleableError<TEnum extends Record<string, string>>
 
   constructor(
     type: TEnum[keyof TEnum],
-    reasonMap: CompleteReasonMap<TEnum, CoreStringKey>,
+    reasonMap: CompleteReasonMap<TEnum, CoreStringKeyValue>,
     source: Error,
     options?: HandleableErrorOptions,
     language?: string,

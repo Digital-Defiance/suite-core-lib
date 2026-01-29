@@ -2,7 +2,7 @@
  * Error thrown for account status-related issues.
  */
 import { HandleableError } from '@digitaldefiance/i18n-lib';
-import { SuiteCoreStringKey } from '../enumerations';
+import { SuiteCoreStringKey, SuiteCoreStringKeyValue } from '../enumerations';
 import { AccountStatus } from '../enumerations/account-status';
 import { TranslatableSuiteError } from './translatable-suite';
 
@@ -14,8 +14,8 @@ export class AccountStatusError extends HandleableError {
     language?: string,
     statusCode = 403,
   ) {
-    // Map AccountStatus to SuiteCoreStringKey
-    const getErrorKey = (status: AccountStatus): SuiteCoreStringKey => {
+    // Map AccountStatus to SuiteCoreStringKeyValue
+    const getErrorKey = (status: AccountStatus): SuiteCoreStringKeyValue => {
       switch (status) {
         case AccountStatus.Active:
           return SuiteCoreStringKey.Error_AccountStatus_Active;

@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in Ukrainian.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const ukrainianStrings: Record<SuiteCoreStringKey, string> = {
+export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]:
     'Обліковий запис тимчасово заблоковано',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:

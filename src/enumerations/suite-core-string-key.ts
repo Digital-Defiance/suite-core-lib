@@ -2,7 +2,18 @@
  * String keys for internationalization (i18n) in the suite-core library.
  * Contains all translatable strings used throughout the application.
  */
-export enum SuiteCoreStringKey {
+import {
+  createI18nStringKeysFromEnum,
+  BrandedStringKeyValue,
+} from '@digitaldefiance/i18n-lib';
+
+export const SuiteCoreComponentId = 'suite-core' as const;
+
+/**
+ * Internal TypeScript enum for suite-core string keys.
+ * @internal
+ */
+enum SuiteCoreStringKeyEnum {
   // Common messages
   Common_Stopping = 'common_stopping',
   Common_Stopped = 'common_stopped',
@@ -499,3 +510,20 @@ export enum SuiteCoreStringKey {
   Validation_UserNotFound = 'validation_userNotFound',
   ValidationError = 'validationError',
 }
+
+/**
+ * Branded enum for suite-core string keys.
+ * Provides runtime identification and collision detection for i18n operations.
+ */
+export const SuiteCoreStringKey = createI18nStringKeysFromEnum(
+  SuiteCoreComponentId,
+  SuiteCoreStringKeyEnum,
+);
+
+/**
+ * Type for individual SuiteCoreStringKey values (string literal union).
+ * Use this when typing variables or function parameters that accept a string key value.
+ */
+export type SuiteCoreStringKeyValue = BrandedStringKeyValue<
+  typeof SuiteCoreStringKey
+>;

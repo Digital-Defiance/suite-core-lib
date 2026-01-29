@@ -4,8 +4,9 @@
  * for the suite-core implementation.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const americanEnglishStrings: Record<SuiteCoreStringKey, string> = {
+export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]: 'Account is temporarily locked',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:
     'Insufficient permissions for this action',

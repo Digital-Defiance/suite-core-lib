@@ -6,12 +6,12 @@ import {
   HandleableErrorOptions,
   TypedHandleableError,
 } from '@digitaldefiance/i18n-lib';
-import { SuiteCoreStringKey } from '../enumerations';
+import { SuiteCoreStringKey, SuiteCoreStringKeyValue } from '../enumerations';
 import { SuiteCoreComponentId } from '../i18n-setup';
 
 export class InvalidEmailError extends TypedHandleableError<
   typeof InvalidEmailErrorType,
-  SuiteCoreStringKey
+  SuiteCoreStringKeyValue
 > {
   public readonly email?: string;
   constructor(
@@ -22,7 +22,7 @@ export class InvalidEmailError extends TypedHandleableError<
   ) {
     const source =
       options?.cause instanceof Error ? options.cause : new Error();
-    const reasonMap: Record<InvalidEmailErrorType, SuiteCoreStringKey> = {
+    const reasonMap: Record<InvalidEmailErrorType, SuiteCoreStringKeyValue> = {
       [InvalidEmailErrorType.Invalid]: SuiteCoreStringKey.Error_InvalidEmail,
       [InvalidEmailErrorType.Missing]:
         SuiteCoreStringKey.Error_InvalidEmailMissing,

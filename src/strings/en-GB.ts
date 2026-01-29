@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in British English.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const britishEnglishStrings: Record<SuiteCoreStringKey, string> = {
+export const britishEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]: 'Account is temporarily locked',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:
     'Insufficient permissions for this action',

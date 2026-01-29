@@ -1,5 +1,8 @@
 import { LanguageCodes, PluginI18nEngine } from '@digitaldefiance/i18n-lib';
-import { SuiteCoreStringKey } from '../src/enumerations';
+import {
+  SuiteCoreStringKey,
+  SuiteCoreStringKeyValue,
+} from '../src/enumerations';
 import {
   getSuiteCoreI18nEngine,
   getSuiteCoreTranslation,
@@ -44,29 +47,33 @@ describe('User System I18n Setup', () => {
     it('should have English translations for all keys', () => {
       initSuiteCoreI18nEngine();
 
-      Object.values(SuiteCoreStringKey).forEach((key) => {
-        const translation = getSuiteCoreTranslation(
-          key,
-          undefined,
-          LanguageCodes.EN_US,
-        );
-        expect(translation).toBeTruthy();
-        expect(translation).not.toBe(key);
-      });
+      (Object.values(SuiteCoreStringKey) as SuiteCoreStringKeyValue[]).forEach(
+        (key) => {
+          const translation = getSuiteCoreTranslation(
+            key,
+            undefined,
+            LanguageCodes.EN_US,
+          );
+          expect(translation).toBeTruthy();
+          expect(translation).not.toBe(key);
+        },
+      );
     });
 
     it('should have French translations for all keys', () => {
       initSuiteCoreI18nEngine();
 
-      Object.values(SuiteCoreStringKey).forEach((key) => {
-        const translation = getSuiteCoreTranslation(
-          key,
-          undefined,
-          LanguageCodes.FR,
-        );
-        expect(translation).toBeTruthy();
-        expect(translation).not.toBe(key);
-      });
+      (Object.values(SuiteCoreStringKey) as SuiteCoreStringKeyValue[]).forEach(
+        (key) => {
+          const translation = getSuiteCoreTranslation(
+            key,
+            undefined,
+            LanguageCodes.FR,
+          );
+          expect(translation).toBeTruthy();
+          expect(translation).not.toBe(key);
+        },
+      );
     });
   });
 

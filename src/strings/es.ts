@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in Spanish.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const spanishStrings: Record<SuiteCoreStringKey, string> = {
+export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]:
     'La cuenta está temporalmente bloqueada',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:

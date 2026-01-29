@@ -5,11 +5,18 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@digitaldefiance/ecies-lib@npm:4.13.8":
-  version: 4.13.8
-  resolution: "@digitaldefiance/ecies-lib@npm:4.13.8"
+"@digitaldefiance/branded-enum@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@digitaldefiance/branded-enum@npm:0.0.5"
+  checksum: 10c0/b6c6d7e6888a63973085f047a56a59fc5fd3c79275042f1d3fbf59097bba00bea00a221c02c8f0b8bdce790602357b94ebfc0f8ca9c36b28ddb4ed680d743a9e
+  languageName: node
+  linkType: hard
+
+"@digitaldefiance/ecies-lib@npm:4.14.2":
+  version: 4.14.2
+  resolution: "@digitaldefiance/ecies-lib@npm:4.14.2"
   dependencies:
-    "@digitaldefiance/i18n-lib": "npm:3.8.16"
+    "@digitaldefiance/i18n-lib": "npm:4.0.2"
     "@ethereumjs/wallet": "npm:^10.0.0"
     "@noble/curves": "npm:1.9.0"
     "@noble/hashes": "npm:1.8.0"
@@ -19,19 +26,20 @@ __metadata:
     js-sha3: "npm:^0.9.3"
     paillier-bigint: "npm:^3.4.1"
     ts-brand: "npm:^0.2.0"
-  checksum: 10c0/57cdd711a5b2e7de997ad6b1aa7b8f2dc132a46c603639719cb1bbbbb602e3f8771958331e26cae2ec7f9d2e0969b1e8126ffc6fbb82a9aaf8698e79cf1587a7
+  checksum: 10c0/2488cbd5e595d69fbfd3976c1ac3c3d4ea7bd1297bb290e2c0d0657f6dd71287211297c63417ed8c29d36caaac1598d4a4fe594765b3a41d556f8a6777190d96
   languageName: node
   linkType: hard
 
-"@digitaldefiance/i18n-lib@npm:3.8.16":
-  version: 3.8.16
-  resolution: "@digitaldefiance/i18n-lib@npm:3.8.16"
+"@digitaldefiance/i18n-lib@npm:4.0.2":
+  version: 4.0.2
+  resolution: "@digitaldefiance/i18n-lib@npm:4.0.2"
   dependencies:
+    "@digitaldefiance/branded-enum": "npm:0.0.5"
     currency-codes: "npm:^2.2.0"
     lru-cache: "npm:^5.1.1"
     moment: "npm:^2.30.1"
     moment-timezone: "npm:^0.6.0"
-  checksum: 10c0/21288d1fa56bb75cf71b234705c9f3ba0fba1e5a5a8511b1e669dac4960ff92b95bbf3a57e57aa3b6c2061cc5629207843e058efb1474a99ed8b222c6df6202a
+  checksum: 10c0/f199cbae9223535d764eaeb3cb64bb1381367a2cbbfff35807340733cfd215ace80d04dd73bae7b36b457e4404c888ee5d3aa12742e2ca4dde0fdb1faff585f5
   languageName: node
   linkType: hard
 
@@ -39,8 +47,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@digitaldefiance/suite-core-lib@workspace:."
   dependencies:
-    "@digitaldefiance/ecies-lib": "npm:4.13.8"
-    "@digitaldefiance/i18n-lib": "npm:3.8.16"
+    "@digitaldefiance/ecies-lib": "npm:4.14.2"
+    "@digitaldefiance/i18n-lib": "npm:4.0.2"
     "@typescript-eslint/eslint-plugin": "npm:^8.53.1"
     "@typescript-eslint/parser": "npm:^8.53.1"
     eslint-plugin-import: "npm:^2.32.0"

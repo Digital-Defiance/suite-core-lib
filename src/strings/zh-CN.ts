@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in Simplified Chinese.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const mandarinStrings: Record<SuiteCoreStringKey, string> = {
+export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]: '账户暂时被锁定',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]: '权限不足，无法执行此操作',
   [SuiteCoreStringKey.Auth_InvalidToken]: '无效的认证令牌',

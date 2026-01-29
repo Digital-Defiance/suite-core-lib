@@ -3,8 +3,9 @@
  * Contains all localized error messages and user-facing text in Japanese.
  */
 import { SuiteCoreStringKey } from '../enumerations';
+import type { SuiteCoreStringKeyValue } from '../enumerations';
 
-export const japaneseStrings: Record<SuiteCoreStringKey, string> = {
+export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Auth_AccountLocked]:
     'アカウントは一時的にロックされています',
   [SuiteCoreStringKey.Auth_InsufficientPermissions]:
