@@ -12,13 +12,14 @@ import {
   EngineConfig,
   I18nEngine,
   LanguageCodes,
+  type BrandedMasterStringsCollection,
 } from '@digitaldefiance/i18n-lib';
 import { Role } from './enumerations/role';
 import {
   SuiteCoreComponentId,
   SuiteCoreStringKey,
+  type SuiteCoreStringKeyValue,
 } from './enumerations/suite-core-string-key';
-import type { SuiteCoreStringKeyValue } from './enumerations/suite-core-string-key';
 import { germanStrings } from './strings/de';
 import { britishEnglishStrings } from './strings/en-GB';
 import { americanEnglishStrings } from './strings/en-US';
@@ -37,9 +38,13 @@ export const SuiteCoreComponent: ComponentDefinition<
   name: 'Suite Core Library Component',
   stringKeys: SuiteCoreStringKey,
 };
-export const SuiteCoreComponentStrings: Record<
-  string,
-  Record<SuiteCoreStringKeyValue, string>
+/**
+ * Master strings collection for the Suite Core component.
+ * Uses BrandedMasterStringsCollection for type-safe branded enum support.
+ */
+export const SuiteCoreComponentStrings: BrandedMasterStringsCollection<
+  typeof SuiteCoreStringKey,
+  CoreLanguageCode
 > = {
   [LanguageCodes.EN_US]: americanEnglishStrings,
   [LanguageCodes.EN_GB]: britishEnglishStrings,
