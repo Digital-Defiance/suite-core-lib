@@ -2,7 +2,7 @@
  * Translatable error class for suite-core library with i18n support.
  */
 import { SuiteCoreStringKeyValue } from '../enumerations/suite-core-string-key';
-import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
+import { getSuiteCoreI18nEngine } from '../i18n-setup';
 
 export class TranslatableSuiteError extends Error {
   public readonly StringName: SuiteCoreStringKeyValue;
@@ -21,8 +21,7 @@ export class TranslatableSuiteError extends Error {
     const i18nEngine = getSuiteCoreI18nEngine();
     let translatedMessage: string;
     try {
-      translatedMessage = i18nEngine.translate(
-        SuiteCoreComponentId,
+      translatedMessage = i18nEngine.translateStringKey(
         string,
         otherVars,
         language,

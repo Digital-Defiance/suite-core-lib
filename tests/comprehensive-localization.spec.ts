@@ -324,15 +324,13 @@ describe('Comprehensive Localization Testing', () => {
     it('should translate through engine directly', () => {
       const engine = getSuiteCoreI18nEngine();
 
-      const enMsg = engine.translate(
-        SuiteCoreComponentId,
+      const enMsg = engine.translateStringKey(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
         LanguageCodes.EN_US,
       );
 
-      const frMsg = engine.translate(
-        SuiteCoreComponentId,
+      const frMsg = engine.translateStringKey(
         SuiteCoreStringKey.Validation_UsernameInUse,
         undefined,
         LanguageCodes.FR,

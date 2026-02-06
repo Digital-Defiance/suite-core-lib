@@ -3,7 +3,7 @@
  */
 import { CoreLanguageCode, HandleableError } from '@digitaldefiance/i18n-lib';
 import { SuiteCoreStringKey, SuiteCoreStringKeyValue } from '../enumerations';
-import { getSuiteCoreI18nEngine, SuiteCoreComponentId } from '../i18n-setup';
+import { getSuiteCoreI18nEngine } from '../i18n-setup';
 
 export class InvalidUserIdError extends HandleableError {
   constructor(
@@ -13,21 +13,14 @@ export class InvalidUserIdError extends HandleableError {
   ) {
     const engine = getSuiteCoreI18nEngine();
     const baseMessage = detail
-      ? engine.translate(
-          SuiteCoreComponentId,
+      ? engine.translateStringKey(
           SuiteCoreStringKey.Validation_InvalidUserIdTemplate,
           {
-            detail: engine.translate(
-              SuiteCoreComponentId,
-              detail,
-              undefined,
-              language,
-            ),
+            detail: engine.translateStringKey(detail, undefined, language),
           },
           language,
         )
-      : engine.translate(
-          SuiteCoreComponentId,
+      : engine.translateStringKey(
           SuiteCoreStringKey.Validation_InvalidUserId,
           undefined,
           language,

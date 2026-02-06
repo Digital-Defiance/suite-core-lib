@@ -128,6 +128,9 @@ export function getSuiteCoreI18nEngine(config?: EngineConfig): I18nEngine {
 
     _engine.registerIfNotExists(createSuiteCoreComponentConfig());
     _engine.registerEnum(Role, roleTranslations, 'Role');
+
+    // Register the branded string key enum for direct translation support
+    _engine.registerStringKeyEnum(SuiteCoreStringKey);
   }
   return _engine;
 }
@@ -138,8 +141,7 @@ export function getSuiteCoreTranslation(
   language?: string,
   config?: EngineConfig,
 ): string {
-  return getSuiteCoreI18nEngine(config).translate(
-    SuiteCoreComponentId,
+  return getSuiteCoreI18nEngine(config).translateStringKey(
     key,
     variables,
     language,
@@ -161,9 +163,9 @@ export function safeGetSuiteCoreTranslation(
   language?: string,
   config?: EngineConfig,
 ): string {
-  try {
-    return getSuiteCoreTranslation(key, variables, language, config);
-  } catch {
-    return key;
-  }
+  return getSuiteCoreI18nEngine(config).safeTranslateStringKey(
+    key,
+    variables,
+    language,
+  );
 }

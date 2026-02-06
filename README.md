@@ -8,6 +8,18 @@ A comprehensive library providing higher-level primitives and foundational build
 
 Part of [Express Suite](https://github.com/Digital-Defiance/express-suite)
 
+## What's New in v3.10.0 - 3.10.25
+
+✨ **String Key Enum Registration & translateStringKey Support** - Translation functions now use `translateStringKey()` for automatic component ID resolution.
+
+**Changes:**
+- `getSuiteCoreTranslation()` now uses `translateStringKey()` internally
+- `safeGetSuiteCoreTranslation()` now uses `safeTranslateStringKey()` internally
+- `SuiteCoreStringKey` branded enum is automatically registered during engine initialization
+- `SuiteCoreComponentStrings` now uses `BrandedMasterStringsCollection` for type-safe branded enum support
+- Upgraded to `@digitaldefiance/ecies-lib` v4.16.20
+- Upgraded to `@digitaldefiance/i18n-lib` v4.3.0
+
 ## 🚀 Framework Ecosystem
 
 `@digitaldefiance/suite-core-lib` offers the essential **core primitives and abstractions** that power:
@@ -37,6 +49,39 @@ This library includes built-in support for **five major languages** using a mode
 - **Ukrainian**
 
 All error messages, validation texts, and user-facing strings are fully localized and designed to be extensible for additional languages.
+
+### Translation Functions
+
+The library provides convenient translation functions that leverage branded string key enums for automatic component routing:
+
+```typescript
+import { 
+  getSuiteCoreTranslation, 
+  safeGetSuiteCoreTranslation,
+  SuiteCoreStringKey 
+} from '@digitaldefiance/suite-core-lib';
+
+// Direct translation using branded string keys (v3.10.0+)
+// Component ID is automatically resolved from the branded enum
+const message = getSuiteCoreTranslation(SuiteCoreStringKey.Common_Yes);
+// Output: "Yes" (or localized equivalent)
+
+// With variables
+const greeting = getSuiteCoreTranslation(
+  SuiteCoreStringKey.Welcome_Template, 
+  { name: 'Alice' }
+);
+
+// With specific language
+const french = getSuiteCoreTranslation(
+  SuiteCoreStringKey.Common_Yes,
+  {},
+  CoreLanguage.French
+);
+
+// Safe version returns placeholder on failure instead of throwing
+const safe = safeGetSuiteCoreTranslation(SuiteCoreStringKey.Common_Yes);
+```
 
 ## 🏗️ Architecture Overview
 
@@ -558,6 +603,39 @@ describe('User Management', () => {
 ```
 
 ## ChangeLog
+
+### v3.10.x (v3.10.0 - v3.10.20)
+
+**String Key Enum Registration & translateStringKey Support**
+
+- Added `registerStringKeyEnum(SuiteCoreStringKey)` during engine initialization
+- Updated `getSuiteCoreTranslation()` to use `translateStringKey()` for automatic component ID resolution
+- Updated `safeGetSuiteCoreTranslation()` to use `safeTranslateStringKey()`
+- Changed `SuiteCoreComponentStrings` to use `BrandedMasterStringsCollection<typeof SuiteCoreStringKey, CoreLanguageCode>` for type-safe branded enum support
+- Upgraded `@digitaldefiance/ecies-lib` from 4.15.6 to 4.16.20
+- Upgraded `@digitaldefiance/i18n-lib` from 4.0.5 to 4.2.20
+
+### v3.9.0
+
+**Showcase Application**
+
+- Added interactive showcase application for demonstrating suite-core-lib features
+- Deployed to GitHub Pages
+
+### v3.8.0
+
+**I18n Improvements**
+
+- Upgraded i18n-lib with branded enum support
+- Improved type safety in translation functions
+
+### v3.7.0
+
+**ECIES Integration Updates**
+
+- Upgraded ecies-lib to latest version
+- Improved ID provider integration
+- Enhanced type safety for generic ID types
 
 ## v3.6.6
 
