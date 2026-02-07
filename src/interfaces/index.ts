@@ -1,6 +1,7 @@
 /**
  * Interface exports for the suite-core library.
  */
+export type * from './api-message-response';
 export * from './backup-code';
 export * from './backup-code-consts';
 export * from './bases';
