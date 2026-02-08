@@ -60,27 +60,27 @@ import {
   safeGetSuiteCoreTranslation,
   SuiteCoreStringKey 
 } from '@digitaldefiance/suite-core-lib';
+import { LanguageCodes } from '@digitaldefiance/i18n-lib';
 
 // Direct translation using branded string keys (v3.10.0+)
 // Component ID is automatically resolved from the branded enum
-const message = getSuiteCoreTranslation(SuiteCoreStringKey.Common_Yes);
-// Output: "Yes" (or localized equivalent)
+const message = getSuiteCoreTranslation(SuiteCoreStringKey.Auth_UserNotFound);
+// Output: "User account not found" (or localized equivalent)
 
-// With variables
-const greeting = getSuiteCoreTranslation(
-  SuiteCoreStringKey.Welcome_Template, 
-  { name: 'Alice' }
+// With variables (if the string supports them)
+const validation = getSuiteCoreTranslation(
+  SuiteCoreStringKey.Validation_InvalidUsername
 );
 
 // With specific language
 const french = getSuiteCoreTranslation(
-  SuiteCoreStringKey.Common_Yes,
+  SuiteCoreStringKey.Auth_AccountLocked,
   {},
-  CoreLanguage.French
+  LanguageCodes.FR  // or use string directly: 'fr'
 );
 
 // Safe version returns placeholder on failure instead of throwing
-const safe = safeGetSuiteCoreTranslation(SuiteCoreStringKey.Common_Yes);
+const safe = safeGetSuiteCoreTranslation(SuiteCoreStringKey.Auth_TokenExpired);
 ```
 
 ## 🏗️ Architecture Overview
@@ -149,13 +149,13 @@ import {
 } from '@digitaldefiance/suite-core-lib';
 
 // Throw errors with automatic localization support
-throw new UserNotFoundError(CoreLanguage.French);
+throw new UserNotFoundError(LanguageCodes.French);
 // Output: "Compte utilisateur introuvable"
 
-throw new UsernameInUseError(CoreLanguage.Spanish); 
+throw new UsernameInUseError(LanguageCodes.Spanish); 
 // Output: "El nombre de usuario ya está en uso"
 
-throw new AccountLockedError(CoreLanguage.German);
+throw new AccountLockedError(LanguageCodes.German);
 // Output: "Konto ist von einem Administrator gesperrt"
 ```
 
@@ -384,7 +384,13 @@ import {
   isValidEmail, 
   isValidPassword,
   createValidators,
-  createConstants 
+  createConstants,
+  formatBackupCode,
+  normalizeBackupCode,
+  isValidBackupCodeFormat,
+  hydrateUserSettings,
+  dehydrateUserSettings,
+  BCP47_TO_FLAG_CDN
 } from '@digitaldefiance/suite-core-lib';
 
 // Use default validators with built-in constants
@@ -403,6 +409,25 @@ const validators = createValidators(myConstants);
 if (!validators.isValidUsername('user_name')) {
   throw new Error('Invalid username');
 }
+
+// Format backup codes
+const formatted = formatBackupCode('1234567890ABCDEF'); // "1234-5678-90AB-CDEF"
+const normalized = normalizeBackupCode('1234-5678-90AB-CDEF'); // "1234567890ABCDEF"
+const isValid = isValidBackupCodeFormat('1234-5678-90AB-CDEF'); // true
+
+// Hydrate/dehydrate user settings
+const settings = hydrateUserSettings({
+  email: 'user@example.com',
+  timezone: 'America/New_York',
+  currency: 'USD',
+  siteLanguage: 'en-US',
+  darkMode: false,
+  directChallenge: true
+});
+const dto = dehydrateUserSettings(settings);
+
+// Map language codes to flag codes for UI
+const flagCode = BCP47_TO_FLAG_CDN['en-US']; // 'us'
 ```
 
 ### Improved Architecture
@@ -561,11 +586,11 @@ describe('Validators', () => {
 #### Testing Error Handling
 
 ```typescript
-import { UserNotFoundError, UsernameInUseError, CoreLanguage } from '@digitaldefiance/suite-core-lib';
+import { UserNotFoundError, UsernameInUseError } from '@digitaldefiance/suite-core-lib';
 
 describe('Error Handling', () => {
   it('should throw localized errors', () => {
-    const error = new UserNotFoundError(CoreLanguage.French);
+    const error = new UserNotFoundError(LanguageCodes.French);
     expect(error.message).toContain('utilisateur');
   });
 });
@@ -611,7 +636,7 @@ describe('User Management', () => {
 - Added `registerStringKeyEnum(SuiteCoreStringKey)` during engine initialization
 - Updated `getSuiteCoreTranslation()` to use `translateStringKey()` for automatic component ID resolution
 - Updated `safeGetSuiteCoreTranslation()` to use `safeTranslateStringKey()`
-- Changed `SuiteCoreComponentStrings` to use `BrandedMasterStringsCollection<typeof SuiteCoreStringKey, CoreLanguageCode>` for type-safe branded enum support
+- Changed `SuiteCoreComponentStrings` to use `BrandedMasterStringsCollection<typeof SuiteCoreStringKey>` for type-safe branded enum support
 - Upgraded `@digitaldefiance/ecies-lib` from 4.15.6 to 4.16.20
 - Upgraded `@digitaldefiance/i18n-lib` from 4.0.5 to 4.2.20
 
