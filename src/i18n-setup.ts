@@ -13,6 +13,7 @@ import {
   I18nEngine,
   LanguageCodes,
   type BrandedMasterStringsCollection,
+  type I18nComponentPackage,
 } from '@digitaldefiance/i18n-lib';
 import { Role } from './enumerations/role';
 import {
@@ -107,6 +108,18 @@ export function createSuiteCoreComponentConfig(): ComponentConfig {
     aliases: ['SuiteCoreStringKey'],
   };
   return SuiteCoreComponentConfig;
+}
+
+/**
+ * Creates an I18nComponentPackage bundling the SuiteCore ComponentConfig
+ * with its branded string key enum. Use this with createI18nSetup's
+ * libraryComponents array.
+ */
+export function createSuiteCoreComponentPackage(): I18nComponentPackage {
+  return {
+    config: createSuiteCoreComponentConfig(),
+    stringKeyEnum: SuiteCoreStringKey,
+  };
 }
 
 let _engine: I18nEngine | undefined;
