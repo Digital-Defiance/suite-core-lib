@@ -94,11 +94,11 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS doit être supérieur à 0',
   [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
-    'LETS_ENCRYPT_EMAIL est requis lorsque Let\'s Encrypt est activé',
+    "LETS_ENCRYPT_EMAIL est requis lorsque Let's Encrypt est activé",
   [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
-    'LETS_ENCRYPT_HOSTNAMES est requis lorsque Let\'s Encrypt est activé',
+    "LETS_ENCRYPT_HOSTNAMES est requis lorsque Let's Encrypt est activé",
   [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
-    'Nom d\'hôte invalide dans LETS_ENCRYPT_HOSTNAMES : {hostname}',
+    "Nom d'hôte invalide dans LETS_ENCRYPT_HOSTNAMES : {hostname}",
   [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]:
     'Options CSP ou Helmet invalides fournies',
   [SuiteCoreStringKey.Error_EnvironmentIsRequired]:

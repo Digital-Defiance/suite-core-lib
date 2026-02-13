@@ -72,9 +72,9 @@ export const britishEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS must be greater than 0',
   [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
-    'LETS_ENCRYPT_EMAIL is required when Let\'s Encrypt is enabled',
+    "LETS_ENCRYPT_EMAIL is required when Let's Encrypt is enabled",
   [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
-    'LETS_ENCRYPT_HOSTNAMES is required when Let\'s Encrypt is enabled',
+    "LETS_ENCRYPT_HOSTNAMES is required when Let's Encrypt is enabled",
   [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
     'Invalid hostname in LETS_ENCRYPT_HOSTNAMES: {hostname}',
   [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]:

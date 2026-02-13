@@ -82,9 +82,9 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS 必须大于 0',
   [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
-    '启用 Let\'s Encrypt 时，LETS_ENCRYPT_EMAIL 是必需的',
+    "启用 Let's Encrypt 时，LETS_ENCRYPT_EMAIL 是必需的",
   [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
-    '启用 Let\'s Encrypt 时，LETS_ENCRYPT_HOSTNAMES 是必需的',
+    "启用 Let's Encrypt 时，LETS_ENCRYPT_HOSTNAMES 是必需的",
   [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
     'LETS_ENCRYPT_HOSTNAMES 中的主机名无效: {hostname}',
   [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]:

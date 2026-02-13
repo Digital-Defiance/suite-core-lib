@@ -92,9 +92,9 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS debe ser mayor que 0',
   [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
-    'LETS_ENCRYPT_EMAIL es obligatorio cuando Let\'s Encrypt está habilitado',
+    "LETS_ENCRYPT_EMAIL es obligatorio cuando Let's Encrypt está habilitado",
   [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
-    'LETS_ENCRYPT_HOSTNAMES es obligatorio cuando Let\'s Encrypt está habilitado',
+    "LETS_ENCRYPT_HOSTNAMES es obligatorio cuando Let's Encrypt está habilitado",
   [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
     'Nombre de host no válido en LETS_ENCRYPT_HOSTNAMES: {hostname}',
   [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'El entorno es requerido',

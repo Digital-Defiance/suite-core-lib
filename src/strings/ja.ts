@@ -88,9 +88,9 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS は 0 より大きい値である必要があります',
   [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
-    'Let\'s Encrypt が有効な場合、LETS_ENCRYPT_EMAIL は必須です',
+    "Let's Encrypt が有効な場合、LETS_ENCRYPT_EMAIL は必須です",
   [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
-    'Let\'s Encrypt が有効な場合、LETS_ENCRYPT_HOSTNAMES は必須です',
+    "Let's Encrypt が有効な場合、LETS_ENCRYPT_HOSTNAMES は必須です",
   [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
     'LETS_ENCRYPT_HOSTNAMES に無効なホスト名があります: {hostname}',
   [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]:
