@@ -129,6 +129,12 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'MNEMONIC_HMAC_SECRET повинен бути шістнадцятковим рядком з 64 символів',
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS повинен бути більше 0',
+  [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
+    'LETS_ENCRYPT_EMAIL є обов\'язковим, коли Let\'s Encrypt увімкнено',
+  [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
+    'LETS_ENCRYPT_HOSTNAMES є обов\'язковим, коли Let\'s Encrypt увімкнено',
+  [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
+    'Недійсне ім\'я хоста в LETS_ENCRYPT_HOSTNAMES: {hostname}',
   [SuiteCoreStringKey.Error_EnvironmentIsRequired]: "Середовище є обов'язковим",
   [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]:
     "Фабрика API-маршрутизатора є обов'язковою",

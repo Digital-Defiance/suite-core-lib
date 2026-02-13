@@ -91,6 +91,12 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'La frase mnemotécnica del miembro debe ser una frase mnemotécnica válida',
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS debe ser mayor que 0',
+  [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
+    'LETS_ENCRYPT_EMAIL es obligatorio cuando Let\'s Encrypt está habilitado',
+  [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
+    'LETS_ENCRYPT_HOSTNAMES es obligatorio cuando Let\'s Encrypt está habilitado',
+  [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
+    'Nombre de host no válido en LETS_ENCRYPT_HOSTNAMES: {hostname}',
   [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'El entorno es requerido',
   [SuiteCoreStringKey.Error_ApiRouterFactoryIsRequired]:
     'La fábrica de enrutador API es requerida',

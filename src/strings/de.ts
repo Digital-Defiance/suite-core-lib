@@ -94,6 +94,12 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'MEMBER_MNEMONIC muss eine gültige BIP39-Phrase sein',
   [SuiteCoreStringKey.Error_Pbkdf2IterationsMustBeGreaterThanZero]:
     'PBKDF2_ITERATIONS muss größer als 0 sein',
+  [SuiteCoreStringKey.Error_LetsEncryptMaintainerEmailRequired]:
+    'LETS_ENCRYPT_EMAIL ist erforderlich, wenn Let\'s Encrypt aktiviert ist',
+  [SuiteCoreStringKey.Error_LetsEncryptHostnamesRequired]:
+    'LETS_ENCRYPT_HOSTNAMES ist erforderlich, wenn Let\'s Encrypt aktiviert ist',
+  [SuiteCoreStringKey.Error_LetsEncryptInvalidHostnameTemplate]:
+    'Ungültiger Hostname in LETS_ENCRYPT_HOSTNAMES: {hostname}',
   [SuiteCoreStringKey.Error_InvalidCspOrHelmetOptionsProvided]:
     'Ungültige CSP- oder Helmet-Optionen bereitgestellt',
   [SuiteCoreStringKey.Error_EnvironmentIsRequired]: 'Umgebung ist erforderlich',
