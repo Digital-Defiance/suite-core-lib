@@ -83,15 +83,43 @@ const french = getSuiteCoreTranslation(
 const safe = safeGetSuiteCoreTranslation(SuiteCoreStringKey.Auth_TokenExpired);
 ```
 
+### Typed Constants with `ISuiteCoreI18nConstants`
+
+Suite Core defines `ISuiteCoreI18nConstants`, a typed interface extending `II18nConstants` from `@digitaldefiance/i18n-lib`. It declares the exact constant keys referenced in Suite Core translation templates (e.g., `{Site}`, `{SiteTagline}`):
+
+```typescript
+import type { ISuiteCoreI18nConstants } from '@digitaldefiance/suite-core-lib';
+
+// TypeScript enforces the shape at compile time
+const myConstants: ISuiteCoreI18nConstants = {
+  Site: 'Acme Corp',
+  SiteTagline: 'Building the future',
+  SiteDescription: 'A platform for innovation',
+  SiteEmailDomain: 'acme.example.com',
+  SiteHostname: 'acme.example.com',
+  EmailTokenResendIntervalMinutes: 10,
+};
+```
+
+Consuming apps that extend Suite Core constants should extend this interface:
+
+```typescript
+import type { ISuiteCoreI18nConstants } from '@digitaldefiance/suite-core-lib';
+
+export interface IMyAppI18nConstants extends ISuiteCoreI18nConstants {
+  AppSpecificKey: string;
+}
+```
+
 ### Default Constants
 
-`createSuiteCoreComponentPackage()` bundles default constants used in translation templates. These are registered automatically when the package is passed as a library component to `createI18nSetup`:
+`createSuiteCoreComponentPackage()` bundles default constants (typed as `ISuiteCoreI18nConstants`) used in translation templates. These are registered automatically when the package is passed as a library component to `createI18nSetup`:
 
 ```typescript
 import { createSuiteCoreComponentPackage } from '@digitaldefiance/suite-core-lib';
 
 const pkg = createSuiteCoreComponentPackage();
-// pkg.constants includes:
+// pkg.constants satisfies ISuiteCoreI18nConstants and includes:
 //   Site, SiteTagline, SiteDescription, SiteEmailDomain,
 //   SiteHostname, EmailTokenResendIntervalMinutes
 ```

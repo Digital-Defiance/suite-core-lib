@@ -22,6 +22,7 @@ import {
   SuiteCoreStringKey,
   type SuiteCoreStringKeyValue,
 } from './enumerations/suite-core-string-key';
+import type { ISuiteCoreI18nConstants } from './interfaces/i18n-constants';
 import { germanStrings } from './strings/de';
 import { britishEnglishStrings } from './strings/en-GB';
 import { americanEnglishStrings } from './strings/en-US';
@@ -117,17 +118,18 @@ export function createSuiteCoreComponentConfig(): ComponentConfig {
  * libraryComponents array.
  */
 export function createSuiteCoreComponentPackage(): I18nComponentPackage {
+  const constants: ISuiteCoreI18nConstants = {
+    Site: CORE.Site,
+    SiteTagline: CORE.SiteTagline,
+    SiteDescription: CORE.SiteDescription,
+    SiteEmailDomain: CORE.SiteEmailDomain,
+    SiteHostname: CORE.SiteHostname,
+    EmailTokenResendIntervalMinutes: CORE.EmailTokenResendIntervalMinutes,
+  };
   return {
     config: createSuiteCoreComponentConfig(),
     stringKeyEnum: SuiteCoreStringKey,
-    constants: {
-      Site: CORE.Site,
-      SiteTagline: CORE.SiteTagline,
-      SiteDescription: CORE.SiteDescription,
-      SiteEmailDomain: CORE.SiteEmailDomain,
-      SiteHostname: CORE.SiteHostname,
-      EmailTokenResendIntervalMinutes: CORE.EmailTokenResendIntervalMinutes,
-    },
+    constants,
   };
 }
 
