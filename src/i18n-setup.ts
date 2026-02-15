@@ -15,6 +15,7 @@ import {
   type BrandedMasterStringsCollection,
   type I18nComponentPackage,
 } from '@digitaldefiance/i18n-lib';
+import { CORE } from './constants';
 import { Role } from './enumerations/role';
 import {
   SuiteCoreComponentId,
@@ -119,6 +120,14 @@ export function createSuiteCoreComponentPackage(): I18nComponentPackage {
   return {
     config: createSuiteCoreComponentConfig(),
     stringKeyEnum: SuiteCoreStringKey,
+    constants: {
+      Site: CORE.Site,
+      SiteTagline: CORE.SiteTagline,
+      SiteDescription: CORE.SiteDescription,
+      SiteEmailDomain: CORE.SiteEmailDomain,
+      SiteHostname: CORE.SiteHostname,
+      EmailTokenResendIntervalMinutes: CORE.EmailTokenResendIntervalMinutes,
+    },
   };
 }
 

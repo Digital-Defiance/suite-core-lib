@@ -83,6 +83,35 @@ const french = getSuiteCoreTranslation(
 const safe = safeGetSuiteCoreTranslation(SuiteCoreStringKey.Auth_TokenExpired);
 ```
 
+### Default Constants
+
+`createSuiteCoreComponentPackage()` bundles default constants used in translation templates. These are registered automatically when the package is passed as a library component to `createI18nSetup`:
+
+```typescript
+import { createSuiteCoreComponentPackage } from '@digitaldefiance/suite-core-lib';
+
+const pkg = createSuiteCoreComponentPackage();
+// pkg.constants includes:
+//   Site, SiteTagline, SiteDescription, SiteEmailDomain,
+//   SiteHostname, EmailTokenResendIntervalMinutes
+```
+
+Apps override these at runtime by passing their own `constants` to `createI18nSetup`:
+
+```typescript
+import { createI18nSetup } from '@digitaldefiance/i18n-lib';
+import { createSuiteCoreComponentPackage } from '@digitaldefiance/suite-core-lib';
+
+const setup = createI18nSetup({
+  componentId: 'my-app',
+  stringKeyEnum: MyAppStringKey,
+  strings: MyAppStrings,
+  constants: { Site: 'My Real Site', SiteTagline: 'We do real things' },
+  libraryComponents: [createSuiteCoreComponentPackage()],
+});
+// SuiteCore registers defaults → app overrides with real values
+```
+
 ## 🏗️ Architecture Overview
 
 ### Type-Safe Base Interfaces
