@@ -16,8 +16,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as fc from 'fast-check';
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Compile-time check: all types importable from storage barrel
+import type { IFailableResult } from '../../src/interfaces/failable-result';
 import type {
   IDatabase,
   ICollection,
@@ -60,8 +61,6 @@ import type {
   UpdateOperators,
   ClientSession,
 } from '../../src/interfaces/storage';
-
-import type { IFailableResult } from '../../src/interfaces/failable-result';
 
 /** All storage type names that must be present in suite-core-lib */
 const EXPECTED_STORAGE_TYPES = [
