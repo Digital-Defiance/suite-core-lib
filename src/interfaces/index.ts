@@ -25,3 +25,4 @@ export * from './success-message';
 export * from './token-user';
 export * from './user-settings';
 export * from './i18n-constants';
+export * from './storage';
