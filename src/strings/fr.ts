@@ -262,6 +262,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Échec de la récupération des codes de sauvegarde',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]:
     'Échec de la génération des codes de sauvegarde',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]:
+    'Codes de sauvegarde récupérés avec succès',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     '{count} codes de sauvegarde restants',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:

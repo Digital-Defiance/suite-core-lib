@@ -145,6 +145,7 @@ enum SuiteCoreStringKeyEnum {
   ApiAccess_TokenNotAvailable = 'apiAccess_tokenNotAvailable',
   BackupCodes_FailedToFetch = 'backupCodes_failedToFetch',
   BackupCodes_FailedToGenerate = 'backupCodes_failedToGenerate',
+  BackupCodes_RetrievedSuccess = 'backupCodes_retrievedSuccess',
   BackupCodeRecovery_YourNewCodes = 'backupCodeRecovery_yourNewCodes',
   BackupCodeRecovery_CodesRemainingTemplate = 'backupCodeRecovery_codesRemainingTemplate',
   BackupCodeRecovery_GenerateNewCodes = 'backupCodeRecovery_generateNewCodes',

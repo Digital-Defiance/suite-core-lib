@@ -215,6 +215,7 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: '令牌不可用',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]: '获取备份代码失败',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]: '生成备份代码失败',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]: '备份代码获取成功',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     '{count} 个备份代码剩余',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]: '生成新的备份代码',

@@ -250,6 +250,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Не вдалося отримати коди резервної копії',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]:
     'Не вдалося згенерувати коди резервної копії',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]:
+    'Коди резервної копії успішно отримано',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     '{count} кодів резервної копії залишилося',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:

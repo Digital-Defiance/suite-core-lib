@@ -252,6 +252,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Fehler beim Abrufen der Backup-Codes',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]:
     'Fehler beim Generieren der Backup-Codes',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]:
+    'Backup-Codes erfolgreich abgerufen',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     'Verbleibende Backup-Codes: {count}',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:

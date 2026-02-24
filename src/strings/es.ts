@@ -254,6 +254,8 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Error al obtener los códigos de respaldo',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]:
     'Error al generar los códigos de respaldo',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]:
+    'Códigos de respaldo obtenidos exitosamente',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     '{count} códigos de respaldo restantes',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:

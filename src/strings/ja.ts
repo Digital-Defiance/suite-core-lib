@@ -254,6 +254,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     'バックアップコードの取得に失敗しました',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]:
     'バックアップコードの生成に失敗しました',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]:
+    'バックアップコードを正常に取得しました',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     '{count} バックアップコードが残っています',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:

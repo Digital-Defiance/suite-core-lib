@@ -242,6 +242,8 @@ export const britishEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Failed to fetch backup codes',
   [SuiteCoreStringKey.BackupCodes_FailedToGenerate]:
     'Failed to generate backup codes',
+  [SuiteCoreStringKey.BackupCodes_RetrievedSuccess]:
+    'Backup codes retrieved successfully',
   [SuiteCoreStringKey.BackupCodeRecovery_CodesRemainingTemplate]:
     '{count} backup codes remaining',
   [SuiteCoreStringKey.BackupCodeRecovery_GenerateNewCodes]:
