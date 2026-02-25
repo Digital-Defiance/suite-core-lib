@@ -686,40 +686,90 @@ describe('User Management', () => {
 
 ## ChangeLog
 
-### v4.19.11 version sync with major/minor version bump but no substantive changes
+### v4.19.11
 
-### v3.10.x (v3.10.0 - v3.10.20)
+- Version sync release with major/minor version bump; no substantive code changes
 
-**String Key Enum Registration & translateStringKey Support**
+### v3.13.4 – v3.13.8
 
-- Added `registerStringKeyEnum(SuiteCoreStringKey)` during engine initialization
+**Branded Constants & Storage Interfaces**
+
+- Added `branded-constants.ts` with runtime validation for `ICoreConstants` and `IConstants` using `@digitaldefiance/branded-interface` (v3.13.4)
+- Added property-based tests for branded constants: core constants, site constants, serialization round-trip, and constants composition (v3.13.4)
+- Dependency updates (v3.13.5)
+- Added `src/interfaces/storage/` module with shared document store types promoted from brightchain-db: `FilterQuery<T>`, `UpdateQuery<T>`, `ICollection<T>`, `IDatabase`, `IDatabaseLifecycleHooks`, `IClientSession`, and branded document type specs (v3.13.6)
+- Added new string keys and type-identity property tests (v3.13.7)
+- Dependency updates (v3.13.8)
+
+### v3.13.1 – v3.13.3
+
+**I18n Component Package Constants & Interface**
+
+- Added `ISuiteCoreI18nConstants` interface for type-safe i18n template constants (`Site`, `SiteTagline`, `SiteDescription`, `SiteEmailDomain`, `SiteHostname`, `EmailTokenResendIntervalMinutes`) (v3.13.1)
+- Enriched `createSuiteCoreComponentPackage()` to include CORE constants in the component package (v3.13.1)
+- Updated i18n-setup with improved initialization and README documentation (v3.13.2)
+- Added `i18n-component-package` tests (v3.13.2)
+- Dependency updates (v3.13.3)
+
+### v3.12.1 – v3.12.12
+
+**Component Package Support & New Strings**
+
+- Updated README examples to use `LanguageCodes` and realistic string keys (v3.12.1)
+- Added `createSuiteCoreComponentPackage()` returning `I18nComponentPackage` for use with `createI18nSetup` library components (v3.12.5)
+- Added `i18n-component-package` test suite (v3.12.5)
+- Dependency updates (v3.12.10, v3.12.11)
+- Added Let's Encrypt error string keys (`Error_LetsEncryptMaintainerEmailRequired`, `Error_LetsEncryptHostnamesRequired`, `Error_LetsEncryptInvalidHostnameTemplate`) with translations in all 8 languages (v3.12.12)
+
+### v3.10.20 – v3.10.31
+
+**String Key Migration Tests & API Message Response**
+
+- Added `registerStringKeyEnum(SuiteCoreStringKey)` during engine initialization (v3.10.20–v3.10.25)
 - Updated `getSuiteCoreTranslation()` to use `translateStringKey()` for automatic component ID resolution
 - Updated `safeGetSuiteCoreTranslation()` to use `safeTranslateStringKey()`
-- Changed `SuiteCoreComponentStrings` to use `BrandedMasterStringsCollection<typeof SuiteCoreStringKey>` for type-safe branded enum support
+- Added comprehensive `i18n-string-key-migration` test suite (400+ lines) and updated translatable-suite error tests (v3.10.25)
+- Dependency updates (v3.10.26, v3.10.30)
+- Added `IApiMessageResponse` interface for base API response structure (v3.10.31)
+
+### v3.10.0 – v3.10.10
+
+**Branded String Key Enum Support**
+
+- Changed `SuiteCoreComponentStrings` to use `BrandedMasterStringsCollection<typeof SuiteCoreStringKey>` for type-safe branded enum support (v3.10.0–v3.10.2)
 - Upgraded `@digitaldefiance/ecies-lib` from 4.15.6 to 4.16.20
 - Upgraded `@digitaldefiance/i18n-lib` from 4.0.5 to 4.2.20
+- Dependency updates (v3.10.3 – v3.10.10)
 
-### v3.9.0
+### v3.9.1 – v3.9.5
 
-**Showcase Application**
+- Removed `yarn.lock` and `showcase/yarn.lock` from the repository (v3.9.1)
+- Dependency updates (v3.9.2 – v3.9.5)
 
-- Added interactive showcase application for demonstrating suite-core-lib features
-- Deployed to GitHub Pages
+### v3.8.0 – v3.8.1
 
-### v3.8.0
+**I18n Branded Enum Support**
 
-**I18n Improvements**
+- Upgraded i18n-lib with branded enum support; updated i18n-setup, string files, and test suite for new branded patterns (v3.8.0)
+- Dependency updates (v3.8.1)
 
-- Upgraded i18n-lib with branded enum support
-- Improved type safety in translation functions
-
-### v3.7.0
+### v3.7.0 – v3.7.8
 
 **ECIES Integration Updates**
 
-- Upgraded ecies-lib to latest version
-- Improved ID provider integration
-- Enhanced type safety for generic ID types
+- Upgraded `@digitaldefiance/ecies-lib` to 4.13.0 (v3.7.0)
+- Dependency updates (v3.7.1 – v3.7.8)
+
+### Versions 3.6.7 – 3.6.50
+
+**Showcase App, Test Overhaul & Dependency Updates**
+
+- Added interactive showcase application for demonstrating suite-core-lib features, deployed to GitHub Pages (v3.6.20–v3.6.30)
+- Major test suite overhaul: rewrote and expanded integration, interface, builder, validator, formatter, and local-storage-manager tests (v3.6.10–v3.6.20)
+- Improved README documentation and added `tsconfig.eslint.json` (v3.6.7–v3.6.10)
+- Added `ISuccessMessage`, `IUserSettings` interfaces and hydrate/dehydrate methods (v3.6.30–v3.6.50)
+- Added new i18n string keys across all 8 languages (v3.6.30–v3.6.50)
+- Continuous dependency updates throughout
 
 ## v3.6.6
 
