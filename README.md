@@ -686,6 +686,8 @@ describe('User Management', () => {
 
 ## ChangeLog
 
+### v4.19.11 version sync with major/minor version bump but no substantive changes
+
 ### v3.10.x (v3.10.0 - v3.10.20)
 
 **String Key Enum Registration & translateStringKey Support**
