@@ -411,6 +411,11 @@ export interface CollectionSchema {
   validationLevel?: 'strict' | 'moderate' | 'off';
   /** What to do on failure: 'error' = throw, 'warn' = log and continue */
   validationAction?: 'error' | 'warn';
+  /**
+   * Indexes to create automatically when the schema is applied to a collection.
+   * Each entry specifies the field(s) and options (e.g. unique constraint).
+   */
+  indexes?: Array<{ fields: IndexSpec; options?: IndexOptions }>;
 }
 
 /**
