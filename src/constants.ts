@@ -141,47 +141,13 @@ export const CORE: ICoreConstants = Object.freeze({
    * The site description. Overridden by specific site constants.
    */
   SiteDescription: 'Description of the new site' as const,
-  /**
-   * Email domain of usernames on the site. Overridden by specific site constants.
-   */
-  SiteEmailDomain: 'localhost' as const,
-  /**
-   * The hostname of the site. Overridden by specific site constants.
-   */
-  SiteHostname: 'localhost' as const,
 } as const);
 
 export const createConstants: (
-  siteDomain: string,
-  siteHostname: string,
   overrides?: Partial<IConstants>,
-) => IConstants = (
-  siteDomain: string,
-  siteHostname: string,
-  overrides?: Partial<IConstants>,
-) => {
+) => IConstants = (overrides?: Partial<IConstants>) => {
   return Object.freeze({
     ...CORE,
-    /**
-     * The email of the administrator user/admin contact
-     */
-    AdministratorEmail: `admin@${siteDomain}` as const,
-    /**
-     * The email of the test user.
-     */
-    MemberEmail: `test@${siteDomain}` as const,
-    /**
-     * The email of the system user.
-     */
-    SystemEmail: `system@${siteDomain}` as const,
-    /**
-     * The email domain of usernames on the site.
-     */
-    SiteEmailDomain: siteDomain,
-    /**
-     * The hostname of the site.
-     */
-    SiteHostname: siteHostname,
     /**
      * The color used to indicate success states.
      */
@@ -226,4 +192,4 @@ export const createConstants: (
   } as const);
 };
 
-export const Constants = createConstants('localhost', 'localhost');
+export const Constants = createConstants();

@@ -16,10 +16,6 @@ export interface ISuiteCoreI18nConstants extends II18nConstants {
   SiteTagline: string;
   /** Site description, used in `{SiteDescription}` template variables */
   SiteDescription: string;
-  /** Email domain, used in `{SiteEmailDomain}` template variables */
-  SiteEmailDomain: string;
-  /** Hostname, used in `{SiteHostname}` template variables */
-  SiteHostname: string;
   /** Token resend interval in minutes, used in `{EmailTokenResendIntervalMinutes}` */
   EmailTokenResendIntervalMinutes: number;
 }

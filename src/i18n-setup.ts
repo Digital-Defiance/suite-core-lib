@@ -122,8 +122,6 @@ export function createSuiteCoreComponentPackage(): I18nComponentPackage {
     Site: CORE.Site,
     SiteTagline: CORE.SiteTagline,
     SiteDescription: CORE.SiteDescription,
-    SiteEmailDomain: CORE.SiteEmailDomain,
-    SiteHostname: CORE.SiteHostname,
     EmailTokenResendIntervalMinutes: CORE.EmailTokenResendIntervalMinutes,
   };
   return {
