@@ -137,6 +137,13 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     '無効なインデックスパス：ベースディレクトリを超えています',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
     '無効なアセットパス：ベースディレクトリを超えています',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'React index.htmlがdistディレクトリに見つかりません',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: 'APIルートが見つかりません',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    '{url}の静的ファイルを提供しようとしています',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    '静的ファイルの提供エラー：{error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     '必須の環境変数が見つかりません：{key}',
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -155,6 +162,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]:
     'フィールドの検証済みデータがありません: {field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]: '無効な助記詞の形式',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]:
+    'このニーモニックはすでに使用されています',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     '以下は、API .env ファイルに追加する必要がある認証情報です',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: '.env 認証情報の終了',

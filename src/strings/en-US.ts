@@ -98,6 +98,13 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Invalid index path: escapes base directory',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
     'Invalid assets path: escapes base directory',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'React index.html not found in dist directory',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: 'API route not found',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    'Trying to serve static for {url}',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    'Error serving static file: {error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     'Missing required environment variable: {key}',
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -145,6 +152,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]:
     'Missing validated data for field: {field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Invalid mnemonic format',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]:
+    'This mnemonic is already in use',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     'Below are the credentials to add to your API .env file',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: 'End of .env credentials',

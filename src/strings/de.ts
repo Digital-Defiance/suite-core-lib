@@ -74,6 +74,13 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Ungültiger Index-Pfad: verlässt Basisverzeichnis',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
     'Ungültiger Asset-Pfad: verlässt Basisverzeichnis',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'React index.html nicht im dist-Verzeichnis gefunden',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: 'API-Route nicht gefunden',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    'Versuche statische Datei bereitzustellen für {url}',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    'Fehler beim Bereitstellen der statischen Datei: {error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     'Erforderliche Umgebungsvariable fehlt: {key}',
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -154,6 +161,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]:
     'Fehlende validierte Daten für Feld: {field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Ungültiges Mnemoformat',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]:
+    'Diese Mnemonik wird bereits verwendet',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     'Unten sind die Zugangsdaten, die Sie Ihrer API .env-Datei hinzufügen müssen',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: 'Ende der .env-Zugangsdaten',

@@ -65,10 +65,6 @@ describe('ISuiteCoreI18nConstants type safety', () => {
     expect(typeof constants.SiteTagline).toBe('string');
     expect(constants.SiteDescription).toBeDefined();
     expect(typeof constants.SiteDescription).toBe('string');
-    expect(constants.SiteEmailDomain).toBeDefined();
-    expect(typeof constants.SiteEmailDomain).toBe('string');
-    expect(constants.SiteHostname).toBeDefined();
-    expect(typeof constants.SiteHostname).toBe('string');
     expect(constants.EmailTokenResendIntervalMinutes).toBeDefined();
     expect(typeof constants.EmailTokenResendIntervalMinutes).toBe('number');
   });
@@ -89,8 +85,6 @@ describe('ISuiteCoreI18nConstants type safety', () => {
       'Site',
       'SiteTagline',
       'SiteDescription',
-      'SiteEmailDomain',
-      'SiteHostname',
       'EmailTokenResendIntervalMinutes',
     ];
     for (const key of requiredKeys) {

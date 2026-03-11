@@ -70,6 +70,13 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Недійсний шлях індексу: виходить за межі базового каталогу',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
     'Недійсний шлях ресурсів: виходить за межі базового каталогу',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'React index.html не знайдено в каталозі dist',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: 'Маршрут API не знайдено',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    'Спроба обслуговування статичного файлу для {url}',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    'Помилка обслуговування статичного файлу: {error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     "Відсутня обов'язкова змінна середовища: {key}",
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -152,6 +159,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]:
     'Відсутні валідовані дані для поля: {field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]: 'Недійсний формат мнемоніки',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]:
+    'Ця мнемоніка вже використовується',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     'Нижче наведено облікові дані, які потрібно додати до файлу API .env',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: 'Кінець облікових даних .env',

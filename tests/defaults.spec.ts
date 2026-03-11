@@ -8,7 +8,6 @@ describe('Suite Core Runtime Configuration Registry', () => {
   it('should return the default configuration', () => {
     const config = getSuiteCoreRuntimeConfiguration();
     expect(config).toBeDefined();
-    expect(config.AdministratorEmail).toBe('admin@localhost');
     expect(config.BcryptRounds).toBe(10);
     expect(config.BACKUP_CODES).toBeDefined();
     expect(config.BACKUP_CODES.Count).toBe(10);
@@ -16,15 +15,9 @@ describe('Suite Core Runtime Configuration Registry', () => {
 
   it('should allow registering and retrieving a custom configuration', () => {
     const customKey = Symbol('custom-suite-core-config');
-    registerSuiteCoreRuntimeConfiguration(
-      customKey,
-      'example.com',
-      'example.com',
-      { BcryptRounds: 12 },
-    );
+    registerSuiteCoreRuntimeConfiguration(customKey, { BcryptRounds: 12 });
     const customConfig = getSuiteCoreRuntimeConfiguration(customKey);
     expect(customConfig.BcryptRounds).toBe(12);
-    expect(customConfig.AdministratorEmail).toBe('admin@example.com');
   });
 
   it('should deeply freeze the configuration objects', () => {
@@ -35,29 +28,19 @@ describe('Suite Core Runtime Configuration Registry', () => {
 
   it('should apply overrides correctly', () => {
     const overrides = {
-      AdministratorEmail: 'root@custom.org',
       BcryptRounds: 20,
     };
-    const config = createSuiteCoreRuntimeConfiguration(
-      'custom.org',
-      'custom.org',
-      overrides,
-    );
-    expect(config.AdministratorEmail).toBe('root@custom.org');
+    const config = createSuiteCoreRuntimeConfiguration(overrides);
     expect(config.BcryptRounds).toBe(20);
   });
 
   it('should handle undefined overrides', () => {
-    const config = createSuiteCoreRuntimeConfiguration(
-      'test.com',
-      'test.com',
-      undefined,
-    );
-    expect(config.AdministratorEmail).toBe('admin@test.com');
+    const config = createSuiteCoreRuntimeConfiguration(undefined);
+    expect(config.BcryptRounds).toBe(10);
   });
 
   it('should clone RegExp correctly', () => {
-    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com');
+    const config = createSuiteCoreRuntimeConfiguration();
     expect(config.UsernameRegex).toBeInstanceOf(RegExp);
     expect(config.UsernameRegex.source).toBe(/^[A-Za-z0-9]{3,30}$/.source);
   });
@@ -65,27 +48,23 @@ describe('Suite Core Runtime Configuration Registry', () => {
   it('should register with default key when no key provided', () => {
     const config = registerSuiteCoreRuntimeConfiguration();
     expect(config).toBeDefined();
-    expect(config.AdministratorEmail).toBe('admin@localhost');
   });
 
   it('should handle null values in deepClone', () => {
-    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com', {
-      AdministratorEmail: undefined as unknown as string,
+    const config = createSuiteCoreRuntimeConfiguration({
+      BcryptRounds: undefined as unknown as number,
     });
     expect(config).toBeDefined();
   });
 
   it('should handle Date objects in deepClone', () => {
-    const config = createSuiteCoreRuntimeConfiguration('test.com', 'test.com');
+    const config = createSuiteCoreRuntimeConfiguration();
     expect(config).toBeDefined();
   });
 
   describe('Type safety improvements', () => {
     it('should deep clone nested objects without type casts', () => {
-      const config = createSuiteCoreRuntimeConfiguration(
-        'test.com',
-        'test.com',
-      );
+      const config = createSuiteCoreRuntimeConfiguration();
       expect(config).toBeDefined();
       expect(config.BACKUP_CODES).toBeDefined();
       expect(config.BACKUP_CODES.Count).toBe(10);
@@ -96,22 +75,13 @@ describe('Suite Core Runtime Configuration Registry', () => {
     it('should apply overrides with proper type safety', () => {
       const overrides = {
         BcryptRounds: 15,
-        AdministratorEmail: 'test@example.com',
       };
-      const config = createSuiteCoreRuntimeConfiguration(
-        'example.com',
-        'example.com',
-        overrides,
-      );
+      const config = createSuiteCoreRuntimeConfiguration(overrides);
       expect(config.BcryptRounds).toBe(15);
-      expect(config.AdministratorEmail).toBe('test@example.com');
     });
 
     it('should deep freeze nested objects without type casts', () => {
-      const config = createSuiteCoreRuntimeConfiguration(
-        'test.com',
-        'test.com',
-      );
+      const config = createSuiteCoreRuntimeConfiguration();
       expect(Object.isFrozen(config)).toBe(true);
       expect(Object.isFrozen(config.BACKUP_CODES)).toBe(true);
 
@@ -122,13 +92,8 @@ describe('Suite Core Runtime Configuration Registry', () => {
     });
 
     it('should handle primitive values in deep clone', () => {
-      const config = createSuiteCoreRuntimeConfiguration(
-        'test.com',
-        'test.com',
-      );
+      const config = createSuiteCoreRuntimeConfiguration();
       expect(typeof config.BcryptRounds).toBe('number');
-      expect(typeof config.AdministratorEmail).toBe('string');
-      expect(typeof config.SiteHostname).toBe('string');
     });
   });
 });

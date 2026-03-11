@@ -61,6 +61,13 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
     '索引路径无效：超出基础目录',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
     '资源路径无效：超出基础目录',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'dist目录中未找到React index.html',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: '未找到API路由',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    '正在尝试为{url}提供静态文件',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    '提供静态文件时出错：{error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     '缺少必需的环境变量：{key}',
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -135,6 +142,7 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Validation_MissingValidatedDataForFieldTemplate]:
     '字段缺少验证数据：{field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]: '助记词格式无效',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]: '此助记词已被使用',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     '以下是需要添加到您的 API .env 文件中的凭据',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: '.env 凭据结束',

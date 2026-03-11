@@ -150,13 +150,10 @@ describe('Constants Module', () => {
         'BcryptRounds',
         'AdministratorUser',
         'AdministratorRole',
-        'AdministratorEmail',
         'MemberRole',
-        'MemberEmail',
         'MemberUser',
         'SystemRole',
         'SystemUser',
-        'SystemEmail',
         'UsernameMinLength',
         'UsernameMaxLength',
         'UsernameRegex',
@@ -218,30 +215,16 @@ describe('Constants Module', () => {
       it('should have correct administrator configuration', () => {
         expect(constants.AdministratorUser).toBe('admin');
         expect(constants.AdministratorRole).toBe(Role.Admin);
-        expect(constants.AdministratorEmail).toBe(`admin@${testDomain}`);
       });
 
       it('should have correct member configuration', () => {
         expect(constants.MemberUser).toBe('test');
         expect(constants.MemberRole).toBe(Role.Member);
-        expect(constants.MemberEmail).toBe(`test@${testDomain}`);
       });
 
       it('should have correct system configuration', () => {
         expect(constants.SystemUser).toBe('system');
         expect(constants.SystemRole).toBe(Role.System);
-        expect(constants.SystemEmail).toBe(`system@${testDomain}`);
-      });
-
-      it('should use the provided domain in email addresses', () => {
-        const customDomain = 'custom-domain.org';
-        const customConstants = createConstants(customDomain, customDomain);
-
-        expect(customConstants.AdministratorEmail).toBe(
-          `admin@${customDomain}`,
-        );
-        expect(customConstants.MemberEmail).toBe(`test@${customDomain}`);
-        expect(customConstants.SystemEmail).toBe(`system@${customDomain}`);
       });
     });
 
@@ -452,63 +435,12 @@ describe('Constants Module', () => {
         (constants as Record<string, unknown>).BcryptRounds = 999;
       }).toThrow();
     });
-    it('should create consistent objects for same domain', () => {
-      const constants1 = createConstants(testDomain, testDomain);
-      const constants2 = createConstants(testDomain, testDomain);
-
-      expect(constants1).toEqual(constants2);
-      expect(constants1.AdministratorEmail).toBe(constants2.AdministratorEmail);
-      expect(constants1.MemberEmail).toBe(constants2.MemberEmail);
-      expect(constants1.SystemEmail).toBe(constants2.SystemEmail);
-    });
-
-    it('should create different email addresses for different domains', () => {
-      const domain1 = 'example.com';
-      const domain2 = 'test.org';
-
-      const constants1 = createConstants(domain1, domain1);
-      const constants2 = createConstants(domain2, domain2);
-
-      expect(constants1.AdministratorEmail).not.toBe(
-        constants2.AdministratorEmail,
-      );
-      expect(constants1.MemberEmail).not.toBe(constants2.MemberEmail);
-      expect(constants1.SystemEmail).not.toBe(constants2.SystemEmail);
-
-      expect(constants1.AdministratorEmail).toBe(`admin@${domain1}`);
-      expect(constants2.AdministratorEmail).toBe(`admin@${domain2}`);
-    });
-
-    describe('edge cases and error conditions', () => {
-      it('should handle empty domain string', () => {
-        const constants = createConstants('', '');
-        expect(constants.AdministratorEmail).toBe('admin@');
-        expect(constants.MemberEmail).toBe('test@');
-        expect(constants.SystemEmail).toBe('system@');
-      });
-
-      it('should handle domain with special characters', () => {
-        const specialDomain = 'test-domain.co.uk';
-        const constants = createConstants(specialDomain, specialDomain);
-        expect(constants.AdministratorEmail).toBe(`admin@${specialDomain}`);
-        expect(constants.MemberEmail).toBe(`test@${specialDomain}`);
-        expect(constants.SystemEmail).toBe(`system@${specialDomain}`);
-      });
-
-      it('should handle very long domain names', () => {
-        const longDomain = 'a'.repeat(100) + '.com';
-        const constants = createConstants(longDomain, longDomain);
-        expect(constants.AdministratorEmail).toBe(`admin@${longDomain}`);
-        expect(constants.MemberEmail).toBe(`test@${longDomain}`);
-        expect(constants.SystemEmail).toBe(`system@${longDomain}`);
-      });
-    });
 
     describe('type safety and const assertions', () => {
       it('should have readonly properties due to const assertions', () => {
         // These tests verify that the const assertions are working
         // TypeScript should treat these as literal types, not just numbers
-        const constTest = createConstants('test.com', 'test.com');
+        const constTest = createConstants();
 
         // The values should be the exact literals, not just any number
         expect(constTest.DefaultExpireMemoryMnemonicSeconds).toBe(300);
@@ -526,7 +458,7 @@ describe('Constants Module', () => {
       });
 
       it('should have string literal types for user/role constants', () => {
-        const constTest = createConstants('test.com', 'test.com');
+        const constTest = createConstants();
 
         expect(constTest.AdministratorUser).toBe('admin');
         expect(constTest.MemberUser).toBe('test');
@@ -582,7 +514,7 @@ describe('Constants Module', () => {
         const customBcryptRounds = 15;
         const customTokenExpiration = 7200000; // 2 hours
 
-        const constants = createConstants('test.com', 'test.com', {
+        const constants = createConstants({
           BcryptRounds: customBcryptRounds,
           EmailTokenExpiration: customTokenExpiration,
         });
@@ -596,24 +528,23 @@ describe('Constants Module', () => {
       });
 
       it('should handle partial overrides', () => {
-        const constants = createConstants('test.com', 'test.com', {
+        const constants = createConstants({
           BcryptRounds: 12,
         });
 
         expect(constants.BcryptRounds).toBe(12);
         expect(constants.EmailTokenExpiration).toBe(86400000); // default
-        expect(constants.AdministratorEmail).toBe('admin@test.com');
       });
 
       it('should handle empty overrides', () => {
-        const constants1 = createConstants('test.com', 'test.com', {});
-        const constants2 = createConstants('test.com', 'test.com');
+        const constants1 = createConstants({});
+        const constants2 = createConstants();
 
         expect(constants1).toEqual(constants2);
       });
 
       it('should handle undefined overrides', () => {
-        const constants = createConstants('test.com', 'test.com', undefined);
+        const constants = createConstants(undefined);
 
         expect(constants.BcryptRounds).toBe(10); // default
         expect(constants.EmailTokenExpiration).toBe(86400000); // default
@@ -621,7 +552,7 @@ describe('Constants Module', () => {
 
       it('should allow regex overrides', () => {
         const customUsernameRegex = /^[a-zA-Z0-9_]{4,25}$/;
-        const constants = createConstants('test.com', 'test.com', {
+        const constants = createConstants({
           UsernameRegex: customUsernameRegex,
         });
 
@@ -643,14 +574,8 @@ describe('Constants Module', () => {
       expect(Constants).toHaveProperty('BcryptRounds');
     });
 
-    it('should use localhost as default domain', () => {
-      expect(Constants.AdministratorEmail).toBe('admin@localhost');
-      expect(Constants.MemberEmail).toBe('test@localhost');
-      expect(Constants.SystemEmail).toBe('system@localhost');
-    });
-
     it('should have the same structure as createConstants result', () => {
-      const created = createConstants('localhost', 'localhost');
+      const created = createConstants();
       expect(Constants).toEqual(created);
     });
 

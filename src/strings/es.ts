@@ -71,6 +71,13 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Ruta de índice inválida: escapa del directorio base',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
     'Ruta de recursos inválida: escapa del directorio base',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'React index.html no encontrado en el directorio dist',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: 'Ruta de API no encontrada',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    'Intentando servir archivo estático para {url}',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    'Error al servir archivo estático: {error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     'Falta la variable de entorno requerida: {key}',
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -154,6 +161,8 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Faltan datos validados para el campo: {field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]:
     'Formato de mnemónico inválido',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]:
+    'Este mnemónico ya está en uso',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     'A continuación se muestran las credenciales para agregar a su archivo .env de API',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: 'Fin de las credenciales .env',

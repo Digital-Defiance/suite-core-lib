@@ -72,7 +72,14 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Error_InvalidIndexPathEscapesBaseDirectory]:
     'Ruta de índice inválida: escapa del directorio base',
   [SuiteCoreStringKey.Error_InvalidAssetsPathEscapesBaseDirectory]:
-    'Ruta de recursos inválida: escapa del directorio base',
+    'Chemin des ressources invalide : dépasse le répertoire de base',
+  [SuiteCoreStringKey.Error_ReactIndexHtmlNotFoundInDistDirectory]:
+    'React index.html introuvable dans le répertoire dist',
+  [SuiteCoreStringKey.Error_ApiRouteNotFound]: 'Route API introuvable',
+  [SuiteCoreStringKey.Debug_TryingToServeStaticFor]:
+    'Tentative de servir le fichier statique pour {url}',
+  [SuiteCoreStringKey.Debug_ErrorServingStaticFile]:
+    'Erreur lors du service du fichier statique : {error}',
   [SuiteCoreStringKey.Error_MissingRequiredEnvironmentVariableTemplate]:
     "Variable d'environnement requise manquante : {key}",
   [SuiteCoreStringKey.Error_EmptyEnvironmentVariableTemplate]:
@@ -161,6 +168,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Données validées manquantes pour le champ: {field}',
   [SuiteCoreStringKey.Validation_MnemonicRegex]:
     'Format de mnémonique invalide',
+  [SuiteCoreStringKey.Validation_MnemonicInUse]:
+    'Ce mnémonique est déjà utilisé',
   [SuiteCoreStringKey.Admin_DotEnvFormat]:
     'Voici les identifiants à ajouter à votre fichier API .env',
   [SuiteCoreStringKey.Admin_EndDotEnvFormat]: 'Fin des identifiants .env',
