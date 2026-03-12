@@ -218,7 +218,7 @@ describe('Constants Module', () => {
       });
 
       it('should have correct member configuration', () => {
-        expect(constants.MemberUser).toBe('test');
+        expect(constants.MemberUser).toBe('member');
         expect(constants.MemberRole).toBe(Role.Member);
       });
 
@@ -461,7 +461,7 @@ describe('Constants Module', () => {
         const constTest = createConstants();
 
         expect(constTest.AdministratorUser).toBe('admin');
-        expect(constTest.MemberUser).toBe('test');
+        expect(constTest.MemberUser).toBe('member');
         expect(constTest.SystemUser).toBe('system');
         expect(constTest.AdministratorRole).toBe(Role.Admin);
         expect(constTest.MemberRole).toBe(Role.Member);

@@ -71,9 +71,9 @@ export const CORE: ICoreConstants = Object.freeze({
    */
   MemberRole: Role.Member as const,
   /**
-   * The username of the test user.
+   * The username of the member user.
    */
-  MemberUser: 'test' as const,
+  MemberUser: 'member' as const,
   /**
    * The name of the system role.
    */
