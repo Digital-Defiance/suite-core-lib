@@ -83,6 +83,29 @@ export const CORE: ICoreConstants = Object.freeze({
    */
   SystemUser: 'system' as const,
   /**
+   * Email validation regex (RFC 5322 simplified)
+   */
+  EmailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  /**
+   * Enable display names
+   */
+  EnableDisplayName: true as const,
+  /**
+   * Minimum display name length
+   */
+  DisplayNameMinLength: 2 as const,
+  /**
+   * Maximum display name length
+   */
+  DisplayNameMaxLength: 255 as const,
+  /**
+   * DisplayNameRegex: Allows Unicode letters, numbers, spaces, hyphens, apostrophes, and periods.
+   * Must start and end with a letter, mark, or number (no leading/trailing whitespace or punctuation).
+   * Minimum 2 characters.
+   */
+  DisplayNameRegex:
+    /^[\p{L}\p{M}\p{N}][\p{L}\p{M}\p{N}\p{Zs}\-'.]{0,253}[\p{L}\p{M}\p{N}]$/u,
+  /**
    * Minimum username length
    */
   UsernameMinLength: 3 as const,

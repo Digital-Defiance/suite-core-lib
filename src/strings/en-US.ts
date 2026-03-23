@@ -291,6 +291,7 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: 'Description',
   [SuiteCoreStringKey.Common_Disabled]: 'Disabled',
   [SuiteCoreStringKey.Common_Email]: 'Email Address',
+  [SuiteCoreStringKey.Common_DisplayName]: 'Display Name',
   [SuiteCoreStringKey.Common_EmailVerification]: 'Email Verification',
   [SuiteCoreStringKey.Common_Enabled]: 'Enabled',
   [SuiteCoreStringKey.Common_Expiration]: 'Expiration',
@@ -762,5 +763,11 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Username must be at least {UsernameMinLength} characters',
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     'Username must be {UsernameMinLength}-{UsernameMaxLength} characters long and contain only letters and numbers',
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    'Diplay Name must be at most {DisplayNameMaxLength} characters',
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    'Display Name must be at least {DisplayNameMinLength} characters',
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    'Display Name must be {DisplayNameMinLength}-{DisplayNameMaxLength} characters long and contain only letters, numbers, and spaces',
   [SuiteCoreStringKey.Validation_UserNotFound]: 'User not found or inactive',
 };

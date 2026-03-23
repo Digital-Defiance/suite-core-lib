@@ -31,6 +31,10 @@ export interface IUserBase<
    */
   email: string;
   /**
+   * The optional display name of the user
+   */
+  displayName?: string;
+  /**
    * The public key for the user
    */
   publicKey: string;

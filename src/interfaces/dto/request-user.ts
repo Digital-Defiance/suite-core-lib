@@ -13,6 +13,7 @@ export interface IRequestUserDTO {
   username: string;
   email: string;
   emailVerified: boolean;
+  displayName?: string;
   lastLogin?: string;
   // IUserSettingsDTO
   timezone: string;

@@ -183,6 +183,7 @@ enum SuiteCoreStringKeyEnum {
   Common_Disabled = 'common_disabled',
   Common_Disconnected = 'common_disconnected',
   Common_Email = 'common_email',
+  Common_DisplayName = 'common_displayName',
   Common_EmailVerification = 'common_emailVerification',
   Common_Enabled = 'common_enabled',
   Common_Expiration = 'common_expiration',
@@ -516,6 +517,9 @@ enum SuiteCoreStringKeyEnum {
   Validation_UsernameMinLengthTemplate = 'validation_usernameMinLengthTemplate',
   Validation_UsernameOrEmailRequired = 'validation_usernameOrEmailRequired',
   Validation_UsernameRegexErrorTemplate = 'validation_usernameRegexErrorTemplate',
+  Validation_DisplayNameMaxLengthTemplate = 'validation_displayNameMaxLengthTemplate',
+  Validation_DisplayNameMinLengthTemplate = 'validation_displayNameMinLengthTemplate',
+  Validation_DisplayNameRegexErrorTemplate = 'valiation_displayNameRegexErrorTemplate',
   Validation_UserNotFound = 'validation_userNotFound',
   ValidationError = 'validationError',
 }

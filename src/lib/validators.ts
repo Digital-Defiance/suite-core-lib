@@ -4,19 +4,28 @@
 import { CORE } from '../constants';
 
 /**
- * Email validation regex (RFC 5322 simplified)
- */
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-/**
  * Validate email format
  */
 export function isValidEmail(email: string): boolean {
-  return EMAIL_REGEX.test(email);
+  return CORE.EmailRegex.test(email);
+}
+
+/**
+ * Validate display name format using constants
+ * @param displayName
+ * @returns True if valid
+ * @see CORE.DisplayNameRegex
+ */
+export function isValidDisplayName(displayName: string): boolean {
+  if (!CORE.EnableDisplayName)
+    return displayName === undefined || displayName === '';
+  if (displayName === undefined || displayName === '') return true; // optional field
+  return CORE.DisplayNameRegex.test(displayName);
 }
 
 /**
  * Validate username format using constants
+ * @see CORE.UsernameRegex
  */
 export function isValidUsername(username: string): boolean {
   return CORE.UsernameRegex.test(username);

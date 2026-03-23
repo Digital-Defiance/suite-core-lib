@@ -303,6 +303,7 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: '説明',
   [SuiteCoreStringKey.Common_Disabled]: '無効',
   [SuiteCoreStringKey.Common_Email]: 'メールアドレス',
+  [SuiteCoreStringKey.Common_DisplayName]: '表示名',
   [SuiteCoreStringKey.Common_EmailVerification]: 'メール確認',
   [SuiteCoreStringKey.Common_Enabled]: '有効',
   [SuiteCoreStringKey.Common_Expiration]: '有効期限',
@@ -781,6 +782,12 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     'ユーザー名は少なくとも{UsernameMinLength}文字必要です',
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     'ユーザー名は{UsernameMinLength}～{UsernameMaxLength}文字で、文字と数字のみを含む必要があります',
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    '表示名は{DisplayNameMaxLength}文字以内にしてください',
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    '表示名は{DisplayNameMinLength}文字以上にしてください',
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    '表示名は{DisplayNameMinLength}〜{DisplayNameMaxLength}文字で、先頭と末尾は英数字にし、英数字・スペース・ハイフン・アポストロフィ・ピリオドを使用できます',
   [SuiteCoreStringKey.Validation_UserNotFound]:
     'ユーザーが見つからないか非アクティブです',
 };

@@ -20,6 +20,7 @@ export function hydrateUserSettings(dto: IUserSettingsDTO): IUserSettings {
     siteLanguage: dto.siteLanguage,
     darkMode: dto.darkMode,
     directChallenge: dto.directChallenge,
+    ...(dto.displayName !== undefined ? { displayName: dto.displayName } : {}),
   };
 }
 
@@ -39,5 +40,8 @@ export function dehydrateUserSettings(
     siteLanguage: settings.siteLanguage,
     darkMode: settings.darkMode,
     directChallenge: settings.directChallenge,
+    ...(settings.displayName !== undefined
+      ? { displayName: settings.displayName }
+      : {}),
   };
 }

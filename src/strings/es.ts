@@ -307,6 +307,7 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: 'Descripción',
   [SuiteCoreStringKey.Common_Disabled]: 'Deshabilitado',
   [SuiteCoreStringKey.Common_Email]: 'Dirección de correo electrónico',
+  [SuiteCoreStringKey.Common_DisplayName]: 'Nombre para mostrar',
   [SuiteCoreStringKey.Common_EmailVerification]:
     'Verificación de correo electrónico',
   [SuiteCoreStringKey.Common_Enabled]: 'Habilitado',
@@ -814,6 +815,12 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'El nombre de usuario debe tener al menos {UsernameMinLength} caracteres',
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     'El nombre de usuario debe tener entre {UsernameMinLength} y {UsernameMaxLength} caracteres y contener solo letras y números',
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    'El nombre para mostrar debe tener como máximo {DisplayNameMaxLength} caracteres',
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    'El nombre para mostrar debe tener como mínimo {DisplayNameMinLength} caracteres',
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    'El nombre para mostrar debe tener entre {DisplayNameMinLength} y {DisplayNameMaxLength} caracteres, comenzar y terminar con una letra o número, y puede contener letras, números, espacios, guiones, apóstrofos y puntos',
   [SuiteCoreStringKey.Validation_UserNotFound]:
     'Usuario no encontrado o inactivo',
 };

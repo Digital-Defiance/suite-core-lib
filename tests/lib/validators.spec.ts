@@ -4,6 +4,7 @@ import {
   isNotEmpty,
   isValidBackupCodeDisplay,
   isValidBackupCodeNormalized,
+  isValidDisplayName,
   isValidEmail,
   isValidMnemonic,
   isValidPassword,
@@ -24,6 +25,27 @@ describe('Validators', () => {
       expect(isValidEmail('@example.com')).toBe(false);
       expect(isValidEmail('test @example.com')).toBe(false);
       expect(isValidEmail('')).toBe(false);
+    });
+  });
+
+  describe('isValidDisplayName', () => {
+    it('should validate correct display names', () => {
+      expect(isValidDisplayName('Test User')).toBe(true);
+      expect(isValidDisplayName('John Doe')).toBe(true);
+      expect(isValidDisplayName("O'Brien")).toBe(true);
+      expect(isValidDisplayName('Jean-Luc')).toBe(true);
+      expect(isValidDisplayName('AB')).toBe(true); // minimum 2 chars
+    });
+
+    it('should accept empty/undefined as optional field', () => {
+      expect(isValidDisplayName('')).toBe(true);
+      expect(isValidDisplayName(undefined as unknown as string)).toBe(true);
+    });
+
+    it('should reject invalid display names', () => {
+      expect(isValidDisplayName('A')).toBe(false); // too short for regex
+      expect(isValidDisplayName(' Leading')).toBe(false); // leading space
+      expect(isValidDisplayName('Trailing ')).toBe(false); // trailing space
     });
   });
 

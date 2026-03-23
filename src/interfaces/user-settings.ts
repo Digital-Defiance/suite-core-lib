@@ -11,4 +11,5 @@ export interface IUserSettings {
   siteLanguage: string;
   darkMode: boolean;
   directChallenge: boolean;
+  displayName?: string;
 }

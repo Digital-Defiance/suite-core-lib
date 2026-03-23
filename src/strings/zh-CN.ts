@@ -258,6 +258,7 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: '描述',
   [SuiteCoreStringKey.Common_Disabled]: '已禁用',
   [SuiteCoreStringKey.Common_Email]: '电子邮箱地址',
+  [SuiteCoreStringKey.Common_DisplayName]: '显示名称',
   [SuiteCoreStringKey.Common_EmailVerification]: '邮箱验证',
   [SuiteCoreStringKey.Common_Enabled]: '已启用',
   [SuiteCoreStringKey.Common_Expiration]: '过期',
@@ -663,5 +664,11 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
     '用户名必须至少有 {UsernameMinLength} 个字符',
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     '用户名必须为 {UsernameMinLength}-{UsernameMaxLength} 个字符长，只能包含字母和数字',
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    '显示名称不得超过{DisplayNameMaxLength}个字符',
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    '显示名称不得少于{DisplayNameMinLength}个字符',
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    '显示名称必须为{DisplayNameMinLength}-{DisplayNameMaxLength}个字符，以字母或数字开头和结尾，可包含字母、数字、空格、连字符、撇号和句点',
   [SuiteCoreStringKey.Validation_UserNotFound]: '未找到用户或用户不活跃',
 };

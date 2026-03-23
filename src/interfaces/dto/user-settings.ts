@@ -9,4 +9,5 @@ export interface IUserSettingsDTO {
   siteLanguage: string;
   darkMode: boolean;
   directChallenge: boolean;
+  displayName?: string;
 }

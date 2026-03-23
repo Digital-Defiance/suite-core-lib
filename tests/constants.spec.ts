@@ -127,11 +127,10 @@ describe('Constants Module', () => {
   });
 
   describe('createConstants function', () => {
-    const testDomain = 'example.com';
     let constants: IConstants;
 
     beforeEach(() => {
-      constants = createConstants(testDomain, testDomain);
+      constants = createConstants();
     });
 
     it('should return an object that conforms to IConstants interface', () => {
@@ -154,6 +153,11 @@ describe('Constants Module', () => {
         'MemberUser',
         'SystemRole',
         'SystemUser',
+        'EmailRegex',
+        'EnableDisplayName',
+        'DisplayNameMinLength',
+        'DisplayNameMaxLength',
+        'DisplayNameRegex',
         'UsernameMinLength',
         'UsernameMaxLength',
         'UsernameRegex',
@@ -225,6 +229,51 @@ describe('Constants Module', () => {
       it('should have correct system configuration', () => {
         expect(constants.SystemUser).toBe('system');
         expect(constants.SystemRole).toBe(Role.System);
+      });
+    });
+
+    describe('email validation', () => {
+      it('should have valid EmailRegex', () => {
+        const { EmailRegex } = constants;
+
+        expect(EmailRegex.test('test@example.com')).toBe(true);
+        expect(EmailRegex.test('user.name@domain.co.uk')).toBe(true);
+        expect(EmailRegex.test('user+tag@example.com')).toBe(true);
+
+        expect(EmailRegex.test('invalid')).toBe(false);
+        expect(EmailRegex.test('@example.com')).toBe(false);
+        expect(EmailRegex.test('test @example.com')).toBe(false);
+        expect(EmailRegex.test('')).toBe(false);
+      });
+    });
+
+    describe('display name validation', () => {
+      it('should have EnableDisplayName set to true by default', () => {
+        expect(constants.EnableDisplayName).toBe(true);
+      });
+
+      it('should have correct display name length constraints', () => {
+        expect(constants.DisplayNameMinLength).toBe(2);
+        expect(constants.DisplayNameMaxLength).toBe(255);
+        expect(constants.DisplayNameMinLength).toBeLessThan(
+          constants.DisplayNameMaxLength,
+        );
+      });
+
+      it('should have valid DisplayNameRegex', () => {
+        const { DisplayNameRegex } = constants;
+
+        // Valid display names
+        expect(DisplayNameRegex.test('AB')).toBe(true);
+        expect(DisplayNameRegex.test('Test User')).toBe(true);
+        expect(DisplayNameRegex.test("O'Brien")).toBe(true);
+        expect(DisplayNameRegex.test('Jean-Luc')).toBe(true);
+        expect(DisplayNameRegex.test('Dr. Smith')).toBe(true);
+
+        // Invalid display names
+        expect(DisplayNameRegex.test('A')).toBe(false); // too short
+        expect(DisplayNameRegex.test(' Leading')).toBe(false);
+        expect(DisplayNameRegex.test('Trailing ')).toBe(false);
       });
     });
 

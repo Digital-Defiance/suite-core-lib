@@ -11,6 +11,31 @@ describe('Validators with Constants', () => {
       const validators = createValidators();
       expect(validators.isValidUsername('test123')).toBe(true);
       expect(validators.isValidPassword('Test123!')).toBe(true);
+      expect(validators.isValidEmail('test@example.com')).toBe(true);
+      expect(validators.isValidEmail('invalid')).toBe(false);
+    });
+
+    it('should validate display name with default constants', () => {
+      const validators = createValidators();
+      expect(validators.isValidDisplayName('Test User')).toBe(true);
+      expect(validators.isValidDisplayName(undefined)).toBe(true);
+      expect(validators.isValidDisplayName('')).toBe(true);
+      expect(validators.isValidDisplayName('A')).toBe(false);
+    });
+
+    it('should respect EnableDisplayName flag', () => {
+      const disabledConstants: IConstants = {
+        ...CORE,
+        EnableDisplayName: false,
+        AdministratorEmail: 'admin@test.com',
+        MemberEmail: 'member@test.com',
+        SystemEmail: 'system@test.com',
+      };
+      const validators = createValidators(disabledConstants);
+      // When disabled, only undefined or empty string are valid
+      expect(validators.isValidDisplayName(undefined)).toBe(true);
+      expect(validators.isValidDisplayName('')).toBe(true);
+      expect(validators.isValidDisplayName('Some Name')).toBe(false);
     });
 
     it('should create validators with custom constants', () => {
@@ -75,6 +100,18 @@ describe('Validators with Constants', () => {
     it('should use CORE constants', () => {
       expect(defaultValidators.isValidUsername('test123')).toBe(true);
       expect(defaultValidators.isValidPassword('Test123!')).toBe(true);
+    });
+
+    it('should validate email with default constants', () => {
+      expect(defaultValidators.isValidEmail('test@example.com')).toBe(true);
+      expect(defaultValidators.isValidEmail('invalid')).toBe(false);
+    });
+
+    it('should validate display name with default constants', () => {
+      expect(defaultValidators.isValidDisplayName('Test User')).toBe(true);
+      expect(defaultValidators.isValidDisplayName(undefined)).toBe(true);
+      expect(defaultValidators.isValidDisplayName('')).toBe(true);
+      expect(defaultValidators.isValidDisplayName('A')).toBe(false); // too short for regex (needs 2 chars)
     });
   });
 

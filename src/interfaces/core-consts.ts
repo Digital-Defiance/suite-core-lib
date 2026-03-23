@@ -38,6 +38,26 @@ export interface ICoreConstants {
    */
   EmailTokenLength: number;
   /**
+   * The regular expression for valid email addresses (RFC 5322 simplified).
+   */
+  EmailRegex: RegExp;
+  /**
+   * Enable display names
+   */
+  EnableDisplayName: boolean;
+  /**
+   * Minimum display name length
+   */
+  DisplayNameMinLength: number;
+  /**
+   * Maximum display name length
+   */
+  DisplayNameMaxLength: number;
+  /**
+   * The regular expression for valid display names.
+   */
+  DisplayNameRegex: RegExp;
+  /**
    * Number of rounds for bcrypt hashing. Higher values increase security but also consume more CPU resources.
    */
   BcryptRounds: number;

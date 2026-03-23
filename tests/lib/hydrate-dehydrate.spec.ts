@@ -342,4 +342,98 @@ describe('Hydrate/Dehydrate Functions', () => {
       expect(typeof result.currency).toBe('string');
     });
   });
+
+  describe('displayName support', () => {
+    it('should hydrate displayName when present in DTO', () => {
+      const dto: IUserSettingsDTO = {
+        email: 'display@example.com',
+        timezone: 'UTC',
+        currency: 'USD',
+        siteLanguage: 'en-US',
+        darkMode: false,
+        directChallenge: false,
+        displayName: 'Test User',
+      };
+
+      const result = hydrateUserSettings(dto);
+      expect(result.displayName).toBe('Test User');
+    });
+
+    it('should not include displayName when absent from DTO', () => {
+      const dto: IUserSettingsDTO = {
+        email: 'nodisplay@example.com',
+        timezone: 'UTC',
+        currency: 'USD',
+        siteLanguage: 'en-US',
+        darkMode: false,
+        directChallenge: false,
+      };
+
+      const result = hydrateUserSettings(dto);
+      expect(result.displayName).toBeUndefined();
+    });
+
+    it('should dehydrate displayName when present in settings', () => {
+      const settings: IUserSettings = {
+        email: createEmailString('display@example.com'),
+        timezone: new Timezone('UTC'),
+        currency: new CurrencyCode('USD'),
+        siteLanguage: 'en-US',
+        darkMode: false,
+        directChallenge: false,
+        displayName: 'Dehydrated User',
+      };
+
+      const result = dehydrateUserSettings(settings);
+      expect(result.displayName).toBe('Dehydrated User');
+    });
+
+    it('should not include displayName when absent from settings', () => {
+      const settings: IUserSettings = {
+        email: createEmailString('nodisplay@example.com'),
+        timezone: new Timezone('UTC'),
+        currency: new CurrencyCode('USD'),
+        siteLanguage: 'en-US',
+        darkMode: false,
+        directChallenge: false,
+      };
+
+      const result = dehydrateUserSettings(settings);
+      expect(result.displayName).toBeUndefined();
+    });
+
+    it('should round-trip displayName through hydrate->dehydrate', () => {
+      const originalDTO: IUserSettingsDTO = {
+        email: 'roundtrip@example.com',
+        timezone: 'America/Chicago',
+        currency: 'USD',
+        siteLanguage: 'en-US',
+        darkMode: true,
+        directChallenge: true,
+        displayName: 'Round Trip User',
+      };
+
+      const hydrated = hydrateUserSettings(originalDTO);
+      const dehydrated = dehydrateUserSettings(hydrated);
+
+      expect(dehydrated).toEqual(originalDTO);
+    });
+
+    it('should round-trip without displayName through hydrate->dehydrate', () => {
+      const originalDTO: IUserSettingsDTO = {
+        email: 'roundtrip@example.com',
+        timezone: 'America/Chicago',
+        currency: 'USD',
+        siteLanguage: 'en-US',
+        darkMode: true,
+        directChallenge: true,
+      };
+
+      const hydrated = hydrateUserSettings(originalDTO);
+      const dehydrated = dehydrateUserSettings(hydrated);
+
+      expect(dehydrated).toEqual(originalDTO);
+      expect(dehydrated.displayName).toBeUndefined();
+    });
+  });
 });

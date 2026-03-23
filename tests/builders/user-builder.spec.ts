@@ -43,6 +43,21 @@ describe('UserBuilder', () => {
     expect(result).toBe(builder);
   });
 
+  it('should set displayName with withDisplayName', () => {
+    const user = UserBuilder.create()
+      .withUsername('testuser')
+      .withEmail('test@example.com')
+      .withDisplayName('Test Display Name')
+      .build();
+
+    expect(user.displayName).toBe('Test Display Name');
+  });
+
+  it('should not include displayName by default', () => {
+    const user = UserBuilder.create().build();
+    expect(user.displayName).toBeUndefined();
+  });
+
   it('should create independent instances', () => {
     const user1 = UserBuilder.create().withUsername('user1').build();
 

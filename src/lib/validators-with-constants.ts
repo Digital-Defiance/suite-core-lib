@@ -15,10 +15,29 @@ export function createValidators(
 ) {
   return {
     /**
+     * Validate email format using provided constants
+     */
+    isValidEmail(email: string): boolean {
+      return constants.EmailRegex.test(email);
+    },
+
+    /**
      * Validate username format using provided constants
      */
     isValidUsername(username: string): boolean {
       return constants.UsernameRegex.test(username);
+    },
+
+    /**
+     * Validate display name format using provided constants
+     * @param displayName
+     * @returns
+     */
+    isValidDisplayName(displayName: string | undefined): boolean {
+      if (!constants.EnableDisplayName)
+        return displayName === undefined || displayName === '';
+      if (displayName === undefined || displayName === '') return true;
+      return constants.DisplayNameRegex.test(displayName);
     },
 
     /**

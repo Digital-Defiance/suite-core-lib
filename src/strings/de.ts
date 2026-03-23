@@ -303,6 +303,7 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: 'Beschreibung',
   [SuiteCoreStringKey.Common_Disabled]: 'Deaktiviert',
   [SuiteCoreStringKey.Common_Email]: 'E-Mail-Adresse',
+  [SuiteCoreStringKey.Common_DisplayName]: 'Anzeigename',
   [SuiteCoreStringKey.Common_EmailVerification]: 'E-Mail-Verifizierung',
   [SuiteCoreStringKey.Common_Enabled]: 'Aktiviert',
   [SuiteCoreStringKey.Common_Expiration]: 'Ablauf',
@@ -808,6 +809,12 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Der Benutzername muss mindestens {UsernameMinLength} Zeichen enthalten',
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     'Der Benutzername muss zwischen {UsernameMinLength} und {UsernameMaxLength} Zeichen lang sein und darf nur Buchstaben und Zahlen enthalten',
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    'Der Anzeigename darf höchstens {DisplayNameMaxLength} Zeichen lang sein',
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    'Der Anzeigename muss mindestens {DisplayNameMinLength} Zeichen lang sein',
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    'Der Anzeigename muss {DisplayNameMinLength}-{DisplayNameMaxLength} Zeichen lang sein, mit einem Buchstaben oder einer Zahl beginnen und enden und darf Buchstaben, Zahlen, Leerzeichen, Bindestriche, Apostrophe und Punkte enthalten',
   [SuiteCoreStringKey.Validation_UserNotFound]:
     'Benutzer nicht gefunden oder inaktiv',
 };

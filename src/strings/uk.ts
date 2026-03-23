@@ -302,6 +302,7 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: 'Опис',
   [SuiteCoreStringKey.Common_Disabled]: 'Вимкнено',
   [SuiteCoreStringKey.Common_Email]: 'Електронна адреса',
+  [SuiteCoreStringKey.Common_DisplayName]: "Ім'я для відображення",
   [SuiteCoreStringKey.Common_EmailVerification]:
     'Підтвердження електронної пошти',
   [SuiteCoreStringKey.Common_Enabled]: 'Увімкнено',
@@ -798,6 +799,12 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     "Ім'я користувача має містити щонайменше {UsernameMinLength} символів",
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     "Ім'я користувача має містити від {UsernameMinLength} до {UsernameMaxLength} символів і складатися лише з літер та цифр",
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    "Ім'я для відображення має містити не більше {DisplayNameMaxLength} символів",
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    "Ім'я для відображення має містити не менше {DisplayNameMinLength} символів",
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    "Ім'я для відображення має містити від {DisplayNameMinLength} до {DisplayNameMaxLength} символів, починатися й закінчуватися літерою або цифрою та може містити літери, цифри, пробіли, дефіси, апострофи та крапки",
   [SuiteCoreStringKey.Validation_UserNotFound]:
     'Користувача не знайдено або він неактивний',
 };

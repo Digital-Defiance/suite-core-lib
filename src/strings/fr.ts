@@ -316,6 +316,7 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Common_Description]: 'Description',
   [SuiteCoreStringKey.Common_Disabled]: 'Désactivé',
   [SuiteCoreStringKey.Common_Email]: 'Adresse e-mail',
+  [SuiteCoreStringKey.Common_DisplayName]: "Nom d'affichage",
   [SuiteCoreStringKey.Common_EmailVerification]: "Vérification de l'e-mail",
   [SuiteCoreStringKey.Common_Enabled]: 'Activé',
   [SuiteCoreStringKey.Common_Expiration]: 'Expiration',
@@ -819,6 +820,12 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     "Le nom d'utilisateur doit comporter au moins {UsernameMinLength} caractères",
   [SuiteCoreStringKey.Validation_UsernameRegexErrorTemplate]:
     "Le nom d'utilisateur doit comporter entre {UsernameMinLength} et {UsernameMaxLength} caractères et ne contenir que des lettres et des chiffres",
+  [SuiteCoreStringKey.Validation_DisplayNameMaxLengthTemplate]:
+    "Le nom d'affichage doit comporter au maximum {DisplayNameMaxLength} caractères",
+  [SuiteCoreStringKey.Validation_DisplayNameMinLengthTemplate]:
+    "Le nom d'affichage doit comporter au moins {DisplayNameMinLength} caractères",
+  [SuiteCoreStringKey.Validation_DisplayNameRegexErrorTemplate]:
+    "Le nom d'affichage doit comporter {DisplayNameMinLength} à {DisplayNameMaxLength} caractères, commencer et se terminer par une lettre ou un chiffre, et peut contenir des lettres, des chiffres, des espaces, des tirets, des apostrophes et des points",
   [SuiteCoreStringKey.Validation_UserNotFound]:
     'Utilisateur non trouvé ou inactif',
 };
