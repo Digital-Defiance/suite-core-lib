@@ -652,6 +652,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Title]: 'パスワードリセット',
   [SuiteCoreStringKey.PasswordReset_Button]: 'パスワードをリセット',
   [SuiteCoreStringKey.ProceedToLogin]: 'ログインに進む',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]:
+    'リカバリーフレーズを保存しました',
   [SuiteCoreStringKey.Register_RegisterButton]: '始める',
   [SuiteCoreStringKey.RegisterButton]: '登録',
   [SuiteCoreStringKey.Registration_ConfirmPassword]: 'パスワードを確認',

@@ -670,6 +670,8 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Button]: 'Restablecer Contraseña',
   [SuiteCoreStringKey.PasswordReset_Title]: 'Restablecer Contraseña',
   [SuiteCoreStringKey.ProceedToLogin]: 'Proceder a iniciar sesión',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]:
+    'He guardado mi frase de recuperación',
   [SuiteCoreStringKey.Register_RegisterButton]: 'Comenzar',
   [SuiteCoreStringKey.RegisterButton]: 'Registrarse',
   [SuiteCoreStringKey.Registration_ConfirmPassword]: 'Confirmar contraseña',

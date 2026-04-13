@@ -677,6 +677,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Button]:
     'Envoyer le lien de réinitialisation',
   [SuiteCoreStringKey.ProceedToLogin]: 'Procéder à la connexion',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]:
+    "J'ai sauvegardé ma phrase de récupération",
   [SuiteCoreStringKey.Register_RegisterButton]: 'Commencer',
   [SuiteCoreStringKey.RegisterButton]: "S'inscrire",
   [SuiteCoreStringKey.Registration_ConfirmPassword]:

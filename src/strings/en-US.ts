@@ -636,6 +636,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Title]: 'Password Reset',
   [SuiteCoreStringKey.PasswordReset_Button]: 'Reset Password',
   [SuiteCoreStringKey.ProceedToLogin]: 'Proceed to login',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]:
+    'I Have Saved My Recovery Phrase',
   [SuiteCoreStringKey.Register_RegisterButton]: 'Get Started',
   [SuiteCoreStringKey.RegisterButton]: 'Register',
   [SuiteCoreStringKey.Registration_ConfirmPassword]: 'Confirm Password',

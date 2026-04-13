@@ -558,6 +558,7 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Title]: '重置密码',
   [SuiteCoreStringKey.PasswordReset_Button]: '发送重置链接',
   [SuiteCoreStringKey.ProceedToLogin]: '继续登录',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]: '我已保存我的恢复短语',
   [SuiteCoreStringKey.Register_RegisterButton]: '开始使用',
   [SuiteCoreStringKey.RegisterButton]: '注册',
   [SuiteCoreStringKey.Registration_ConfirmPassword]: '确认密码',

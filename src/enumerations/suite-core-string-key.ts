@@ -417,6 +417,7 @@ enum SuiteCoreStringKeyEnum {
   PasswordReset_Title = 'passwordReset_title',
   PasswordReset_Button = 'passwordReset_button',
   ProceedToLogin = 'proceedToLogin',
+  Registration_SavedRecoveryPhrase = 'registration_savedRecoveryPhrase',
   Register_RegisterButton = 'register_RegisterButton',
   RegisterButton = 'registerButton',
   Registration_ConfirmPassword = 'registration_confirmPassword',

@@ -666,6 +666,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Button]: 'Passwort zurücksetzen',
   [SuiteCoreStringKey.PasswordReset_Title]: 'Passwort Zurücksetzen',
   [SuiteCoreStringKey.ProceedToLogin]: 'Zur Anmeldung fortfahren',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]:
+    'Ich habe meine Wiederherstellungsphrase gespeichert',
   [SuiteCoreStringKey.Register_RegisterButton]: 'Loslegen',
   [SuiteCoreStringKey.RegisterButton]: 'Registrieren',
   [SuiteCoreStringKey.Registration_ConfirmPassword]: 'Passwort bestätigen',

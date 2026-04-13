@@ -665,6 +665,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.PasswordReset_Title]: 'Скидання Пароля',
   [SuiteCoreStringKey.PasswordReset_Button]: 'Скинути Пароль',
   [SuiteCoreStringKey.ProceedToLogin]: 'Перейти до входу',
+  [SuiteCoreStringKey.Registration_SavedRecoveryPhrase]:
+    'Я зберіг свою фразу відновлення',
   [SuiteCoreStringKey.Register_RegisterButton]: 'Почати',
   [SuiteCoreStringKey.RegisterButton]: 'Зареєструватися',
   [SuiteCoreStringKey.Registration_ConfirmPassword]: 'Підтвердіть пароль',
