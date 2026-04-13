@@ -21,6 +21,8 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.User_UpdateFailed]: '更新用户账户失败',
   [SuiteCoreStringKey.Validation_EmailInUse]: '电子邮件地址已被使用',
   [SuiteCoreStringKey.Validation_InvalidCredentials]: '无效的用户名或密码',
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    '不允许使用@{domain}地址注册',
   [SuiteCoreStringKey.Validation_InvalidEmail]: '无效的电子邮件地址格式',
   [SuiteCoreStringKey.Validation_InvalidJwtToken]: '无效的JWT令牌',
   [SuiteCoreStringKey.Validation_InvalidToken]: '无效的令牌',

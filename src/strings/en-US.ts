@@ -19,6 +19,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.User_NotFound]: 'User not found',
   [SuiteCoreStringKey.User_UpdateFailed]: 'Failed to update user account',
   [SuiteCoreStringKey.Validation_EmailInUse]: 'Email address is already in use',
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    'Registration with @{domain} addresses is not allowed',
   [SuiteCoreStringKey.Validation_InvalidCredentials]:
     'Invalid username or password',
   [SuiteCoreStringKey.Validation_InvalidEmail]: 'Invalid email address format',

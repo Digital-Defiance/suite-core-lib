@@ -29,6 +29,8 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'La dirección de correo electrónico ya está en uso',
   [SuiteCoreStringKey.Validation_InvalidCredentials]:
     'Nombre de usuario o contraseña inválidos',
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    'No se permite el registro con direcciones @{domain}',
   [SuiteCoreStringKey.Validation_InvalidEmail]:
     'Formato de dirección de correo electrónico inválido',
   [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Token JWT inválido',

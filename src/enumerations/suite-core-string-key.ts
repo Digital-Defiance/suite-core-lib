@@ -476,6 +476,7 @@ enum SuiteCoreStringKeyEnum {
   Validation_InvalidChallenge = 'validation_invalidChallenge',
   Validation_InvalidCredentials = 'validation_invalidCredentials',
   Validation_InvalidCurrencyCode = 'validation_invalidCurrencyCode',
+  Validation_EmailDomainNotAllowedTemplate = 'validation_emailDomainNotAllowedTemplate',
   Validation_InvalidEmail = 'validation_invalidEmail',
   Validation_InvalidEncryptedMnemonic = 'validation_invalidEncryptedMnemonic',
   Validation_InvalidGuid = 'validation_invalidGuid',

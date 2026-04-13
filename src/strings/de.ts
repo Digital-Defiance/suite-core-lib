@@ -28,6 +28,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'E-Mail-Adresse wird bereits verwendet',
   [SuiteCoreStringKey.Validation_InvalidCredentials]:
     'Ungültiger Benutzername oder Passwort',
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    'Registrierung mit @{domain}-Adressen ist nicht erlaubt',
   [SuiteCoreStringKey.Validation_InvalidEmail]:
     'Ungültiges E-Mail-Adressformat',
   [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Ungültiger JWT-Token',

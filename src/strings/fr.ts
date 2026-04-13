@@ -26,6 +26,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     "L'adresse e-mail est déjà utilisée",
   [SuiteCoreStringKey.Validation_InvalidCredentials]:
     "Nom d'utilisateur ou mot de passe invalide",
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    "L'inscription avec des adresses @{domain} n'est pas autorisée",
   [SuiteCoreStringKey.Validation_InvalidEmail]:
     "Format d'adresse e-mail invalide",
   [SuiteCoreStringKey.Common_SiteTemplate]: '{Site}',

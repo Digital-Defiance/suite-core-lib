@@ -30,6 +30,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Адреса електронної пошти вже використовується',
   [SuiteCoreStringKey.Validation_InvalidCredentials]:
     "Недійсне ім'я користувача або пароль",
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    'Реєстрація з адресами @{domain} не дозволена',
   [SuiteCoreStringKey.Validation_InvalidEmail]:
     'Недійсний формат адреси електронної пошти',
   [SuiteCoreStringKey.Validation_InvalidJwtToken]: 'Недійсний JWT токен',

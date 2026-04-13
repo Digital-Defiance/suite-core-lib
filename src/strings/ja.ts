@@ -27,8 +27,9 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     'ユーザーアカウントの更新に失敗しました',
   [SuiteCoreStringKey.Validation_EmailInUse]:
     'このメールアドレスは既に使用されています',
-  [SuiteCoreStringKey.Validation_InvalidCredentials]:
-    '無効なユーザー名またはパスワード',
+  [SuiteCoreStringKey.Validation_InvalidCredentials]: '無効なユーザー名またはパスワード',
+  [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
+    '@{domain}アドレスでの登録は許可されていません',
   [SuiteCoreStringKey.Validation_InvalidEmail]: '無効なメールアドレスの形式',
   [SuiteCoreStringKey.Validation_InvalidJwtToken]: '無効なJWTトークン',
   [SuiteCoreStringKey.Validation_InvalidToken]: '無効なトークン',
