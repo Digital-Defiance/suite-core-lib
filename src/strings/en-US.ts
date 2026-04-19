@@ -660,6 +660,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Enable Direct Challenge Login',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Allow logging in directly with your mnemonic phrase without email verification. This is more convenient but less secure if your mnemonic is compromised.',
+  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    'Registration successful! Please check your email inbox for a verification link to activate your account.',
   [SuiteCoreStringKey.RemoveAdmin_Success]: 'Admin removed successfully',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
     'Unauthorized to remove an admin',

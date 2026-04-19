@@ -27,7 +27,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     'ユーザーアカウントの更新に失敗しました',
   [SuiteCoreStringKey.Validation_EmailInUse]:
     'このメールアドレスは既に使用されています',
-  [SuiteCoreStringKey.Validation_InvalidCredentials]: '無効なユーザー名またはパスワード',
+  [SuiteCoreStringKey.Validation_InvalidCredentials]:
+    '無効なユーザー名またはパスワード',
   [SuiteCoreStringKey.Validation_EmailDomainNotAllowedTemplate]:
     '@{domain}アドレスでの登録は許可されていません',
   [SuiteCoreStringKey.Validation_InvalidEmail]: '無効なメールアドレスの形式',
@@ -675,6 +676,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     'ダイレクトチャレンジログインを有効にする',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'メール確認なしでニーモニックフレーズを使用して直接ログインできるようにします。これはより便利ですが、ニーモニックが漏洩した場合はセキュリティが低下します。',
+  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    '登録が完了しました！アカウントを有効にするための確認リンクが記載されたメールをご確認ください。',
   [SuiteCoreStringKey.RemoveAdmin_Success]: '管理者が正常に削除されました',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
     '管理者を削除する権限がありません',

@@ -431,6 +431,7 @@ enum SuiteCoreStringKeyEnum {
   Registration_SuccessTitle = 'registration_successTitle',
   Registration_DirectChallengeLabel = 'registration_directChallengeLabel',
   Registration_DirectChallengeHelper = 'registration_directChallengeHelper',
+  Registration_CheckYourEmail = 'registration_checkYourEmail',
   RemoveAdmin_Success = 'removeAdmin_success',
   RemoveAdmin_Unauthorized = 'removeAdmin_unauthorized',
   RemoveMember_Success = 'removeMember_success',

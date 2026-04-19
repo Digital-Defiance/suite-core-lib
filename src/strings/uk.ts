@@ -688,6 +688,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Увімкнути прямий вхід за викликом',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Дозволити вхід безпосередньо за допомогою вашої мнемонічної фрази без підтвердження електронної пошти. Це зручніше, але менш безпечно, якщо ваша мнемоніка скомпрометована.',
+  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    'Реєстрація успішна! Будь ласка, перевірте свою електронну пошту на наявність посилання для підтвердження, щоб активувати свій обліковий запис.',
   [SuiteCoreStringKey.RemoveAdmin_Success]: 'Адміністратора успішно видалено',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
     'Ви не маєте права видаляти адміністратора',

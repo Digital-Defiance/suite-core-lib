@@ -702,6 +702,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Activer la connexion par défi direct',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     "Permettre de se connecter directement avec votre phrase mnémotechnique sans vérification par e-mail. C'est plus pratique mais moins sécurisé si votre phrase mnémotechnique est compromise.",
+  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    "Inscription réussie ! Veuillez vérifier votre boîte de réception pour un lien de vérification afin d'activer votre compte.",
   [SuiteCoreStringKey.RemoveAdmin_Success]:
     'Administrateur supprimé avec succès',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:

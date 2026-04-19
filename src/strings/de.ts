@@ -690,6 +690,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Direkte Challenge-Anmeldung aktivieren',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Ermöglichen Sie die direkte Anmeldung mit Ihrer mnemonischen Phrase ohne E-Mail-Verifizierung. Dies ist bequemer, aber weniger sicher, wenn Ihre mnemonische Phrase kompromittiert wird.',
+  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    'Registrierung erfolgreich! Bitte überprüfen Sie Ihren E-Mail-Posteingang auf einen Bestätigungslink, um Ihr Konto zu aktivieren.',
   [SuiteCoreStringKey.RemoveAdmin_Success]:
     'Administrator erfolgreich entfernt',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:
