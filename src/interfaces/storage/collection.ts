@@ -119,7 +119,7 @@ export interface ICollection<T extends BsonDocument = BsonDocument> {
   dropIndex(name: string): Promise<void>;
 
   /** List all index names on this collection. */
-  listIndexes(): string[];
+  listIndexes(): string[] | Promise<string[]>;
 
   // ── Bulk operations ──
 
