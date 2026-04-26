@@ -268,6 +268,18 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Utilisation de MongoDB Memory Server avec prise en charge des transactions',
   [SuiteCoreStringKey.AdminRoleNotFound]: 'Rôle administrateur non trouvé',
   [SuiteCoreStringKey.ApiAccess_Title]: "Votre jeton d'accès",
+  [SuiteCoreStringKey.FakeEmail_Admin_Title]: 'Email factice (Dev)',
+  [SuiteCoreStringKey.FakeEmail_Admin_Recipients]: 'Destinataires',
+  [SuiteCoreStringKey.FakeEmail_Admin_Subject]: 'Sujet',
+  [SuiteCoreStringKey.FakeEmail_Admin_Timestamp]: 'Horodatage',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoRecipients]:
+    "Aucun email capturé pour l'instant.",
+  [SuiteCoreStringKey.FakeEmail_Admin_NoEmails]:
+    'Aucun email pour ce destinataire.',
+  [SuiteCoreStringKey.FakeEmail_Admin_Refresh]: 'Actualiser',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearAll]: 'Tout effacer',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearConfirm]:
+    'Effacer tous les emails capturés ?',
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Jeton non disponible',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]:
     'Échec de la récupération des codes de sauvegarde',

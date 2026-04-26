@@ -258,6 +258,18 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Verwendung von MongoDB Memory Server mit Unterstützung für Transaktionen',
   [SuiteCoreStringKey.AdminRoleNotFound]: 'Administratorrolle nicht gefunden',
   [SuiteCoreStringKey.ApiAccess_Title]: 'Ihr Zugriffstoken',
+  [SuiteCoreStringKey.FakeEmail_Admin_Title]: 'Fake-E-Mail (Dev)',
+  [SuiteCoreStringKey.FakeEmail_Admin_Recipients]: 'Empfänger',
+  [SuiteCoreStringKey.FakeEmail_Admin_Subject]: 'Betreff',
+  [SuiteCoreStringKey.FakeEmail_Admin_Timestamp]: 'Zeitstempel',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoRecipients]:
+    'Noch keine E-Mails erfasst.',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoEmails]:
+    'Keine E-Mails für diesen Empfänger.',
+  [SuiteCoreStringKey.FakeEmail_Admin_Refresh]: 'Aktualisieren',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearAll]: 'Alle löschen',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearConfirm]:
+    'Alle erfassten E-Mails löschen?',
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Token nicht verfügbar',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]:
     'Fehler beim Abrufen der Backup-Codes',

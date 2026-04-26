@@ -256,6 +256,18 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Використання MongoDB Memory Server з підтримкою транзакцій',
   [SuiteCoreStringKey.AdminRoleNotFound]: 'Роль адміністратора не знайдено',
   [SuiteCoreStringKey.ApiAccess_Title]: 'Ваш токен доступу',
+  [SuiteCoreStringKey.FakeEmail_Admin_Title]: 'Фейкова пошта (Dev)',
+  [SuiteCoreStringKey.FakeEmail_Admin_Recipients]: 'Отримувачі',
+  [SuiteCoreStringKey.FakeEmail_Admin_Subject]: 'Тема',
+  [SuiteCoreStringKey.FakeEmail_Admin_Timestamp]: 'Позначка часу',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoRecipients]:
+    'Листів ще не перехоплено.',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoEmails]:
+    'Немає листів для цього отримувача.',
+  [SuiteCoreStringKey.FakeEmail_Admin_Refresh]: 'Оновити',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearAll]: 'Очистити все',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearConfirm]:
+    'Очистити всі перехоплені листи?',
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Токен недоступний',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]:
     'Не вдалося отримати коди резервної копії',

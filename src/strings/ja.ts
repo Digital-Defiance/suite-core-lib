@@ -260,6 +260,18 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
     'トランザクションサポート付きMongoDB Memory Serverを使用しています',
   [SuiteCoreStringKey.AdminRoleNotFound]: '管理者役割が見つかりません',
   [SuiteCoreStringKey.ApiAccess_Title]: 'アクセストークン',
+  [SuiteCoreStringKey.FakeEmail_Admin_Title]: 'フェイクメール (開発)',
+  [SuiteCoreStringKey.FakeEmail_Admin_Recipients]: '受信者',
+  [SuiteCoreStringKey.FakeEmail_Admin_Subject]: '件名',
+  [SuiteCoreStringKey.FakeEmail_Admin_Timestamp]: 'タイムスタンプ',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoRecipients]:
+    'まだメールはキャプチャされていません。',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoEmails]:
+    'この受信者のメールはありません。',
+  [SuiteCoreStringKey.FakeEmail_Admin_Refresh]: '更新',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearAll]: 'すべて削除',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearConfirm]:
+    'キャプチャされたメールをすべて削除しますか？',
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'トークンが利用できません',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]:
     'バックアップコードの取得に失敗しました',

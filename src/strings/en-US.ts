@@ -249,6 +249,17 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Using MongoDB Memory Server with transaction support',
   [SuiteCoreStringKey.AdminRoleNotFound]: 'Admin role not found',
   [SuiteCoreStringKey.ApiAccess_Title]: 'Your Access Token',
+  [SuiteCoreStringKey.FakeEmail_Admin_Title]: 'Fake Email (Dev)',
+  [SuiteCoreStringKey.FakeEmail_Admin_Recipients]: 'Recipients',
+  [SuiteCoreStringKey.FakeEmail_Admin_Subject]: 'Subject',
+  [SuiteCoreStringKey.FakeEmail_Admin_Timestamp]: 'Timestamp',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoRecipients]: 'No emails captured yet.',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoEmails]:
+    'No emails for this recipient.',
+  [SuiteCoreStringKey.FakeEmail_Admin_Refresh]: 'Refresh',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearAll]: 'Clear All',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearConfirm]:
+    'Clear all captured emails?',
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]: 'Token not available',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]:
     'Failed to fetch backup codes',

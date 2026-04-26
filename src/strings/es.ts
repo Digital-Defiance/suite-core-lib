@@ -259,6 +259,18 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Utilización de MongoDB Memory Server con soporte de transacciones',
   [SuiteCoreStringKey.AdminRoleNotFound]: 'Rol de administrador no encontrado',
   [SuiteCoreStringKey.ApiAccess_Title]: 'Su token de acceso',
+  [SuiteCoreStringKey.FakeEmail_Admin_Title]: 'Correo falso (Dev)',
+  [SuiteCoreStringKey.FakeEmail_Admin_Recipients]: 'Destinatarios',
+  [SuiteCoreStringKey.FakeEmail_Admin_Subject]: 'Asunto',
+  [SuiteCoreStringKey.FakeEmail_Admin_Timestamp]: 'Marca de tiempo',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoRecipients]:
+    'Aún no se han capturado correos.',
+  [SuiteCoreStringKey.FakeEmail_Admin_NoEmails]:
+    'Sin correos para este destinatario.',
+  [SuiteCoreStringKey.FakeEmail_Admin_Refresh]: 'Actualizar',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearAll]: 'Borrar todo',
+  [SuiteCoreStringKey.FakeEmail_Admin_ClearConfirm]:
+    '¿Borrar todos los correos capturados?',
   [SuiteCoreStringKey.ApiAccess_TokenNotAvailable]:
     'El token no está disponible',
   [SuiteCoreStringKey.BackupCodes_FailedToFetch]:
