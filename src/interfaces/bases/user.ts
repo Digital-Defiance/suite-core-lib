@@ -92,4 +92,18 @@ export interface IUserBase<
    * Copy of the mnemonic encrypted with the user's public key
    */
   mnemonicRecovery: string;
+  /**
+   * Whether TOTP 2FA is enabled for this account.
+   */
+  totpEnabled?: boolean;
+  /**
+   * TOTP secret encrypted with the user's ECIES public key.
+   * Present only when totpEnabled is true.
+   */
+  totpSecret?: string;
+  /**
+   * Pending TOTP secret encrypted with the user's ECIES public key.
+   * Present during setup flow before confirmation.
+   */
+  totpPendingSecret?: string;
 }
