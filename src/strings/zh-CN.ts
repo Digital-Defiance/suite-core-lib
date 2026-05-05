@@ -547,6 +547,8 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_Title]: '登录',
   [SuiteCoreStringKey.Login_UseEmailAddress]: '使用邮箱地址',
   [SuiteCoreStringKey.Login_UseUsername]: '使用用户名',
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    '您的密码解密仅存储在此浏览器中的恢复短语。在新设备上登录需要直接使用您的恢复短语。',
   [SuiteCoreStringKey.LogoutButton]: '登出',
   [SuiteCoreStringKey.MemberRoleNotFound]: '未找到成员角色',
   [SuiteCoreStringKey.SystemRoleNotFound]: '未找到系统角色',
@@ -586,8 +588,8 @@ export const mandarinStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Registration_SuccessTitle]: '注册成功。',
   [SuiteCoreStringKey.Registration_DirectChallengeLabel]: '启用直接挑战登录',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
-    '允许直接使用您的助记词登录，无需电子邮件验证。这更方便，但如果您的助记词泄露，安全性会降低。',
-  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    '允许直接使用您的助记词登录，无需电子邮件验证。这更方便，但如果您的助记词泄露，安全性会降低。',  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    '您的密码将加密仅存储在此浏览器中的恢复短语。在新设备上登录将需要直接使用您的恢复短语——请将其保存在安全的地方。',  [SuiteCoreStringKey.Registration_CheckYourEmail]:
     '注册成功！请检查您的电子邮件收件箱，点击验证链接以激活您的账户。',
   [SuiteCoreStringKey.RemoveAdmin_Success]: '管理员移除成功',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]: '未授权移除管理员',

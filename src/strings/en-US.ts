@@ -619,6 +619,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_Title]: 'Sign In',
   [SuiteCoreStringKey.Login_UseEmailAddress]: 'Use Email Address',
   [SuiteCoreStringKey.Login_UseUsername]: 'Use Username',
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    'Your password decrypts a recovery phrase stored only in this browser. Signing in on a new device requires your recovery phrase directly.',
   [SuiteCoreStringKey.LogoutButton]: 'Logout',
   [SuiteCoreStringKey.MemberRoleNotFound]: 'Member role not found',
   [SuiteCoreStringKey.SystemRoleNotFound]: 'System role not found',
@@ -671,6 +673,8 @@ export const americanEnglishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Enable Direct Challenge Login',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Allow logging in directly with your mnemonic phrase without email verification. This is more convenient but less secure if your mnemonic is compromised.',
+  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    'Your password will encrypt a recovery phrase stored only in this browser. Signing in on a new device will require your recovery phrase directly — keep it somewhere safe.',
   [SuiteCoreStringKey.Registration_CheckYourEmail]:
     'Registration successful! Please check your email inbox for a verification link to activate your account.',
   [SuiteCoreStringKey.RemoveAdmin_Success]: 'Admin removed successfully',

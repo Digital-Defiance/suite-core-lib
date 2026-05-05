@@ -635,6 +635,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_Title]: 'サインイン',
   [SuiteCoreStringKey.Login_UseEmailAddress]: 'メールアドレスを使用',
   [SuiteCoreStringKey.Login_UseUsername]: 'ユーザー名を使用',
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    'パスワードは、このブラウザにのみ保存されているリカバリーフレーズを復号化します。新しいデバイスでサインインするには、リカバリーフレーズを直接使用する必要があります。',
   [SuiteCoreStringKey.LogoutButton]: 'ログアウト',
   [SuiteCoreStringKey.MemberRoleNotFound]: 'メンバー役割が見つかりません',
   [SuiteCoreStringKey.SystemRoleNotFound]: 'システム役割が見つかりません',
@@ -687,8 +689,8 @@ export const japaneseStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Registration_DirectChallengeLabel]:
     'ダイレクトチャレンジログインを有効にする',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
-    'メール確認なしでニーモニックフレーズを使用して直接ログインできるようにします。これはより便利ですが、ニーモニックが漏洩した場合はセキュリティが低下します。',
-  [SuiteCoreStringKey.Registration_CheckYourEmail]:
+    'メール確認なしでニーモニックフレーズを使用して直接ログインできるようにします。これはより便利ですが、ニーモニックが漏洩した場合はセキュリティが低下します。',  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    'パスワードは、このブラウザにのみ保存されるリカバリーフレーズを暗号化します。新しいデバイスでサインインするには、リカバリーフレーズを直接使用する必要があります — 安全な場所に保管してください。',  [SuiteCoreStringKey.Registration_CheckYourEmail]:
     '登録が完了しました！アカウントを有効にするための確認リンクが記載されたメールをご確認ください。',
   [SuiteCoreStringKey.RemoveAdmin_Success]: '管理者が正常に削除されました',
   [SuiteCoreStringKey.RemoveAdmin_Unauthorized]:

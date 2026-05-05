@@ -659,6 +659,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_Title]: 'Connexion',
   [SuiteCoreStringKey.Login_UseEmailAddress]: "Utiliser l'adresse e-mail",
   [SuiteCoreStringKey.Login_UseUsername]: "Utiliser le nom d'utilisateur",
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    "Votre mot de passe déchiffre une phrase de récupération stockée uniquement dans ce navigateur. Pour vous connecter sur un nouvel appareil, vous devez utiliser directement votre phrase de récupération.",
   [SuiteCoreStringKey.LogoutButton]: 'Se déconnecter',
   [SuiteCoreStringKey.MemberRoleNotFound]: 'Rôle de membre non trouvé',
   [SuiteCoreStringKey.SystemRoleNotFound]: 'Rôle système non trouvé',
@@ -714,6 +716,8 @@ export const frenchStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Activer la connexion par défi direct',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     "Permettre de se connecter directement avec votre phrase mnémotechnique sans vérification par e-mail. C'est plus pratique mais moins sécurisé si votre phrase mnémotechnique est compromise.",
+  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    "Votre mot de passe chiffrera une phrase de récupération stockée uniquement dans ce navigateur. Pour vous connecter sur un nouvel appareil, vous aurez besoin de votre phrase de récupération directement — conservez-la en lieu sûr.",
   [SuiteCoreStringKey.Registration_CheckYourEmail]:
     "Inscription réussie ! Veuillez vérifier votre boîte de réception pour un lien de vérification afin d'activer votre compte.",
   [SuiteCoreStringKey.RemoveAdmin_Success]:

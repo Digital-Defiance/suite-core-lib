@@ -649,6 +649,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_UseEmailAddress]:
     'Використати адресу електронної пошти',
   [SuiteCoreStringKey.Login_UseUsername]: "Використати ім'я користувача",
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    'Ваш пароль розшифровує фразу відновлення, яка зберігається лише в цьому браузері. Для входу на новому пристрої потрібна ваша фраза відновлення безпосередньо.',
   [SuiteCoreStringKey.LogoutButton]: 'Вийти',
   [SuiteCoreStringKey.MemberRoleNotFound]: 'Роль учасника не знайдено',
   [SuiteCoreStringKey.SystemRoleNotFound]: 'Роль системи не знайдено',
@@ -700,6 +702,8 @@ export const ukrainianStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Увімкнути прямий вхід за викликом',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Дозволити вхід безпосередньо за допомогою вашої мнемонічної фрази без підтвердження електронної пошти. Це зручніше, але менш безпечно, якщо ваша мнемоніка скомпрометована.',
+  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    'Ваш пароль зашифрує фразу відновлення, яка зберігатиметься лише в цьому браузері. Для входу на новому пристрої буде потрібна ваша фраза відновлення безпосередньо — зберігайте її в надійному місці.',
   [SuiteCoreStringKey.Registration_CheckYourEmail]:
     'Реєстрація успішна! Будь ласка, перевірте свою електронну пошту на наявність посилання для підтвердження, щоб активувати свій обліковий запис.',
   [SuiteCoreStringKey.RemoveAdmin_Success]: 'Адміністратора успішно видалено',

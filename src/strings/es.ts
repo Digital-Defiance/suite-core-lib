@@ -654,6 +654,8 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_UseEmailAddress]:
     'Usar dirección de correo electrónico',
   [SuiteCoreStringKey.Login_UseUsername]: 'Usar nombre de usuario',
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    'Su contraseña descifra una frase de recuperación almacenada únicamente en este navegador. Para iniciar sesión en un dispositivo nuevo, necesitará su frase de recuperación directamente.',
   [SuiteCoreStringKey.LogoutButton]: 'Cerrar sesión',
   [SuiteCoreStringKey.MemberRoleNotFound]: 'Rol de miembro no encontrado',
   [SuiteCoreStringKey.SystemRoleNotFound]: 'Rol de sistema no encontrado',
@@ -706,6 +708,8 @@ export const spanishStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Habilitar inicio de sesión por desafío directo',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Permitir iniciar sesión directamente con su frase mnemotécnica sin verificación por correo electrónico. Esto es más conveniente pero menos seguro si su frase mnemotécnica se ve comprometida.',
+  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    'Su contraseña cifrará una frase de recuperación almacenada únicamente en este navegador. Para iniciar sesión en un dispositivo nuevo, necesitará su frase de recuperación directamente — guárdela en un lugar seguro.',
   [SuiteCoreStringKey.Registration_CheckYourEmail]:
     '¡Registro exitoso! Por favor revise su bandeja de entrada de correo electrónico para un enlace de verificación para activar su cuenta.',
   [SuiteCoreStringKey.RemoveAdmin_Success]: 'Administrador eliminado con éxito',

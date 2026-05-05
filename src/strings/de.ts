@@ -650,6 +650,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
   [SuiteCoreStringKey.Login_Title]: 'Anmeldung',
   [SuiteCoreStringKey.Login_UseEmailAddress]: 'E-Mail-Adresse verwenden',
   [SuiteCoreStringKey.Login_UseUsername]: 'Benutzernamen verwenden',
+  [SuiteCoreStringKey.Login_PasswordAuthInfo]:
+    'Ihr Passwort entschlüsselt eine Wiederherstellungsphrase, die nur in diesem Browser gespeichert ist. Für die Anmeldung auf einem neuen Gerät benötigen Sie Ihre Wiederherstellungsphrase direkt.',
   [SuiteCoreStringKey.LogoutButton]: 'Abmelden',
   [SuiteCoreStringKey.MemberRoleNotFound]: 'Mitgliederrolle nicht gefunden',
   [SuiteCoreStringKey.SystemRoleNotFound]: 'Systemrolle nicht gefunden',
@@ -702,6 +704,8 @@ export const germanStrings: Record<SuiteCoreStringKeyValue, string> = {
     'Direkte Challenge-Anmeldung aktivieren',
   [SuiteCoreStringKey.Registration_DirectChallengeHelper]:
     'Ermöglichen Sie die direkte Anmeldung mit Ihrer mnemonischen Phrase ohne E-Mail-Verifizierung. Dies ist bequemer, aber weniger sicher, wenn Ihre mnemonische Phrase kompromittiert wird.',
+  [SuiteCoreStringKey.Registration_PasswordAuthInfo]:
+    'Ihr Passwort verschlüsselt eine Wiederherstellungsphrase, die nur in diesem Browser gespeichert wird. Für die Anmeldung auf einem neuen Gerät benötigen Sie Ihre Wiederherstellungsphrase direkt — bewahren Sie diese sicher auf.',
   [SuiteCoreStringKey.Registration_CheckYourEmail]:
     'Registrierung erfolgreich! Bitte überprüfen Sie Ihren E-Mail-Posteingang auf einen Bestätigungslink, um Ihr Konto zu aktivieren.',
   [SuiteCoreStringKey.RemoveAdmin_Success]:
