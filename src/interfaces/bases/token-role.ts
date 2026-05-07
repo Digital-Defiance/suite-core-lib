@@ -7,7 +7,7 @@ import { IRoleBase } from './role';
 
 export interface ITokenRole<
   TID extends PlatformID,
-  TDate extends Date | string = Date,
+  TDate extends Date | number | string = Date,
 > extends IRoleBase<TID, TDate> {
   /**
    * The translated name of the role

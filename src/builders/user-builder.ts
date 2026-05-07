@@ -11,7 +11,7 @@ import { IUserBase } from '../interfaces/bases/user';
  */
 export class UserBuilder<
   TID extends PlatformID = PlatformID,
-  TDate extends Date | string = Date,
+  TDate extends Date | number | string = Date,
   TLanguage extends string = string,
 > {
   private data: Partial<IUserBase<TID, TDate, TLanguage, AccountStatus>> = {
@@ -28,7 +28,7 @@ export class UserBuilder<
    */
   static create<
     TID extends PlatformID = PlatformID,
-    TDate extends Date | string = Date,
+    TDate extends Date | number | string = Date,
     TLanguage extends string = string,
   >(): UserBuilder<TID, TDate, TLanguage> {
     return new UserBuilder<TID, TDate, TLanguage>();

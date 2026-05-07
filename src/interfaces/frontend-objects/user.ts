@@ -5,9 +5,5 @@
 import { AccountStatus } from '../../enumerations/account-status';
 import { IUserBase } from '../bases/user';
 
-export type IUserFrontendObject = IUserBase<
-  string,
-  Date,
-  string,
-  AccountStatus
->;
+export type IUserFrontendObject<TDate extends Date | number | string = Date> =
+  IUserBase<string, TDate, string, AccountStatus>;

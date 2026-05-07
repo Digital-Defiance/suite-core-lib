@@ -8,7 +8,7 @@ import { IHasTimestamps } from '../has-timestamps';
  */
 export interface IEmailTokenBase<
   TID extends PlatformID,
-  TDate extends Date | string,
+  TDate extends Date | number | string,
   TEmailTokenType extends EmailTokenType | string,
 >
   extends IHasId<TID>, IHasTimestamps<TDate> {

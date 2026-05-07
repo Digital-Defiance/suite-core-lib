@@ -12,7 +12,7 @@ import { IHasTimestamps } from '../has-timestamps';
  */
 export interface IUserBase<
   TID extends PlatformID,
-  TDate extends Date | string,
+  TDate extends Date | number | string,
   TLanguage extends string,
   TAccountStatus extends AccountStatus | string,
 >

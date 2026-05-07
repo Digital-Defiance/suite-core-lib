@@ -11,7 +11,7 @@ import { IRoleBase } from '../interfaces/bases/role';
  */
 export class RoleBuilder<
   TID extends PlatformID = PlatformID,
-  TDate extends Date | string = Date,
+  TDate extends Date | number | string = Date,
 > {
   private data: Partial<IRoleBase<TID, TDate, Role>> = {
     admin: false,
@@ -22,7 +22,7 @@ export class RoleBuilder<
 
   static create<
     TID extends PlatformID = PlatformID,
-    TDate extends Date | string = Date,
+    TDate extends Date | number | string = Date,
   >(): RoleBuilder<TID, TDate> {
     return new RoleBuilder<TID, TDate>();
   }

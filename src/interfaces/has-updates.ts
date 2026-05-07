@@ -1,6 +1,6 @@
 /**
  * Interface for objects with an update timestamp.
  */
-export interface IHasUpdates<TDate extends Date | string> {
+export interface IHasUpdates<TDate extends Date | number | string> {
   updatedAt: TDate;
 }

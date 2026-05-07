@@ -4,4 +4,5 @@
  */
 import { IUserRoleBase } from '../bases/user-role';
 
-export type IUserRoleFrontendObject = IUserRoleBase<string, Date>;
+export type IUserRoleFrontendObject<TDate extends Date | number = Date> =
+  IUserRoleBase<string, TDate>;

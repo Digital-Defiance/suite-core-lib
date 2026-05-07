@@ -8,7 +8,7 @@ import { IHasTimestamps } from '../has-timestamps';
 
 export interface IRoleBase<
   TID extends PlatformID,
-  TDate extends Date | string = Date,
+  TDate extends Date | number | string = Date,
   TRole extends Role | string = Role,
 >
   extends

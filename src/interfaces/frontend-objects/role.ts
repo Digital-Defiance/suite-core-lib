@@ -5,4 +5,8 @@
 import { Role } from '../../enumerations/role';
 import { IRoleBase } from '../bases/role';
 
-export type IRoleFrontendObject = IRoleBase<string, Date, Role>;
+export type IRoleFrontendObject<TDate extends Date | number = Date> = IRoleBase<
+  string,
+  TDate,
+  Role
+>;
