@@ -185,7 +185,10 @@ export interface ReplaceResult {
 /** Change stream event types */
 export type ChangeEventType = 'insert' | 'update' | 'replace' | 'delete';
 
-export interface ChangeEvent<T = BsonDocument> {
+export interface ChangeEvent<
+  T = BsonDocument,
+  TDate extends Date | number = Date,
+> {
   operationType: ChangeEventType;
   documentKey: { _id: DocumentId };
   fullDocument?: T;
@@ -194,11 +197,14 @@ export interface ChangeEvent<T = BsonDocument> {
     removedFields?: string[];
   };
   ns: { db: string; coll: string };
-  timestamp: Date;
+  timestamp: TDate;
 }
 
 /** Listener for change events */
-export type ChangeListener<T = BsonDocument> = (event: ChangeEvent<T>) => void;
+export type ChangeListener<
+  T = BsonDocument,
+  TDate extends Date | number = Date,
+> = (event: ChangeEvent<T, TDate>) => void;
 
 /**
  * Aggregation pipeline stage types

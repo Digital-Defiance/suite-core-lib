@@ -5,7 +5,9 @@
 import { ICombinedRolePrivileges } from '../combined-role-privileges';
 import { IRoleFrontendObject } from './role';
 
-export interface IRequestUserFrontendObject {
+export interface IRequestUserFrontendObject<
+  TDate extends Date | number = Date,
+> {
   id: string;
   roles: Array<IRoleFrontendObject>;
   rolePrivileges: ICombinedRolePrivileges;
@@ -15,7 +17,7 @@ export interface IRequestUserFrontendObject {
   currency: string;
   directChallenge: boolean;
   siteLanguage: string;
-  lastLogin?: Date;
+  lastLogin?: TDate;
   emailVerified: boolean;
   darkMode: boolean;
 }

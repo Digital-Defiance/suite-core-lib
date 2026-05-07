@@ -33,7 +33,10 @@ import {
   WriteOptions,
 } from './document-types';
 
-export interface ICollection<T extends BsonDocument = BsonDocument> {
+export interface ICollection<
+  T extends BsonDocument = BsonDocument,
+  TDate extends Date | number = Date,
+> {
   // ── CRUD ──
 
   /** Insert a single document. */
@@ -132,7 +135,7 @@ export interface ICollection<T extends BsonDocument = BsonDocument> {
   // ── Change streams ──
 
   /** Watch for changes on this collection. Returns an unsubscribe function. */
-  watch(listener: ChangeListener<T>): () => void;
+  watch(listener: ChangeListener<T, TDate>): () => void;
 
   // ── Schema validation ──
 
