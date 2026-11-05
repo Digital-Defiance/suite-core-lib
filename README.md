@@ -686,6 +686,10 @@ describe('User Management', () => {
 
 ## ChangeLog
 
+### v5.0.0
+
+- Version sync release for Express Suite 5.0.0; no breaking changes in this package
+
 ### v4.19.11
 
 - Version sync release with major/minor version bump; no substantive code changes
