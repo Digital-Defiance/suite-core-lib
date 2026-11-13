@@ -685,6 +685,8 @@ describe('User Management', () => {
 ```
 
 ## ChangeLog
+### v5.0.1
+- Depends on `@digitaldefiance/i18n-lib` 4.8.0 and `@digitaldefiance/ecies-lib` 5.2.3; no code changes in this package
 
 ### v5.0.0
 
